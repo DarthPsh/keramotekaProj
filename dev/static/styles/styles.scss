@@ -77,13 +77,14 @@ button { outline: none; }
 }
 
 .container {
-  max-width: 1552px;
+  max-width: calc(1552px + 32px);
   margin: 0 auto;
+  padding: 0 16px;
   @media ( max-width: 1440px ) {
-      max-width: 1240px;
+      max-width: calc(1240px + 32px);
   }
   @media ( max-width: 1200px ) {
-      max-width: 1048px;
+      max-width: calc(1048px + 32px);
   }
 }
 

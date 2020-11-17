@@ -26,3 +26,7 @@ $units: 1px !default;
     @content;
   }
 }
+
+@mixin border-bottom {
+  border-bottom: 1px solid $colorAccent;
+}
