@@ -27,6 +27,18 @@ $units: 1px !default;
   }
 }
 
+
 @mixin border-bottom {
-  border-bottom: 1px solid $colorAccent;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: $colorAccent;
+    transition: .5s;
+  }
+  &:hover::after {
+      width: 0%;
+      height: 0;
+  }
 }

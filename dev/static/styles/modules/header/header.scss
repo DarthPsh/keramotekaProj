@@ -24,6 +24,18 @@ header { flex: 0 0 auto; }
                 }
             }
         }
+        a {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 16px;
+            letter-spacing: 0.04em;
+            color: linear-gradient(0deg, #333333, #333333);
+            transition: .3s;
+            &:hover {
+                color: $colorGray;
+            }
+        }
     }
     &-main {
         display: flex;
@@ -32,7 +44,7 @@ header { flex: 0 0 auto; }
         padding: 16px 0;
         .logo {
             img {
-                @media ( max-width: 1200px ) {
+                @media ( max-width: 1225px ) {
                     height: 18px;
                 }
             }
@@ -76,6 +88,7 @@ header { flex: 0 0 auto; }
         }
         &__phone {
             margin-right: 30px;
+            white-space: nowrap;
             .header-content-block__info {
                 display: block;
             }
@@ -91,6 +104,7 @@ header { flex: 0 0 auto; }
         }
         &__worktime {
             margin-right: 40px;
+            white-space: nowrap;
             @media ( max-width: 1200px ) {
                 .header-content-block__text {
                     display: none;
@@ -110,10 +124,17 @@ header { flex: 0 0 auto; }
             background: $colorDark;
             border-radius: 50%;
             position: relative;
-            img {
-                margin-top: 50%;
-                margin-left: 50%;
-                transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .svg-sprite-icon {
+                height: 24px;
+                width: 24px;
+                fill: $colorLight;
+                transition: .3s;
+            }
+            &:hover .svg-sprite-icon {
+                fill: $colorAccent;
             }
             &__badge {
                 height: 24px;
@@ -122,6 +143,7 @@ header { flex: 0 0 auto; }
                 border-radius: 50%;
                 position: absolute;
                 right: -12px;
+                top: 0;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 19px;
@@ -140,6 +162,23 @@ header { flex: 0 0 auto; }
         &-wrap {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+        }
+        &-inner {
+            display: flex;
+            align-items: center;
+            &__catalog {
+                flex-grow: 1;
+            }
+            &__search {
+                width: 410px;
+                transition: .3s;
+                @media (max-width: 1440px) {
+                    justify-content: space-between;
+                    width: 249px;
+                    position: relative;
+                }
+            }
         }
         &-catalog__link {
             color: $colorLight;
@@ -154,6 +193,10 @@ header { flex: 0 0 auto; }
         &-list {
             display: flex;
             padding: 0 30px;
+            @media (max-width: 1440px) {
+                flex-grow: 1;
+                justify-content: space-between;
+            }
             &__item {
                 a {
                     color: #F1F1F1;
@@ -166,6 +209,9 @@ header { flex: 0 0 auto; }
                     padding: 12px;
                     display: block;
                     white-space: nowrap;
+                    @media (max-width: 1440px) {
+                        padding: 0;
+                    }
                 }
             }
             .letter {
@@ -195,6 +241,10 @@ header { flex: 0 0 auto; }
             display: flex;
             align-items: center;
             cursor: pointer;
+            padding-right: 15px;
+            &_active {
+                position: absolute;
+            }
             // &__icon {}
             &__text {
                 font-style: normal;
@@ -212,14 +262,31 @@ header { flex: 0 0 auto; }
             justify-content: flex-end;
             flex-grow: 1;
             position: relative;
-            padding-left: 32px;
+            transition: all .3s ease-out;
+            &_active {
+                width: 100%;
+                padding-left: 0;
+            }
             @media (max-width: 1440px) {
-                padding-left: 27px;
+                padding-left: 0px;
+                flex-grow: 0;
             }
             &__input {
                 width: 100%;
-                padding: 12px 15px 12px 14px;
+                padding: 10px 15px 10px 14px;
                 border-radius: 4px;
+                transition: all .3s ease-out;
+                max-width: 282px;
+                height: auto;
+                @media (max-width: 1440px) {
+                    width: 112px;
+                }
+                &_active {
+                    max-width: 100%;
+                    @media (max-width: 1440px) {
+                        width: 100%;
+                    }
+                }
                 &::placeholder {
                     font-style: normal;
                     font-weight: 600;

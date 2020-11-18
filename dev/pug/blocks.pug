@@ -1,0 +1,21 @@
+extends layout/main
+
+block variables
+	-var title = 'Просто страница с блоками'
+
+block content
+	.container
+		hr
+		button.btn.btn-fill ПЕРЕЙТИ В КАТАЛОГ
+		hr
+		button.btn.btn-o 
+			+icon('catalog2')
+			| ПЕРЕЙТИ В КАТАЛОГ
+		hr
+		label label
+			input(type="text" placeholder="Placeholder text")
+		hr
+		input(type="checkbox")
+		hr
+		input(type="radio")
+		input(type="radio")

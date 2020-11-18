@@ -1,0 +1,52 @@
+input {
+    padding: 16px 18px;
+    border: 2px solid #D9D9D9;
+    border-radius: 2px;
+    background: $colorLight;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    height: 56px;
+    transition: .3s;
+    &::placeholder {
+        color: #999999;
+    }
+    &:focus {
+        border-color: $colorAccent;
+    }
+    &[type="checkbox"] {
+        cursor: pointer;
+        appearance: none;
+        height: 18px;
+        width: 18px;
+        border-radius: 2px;
+        transition: 0;
+        background-position: center -10px;
+        &:hover {
+            border-color: $colorAccent;
+        }
+        &:checked {
+            background: $colorAccent url('/static/images/common/check-ok.svg') center no-repeat;
+            border-color: $colorAccent;
+        }
+    }
+    &[type="radio"] {
+        cursor: pointer;
+        appearance: none;
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        transition: 0;
+        background-position: center;
+        &:hover {
+            border-color: $colorAccent;
+        }
+        &:checked {
+            border-color: #D9D9D9;
+            transition: .3s;
+            background: radial-gradient(circle, $colorAccent 50%, $colorLight 60%);
+        }
+    }
+}
+
