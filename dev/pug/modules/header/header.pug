@@ -121,7 +121,8 @@ header.header
 						figure.header-bot-filter__icon
 							img(src="static/images/common/filter.svg", alt="icon")
 						.header-bot-filter__text Поиск по параметрам
-					.header-bot-search
+					form.header-bot-search
 						input#search-input.header-bot-search__input(type="text" placeholder="Поиск")
-						figure.header-bot-search__icon
-							img(src="static/images/common/search.svg", alt="icon")
+						//- +icon('search-clear') 
+						input(type="submit").header-bot-search__icon
+						.bx_searche
