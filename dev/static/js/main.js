@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.bx_searche').removeClass('bx_searche_active');
     }
 
-    $('.header-bot-search .icon-search-clear').on('click', function() {
+    $('.header-bot-search .icon-search-clear').on('click', function () {
         console.log(123)
     })
 
@@ -74,6 +74,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
+
+
+    const mainEl = document.querySelector(".page-content");
+    const rowHeight = parseInt(
+        getComputedStyle(mainEl).getPropertyValue("grid-auto-rows")
+    );
+    const rowGap = parseInt(
+        getComputedStyle(mainEl).getPropertyValue("grid-row-gap")
+    );
+    const setSpan = el => {
+        // Calculate the number of lines that the div needs to span
+        el.style.gridRowEnd = `span ${Math.ceil(
+            (el.clientHeight + rowGap) / (rowHeight + rowGap)
+        )}`;
+    };
+
+    function waterfallGrid() {
+        document.querySelectorAll(".page-content-item").forEach(setSpan);
+        document.querySelectorAll(".page-card").forEach((item) => {
+            item.style.height = 'min-content';
+        });
+        setTimeout(() => {
+            document.querySelectorAll(".page-content-item").forEach((item) => {
+                item.style.height = 'auto';
+            });
+        }, 1000);
+
+    }
+    waterfallGrid();
+    window.addEventListener('resize', function (event) {
+        waterfallGrid();
+    });
+
+
+
+
+
     console.log('press F');
 });
-

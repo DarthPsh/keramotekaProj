@@ -69,5 +69,30 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+  var mainEl = document.querySelector(".page-content");
+  var rowHeight = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-auto-rows"));
+  var rowGap = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-row-gap"));
+
+  var setSpan = function setSpan(el) {
+    // Calculate the number of lines that the div needs to span
+    el.style.gridRowEnd = "span ".concat(Math.ceil((el.clientHeight + rowGap) / (rowHeight + rowGap)));
+  };
+
+  function waterfallGrid() {
+    document.querySelectorAll(".page-content-item").forEach(setSpan);
+    document.querySelectorAll(".page-card").forEach(function (item) {
+      item.style.height = 'min-content';
+    });
+    setTimeout(function () {
+      document.querySelectorAll(".page-content-item").forEach(function (item) {
+        item.style.height = 'auto';
+      });
+    }, 1000);
+  }
+
+  waterfallGrid();
+  window.addEventListener('resize', function (event) {
+    waterfallGrid();
+  });
   console.log('press F');
 });
