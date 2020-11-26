@@ -110,20 +110,104 @@ button { outline: none; }
     &-item {
       display: block;
       width: 100%;
+      transition: all .3s ease-out;
     }
   }
   &-slider {
     grid-column: 1 / 3;
     height: 352px;
     background: gray;
+    overflow: hidden;
+    position: relative;
+    &-item {
+      position: relative;
+      figure {
+        height: 100%;
+        width: 100%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      &__text {
+        position: absolute;
+        top: 32px;
+        left: 20px;
+        max-width: 204px;
+        color: $colorLight;
+        &-title {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 100%;
+          padding-bottom: 26px;
+        }
+        &-subtitle {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 32px;
+          line-height: 100%;
+          letter-spacing: 0.01em;
+        }
+      }
+    }
+    .swiper-pagination {
+      width: auto;
+      left: 30px;
+      bottom: 16px;
+      &-bullet {
+        height: 8px;
+        width: 8px;
+        background: $colorLight;
+        border-radius: 0;
+        transform: rotate(45deg);
+        &-active {
+          background: $colorAccent;
+        }
+      }
+    }
+    &-nav {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      height: 40px;
+      width: 88px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      > div {
+        background: #333333;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        height: 40px;
+        width: 40px;
+        opacity: 1;
+        position: unset;
+        opacity: 1;
+        margin: 0;
+        .svg-sprite-icon {
+          fill: $colorLight;
+          height: 10px;
+        }
+      }
+      .swiper-button-next {
+        .svg-sprite-icon {
+          transform: rotate(90deg);
+        }
+      }
+      .swiper-button-prev {
+        .svg-sprite-icon {
+          transform: rotate(-90deg);
+        }
+      }
+    }
   }
   &-card {
     position: relative;
-    background: coral;
+    background: $colorLight;
     z-index: 0;
     &:after {
       content: '';
-      background: red;
       height: calc(100% + 10px);
       width: calc(100% + 10px);
       display: none;
@@ -143,8 +227,17 @@ button { outline: none; }
       background: $colorLight;
       figure {
         position: relative;
+        overflow: hidden;
         img {
           width: 100%;
+        }
+      }
+      &-gallery {
+        img {
+          display: none;
+          &:first-child {
+            display: block;
+          }
         }
       }
       &-badge {
@@ -158,11 +251,14 @@ button { outline: none; }
           top: 16px;
           left: 16px;
           display: flex;
-          &__new {
+          flex-wrap: wrap;
+          align-items: start;
+          &__info {
             background: $colorAccent;
             color: linear-gradient(0deg, #333333, #333333);
             padding: 4px 10px;
             margin-right: 4px;
+            margin-bottom: 4px;
           }
           &__have {
             background: linear-gradient(0deg, #333333, #333333);

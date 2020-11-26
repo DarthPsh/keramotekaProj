@@ -3,7 +3,7 @@ header.header
 		.header-wrap
 			.header-top
 				.header-top__left
-					ul
+					ul.header-top__left-menu
 						li
 							a(href='#') Шоурум
 						li
@@ -11,9 +11,18 @@ header.header
 						li
 							a(href='#') Заказ и доставка
 				.header-top__right
-					ul
+					ul.header-top__right-menu
 						li
 							a(href='#') Сотрудничество
+							figure.header-top__icon.header-top__more
+								img(src='static/images/common/expand_more.svg' alt='icon')
+							ul.header-drop-menu.header-top__right-drop-menu
+								li
+									a(href="#") Дилерам
+								li
+									a(href="#") Строительным организациям
+								li
+									a(href="#") Дизайнерам и архитекторам
 						li
 							a(href='#') Дилерский отдел
 						li
@@ -36,6 +45,20 @@ header.header
 							a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
 						figure.header-content-block__icon.header-content__phone__more
 							img(src='static/images/common/expand_more.svg' alt='icon')
+						ul.header-drop-menu.header-content__phone-drop-menu
+							li
+								.header-content__phone-drop-menu-inner
+									span для Москвы и МО
+									a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
+								a.header-content-circle(href='tel:+74956498420')
+									+icon('phone')
+							li
+								.header-content__phone-drop-menu
+									span для регионов РФ 
+									span (бесплатно)
+									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
+								a.header-content-circle(href='tel:88007075037')
+									+icon('phone')
 					.header-content-block.header-content__worktime
 						figure.header-content-block__icon
 							img(src='static/images/common/clock.svg' alt='icon')
@@ -62,6 +85,51 @@ header.header
 							a(href="#") A
 						li.header-bot-list__item
 							a(href="#") B
+							ul.header-drop-menu.header-bot-list-drop-menu
+								li
+									ul
+										li
+											a(href="#") бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+								li
+									ul
+										li
+											a(href="#") бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
+										li
+											a(href="#") ещё один бренд на букву B
 						li.header-bot-list__item
 							a(href="#") C
 						li.header-bot-list__item
@@ -92,6 +160,25 @@ header.header
 							a(href="#") P
 						li.header-bot-list__item.letter_q
 							a(href="#") Q
+							ul.header-drop-menu.header-bot-list-drop-menu
+								li
+									ul
+										li
+											a(href="#") бренд на букву Q
+										li
+											a(href="#") ещё один бренд на букву Q
+										li
+											a(href="#") ещё один бренд на букву Q
+										li
+											a(href="#") ещё один бренд на букву Q
+										li
+											a(href="#") ещё один бренд на букву Q
+										li
+											a(href="#") ещё один бренд на букву Q
+										li
+											a(href="#") ещё один бренд на букву Q
+										li
+											a(href="#") ещё один бренд на букву Q
 						li.header-bot-list__item.letter_r
 							a(href="#") R
 						li.header-bot-list__item.letter_s
@@ -123,6 +210,147 @@ header.header
 						.header-bot-filter__text Поиск по параметрам
 					form.header-bot-search
 						input#search-input.header-bot-search__input(type="text" placeholder="Поиск")
-						//- +icon('search-clear') 
-						input(type="submit").header-bot-search__icon
+						.header-bot-search__nav
+							input(type="reset" value="").header-bot-search__clear
+							input(type="submit" value="").header-bot-search__icon
 						.bx_searche
+	form.header-filter 
+		.container 
+			.header-filter-top
+				.header-filter-top-left
+					label(for="novelty") 
+						input(type="checkbox" id='novelty')
+						| Новинка
+					label(for="bestseller") 
+						input(type="checkbox" id='bestseller')
+						| Хит продаж
+					label(for="sale") 
+						input(type="checkbox" id='sale')
+						| Распродажа
+				.header-filter-top-right
+					label(for="in-stock") 
+						input(type="checkbox" id='in-stock')
+						| В наличии
+					label(for="on-the-way") 
+						input(type="checkbox" id='on-the-way')
+						| В пути на склад
+					label(for="under-the-order") 
+						input(type="checkbox" id='under-the-order')
+						| Под заказ
+			.header-filter-main
+				ul.header-filter-list
+					li.header-filter-list-item Тип материала
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Страна производителя
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label(for="russia") 
+									input(type="checkbox" id='russia')
+									| Россия
+							li
+								label(for="china") 
+									input(type="checkbox" id='china')
+									| Китай
+							li
+								label(for="israel") 
+									input(type="checkbox" id='israel')
+									| Израиль
+							li
+								label(for="singapur") 
+									input(type="checkbox" id='singapur')
+									| Сингапур
+							li
+								label(for="kenia") 
+									input(type="checkbox" id='kenia')
+									| Кения
+							li
+								label(for="alzhir") 
+									input(type="checkbox" id='alzhir')
+									| Алжир
+							li
+								label(for="venessuela") 
+									input(type="checkbox" id='venessuela')
+									| Венесуэлла
+							li
+								label(for="tadzhik") 
+									input(type="checkbox" id='tadzhik')
+									| Таджикистан
+							li
+								label(for="uzbek") 
+									input(type="checkbox" id='uzbek')
+									| Узбекистан
+							li
+								label(for="kirgiz") 
+									input(type="checkbox" id='kirgiz')
+									| Киргизия
+							li
+								label(for="mordor") 
+									input(type="checkbox" id='mordor')
+									| Мордор
+					li.header-filter-list-item Фабрика/ бренд
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Ценовой диапазон
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Место применения
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Настенная/ напольная
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Формат
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Размер
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Стиль
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Фактура
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Текстура
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+					li.header-filter-list-item Цвет
+						figure.header-filter-list-item__icon.header-top__more
+							+icon('expand_more_brs')
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label(for="red") 
+									input(type="checkbox" id='red')
+									| Красный
+							li
+								label(for="orange") 
+									input(type="checkbox" id='orange')
+									| Оранжевый
+							li
+								label(for="yellow") 
+									input(type="checkbox" id='yellow')
+									| Жёлтый
+							li
+								label(for="green") 
+									input(type="checkbox" id='green')
+									| Зелёный
+							li
+								label(for="skyblue") 
+									input(type="checkbox" id='skyblue')
+									| Голубой
+							li
+								label(for="blue") 
+									input(type="checkbox" id='blue')
+									| Синий
+							li
+								label(for="violet") 
+									input(type="checkbox" id='violet')
+									| Фиолетовый
+				ul.header-filter-checked тут появляются выбранные варианты
+			button.header-filter-submit(type="submit") 
+				| ПОКАЗАТЬ 
+				span.header-filter-submit-count 45
+				|  КОЛЛЕКЦИЙ
