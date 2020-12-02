@@ -34,9 +34,9 @@ header.header
 					.header-content-block.header-content__address
 						figure.header-content-block__icon
 							img(src='static/images/common/map-marker.svg' alt='icon')
-						.header-content-block__text
-							span г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская
-							a.header-content-block__info(href='#') Как добраться?
+						.header-content-block__text г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская 
+								a.header-content-block__info(href='#') 
+									| &nbsp;Как добраться?
 					.header-content-block.header-content__phone
 						figure.header-content-block__icon
 							img(src='static/images/common/phone.svg' alt='icon')
@@ -62,7 +62,7 @@ header.header
 					.header-content-block.header-content__worktime
 						figure.header-content-block__icon
 							img(src='static/images/common/clock.svg' alt='icon')
-						.header-content-block__text
+						.wrapper
 							.header-content-block__text
 								span пн-пт
 								span.header-content-block__info 9:00 — 20:00
@@ -75,6 +75,10 @@ header.header
 					.header-content-circle.header-content__cart
 						+icon('shopping-cart')
 						.header-content-circle__badge 4
+				.header-burger
+					.header-burger-line.header-burger-line__top
+					.header-burger-line.header-burger-line__mid
+					.header-burger-line.header-burger-line__bot
 	.header-bot 
 		.container
 			.header-bot-wrap
@@ -214,8 +218,28 @@ header.header
 							input(type="reset" value="").header-bot-search__clear
 							input(type="submit" value="").header-bot-search__icon
 						.bx_searche
+					.header-bot-mobile-item.header-bot-mobile-item-search
+						+icon('search')
+						.header-bot-mobile-item-desc Поиск
+					.header-bot-mobile-item
+						+icon('map-marker')
+						.header-bot-mobile-item-desc Адрес шоурума
+					.header-bot-mobile-item
+						+icon('phone')
+						.header-bot-mobile-item-desc Звоните нам					
+					.header-bot-mobile-item
+						+icon('favourites')
+						.header-bot-mobile-item-desc Избранные коллекции
+					.header-bot-mobile-item
+						+icon('shopping-cart')
+						.header-bot-mobile-item-desc Ваш заказ
+					.header-bot-mobile-search-close Отмена
 	form.header-filter 
 		.container 
+			.header-filter-head
+				.header-filter-head__title Поиск по параметрам
+				.header-filter-head__close
+					+icon('search-clear')
 			.header-filter-top
 				.header-filter-top-left
 					label(for="novelty") 
@@ -325,32 +349,105 @@ header.header
 								label(for="red") 
 									input(type="checkbox" id='red')
 									| Красный
+									.header-filter-list-drop-menu__color(style="background:red;")
 							li
 								label(for="orange") 
 									input(type="checkbox" id='orange')
 									| Оранжевый
+									.header-filter-list-drop-menu__color(style="background:orange;")
 							li
 								label(for="yellow") 
 									input(type="checkbox" id='yellow')
 									| Жёлтый
+									.header-filter-list-drop-menu__color(style="background:yellow;")
 							li
 								label(for="green") 
 									input(type="checkbox" id='green')
 									| Зелёный
+									.header-filter-list-drop-menu__color(style="background:green;")
 							li
 								label(for="skyblue") 
 									input(type="checkbox" id='skyblue')
 									| Голубой
+									.header-filter-list-drop-menu__color(style="background:skyblue;")
 							li
 								label(for="blue") 
 									input(type="checkbox" id='blue')
 									| Синий
+									.header-filter-list-drop-menu__color(style="background:blue;")
 							li
 								label(for="violet") 
 									input(type="checkbox" id='violet')
 									| Фиолетовый
+									.header-filter-list-drop-menu__color(style="background:violet;")
 				ul.header-filter-checked тут появляются выбранные варианты
-			button.header-filter-submit(type="submit") 
-				| ПОКАЗАТЬ 
-				span.header-filter-submit-count 45
-				|  КОЛЛЕКЦИЙ
+			.header-filter-btns
+				button.header-filter-reset(type="reset") 
+					+icon('refresh')
+					| Сбросить фильтр
+				button.header-filter-submit(type="submit") 
+					| ПОКАЗАТЬ 
+					span.header-filter-submit-count 45
+					span.header-filter-submit-end  КОЛЛЕКЦИЙ
+	.mobile-menu
+		.container 
+			ul.mobile-menu-list
+				li.mobile-menu-list-item
+					.wrapper.mobile-menu-list-item-wrap
+						button.mobile-menu-list-item__btn 
+							img(src="static/images/common/filter.svg", alt="icon")
+							| ПОИСК ПО ПАРАМЕТРАМ
+				li.mobile-menu-list-item
+					+icon('catalog2')
+					a.mobile-menu-list-item__link(href='#') Каталог
+				li.mobile-menu-list-item
+					+icon('catalog2')
+					a.mobile-menu-list-item__link(href='#') Дилерский отдел
+				li.mobile-menu-list-item
+					a.mobile-menu-list-item__link(href='#') Заказ и доставка
+				li.mobile-menu-list-item
+					a.mobile-menu-list-item__link(href='#') Шоурум
+				li.mobile-menu-list-item
+					a.mobile-menu-list-item__link(href='#') Сотрудничество
+					figure.header-top__icon.header-top__more
+						img(src='static/images/common/expand_more.svg' alt='icon')
+					ul.header-drop-menu.mobile-menu-list-drop
+						li
+							a(href="#") Дилерам
+						li
+							a(href="#") Строительным организациям
+						li
+							a(href="#") Дизайнерам и архитекторам
+				li.mobile-menu-list-item
+					a.mobile-menu-list-item__link(href='#') 3D-визуализация
+				li.mobile-menu-list-item
+					a.mobile-menu-list-item__link(href='#') О компании
+				li.mobile-menu-list-item
+					a.mobile-menu-list-item__link(href='#') Контакты
+					.wrapper.mobile-menu-list-item-wrap
+						.header-content-block.header-content__address
+							figure.header-content-block__icon
+								img(src='static/images/common/map-marker.svg' alt='icon')
+							.header-content-block__text г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская 
+									a.header-content-block__info(href='#') 
+										| &nbsp;Как добраться?
+						.header-content-block.header-content__phone
+							figure.header-content-block__icon
+								img(src='static/images/common/phone.svg' alt='icon')
+							.wrapper
+								.header-content-block__text.header-content__phone_moscow
+									span для Москвы и МО
+									a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
+								.header-content-block__text
+									span для регионов РФ (бесплатно)
+									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
+						.header-content-block.header-content__worktime
+							figure.header-content-block__icon
+								img(src='static/images/common/clock.svg' alt='icon')
+							.wrapper
+								.header-content-block__text
+									span пн-пт
+									span.header-content-block__info 9:00 — 20:00
+								.header-content-block__text
+									span сб-вс
+									span.header-content-block__info 10:00 — 18:00

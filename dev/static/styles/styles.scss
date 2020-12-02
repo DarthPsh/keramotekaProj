@@ -107,6 +107,13 @@ button { outline: none; }
     @media ( max-width: 1440px ) {
       grid-template-columns: repeat(4, 1fr);
     }
+    @media ( max-width: 1024px ) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media ( max-width: 760px ) {
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 0;
+    }
     &-item {
       display: block;
       width: 100%;
@@ -189,6 +196,9 @@ button { outline: none; }
           fill: $colorLight;
           height: 10px;
         }
+        &:hover .svg-sprite-icon {
+          fill: $colorAccent;
+        }
       }
       .swiper-button-next {
         .svg-sprite-icon {
@@ -229,7 +239,9 @@ button { outline: none; }
         position: relative;
         overflow: hidden;
         img {
-          width: 100%;
+          max-width: 100%;
+          margin: auto;
+          display: block;
         }
       }
       &-gallery {
@@ -268,6 +280,9 @@ button { outline: none; }
         }
       &-content {
         padding: 12px 15px 20px;
+        @media ( max-width: 760px ) {
+          padding: 8px 8px 16px;
+        }
         &__brand {
           font-style: normal;
           font-weight: normal;
@@ -281,20 +296,62 @@ button { outline: none; }
           font-weight: bold;
           font-size: 24px;
           line-height: 100%;
-          border-bottom: 1px solid $colorAccent;
-          display: inline-block;
-          margin: 4px 0 15px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 4px 0 15px 0;
+          position: relative;
+          text-decoration: underline;
+          text-decoration-color: $colorAccent;
+          cursor: pointer;
+          &:after {
+            content: "";
+            width: 20px;
+            height: 16px;
+            background: url('/static/images/common/expand_more_brs.svg') center no-repeat;
+            transition: all .3s ease-out;
+            display: none;
+            @media ( max-width: 760px ) {
+              display: block;
+            }
+          }
+          @media ( max-width: 760px ) {
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.04em;  
+          }
         }
         &__desc {
           font-style: normal;
           font-weight: normal;
           font-size: 16px;
           line-height: 24px;
+          @media ( max-width: 760px ) {
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.005em;
+            max-height: 0;
+            opacity: 0;
+            height: 100%;
+            transition: all .3s ease-out;
+          }
+        }
+      }
+      &_active {
+        .page-card-collection-content__name {
+          &:after {
+            content: "";
+            transform: rotate(-180deg);
+          }
+        }
+        .page-card-collection-content__desc {
+          opacity: 1;
+          max-height: 100%;
         }
       }
     }
   }    
 }
-    
+
 
 

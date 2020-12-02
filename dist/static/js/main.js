@@ -61,12 +61,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }); // выпадающие меню в списке фильтров
 
-  var allCheck = document.querySelectorAll('.header-filter-list input[type="checkbox"]');
-  allCheck.forEach(function (item) {
-    item.addEventListener('click', function () {
-      console.log(item.closest('label').innerText);
-    });
-  }); // аякс для строки поиска
+  $('.header-filter input[type="checkbox"]').on('click', function () {
+    $('#result span').html($('#controls input:checkbox:checked').length);
+    var countCheckedFilters = $('.header-filter input[type="checkbox"]:checked').length;
+
+    if (countCheckedFilters > 0) {
+      $('.header-filter-submit').addClass('header-filter-submit_active');
+      $('.header-filter-reset').addClass('header-filter-reset_active');
+    } else {
+      $('.header-filter-submit').removeClass('header-filter-submit_active');
+      $('.header-filter-reset').removeClass('header-filter-reset_active');
+    }
+
+    console.log(countCheckedFilters);
+  });
+  $('.header-filter-reset').on('click', function () {
+    $('.header-filter-submit').removeClass('header-filter-submit_active');
+    $('.header-filter-reset').removeClass('header-filter-reset_active');
+  }); // let allCheck = document.querySelectorAll('.header-filter-list input[type="checkbox"]');
+  // allCheck.forEach(function(item) {
+  //     item.addEventListener('click', function() {
+  //         console.log(item.closest('label').innerText);
+  //         let countCheckedFilters = $('.header-filter checkbox:checked').length;
+  //         console.log(countCheckedFilters);
+  //     })
+  // })
+  // аякс для строки поиска
 
   $(".header-bot-search__input").on('input', function postinput() {
     var searchvalue = $(this).val(); // this.value
@@ -74,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(searchvalue);
     $.ajax({
       url: 'search-res.html',
-      data: {
+      responseData: {
         searchvalue: searchvalue
       } // type: 'post'
 
@@ -98,26 +118,28 @@ document.addEventListener('DOMContentLoaded', function () {
   // сетка "водопад" на главной и других
 
   function waterfallGrid() {
-    var mainEl = document.querySelector(".page-content");
-    var rowHeight = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-auto-rows"));
-    var rowGap = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-row-gap"));
+    if (document.querySelectorAll('.page-content-item').length) {
+      var mainEl = document.querySelector(".page-content");
+      var rowHeight = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-auto-rows"));
+      var rowGap = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-row-gap"));
 
-    var setSpan = function setSpan(el) {
-      // Calculate the number of lines that the div needs to span
-      el.style.gridRowEnd = "span ".concat(Math.ceil((el.clientHeight + rowGap) / (rowHeight + rowGap)));
-    };
+      var setSpan = function setSpan(el) {
+        // Calculate the number of lines that the div needs to span
+        el.style.gridRowEnd = "span ".concat(Math.ceil((el.clientHeight + rowGap) / (rowHeight + rowGap)));
+      };
 
-    setTimeout(function () {
-      document.querySelectorAll(".page-content-item").forEach(setSpan);
-      document.querySelectorAll(".page-card").forEach(function (item) {
-        item.style.height = 'max-content';
-      });
       setTimeout(function () {
-        document.querySelectorAll(".page-content-item").forEach(function (item) {
-          item.style.height = 'auto';
+        document.querySelectorAll(".page-content-item").forEach(setSpan);
+        document.querySelectorAll(".page-card").forEach(function (item) {
+          item.style.height = 'max-content';
         });
-      }, 100);
-    }, 200);
+        setTimeout(function () {
+          document.querySelectorAll(".page-content-item").forEach(function (item) {
+            item.style.height = 'auto';
+          });
+        }, 100);
+      }, 200);
+    }
   }
 
   waterfallGrid();
@@ -134,6 +156,48 @@ document.addEventListener('DOMContentLoaded', function () {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     }
+  });
+  $('.page-card-collection-content__name').on('click', function () {
+    if ($(this).parent($('.page-card-collection')).hasClass('page-card-collection_active')) {
+      $(this).parent($('.page-card-collection')).removeClass('page-card-collection_active');
+    } else {
+      $(this).parent($('.page-card-collection')).addClass('page-card-collection_active');
+    }
+  });
+  $('.header-burger').on('click', function () {
+    $('.header-burger').toggleClass('header-burger_active');
+    $('.mobile-menu').toggleClass('mobile-menu_active');
+    $('.header-bot-mobile-item-desc').toggleClass('header-bot-mobile-item-desc_active');
+    $('.header-bot').toggleClass('header-bot_active');
+  });
+  $('.header-bot-mobile-item-search').on("click", function () {
+    $('.header-bot-mobile-item').hide();
+    $('.header-bot-search').css({
+      'display': 'flex'
+    });
+    $('.header-bot-search__input').css({
+      'max-width': '100%'
+    });
+    $('.header-bot-mobile-search-close').show();
+  });
+  $('.header-bot-mobile-search-close').on("click", function () {
+    $('.header-bot-mobile-item').show();
+    $('.header-bot-search').css({
+      'display': 'none'
+    });
+    $('.header-bot-search__input').css({
+      'max-width': '282px'
+    });
+    $('.header-bot-mobile-search-close').hide();
+  });
+  $('.mobile-menu-list-item .header-top__more').on('click', function () {
+    $(this).siblings($('.mobile-menu-list-drop')).toggleClass('mobile-menu-list-drop_active');
+  });
+  $('.mobile-menu-list-item__btn').on('click', function () {
+    $('.header-filter').addClass('header-filter_active');
+  });
+  $('.header-filter-head__close').on('click', function () {
+    $('.header-filter').removeClass('header-filter_active');
   });
   console.log('press F');
 });
