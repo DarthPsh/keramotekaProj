@@ -260,8 +260,9 @@ header { flex: 0 0 auto; }
     &-bot {
         background: $colorDark;
         padding: 12px 0;
+        transition: all .3s ease-out;
         @media (max-width: 760px) {
-            padding: 8px;
+            padding: 16px 0;
             max-height: 56px;
             display: flex;
             align-items: center;
@@ -274,6 +275,14 @@ header { flex: 0 0 auto; }
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+        &-logo {
+            display: none;
+            .icon-logo {
+                width: 174px;
+                height: 15px;
+                fill: $colorLight;
+            }
         }
         &-inner {
             display: flex;
@@ -307,10 +316,23 @@ header { flex: 0 0 auto; }
         &-mobile {
             &-item {
                 display: none;
-                width: 100%;
+                width: 50px;
+                position: relative;
                 @media (max-width: 520px) {
-                    // width: auto;
-                    max-width: 66px;
+                    max-width: 30px;
+                }
+                &__badge {
+                    position: absolute;
+                    left: 80%;
+                    color: #FAC420;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 22px;
+                    top: -12px;  
+                    @media (max-width: 520px) {
+                        left: 100%;
+                    }              
                 }
                 .svg-sprite-icon {
                     width: 24px;
@@ -320,7 +342,9 @@ header { flex: 0 0 auto; }
                     margin: auto;
                 }
                 @media (max-width: 760px) {
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
                 &-desc {
                     text-align: center;
@@ -358,7 +382,10 @@ header { flex: 0 0 auto; }
             font-size: 16px;
             line-height: 20px;
             letter-spacing: 0.04em;
-        }   
+        } 
+        &-phone {
+            display: none;
+        }  
         &-list {
             display: flex;
             padding: 0 30px;
@@ -559,6 +586,130 @@ header { flex: 0 0 auto; }
             }
         }
     }
+    &-fixed {
+        position: fixed;
+        top: -100px;
+        z-index: 100;
+        width: 100%;
+        transition: all .3s ease-out;
+        @media (max-width: 760px) {
+            display: none;
+        }
+        &_active {
+            top: 1px;
+        }
+        .header {
+            &-bot {
+                &-logo {
+                    display: block;
+                    @media (max-width: 800px) {
+                        .icon-logo {
+                            width: 140px;
+                            height: 10px;
+                        }
+                    }
+                }
+                &-list {
+                    display: none;
+                }
+                &-inner__search {
+                    width: 100%;
+                    max-width: 747px;
+                    @media (max-width: 1440px) {
+                        align-items: center;
+                    }
+                    @media (max-width: 1200px) {
+                        max-width: 550px;
+                    }
+                }
+                &-inner__catalog {
+                    flex-grow: 0;
+                    max-width: 320px;
+                    justify-content: space-between;
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    @media (max-width: 1200px) {
+                        padding-right: 15px;
+                    }
+                    @media (max-width: 800px) {
+                        max-width: 250px;
+                    }
+                    @media (max-width: 760px) {
+                        display: none;
+                    }
+                }
+                &-search {
+                    input {
+                        background-color: #464646;
+                        border-color: transparent;
+                        background-blend-mode: screen;
+                        color: $colorLight;
+                    }
+                    &__input {
+                        @media (max-width: 1440px) {
+                            max-width: none;
+                        }
+                    }
+                }
+                &-phone {
+                    display: flex;
+                    align-items: center;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 0.04em;
+                    color: #999999;
+                    max-width: 220px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    @media (max-width: 760px) {
+                        display: none;
+                    }
+                    &__icon {
+                        margin-right: 10px;
+                    }
+                    @media (max-width: 1200px) {
+                        width: 80px;
+                        min-width: 80px;
+                        padding: 0 30px;
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+                &-mobile {
+                    &-item {
+                        &__badge {
+                            background: $colorAccent;
+                            color: #333333;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 19px;
+                            height: 24px;
+                            width: 24px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        &__favourites {
+                            min-width: 40px;
+                            display: block;
+                            margin-right: 30px;
+                        }
+                        &__cart {
+                            min-width: 40px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
     &-filter {
         background: $colorLight;
         padding-top: 33px;
@@ -607,6 +758,13 @@ header { flex: 0 0 auto; }
             visibility: visible;
             opacity: 1;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03), 0px 4px 16px rgba(0, 0, 0, 0.05);
+            &-fixed {
+                position: fixed;
+                top: 65px;
+                @media (max-width: 760px) {
+                    display: none;
+                }
+            }
         }
         &-top {
             display: flex;
@@ -945,14 +1103,16 @@ header { flex: 0 0 auto; }
 
 .mobile {
     &-menu {
+        visibility: hidden;
         height: auto;
         max-height: 0;
         opacity: 0;
         transition: all 1s ease-out;
-        overflow: auto;
+        // overflow: auto;
         &_active {
-            max-height: 100vh;
+            max-height: 100%;
             opacity: 1;
+            visibility: visible;
         }
         &-list {
             &-item {
@@ -973,6 +1133,30 @@ header { flex: 0 0 auto; }
                 }
                 &:after {
                     right: -16px;
+                }
+                &__contacts {
+                    border: none;
+                    &:before,
+                    &:after {
+                        height: 0;
+                    }
+                }
+                &__social {
+                    border: none;
+                    padding: 32px 0;
+                    display: flex;
+                    justify-content: center;
+                    &-link {
+                        height: 40px;
+                        width: 40px;
+                        display: inline-block;
+                        margin: 0 23px;
+                        .svg-sprite-icon {
+                            max-width: 100%;
+                            max-height: 100%;
+                            fill: #151616;
+                        }
+                    }
                 }
                 &__btn {
                     padding: 20px 0;

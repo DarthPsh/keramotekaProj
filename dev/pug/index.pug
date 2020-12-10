@@ -16,29 +16,29 @@ block content
 				.swiper-wrapper
 					.page-slider-item.swiper-slide
 						figure
-							img.swiper-slide(src="static/images/content/main-slider-1.png", alt="img")
+							img(class="lozad" data-src="static/images/content/main-slider-1.png", alt="img")
 						.page-slider-item__text
 							.page-slider-item__text-title НОВИНКА CERSAIE 2019
 							.page-slider-item__text-subtitle ATLAS CONCORDE BOOST
 					.page-slider-item.swiper-slide
 						figure
-							img(src="static/images/content/main-slider-1.png", alt="img")
+							img(class="lozad" data-src="static/images/content/main-slider-1.png", alt="img")
 						.page-slider-item__text
 							.page-slider-item__text-title НОВИНКА CERSAIE 2019
 							.page-slider-item__text-subtitle ATLAS CONCORDE BOOST
 					.page-slider-item.swiper-slide
 						figure
-							img(src="static/images/content/main-slider-1.png", alt="img")
+							img(class="lozad" data-src="static/images/content/main-slider-1.png", alt="img")
 						.page-slider-item__text
 							.page-slider-item__text-title НОВИНКА CERSAIE 2019
 							.page-slider-item__text-subtitle ATLAS CONCORDE BOOST
-			.page-content-item.page-card(style='height:min-content;')
+			.page-content-item.page-card.page-card_active(style='height:min-content;')
 				.page-card-inner.page-card-collection
 					figure
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-1.png' alt='img')
+						img( class="lozad" data-src="static/images/content/page-card-1.png" alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand REX CERAMICHE
 						.page-card-inner-content-name.page-card-collection-content__name LES BIJOUX DE REX
@@ -49,7 +49,7 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-2.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-2.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand REX CERAMICHE
 						.page-card-inner-content-name.page-card-collection-content__name LES BIJOUX DE REX
@@ -60,7 +60,7 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-3.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-3.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand WOW
 						.page-card-inner-content-name.page-card-collection-content__name FLOW
@@ -72,7 +72,7 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-4.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-4.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand ATLAS CONCORDE
 						.page-card-inner-content-name.page-card-collection-content__name BOOST
@@ -83,7 +83,7 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-5.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-5.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand 41zero42
 						.page-card-inner-content-name.page-card-collection-content__name SPECTRE
@@ -94,18 +94,47 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-3.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-3.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand WOW
 						.page-card-inner-content-name.page-card-collection-content__name FLOW
 						.page-card-inner-content-desc.page-card-collection-content__desc Утонченная коллекция WOW FLOW / ВАУ ФЛОУ представлена керамогранитом в форме ромбов 14x24 см в пяти актуальных оттенках — White, Taupe, Black, Old Rose, Blue, и трех вариантах "под дерево" — Light, Mid, Dark. Серия дополнена декоративным фоном в пяти основных цветах для создания бесконечного числа переливов. Широкая тональная вариативность плиток позволяет добиться более выразительного эффекта от облицовки. Основные элементы выпускаются в 6 оттенках в каждом цвете, цветные декоры — в 14 вариантах и "деревянные" ромбы — в 30 вариантах оттенка, которые случайным образом смешаны в коробке.
+			.page-content-item.page-card(style='height:min-content;')
+				.page-card-inner.page-card-brand
+					figure
+						img( class="lozad" data-src='static/images/content/page-brand-1.png' alt='img')
+					.page-card-inner-content.page-card-brand-content
+						.page-card-inner-content-name.page-card-brand-content__name ATLAS CONCORDE
+							figure.page-card-brand-content__name-flag
+								img(src='static/images/common/italy.svg' alt='img')
+						.page-card-inner-content-brand.page-card-brand-content__count 
+							.page-card-brand-content__count-wrap
+								span.collection-count 8 
+								span.collection-text КОЛЛЕКЦИЙ
+						ul.page-card-inner-content-desc.page-card-brand-content__list
+							li.page-card-brand-content__list-item
+								a(href="#") MODERNISTA
+							li.page-card-brand-content__list-item
+								a(href="#") STUDIO
+							li.page-card-brand-content__list-item
+								a(href="#") NERI
+							li.page-card-brand-content__list-item
+								a(href="#") OCEAN
+							li.page-card-brand-content__list-item
+								a(href="#") PAVIMENTO
+							li.page-card-brand-content__list-item
+								a(href="#") ROMBOS
+							li.page-card-brand-content__list-item
+								a(href="#") NATURE
+							li.page-card-brand-content__list-item
+								a(href="#") EARTH
 			.page-content-item.page-card(style='height:min-content;')
 				.page-card-inner.page-card-collection
 					figure
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-1.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-1.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand ARCANA
 						.page-card-inner-content-name.page-card-collection-content__name RIBE / ELBURG
@@ -116,7 +145,7 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-2.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-2.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand REX CERAMICHE
 						.page-card-inner-content-name.page-card-collection-content__name LES BIJOUX DE REX
@@ -127,7 +156,7 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-3.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-3.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand WOW
 						.page-card-inner-content-name.page-card-collection-content__name FLOW
@@ -139,7 +168,7 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-4.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-4.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand ATLAS CONCORDE
 						.page-card-inner-content-name.page-card-collection-content__name BOOST
@@ -150,11 +179,21 @@ block content
 						.page-card-collection-badge
 							.page-card-collection-badge__info НОВИНКА
 							.page-card-collection-badge__have В ПУТИ НА СКЛАД
-						img(src='static/images/content/page-card-5.png' alt='img')
+						img( class="lozad" data-src='static/images/content/page-card-5.png' alt='img')
 					.page-card-inner-content.page-card-collection-content
 						.page-card-inner-content-brand.page-card-collection-content__brand 41zero42
 						.page-card-inner-content-name.page-card-collection-content__name SPECTRE
 						.page-card-inner-content-desc.page-card-collection-content__desc EQUIPE ARTISAN / ЭКИПЕ АРТИСАН — новая эффектная серия керамической плитки для стен, предлагаемая в десяти оттенках — и ярких, и пастельных. Производится в компактных форматах 13.2x13.2 и 6.5x20.
-		.page-content-after
-			.page-content-pagination
-			.page-content-load-more
+	.page-content-after
+		.container
+			.page-content-after-wrap
+				ul.page-content-pagination
+					li.page-content-pagination__item.page-content-pagination__item-current 1
+					li.page-content-pagination__item 2 
+					li.page-content-pagination__item 3
+					li.page-content-pagination__item.page-content-pagination__item-more ... 
+					li.page-content-pagination__item.page-content-pagination__item-last 8
+				.page-content-load-more
+					button.page-content-load-more__btn(type="reset") 
+						+icon('renew')
+						span ЗАГРУЗИТЬ ЕЩЕ

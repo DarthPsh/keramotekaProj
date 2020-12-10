@@ -79,6 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(countCheckedFilters);
     });
 
+
+    // CБРОС ФИЛЬТРОВ
     $('.header-filter-reset').on('click', function () {
         $('.header-filter-submit').removeClass('header-filter-submit_active');
         $('.header-filter-reset').removeClass('header-filter-reset_active');
@@ -126,10 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // аякс для строки поиска  
 
 
-
-
-
-
     // сетка "водопад" на главной и других
     function waterfallGrid() {
         if (document.querySelectorAll('.page-content-item').length) {
@@ -153,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 setTimeout(() => {
                     document.querySelectorAll(".page-content-item").forEach((item) => {
-                        item.style.height = 'auto';
+                        item.style.height = '100%';
                     });
                 }, 100);
             }, 200);
@@ -165,32 +163,87 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     // сетка "водопад" на главной и других
 
-
-
-    var pageSlider = new Swiper('.page-slider', {
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        }
-    });
-
-
-
     $('.page-card-collection-content__name').on('click', function () {
-        if ($(this).parent($('.page-card-collection')).hasClass('page-card-collection_active') ){
-            $(this).parent($('.page-card-collection')).removeClass('page-card-collection_active');
+        waterfallGrid();
+        if ($(this).closest($('.page-card-collection')).hasClass('page-card-collection_active')) {
+            waterfallGrid();
+            $(this).closest($('.page-card-collection')).removeClass('page-card-collection_active');
+            waterfallGrid();
         }
         else {
-            $(this).parent($('.page-card-collection')).addClass('page-card-collection_active');
+            $(this).closest($('.page-card-collection')).addClass('page-card-collection_active');
         }
+        waterfallGrid();
+    })
+
+    $('.page-card-brand-content__count').on('click', function () {
+        waterfallGrid();
+        if ($(this).closest($('.page-card-brand')).hasClass('page-card-brand_active')) {
+            waterfallGrid();
+            $(this).closest($('.page-card-brand')).removeClass('page-card-brand_active');
+            waterfallGrid();
+        }
+        else {
+            $(this).closest($('.page-card-brand')).addClass('page-card-brand_active');
+        }
+        waterfallGrid();
     })
 
 
+    // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
+    let scrollPos = 0;
+    $(window).on('scroll', function () {
+        var st = $(this).scrollTop();
+        if (st > scrollPos && st > 1000) {
+            console.log('вниз ниже 1000');
+            $(".header-bot").removeClass('header-fixed_active');
+            $(".header-filter").removeClass('header-filter_active-fixed');
+        }
+        else if (st > scrollPos && st > 500) {
+            console.log('вниз ниже 500');
+            console.log(st);
+            $(".header-bot").addClass('header-fixed');
+        }
+        else if (st > scrollPos) {
+            console.log('вниз ниже 0');
+        }
+        else if (st < scrollPos && st > 1000) {
+            console.log('вверх ниже 1000');
+            $(".header-bot").addClass('header-fixed_active');
+            $(".header-filter").addClass('header-filter_active-fixed');
+        }
+        else if (st < scrollPos && st > 500) {
+            console.log('вверх выше 1000 и ниже 500');
+            $(".header-bot").removeClass('header-fixed_active');
+            $(".header-filter").removeClass('header-filter_active-fixed');
+        }
+        else {
+            console.log('вверх');
+            $(".header-bot").removeClass('header-fixed');
+        }
+        scrollPos = st;
+    })
+    // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
 
+
+    // АКТИВАЦИЯ СЛАЙДЕРА НА ГЛАВНОЙ
+    if (document.querySelectorAll('.page-slider').length) {
+        var pageSlider = new Swiper('.page-slider', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    }
+    // АКТИВАЦИЯ СЛАЙДЕРА НА ГЛАВНОЙ
+
+
+
+    // БУРГЕР
     $('.header-burger').on('click', function () {
         $('.header-burger').toggleClass('header-burger_active');
         $('.mobile-menu').toggleClass('mobile-menu_active');
@@ -199,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
+    // СТРОКА ПОИСКА НА МОБИЛЕ
     $('.header-bot-mobile-item-search').on("click", function () {
         $('.header-bot-mobile-item').hide();
         $('.header-bot-search').css({ 'display': 'flex' });
@@ -213,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
+    // МОБИЛЬНОЕ МЕНЮ
     $('.mobile-menu-list-item .header-top__more').on('click', function () {
         $(this).siblings($('.mobile-menu-list-drop')).toggleClass('mobile-menu-list-drop_active');
     })
@@ -227,6 +282,66 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.header-filter-head__close').on('click', function () {
         $('.header-filter').removeClass('header-filter_active');
     })
+
+
+
+
+
+
+
+    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+
+
+
+    $('.product-text__content-read-more').on('click', function () {
+        $('.product-text__content-read-more').toggleClass('product-text__content-read-more_active');
+    })
+
+
+
+    if (document.querySelectorAll('.product-slider').length) {
+        var galleryThumbs = new Swiper('.product-slider-thumbs', {
+            lazy: true,
+            spaceBetween: 5,
+            slidesPerView: 7,
+            loop: true,
+            freeMode: true,
+            loopedSlides: 1, //looped slides should be the same
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            direction: 'horizontal',
+            breakpoints: {
+                761: {
+                    freeMode: false,
+                    slidesPerView: 7,
+                    spaceBetween: 8,
+                },
+                1441: {
+                    freeMode: false,
+                    spaceBetween: 16,
+                    direction: 'vertical',
+                },
+            }
+        });
+        var galleryTop = new Swiper('.product-slider-main', {
+            lazy: true,
+            // spaceBetween: 10,
+            loop: true,
+            loopedSlides: 1,
+            // navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            // },
+            thumbs: {
+                swiper: galleryThumbs,
+            },
+            pagination: {
+                el: '.product-slider-thumbs-pagination',
+                type: 'fraction',
+            },
+        });
+    }
 
 
     console.log('press F');

@@ -50,6 +50,7 @@
     "yargs": "^15.3.1"
   },
   "dependencies": {
+    "lozad": "^1.16.0",
     "normalize.css": "^8.0.1",
     "svg4everybody": "^2.1.9"
   }

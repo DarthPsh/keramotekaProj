@@ -1,0 +1,28 @@
+.breadcrumbs {
+    &-list {
+        display: flex;
+        padding: 18px 0;
+        &__item {
+            &-link {
+                color: #828282;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                display: block;
+                &:after {
+                    content: '/';
+                    margin: 0 10px;
+                }
+            }
+            &:last-child {
+                .breadcrumbs-list__item-link {
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+}

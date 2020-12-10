@@ -1,0 +1,226 @@
+extends layout/main
+
+block variables
+    -var title = 'КОЛЛЕКЦИЯ'
+
+block content
+    .product-wrap
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-list__item 
+                        a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") КАТАЛОГ
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") ATLAS CONCORDE
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") BLAZE BLADE RUNNER
+                .product-text__name-mobile
+                    h2.product-text__name-collection ATLAS CONCORDE
+                    h2.product-text__name-prod ANTIGUA
+                    .page-card-collection-badge
+                        .page-card-collection-badge__info НОВИНКА
+                        .page-card-collection-badge__have В ПУТИ НА СКЛА
+        .product
+            .container
+                .product-text
+                    .product-text__name
+                        h2.product-text__name-collection ATLAS CONCORDE
+                        h2.product-text__name-prod ANTIGUA
+                        .page-card-collection-badge
+                            .page-card-collection-badge__info НОВИНКА
+                            .page-card-collection-badge__have В ПУТИ НА СКЛАД
+                    .product-text__content
+                        .product-text__content-excerpt Коллекция Equipe Urban / Экипе Урбан  — новая серия керамогранита, эффектно имитирующая колорированный бетон, в актуальных бежево-серых оттенках. Производится в двух форматах — модном шестиугольном 25,4х29,2 см, а также в квадратном 20х20 см. Поверхность материала — матовая. Керамогранит EQUIPE Ceramicas Urban выпускается в пяти современных оттенках — Light, Natural, Nut, Silver, Dark. Помимо базовой фоновой плитки, серия предлагает широкий спектр абстрактных паттернов, от почти незаметных (на базе основных оттенков) до контрастных акцентных.
+                            .product-text__content-read-more ЧИТАТЬ ПОЛНОСТЬЮ
+                                +icon('expand_more_brs')
+                        button.product-text__content-cta.cta РАССЧИТАТЬ СТОИМОСТЬ
+                        button.product-text__content-favorite 
+                            +icon('favourites')
+                    ul.product-text__info
+                        li.product-text__info-item.product-text__info-item__country 
+                            img(class="lozad" data-src="static/images/common/earth.svg", alt="icon")
+                            div Испания
+                        li.product-text__info-item.product-text__info-item__price 
+                            img(class="lozad" data-src="static/images/common/rub.svg", alt="icon")
+                            div ₽₽₽₽
+                        li.product-text__info-item.product-text__info-item__download 
+                            img(class="lozad" data-src="static/images/common/pdf.svg", alt="icon")
+                            div Скачать PDF-каталог
+            .product-slider.container
+                .product-slider-main.swiper-container
+                    .swiper-wrapper
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            a.product-slider-main-item__label.product-slider-main-item__label-anchor(href="#" style="top:20%;left:35%")
+                                .product-slider-main-item__label-circle &#43;
+                                    +icon('expand_more_brs')
+                                    +icon('expand_more_brs')
+                                .product-slider-main-item__label-block
+                                    .product-slider-main-item__label-block__content 
+                                        .product-slider-main-item__label-block__content-brand DUAL GRES
+                                        .product-slider-main-item__label-block__content-collection  ANTIGUA
+                                        .product-slider-main-item__label-block__content-name Cement Decor
+                            a.product-slider-main-item__label.product-slider-main-item__label-link(href="#" style="top:65.8%;left:50%")
+                                .product-slider-main-item__label-circle &#43;
+                                    +icon('expand_more_brs')
+                                .product-slider-main-item__label-block
+                                    .product-slider-main-item__label-block__content 
+                                        .product-slider-main-item__label-block__content-brand DUAL GRES
+                                        .product-slider-main-item__label-block__content-collection  ANTIGUA
+                                        .product-slider-main-item__label-block__content-name Cement Decor
+                                    .product-slider-main-item__label-block__desc Перейти на страницу коллекции
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                        .product-slider-main-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                .product-slider-thumbs-wrap
+                    .product-slider-thumbs.swiper-container
+                        .swiper-wrapper
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-1.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .product-slider-thumbs-item.swiper-slide
+                                img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                    .product-slider-thumbs-pagination.swiper-pagination
+    .container
+        .product-list-wrap
+            .product-list-title Керамогранит
+            .product-list 
+                .product-card
+                    figure.product-card-img
+                        img(src="static/images/content/product-1.png", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="static/images/content/product-1.png", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="static/images/content/product-1.png", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                .product-card
+                    figure.product-card-img
+                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
+                    .product-card-content
+                        .product-card-content__brand DUAL GRES
+                        .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2

@@ -280,6 +280,7 @@ button { outline: none; }
         }
       &-content {
         padding: 12px 15px 20px;
+        overflow: hidden;
         @media ( max-width: 760px ) {
           padding: 8px 8px 16px;
         }
@@ -332,8 +333,11 @@ button { outline: none; }
             letter-spacing: 0.005em;
             max-height: 0;
             opacity: 0;
-            height: 100%;
+            height: 0;
             transition: all .3s ease-out;
+            transform-origin: 0 0;
+            visibility: hidden;
+            transform: translateY(100%);
           }
         }
       }
@@ -347,6 +351,143 @@ button { outline: none; }
         .page-card-collection-content__desc {
           opacity: 1;
           max-height: 100%;
+          visibility: visible;
+          height: auto;
+          transform: translateY(0);
+        }
+      }
+    }
+    &-brand {
+      background: $colorLight;
+      figure {
+        position: relative;
+        overflow: hidden;
+        img {
+          max-width: 100%;
+          margin: auto;
+          display: block;
+        }
+      }
+      &-gallery {
+        img {
+          display: none;
+          &:first-child {
+            display: block;
+          }
+        }
+      }
+      &-badge {
+          position: absolute;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 12px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          top: 16px;
+          left: 16px;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: start;
+          &__info {
+            background: $colorAccent;
+            color: linear-gradient(0deg, #333333, #333333);
+            padding: 4px 10px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+          }
+          &__have {
+            background: linear-gradient(0deg, #333333, #333333);
+            color: $colorLight;
+            padding: 4px 10px;
+          }
+        }
+      &-content {
+        overflow: hidden;
+        &__count {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 14px;
+          color: #999999;
+          letter-spacing: 0.02em;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px;
+          cursor: pointer;
+          &:after {
+            content: "";
+            width: 20px;
+            height: 16px;
+            background: url('/static/images/common/expand_more_brs.svg') center no-repeat;
+            transition: all .3s ease-out;
+          }
+        }
+        &__name {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 100%;
+          padding: 4px 0 15px 0;
+          position: relative;
+          text-decoration: underline;
+          text-decoration-color: $colorAccent;
+          cursor: pointer;
+          border-top: 1px solid #E9E3E3;
+          border-bottom: 1px solid #E9E3E3;
+          padding: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @media (max-width: 760px) {
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.04em;
+          }
+        }
+        &__list {
+          padding: 0 16px;
+          max-height: 0;
+          opacity: 0;
+          height: 0;
+          transition: all .3s ease-out;
+          transform-origin: 0 0;
+          visibility: hidden;
+          transform: translateY(100%);
+          &-item {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border-top: 1px solid #D9D9D9;
+            @media (max-width: 760px) {
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: 0.005em;
+            }
+            a {
+              padding: 12px 0;
+              display: block;
+            }
+          }
+        }
+      }
+      &_active {
+        .page-card-brand-content__count {
+          &:after {
+            content: "";
+            transform: rotate(-180deg);
+          }
+        }
+        .page-card-brand-content__list {
+          opacity: 1;
+          max-height: 100%;
+          visibility: visible;
+          height: auto;
+          transform: translateY(0);
         }
       }
     }
@@ -354,4 +495,91 @@ button { outline: none; }
 }
 
 
-
+.page {
+  &-content {
+    &-after {
+      background: $colorLight;
+      padding: 35px 0;
+      @media (max-width: 760px) {
+        padding: 0 0 40px 0;
+      }
+      &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 760px) {
+          flex-direction: column-reverse;
+          justify-content: center;
+        }
+      }
+    }
+    &-pagination {
+      display: flex;
+      @media (max-width: 760px) {
+        padding-top: 16px;
+      }
+      &__item {
+        height: 48px;
+        width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $colorLight;
+        margin-right: 10px;
+        cursor: pointer;
+        &-current {
+          background: $colorAccent;
+        }
+      }
+    }
+    &-load-more {
+      @media (max-width: 760px) {
+        width: 100%;
+        background: #F1F1F1;
+        position: relative;
+        &:before,
+        &:after {
+          content: "";
+          background: #F1F1F1;
+          height: 100%;
+          width: 16px;
+          display: block;
+          position: absolute;
+          top: 0;
+        }
+        &:before {
+          right: -16px;
+        }
+        &:after {
+          left: -16px;
+        }
+      }
+      &__btn {
+        border: 2px solid #D9D9D9;
+        background: transparent;
+        align-items: center;
+        justify-content: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        display: flex;
+        padding: 12px;
+        width: 304px;
+        cursor: pointer;
+        @media (max-width: 760px) {
+          margin: auto;
+          margin-bottom: 24px;
+        }
+        .icon-renew {
+          height: 24px;
+          width: 24px;
+          fill: #999999;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
