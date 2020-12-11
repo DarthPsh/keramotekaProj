@@ -62,6 +62,14 @@ input,
 select,
 button { outline: none; }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -582,4 +590,67 @@ button { outline: none; }
       }
     }
   }
+}
+
+
+
+
+.quantity {
+  &-block {
+    display: flex;
+  }
+  &-num-wrap {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+    border: 2px solid #D9D9D9;
+  }
+  &-num {
+    height: 100%;
+    border: none;
+    padding: 0;
+    text-align: right;
+    width: 50%;
+    &-unit {
+      padding-left: 5px;
+    }
+  }
+  &-arrow {
+    min-width: 48px;
+    height: 48px;
+    font-size: 40px;
+    border: 2px solid #D9D9D9;
+    background: #F1F1F1;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: #333333;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+    }
+    &-plus {
+      &:after {
+        content: "";
+        width: 2px;
+        height: 16px;
+        background: #333333;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+      }
+    }
+  }
+}
+
+.add-to-cart {
+  cursor: pointer;
 }

@@ -402,18 +402,37 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 8px;
+        @media (max-width: 1440px) {
+            grid-template-columns: repeat(4, 1fr); 
+        }
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(3, 1fr); 
+        }
+        @media (max-width: 760px) {
+            grid-template-columns: repeat(2, 1fr); 
+        }
     }
     &-card {
-        padding: 16px;
+        // padding: 16px;
         background: $colorLight;
+        transition: all .3s ease-out;
+        z-index: 1;
+        &:hover {
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1), 0px 0px 64px rgba(50, 50, 71, 0.2), 0px 8px 64px rgba(50, 50, 71, 0.1), 0px 8px 16px rgba(50, 50, 71, 0.06);
+            z-index: 0;
+        }
         &-img {
+            padding: 16px;
             overflow: hidden;
             img {
                 max-width: 100%;
             }
         }
         &-content {
-            padding: 16px 0 8px 0;
+            position: relative;
+            padding: 0px 16px 24px 16px;
+            overflow: hidden;
+            // padding: 16px 0 8px 0;
             &__brand {
                 font-style: normal;
                 font-weight: normal;
@@ -421,9 +440,17 @@
                 line-height: 16px;
                 letter-spacing: 0.04em;
                 display: inline-block;
+                @media (max-width: 760px) {
+                    display: block;
+                    letter-spacing: 0.015em;
+                }
                 &:after {
                     content: "/";
                     margin: 0 5px;
+                    @media (max-width: 760px) {
+                        content: " ";
+                        margin: 0;
+                    }
                 }
             }
             &__collection {
@@ -434,6 +461,10 @@
                 letter-spacing: 0.04em;
                 display: inline-block;
                 color: #999999;
+                @media (max-width: 760px) {
+                    display: block;
+                    letter-spacing: 0.015em;
+                }
             }
             &__name {
                 font-style: normal;
@@ -442,16 +473,148 @@
                 line-height: 24px;
                 letter-spacing: 0.02em;
                 margin-bottom: 14px;
+                margin-top: 6px;
+                @media (max-width: 760px) {
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0.04em;
+                }
             }
             &__price {
                 font-style: normal;
                 font-weight: normal;
                 font-size: 20px;
                 line-height: 28px;
+                margin-bottom: 8px;
+                &:before {
+                    @media (max-width: 760px) {
+                        content: "ЦЕНА: ";
+                    }
+                }
                 .unit {
                     color: #999999;
                     &:before {
                         content: "/";
+                    }
+                }
+            }
+            &__info {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.04em;
+                &-size {
+                    &:before {
+                        @media (max-width: 760px) {
+                            content: "РАЗМЕР: ";
+                        }
+                    }
+                }
+                &-article {
+                    margin-bottom: 14px;
+                    &:before {
+                        content: "Арт.: ";
+                        @media (max-width: 760px) {
+                            content: "АРТИКУЛ: ";
+                        }
+                    }
+                }
+                &-have {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    order: 1;
+                    align-items: center;
+                    @media (max-width: 760px) {
+                        justify-content: flex-start;
+                    }
+                    &-count {
+                        order: 3;
+                    }
+                    &:before {
+                        content: ''; 
+                        border-bottom: 1px dashed #828282; 
+                        flex-grow: 1; 
+                        margin: 0 5px;
+                        order: 2;
+                        @media (max-width: 760px) {
+                            display: none;
+                        }
+                    }
+                    &__reserve {
+                        margin-bottom: 6px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        @media (max-width: 760px) {
+                            justify-content: flex-start;
+                        }
+                        &-count {
+                            order: 3;
+                        }
+                        &:before {
+                            content: ''; 
+                            border-bottom: 1px dashed #828282; 
+                            flex-grow: 1; 
+                            margin: 0 5px;
+                            order: 2;
+                            @media (max-width: 760px) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                &-way {
+                    color: #999999;
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    &__reserve {
+                        color: #999999;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+            &__to-cart {
+                background: $colorLight;
+                &-form {}
+                &-btn {
+                    background: #333333;
+                    color: $colorLight;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 19px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 56px;
+                    border: none;
+                    margin-top: 12px;
+                    .icon-shopping-cart {
+                        height: 24px;
+                        width: 24px;
+                        fill: $colorLight;
+                        margin-right: 13px;
+                    }
+                    @media (max-width: 1200px) {
+                        span {
+                            max-width: 100px;
+                        }
+                    }
+                    @media (max-width: 760px) {
+                        border: 2px solid $colorAccent;
+                        background: $colorLight;
+                        color: $colorBlackText;
+                        .icon-shopping-cart {
+                            display: none;
+                        }
+                        span {
+                            max-width: none;
+                        }
                     }
                 }
             }

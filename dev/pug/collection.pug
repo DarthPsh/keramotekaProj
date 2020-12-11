@@ -136,6 +136,33 @@ block content
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
