@@ -79,15 +79,13 @@ document.addEventListener('DOMContentLoaded', function () {
   $('.header-filter-reset').on('click', function () {
     $('.header-filter-submit').removeClass('header-filter-submit_active');
     $('.header-filter-reset').removeClass('header-filter-reset_active');
-  }); // let allCheck = document.querySelectorAll('.header-filter-list input[type="checkbox"]');
-  // allCheck.forEach(function(item) {
-  //     item.addEventListener('click', function() {
-  //         console.log(item.closest('label').innerText);
-  //         let countCheckedFilters = $('.header-filter checkbox:checked').length;
-  //         console.log(countCheckedFilters);
-  //     })
-  // })
-  // аякс для строки поиска
+  });
+  var allCheck = document.querySelectorAll('.header-filter input[type="checkbox"]');
+  allCheck.forEach(function (item) {
+    item.addEventListener('click', function () {
+      console.log(item.closest('label').innerText);
+    });
+  }); // аякс для строки поиска
 
   $(".header-bot-search__input").on('input', function postinput() {
     var searchvalue = $(this).val(); // this.value
@@ -116,64 +114,44 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }); // аякс для строки поиска  
-  // сетка "водопад" на главной и других
 
-  function waterfallGrid() {
-    if (document.querySelectorAll('.page-content-item').length) {
-      var mainEl = document.querySelector(".page-content");
-      var rowHeight = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-auto-rows"));
-      var rowGap = parseInt(getComputedStyle(mainEl).getPropertyValue("grid-row-gap"));
+  var $grid = $('.page-content').masonry({
+    columnWidth: '.grid-sizer',
+    itemSelector: '.page-content-item',
+    horizontalOrder: true,
+    resize: true,
+    percentPosition: true,
+    initLayout: false,
+    gutter: 8
+  });
+  $grid.masonry('on', 'layoutComplete', function () {
+    console.log('layout is complete');
+  });
+  $grid.masonry();
 
-      var setSpan = function setSpan(el) {
-        // Calculate the number of lines that the div needs to span
-        el.style.gridRowEnd = "span ".concat(Math.ceil((el.clientHeight + rowGap) / (rowHeight + rowGap)));
-      };
-
-      setTimeout(function () {
-        document.querySelectorAll(".page-content-item").forEach(setSpan);
-        document.querySelectorAll(".page-card").forEach(function (item) {
-          item.style.height = 'max-content';
-        });
-        setTimeout(function () {
-          document.querySelectorAll(".page-content-item").forEach(function (item) {
-            item.style.height = '100%';
-          });
-        }, 100);
-      }, 200);
-    }
+  function cardCollectionInfo() {
+    $('.page-card-collection-content__name').on('click', function () {
+      if ($(this).closest($('.page-card-collection')).hasClass('page-card-collection_active')) {
+        $(this).closest($('.page-card-collection')).removeClass('page-card-collection_active');
+      } else {
+        $(this).closest($('.page-card-collection')).addClass('page-card-collection_active');
+      }
+    });
   }
 
-  waterfallGrid();
-  window.addEventListener('resize', function (event) {
-    waterfallGrid();
-  }); // сетка "водопад" на главной и других
+  cardCollectionInfo();
 
-  $('.page-card-collection-content__name').on('click', function () {
-    waterfallGrid();
+  function cardBrandInfo() {
+    $('.page-card-brand-content__count').on('click', function () {
+      if ($(this).closest($('.page-card-brand')).hasClass('page-card-brand_active')) {
+        $(this).closest($('.page-card-brand')).removeClass('page-card-brand_active');
+      } else {
+        $(this).closest($('.page-card-brand')).addClass('page-card-brand_active');
+      }
+    });
+  }
 
-    if ($(this).closest($('.page-card-collection')).hasClass('page-card-collection_active')) {
-      waterfallGrid();
-      $(this).closest($('.page-card-collection')).removeClass('page-card-collection_active');
-      waterfallGrid();
-    } else {
-      $(this).closest($('.page-card-collection')).addClass('page-card-collection_active');
-    }
-
-    waterfallGrid();
-  });
-  $('.page-card-brand-content__count').on('click', function () {
-    waterfallGrid();
-
-    if ($(this).closest($('.page-card-brand')).hasClass('page-card-brand_active')) {
-      waterfallGrid();
-      $(this).closest($('.page-card-brand')).removeClass('page-card-brand_active');
-      waterfallGrid();
-    } else {
-      $(this).closest($('.page-card-brand')).addClass('page-card-brand_active');
-    }
-
-    waterfallGrid();
-  }); // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
+  cardBrandInfo(); // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
 
   var scrollPos = 0;
   $(window).on('scroll', function () {
@@ -202,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
       $(".header-bot").removeClass('header-fixed');
     }
 
-    scrollPos = st;
+    scrollPos = st; // 
   }); // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
   // АКТИВАЦИЯ СЛАЙДЕРА НА ГЛАВНОЙ
 
@@ -328,6 +306,30 @@ document.addEventListener('DOMContentLoaded', function () {
         $quantityNum.val(+$quantityNum.val() + 1);
       }
     })();
+  });
+  $(".pager-more").on('click', function () {
+    preventDefault();
+    var pageNext = $(this).data('page-next');
+
+    if (pageNext == undefined) {
+      return;
+    }
+
+    $.ajax({
+      url: 'main-page-list.html',
+      data: {
+        PAGEN_1: pageNext
+      } // type: 'post'
+
+    }).done(function (resultHtml) {
+      $('.page-content').append($(resultHtml).find('.page-content-item')); // $('.wrapper > .content').replaceWith(resultHtml);
+
+      observer.observe();
+      cardBrandInfo();
+      cardCollectionInfo();
+    }).fail(function () {
+      console.log('Failed');
+    }).always(function () {});
   });
   console.log('press F');
 });

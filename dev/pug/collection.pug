@@ -129,8 +129,9 @@ block content
                     figure.product-card-img
                         img(src="static/images/content/product-1.png", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
@@ -167,87 +168,418 @@ block content
                     figure.product-card-img
                         img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="static/images/content/product-1.png", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="static/images/content/product-1.png", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
+            .product-list-title Декоративные элементы
+            .product-list 
+                .product-card
+                    figure.product-card-img
+                        img(src="static/images/content/product-1.png", alt="img")
+                    .product-card-content
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
+                .product-card
+                    figure.product-card-img
+                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
+                    .product-card-content
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
+                        .product-card-content__name Cement Decor
+                        .product-card-content__price 2283
+                            span.currency  ₽
+                            span.unit м
+                                sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
                 .product-card
                     figure.product-card-img
                         img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                     .product-card-content
-                        .product-card-content__brand DUAL GRES
-                        .product-card-content__collection  ANTIGUA
+                        .wrap
+                            .product-card-content__brand DUAL GRES
+                            .product-card-content__collection  ANTIGUA
                         .product-card-content__name Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
                                 sup 2
+                        .product-card-content__info 
+                            .product-card-content__info-size 45x45 см
+                            .product-card-content__info-article DG_ANT_MSD
+                            .product-card-content__info-have В НАЛИЧИИ  
+                                span.product-card-content__info-have-count 46 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-have__reserve ИЗ НИХ В РЕЗЕРВЕ   
+                                span.product-card-content__info-have__reserve-count 40 
+                                    span.unit м
+                                        sup 2
+                            .product-card-content__info-way В ПУТИ
+                                span.product-card-content__info-way-count —
+                            .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
+                                span.product-card-content__info-way__reserve-count —
+                        .product-card-content__to-cart
+                            form.product-card-content__to-cart-form
+                                .quantity-block
+                                    .quantity-arrow.quantity-arrow-minus  
+                                    .quantity-num-wrap
+                                        input.quantity-num(type="number" value="0")
+                                        .quantity-num-unit.unit м
+                                            sup 2
+                                    .quantity-arrow.quantity-arrow-plus 
+                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                    +icon('shopping-cart')
+                                    span ДОБАВИТЬ В КОРЗИНУ
+    .calculate-section
+        .container
+            .calculate
+                .calculate-title Рассчитаем стоимость заказа по вашей спецификации
+                .calculate-desc У вас уже есть готовая спецификация или файл проекта? Отправьте ее нам и мы рассчитаем точную стоимость заказа в кратчайшие сроки. (В этом случае можно не отправлять заказ через корзину)
+                button.calculate-btn ЗАКАЗАТЬ РАСЧЕТ
+            .advantages
+                .advantages-block
+                    figure.advantages-block-img
+                        img(src="static/images/common/adv-1.svg", alt="icon")
+                    .advantages-block-text 762 коллекции керамогранита и плитки от лучших фабрик в Европе и России
+                .advantages-block
+                    figure.advantages-block-img
+                        img(src="static/images/common/adv-2.svg", alt="icon")
+                    .advantages-block-text 3D-визуализация вашего будущего интерьера
+                .advantages-block
+                    figure.advantages-block-img
+                        img(src="static/images/common/adv-3.svg", alt="icon")
+                    .advantages-block-text Шоурум в 5 минутах ходьбы от метро Новослободская
+                .advantages-block
+                    figure.advantages-block-img
+                        img(src="static/images/common/adv-4.svg", alt="icon")
+                    .advantages-block-text Надежная доставка по России и самовывоз
+                .advantages-block
+                    figure.advantages-block-img
+                        img(src="static/images/common/adv-5.svg", alt="icon")
+                    .advantages-block-text Большой складской запас оптовых коллекций

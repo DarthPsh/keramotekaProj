@@ -7,7 +7,8 @@ const vendorsScripts = [
   'dev/static/js/vendor/jquery-3.3.1.min.js',
   'dev/static/js/vendor/swiper-bundle.js',
   'dev/static/js/vendor/slick.min.js',
-  'dev/static/js/vendor/directive.js'
+  'dev/static/js/vendor/directive.js',
+  'dev/static/js/vendor/masonry.pkgd.min.js'
 ];
 
 module.exports = function vendors(cb) {

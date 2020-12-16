@@ -909,6 +909,7 @@ header { flex: 0 0 auto; }
         }
         &-reset {
             display: none;
+            cursor: pointer;
             @media (max-width: 760px) {
                 border: none;
                 background: transparent;

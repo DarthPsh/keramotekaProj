@@ -87,14 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    // let allCheck = document.querySelectorAll('.header-filter-list input[type="checkbox"]');
-    // allCheck.forEach(function(item) {
-    //     item.addEventListener('click', function() {
-    //         console.log(item.closest('label').innerText);
-    //         let countCheckedFilters = $('.header-filter checkbox:checked').length;
-    //         console.log(countCheckedFilters);
-    //     })
-    // })
+    let allCheck = document.querySelectorAll('.header-filter input[type="checkbox"]');
+    allCheck.forEach(function(item) {
+        item.addEventListener('click', function() {
+            console.log(item.closest('label').innerText);
+        })
+    })
 
 
 
@@ -128,66 +126,63 @@ document.addEventListener('DOMContentLoaded', function () {
     // аякс для строки поиска  
 
 
-    // сетка "водопад" на главной и других
-    function waterfallGrid() {
-        if (document.querySelectorAll('.page-content-item').length) {
-            let mainEl = document.querySelector(".page-content");
-            let rowHeight = parseInt(
-                getComputedStyle(mainEl).getPropertyValue("grid-auto-rows")
-            );
-            let rowGap = parseInt(
-                getComputedStyle(mainEl).getPropertyValue("grid-row-gap")
-            );
-            let setSpan = el => {
-                // Calculate the number of lines that the div needs to span
-                el.style.gridRowEnd = `span ${Math.ceil(
-                    (el.clientHeight + rowGap) / (rowHeight + rowGap)
-                )}`;
-            };
-            setTimeout(() => {
-                document.querySelectorAll(".page-content-item").forEach(setSpan);
-                document.querySelectorAll(".page-card").forEach((item) => {
-                    item.style.height = 'max-content';
-                });
-                setTimeout(() => {
-                    document.querySelectorAll(".page-content-item").forEach((item) => {
-                        item.style.height = '100%';
-                    });
-                }, 100);
-            }, 200);
-        }
-    }
-    waterfallGrid();
-    window.addEventListener('resize', function (event) {
-        waterfallGrid();
+
+
+
+
+
+    let $grid = $('.page-content').masonry({
+        columnWidth: '.grid-sizer',
+        itemSelector: '.page-content-item',
+        horizontalOrder: true,
+        resize: true,
+        percentPosition: true,
+        initLayout: false,
+        gutter: 8
     });
-    // сетка "водопад" на главной и других
+    $grid.masonry('on', 'layoutComplete', function () {
+        console.log('layout is complete');
+    });
+    $grid.masonry();
 
-    $('.page-card-collection-content__name').on('click', function () {
-        waterfallGrid();
-        if ($(this).closest($('.page-card-collection')).hasClass('page-card-collection_active')) {
-            waterfallGrid();
-            $(this).closest($('.page-card-collection')).removeClass('page-card-collection_active');
-            waterfallGrid();
-        }
-        else {
-            $(this).closest($('.page-card-collection')).addClass('page-card-collection_active');
-        }
-        waterfallGrid();
-    })
 
-    $('.page-card-brand-content__count').on('click', function () {
-        waterfallGrid();
-        if ($(this).closest($('.page-card-brand')).hasClass('page-card-brand_active')) {
-            waterfallGrid();
-            $(this).closest($('.page-card-brand')).removeClass('page-card-brand_active');
-            waterfallGrid();
-        }
-        else {
-            $(this).closest($('.page-card-brand')).addClass('page-card-brand_active');
-        }
-        waterfallGrid();
-    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function cardCollectionInfo() {
+        $('.page-card-collection-content__name').on('click', function () {
+            if ($(this).closest($('.page-card-collection')).hasClass('page-card-collection_active')) {
+                $(this).closest($('.page-card-collection')).removeClass('page-card-collection_active');
+            }
+            else {
+                $(this).closest($('.page-card-collection')).addClass('page-card-collection_active');
+            }
+        })
+    }
+    cardCollectionInfo();
+
+    function cardBrandInfo() {
+        $('.page-card-brand-content__count').on('click', function () {
+            if ($(this).closest($('.page-card-brand')).hasClass('page-card-brand_active')) {
+                $(this).closest($('.page-card-brand')).removeClass('page-card-brand_active');
+            }
+            else {
+                $(this).closest($('.page-card-brand')).addClass('page-card-brand_active');
+            }
+        })
+    }
+    cardBrandInfo();
 
 
     // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
@@ -222,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $(".header-bot").removeClass('header-fixed');
         }
         scrollPos = st;
+        // 
     })
     // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
 
@@ -282,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.header-filter-head__close').on('click', function () {
         $('.header-filter').removeClass('header-filter_active');
     })
+
 
 
 
@@ -367,6 +364,45 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })();
     });
+
+
+
+
+
+
+
+
+    $(".pager-more").on('click', function () {
+        preventDefault();
+        const pageNext = $(this).data('page-next');
+        if (pageNext == undefined) {
+            return;
+        }
+        $.ajax({
+            url: 'main-page-list.html',
+            data: { PAGEN_1: pageNext },
+            // type: 'post'
+        }).done(function (resultHtml) {
+            $('.page-content').append($(resultHtml).find('.page-content-item'));
+            // $('.wrapper > .content').replaceWith(resultHtml);
+            observer.observe();
+            cardBrandInfo();
+            cardCollectionInfo();
+        }).fail(function () {
+            console.log('Failed');
+        }).always(function () {
+
+        });
+    });
+
+
+
+
+
+
+
+
+
 
 
     console.log('press F');
