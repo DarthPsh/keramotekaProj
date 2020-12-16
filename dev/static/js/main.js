@@ -131,9 +131,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    let $grid = $('.page-content').masonry({
-        columnWidth: '.grid-sizer',
-        itemSelector: '.page-content-item',
+    let $grid = $('.page-content-grid').masonry({
+        columnWidth: '.page-content-grid-sizer',
+        itemSelector: '.page-content-grid-item',
         horizontalOrder: true,
         resize: true,
         percentPosition: true,
@@ -226,12 +226,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelectorAll('.page-slider').length) {
         var pageSlider = new Swiper('.page-slider', {
             pagination: {
-                el: '.swiper-pagination',
+                el: '.page-slider-pagination',
                 clickable: true,
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.page-slider-next',
+                prevEl: '.page-slider-prev',
             }
         });
     }
@@ -378,12 +378,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (pageNext == undefined) {
             return;
         }
+        console.log(pageNext);
         $.ajax({
             url: 'main-page-list.html',
             data: { PAGEN_1: pageNext },
             // type: 'post'
         }).done(function (resultHtml) {
-            $('.page-content').append($(resultHtml).find('.page-content-item'));
+            console.log('ok');
+            // $('.page-content').append($(resultHtml).find('.page-content-grid-item'));
             // $('.wrapper > .content').replaceWith(resultHtml);
             observer.observe();
             cardBrandInfo();

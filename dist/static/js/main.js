@@ -115,9 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }); // аякс для строки поиска  
 
-  var $grid = $('.page-content').masonry({
-    columnWidth: '.grid-sizer',
-    itemSelector: '.page-content-item',
+  var $grid = $('.page-content-grid').masonry({
+    columnWidth: '.page-content-grid-sizer',
+    itemSelector: '.page-content-grid-item',
     horizontalOrder: true,
     resize: true,
     percentPosition: true,
@@ -187,12 +187,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelectorAll('.page-slider').length) {
     var pageSlider = new Swiper('.page-slider', {
       pagination: {
-        el: '.swiper-pagination',
+        el: '.page-slider-pagination',
         clickable: true
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '.page-slider-next',
+        prevEl: '.page-slider-prev'
       }
     });
   } // АКТИВАЦИЯ СЛАЙДЕРА НА ГЛАВНОЙ
@@ -315,6 +315,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    console.log(pageNext);
     $.ajax({
       url: 'main-page-list.html',
       data: {
@@ -322,7 +323,8 @@ document.addEventListener('DOMContentLoaded', function () {
       } // type: 'post'
 
     }).done(function (resultHtml) {
-      $('.page-content').append($(resultHtml).find('.page-content-item')); // $('.wrapper > .content').replaceWith(resultHtml);
+      console.log('ok'); // $('.page-content').append($(resultHtml).find('.page-content-grid-item'));
+      // $('.wrapper > .content').replaceWith(resultHtml);
 
       observer.observe();
       cardBrandInfo();
