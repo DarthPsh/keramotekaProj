@@ -1,45 +1,96 @@
 .page-content
     .container
         .page-content-grid
-            .page-content-grid-sizer
-            .page-content-grid-item.page-slider.swiper-container
-                .swiper-wrapper
-                    .page-slider-item.swiper-slide
-                        figure.page-slider-item-img
-                            img(src="static/images/content/main-slider-1.png", alt="img")
-                        .page-slider-item__info
-                            .page-slider-item__title НОВИНКА CERSAIE 2019
-                            .page-slider-item__subtitle ATLAS CONCORDE BOOST
-                    .page-slider-item.swiper-slide
-                        figure.page-slider-item-img
-                            img.lozad(src="static/images/content/main-slider-1.png" data-src="static/images/content/main-slider-1.png", alt="img")
-                        .page-slider-item__info
-                            .page-slider-item__title НОВИНКА CERSAIE 2019
-                            .page-slider-item__subtitle ATLAS CONCORDE BOOST
-                    .page-slider-item.swiper-slide
-                        figure.page-slider-item-img
-                            img.lozad(src="static/images/content/main-slider-1.png" data-src="static/images/content/main-slider-1.png", alt="img")
-                        .page-slider-item__info
-                            .page-slider-item__title НОВИНКА CERSAIE 2019
-                            .page-slider-item__subtitle ATLAS CONCORDE BOOST
-                .page-slider-pagination.swiper-pagination
-                .page-slider-control.page-slider-next.swiper-button-next
-                    //- +icon('expand_more')
-                .page-slider-control.page-slider-prev.swiper-button-prev
-                    //- +icon('expand_more')
             .page-content-grid-item.page-card
-                .page-card-collection.card-collection
-                    figure.page-card-img
-                        img.lozad(src="http://dummyimage.com/304" data-src="static/images/content/page-card-1.png", alt="img")
+                .page-card-collection.card-collection.card-collection_active
+                    .card-badge
+                        .card-badge__info НОВИНКА
+                        .card-badge__have В ПУТИ НА СКЛАД
+                    figure.page-card-img.swiper-container
+                        .swiper-wrapper
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-1.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-2.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-3.png", alt="img")
+                        ul.page-card-img-hover
+                            li
+                            li
+                            li
+                        .page-card-img-pagination.swiper-pagination
                     .page-card-content.card-collection-content
                         .card-collection__brand ARCANA
                         .card-collection__name RIBE / ELBURG
                             //- +icon('expand_more')
                         .card-collection__desc Коллекция ARCANA RIBE / ELBURG представлена ректифицированным матовым керамогранитом в формате 80x80 см. Более авангардные текстуры Ribe, как и более спокойные Elburg, вдохновлены популярным стилем терраццо для создания очаровательных в своей смелости интерьеров.
             .page-content-grid-item.page-card
+                .page-card-collection.card-collection
+                    .card-badge
+                        .card-badge__info НОВИНКА
+                        .card-badge__have В ПУТИ НА СКЛАД
+                    figure.page-card-img
+                        .swiper-wrapper
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-1.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-2.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-3.png", alt="img")
+                        ul.page-card-img-hover
+                            li
+                            li
+                            li
+                        .page-card-img-pagination.swiper-pagination
+                    .page-card-content.card-collection-content
+                        .card-collection__brand REX CERAMICHE
+                        .card-collection__name LES BIJOUX DE REX
+                            //- +icon('expand_more')
+                        .card-collection__desc Коллекция керамогранита REX LES BIJOUX DE REX вдохновлена мраморами со столь редким и ценным рисунком, что ее можно назвать настоящим произведением искусства. Calacatta Altissimo Blanc, Onyx Blanche, Ombre De Caravage, Brèche Capraia, Marron Imperial, Jaspe Rouge, Sodalite Bleu, Les Quatre Saisons - излучают художественное очарование посредством стиля и большой выразительной силы, характерной для бренда Rex.
+            .page-content-grid-item.page-card
+                .page-card-collection.card-collection
+                    .card-badge
+                        .card-badge__info НОВИНКА
+                        .card-badge__have В ПУТИ НА СКЛАД
+                    figure.page-card-img
+                        img.lozad(src="static/images/common/304.png" data-src="static/images/content/page-card-3.png", alt="img")
+                    .page-card-content.card-collection-content
+                        .card-collection__brand WOW
+                        .card-collection__name FLOW
+                            //- +icon('expand_more')
+                        .card-collection__desc Утонченная коллекция WOW FLOW / ВАУ ФЛОУ представлена керамогранитом в форме ромбов 14x24 см в пяти актуальных оттенках — White, Taupe, Black, Old Rose, Blue, и трех вариантах "под дерево" — Light, Mid, Dark. Серия дополнена декоративным фоном в пяти основных цветах для создания бесконечного числа переливов. Широкая тональная вариативность плиток позволяет добиться более выразительного эффекта от облицовки. Основные элементы выпускаются в 6 оттенках в каждом цвете, цветные декоры — в 14 вариантах и "деревянные" ромбы — в 30 вариантах оттенка, которые случайным образом смешаны в коробке.
+            .page-content-grid-item.page-card
+                .page-card-collection.card-collection
+                    .card-badge
+                        .card-badge__info НОВИНКА
+                        .card-badge__have В ПУТИ НА СКЛАД
+                    figure.page-card-img
+                        img.lozad(src="static/images/common/304.png" data-src="static/images/content/page-card-4.png", alt="img")
+                    .page-card-content.card-collection-content
+                        .card-collection__brand ATLAS CONCORDE
+                        .card-collection__name BOOST
+                            //- +icon('expand_more')
+                        .card-collection__desc Коллекция Atlas Concorde Boost / Атлас Конкорд Буст - представлена керамогранитом и настенной плиткой, имитирующей цемент. Нейтральная палитра керамогранита, перекликаясь с оригинальным цветом стен, наполняет интерьер живой индивидуальностью. Теплые оттенки окисленного материала сочетаются с холодными, характерными для цемента штрихами неяркой по характеру поверхности.
+            .page-content-grid-item.page-card
+                .page-card-collection.card-collection
+                    .card-badge
+                        .card-badge__info НОВИНКА
+                        .card-badge__have В ПУТИ НА СКЛАД
+                    figure.page-card-img
+                        img.lozad(src="static/images/common/304.png" data-src="static/images/content/page-card-5.png", alt="img")
+                    .page-card-content.card-collection-content
+                        .card-collection__brand 41zero42
+                        .card-collection__name SPECTRE
+                            //- +icon('expand_more')
+                        .card-collection__desc EQUIPE ARTISAN / ЭКИПЕ АРТИСАН — новая эффектная серия керамической плитки для стен, предлагаемая в десяти оттенках — и ярких, и пастельных. Производится в компактных форматах 13.2x13.2 и 6.5x20.
+            .page-content-grid-item.page-card
                 .page-card-brand.card-brand
                     figure.page-card-img
-                        img.lozad(src="http://dummyimage.com/304" data-src="static/images/content/page-brand-1.png", alt="img")
+                        .swiper-wrapper
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-brand-1.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-1.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-2.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-3.png", alt="img")
+                        ul.page-card-img-hover
+                            li
+                            li
+                            li
+                            li
+                        .page-card-img-pagination.swiper-pagination
                     .page-card-content.card-brand-content
                         .card-brand__name 
                             span.card-brand__name-title ATLAS CONCORDE RUSSIA
@@ -55,15 +106,44 @@
                                     a(href="#") Название коллекции
                                 li.card-brand__list-item
                                     a(href="#") Название коллекции
-.page-content-after
-    .container
-        .pager
-            .pager-content
-                a(href="#" class="current-page") 1
-                a(href="#") 2
-                a(href="#") 3
-                a(href="#") ...
-                a(href="#") 8
-            a.pager-more(href="#" data-page-next='2') 
-                //- +icon('renew')
-                span ЗАГРУЗИТЬ ЕЩЕ
+            .page-content-grid-item.page-card
+                .page-card-brand.card-brand
+                    figure.page-card-img
+                        .swiper-wrapper
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-brand-1.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-1.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-2.png", alt="img")
+                            img.lozad.swiper-slide(src="static/images/common/304.png" data-src="static/images/content/page-card-3.png", alt="img")
+                        ul.page-card-img-hover
+                            li
+                            li
+                            li
+                            li
+                        .page-card-img-pagination.swiper-pagination
+                    .page-card-content.card-brand-content
+                        .card-brand__name 
+                            span.card-brand__name-title ATLAS CONCORDE RUSSIA
+                            img.card-brand__name-flag(src="static/images/common/russia.svg", alt="flag")
+                        .card-brand__count 
+                            .card-brand__count-title
+                                | 3 КОЛЛЕКЦИИ
+                                //- +icon('expand_more')
+                            ul.card-brand__list 
+                                li.card-brand__list-item
+                                    a(href="#") Название коллекции
+                                li.card-brand__list-item
+                                    a(href="#") Название коллекции
+                                li.card-brand__list-item
+                                    a(href="#") Название коллекции
+    .page-content-after
+        .container
+            .pager
+                .pager-content
+                    a(href="#") 1
+                    a(href="#" class="current-page") 2
+                    a(href="#") 3
+                    a(href="#") ...
+                    a(href="#") 8
+                a.pager-more(href="#" data-page-next='2') 
+                    //- +icon('renew')
+                    span ЗАГРУЗИТЬ ЕЩЕ

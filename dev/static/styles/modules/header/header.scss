@@ -1079,10 +1079,12 @@ header { flex: 0 0 auto; }
 
 .bx_searche {
     position: absolute;
-    background: antiquewhite;
+    background: $colorLight;
     top: -8px;
     left: -8px;
-    padding: 60px 10px 10px 10px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 60px 0px 10px 10px;
     width: calc(100% + 16px);
     border-radius: 4px;
     transform: translateY(30px);
@@ -1091,6 +1093,29 @@ header { flex: 0 0 auto; }
     visibility: hidden;
     z-index: -1;
     transition: .3s;
+    max-height: 376px;
+    overflow: auto;
+    &::-webkit-scrollbar{
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-width:1px 1px 1px 1px;
+        border-color: #999999;
+        background-color: #999999;
+        border-radius: 20px;
+    }
+    &::-webkit-scrollbar-track-piece {
+        background: #D9D9D9;
+    }
+    .bx_item_block {
+        font-style: normal;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.005em;
+        padding: 7px;
+        border-bottom: 1px solid #C8C5C5;
+        margin-right: 10px;
+    }
 }
 .bx_searche_active {
     // display: block;

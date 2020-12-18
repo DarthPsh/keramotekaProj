@@ -21,7 +21,7 @@ body {
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after { box-sizing: border-box; outline: none;}
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul, figure {
   margin: 0;
@@ -105,11 +105,11 @@ input[type="number"]::-webkit-outer-spin-button {
 .page {
   &-content {
     background: #F1F1F1;
-    padding: 20px 0 160px 0;
-    @media ( max-width: 760px ) {
-      padding: 0px 0 88px 0;
-    }
     &-grid {
+      padding: 20px 0 160px 0;
+      @media ( max-width: 760px ) {
+        padding: 0px 0 88px 0;
+      }
       &-item,
       &-sizer {
         width: calc(20% - 8px);
@@ -122,18 +122,47 @@ input[type="number"]::-webkit-outer-spin-button {
           width: calc(100% / 3 - 8px);
         }
         @media ( max-width: 760px ) {
-          width: calc(50% - 8px);
+          width: calc(50% - 4px);
         }
       }
     }
   }
   &-card {
+    overflow: hidden;
     &:hover {
       box-shadow: 0px 0px 0px 8px $colorAccent;
+      .page-card-img-pagination {
+        display: block;
+      }
     }
     &-img {
       width: 100%;
       height: 100%;
+      position: relative;
+      &-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        z-index: 1;
+        li {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &-pagination {
+        display: none;
+        .swiper-pagination-bullet {
+          height: 4px;
+          width: 4px;
+          background: #D9D9D9;
+        }
+        .swiper-pagination-bullet-active {
+          background: $colorAccent;
+        }
+      }
       img {
         width: 100%;
         height: 100%;
@@ -252,6 +281,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .page {
   &-content {
+    display: flex;
+    flex-direction: column;
     &-after {
       background: $colorLight;
       padding: 35px 0;
@@ -273,8 +304,45 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 
+.card-badge {
+  &__info {
+    background: $colorAccent;
+    color: #333333;
+    padding: 5px 10px;
+    display: inline-block;
+  }
+  &__have {
+    color: $colorLight;
+    background: #333333;
+    padding: 5px;
+    display: inline-block;
+  }
+}
+
 .card {
   &-collection {
+    position: relative;
+    .card-badge {
+      position: absolute;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      top: 14px;
+      left: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 2;
+      &__info {
+        margin-right: 4px;
+        margin-bottom: 4px;
+      }
+      &__have {
+        margin-bottom: 4px;
+      }
+    }
     &-content {
       padding: 12px 15px 20px 15px;
     }
@@ -301,12 +369,17 @@ input[type="number"]::-webkit-outer-spin-button {
       @media (max-width: 760px) {
         font-size: 16px;
         line-height: 20px;
+        cursor: pointer;
       }
       .icon-expand_more {
         fill: #999999;
         width: 14px;
         height: 9px;
-        transform: rotate(180deg);
+        display: none;
+        transition: all .3s ease-out;
+        @media ( max-width: 760px ) {
+          display: block;
+        }
       }
     }
     &__desc {
@@ -314,6 +387,23 @@ input[type="number"]::-webkit-outer-spin-button {
       font-weight: normal;
       font-size: 16px;
       line-height: 24px;
+      @media ( max-width: 760px ) {
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        transition: all .1s ease-out;
+      }
+    }
+    &_active {
+      .card-collection__desc {
+        max-height: 10000px;
+        transform: scaleY(1);
+      }
+      .icon-expand_more {
+        transform: rotate(-180deg);
+      }
     }
   }
   &-brand {
@@ -353,16 +443,23 @@ input[type="number"]::-webkit-outer-spin-button {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
+        cursor: pointer;
         .icon-expand_more {
           fill: #999999;
           width: 14px;
           height: 9px;
-          transform: rotate(180deg);
+          transition: all .3s ease-out;
         }
       }
     }
     &__list {
       padding-top: 16px;
+      height: auto;
+      max-height: 0;
+      overflow: hidden;
+      transform: scaleY(0);
+      transform-origin: 0 0;
+      transition: all .1s ease-out;
       &-item {
         border-top: 1px solid #D9D9D9;
         a {
@@ -375,6 +472,15 @@ input[type="number"]::-webkit-outer-spin-button {
           letter-spacing: 0.04em;
           color: #151515;
         }
+      }
+    }
+    &_active {
+      .card-brand__list {
+        max-height: 10000px;
+        transform: scaleY(1);
+      }
+      .icon-expand_more {
+        transform: rotate(-180deg);
       }
     }
   }

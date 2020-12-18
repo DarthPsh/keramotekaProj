@@ -87,12 +87,39 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    let allCheck = document.querySelectorAll('.header-filter input[type="checkbox"]');
-    allCheck.forEach(function(item) {
-        item.addEventListener('click', function() {
-            console.log(item.closest('label').innerText);
-        })
-    })
+    // let allCheck = document.querySelectorAll('.header-filter input[type="checkbox"]');
+    // allCheck.forEach(function (item) {
+    //     item.addEventListener('click', function () {
+    //         console.log(item.closest('label').innerText);
+    //     })
+
+    // })
+
+    $('.header-filter input[type="checkbox"]').on('click', function () {
+        // const pageNext = $(this).data('page-next');
+        // if (pageNext == undefined) {
+        //     return;
+        // }
+        console.log($(this).parent().text());
+        $.ajax({
+            url: 'check-res.html',
+            data: $('.header-filter input[type="checkbox"]').parent().val(),
+            // type: 'post'
+        }).done(function (resultHtml) {
+            console.log(resultHtml);
+        }).fail(function () {
+            console.log('Failed');
+        }).always(function () {
+
+        });
+    });
+
+
+
+
+
+
+
 
 
 
@@ -143,46 +170,51 @@ document.addEventListener('DOMContentLoaded', function () {
     $grid.masonry('on', 'layoutComplete', function () {
         console.log('layout is complete');
     });
-    $grid.masonry();
+    // $grid.masonry();
+
+    $grid.imagesLoaded(function () {
+        // init Masonry after all images have loaded
+        $grid.masonry();
+    });
 
 
 
 
+    function cardCollectionActive() {
+        if (document.querySelectorAll('.card-collection').length) {
+            let cardCollectionCard = document.querySelectorAll('.card-collection');
+            let cardCollectionName = document.querySelectorAll('.card-collection__name');
 
-
-
-
-
-
-
-
-
-
-
-
-    function cardCollectionInfo() {
-        $('.page-card-collection-content__name').on('click', function () {
-            if ($(this).closest($('.page-card-collection')).hasClass('page-card-collection_active')) {
-                $(this).closest($('.page-card-collection')).removeClass('page-card-collection_active');
+            for (let i = 0; i < cardCollectionCard.length; i++) {
+                cardCollectionName[i].onclick = function () {
+                    cardCollectionCard[i].classList.toggle('card-collection_active');
+                    setTimeout(() => {
+                        $grid.masonry();
+                    }, 150);
+                }
             }
-            else {
-                $(this).closest($('.page-card-collection')).addClass('page-card-collection_active');
-            }
-        })
+        }
     }
-    cardCollectionInfo();
+    cardCollectionActive();
 
-    function cardBrandInfo() {
-        $('.page-card-brand-content__count').on('click', function () {
-            if ($(this).closest($('.page-card-brand')).hasClass('page-card-brand_active')) {
-                $(this).closest($('.page-card-brand')).removeClass('page-card-brand_active');
+
+
+    function cardBrandActive() {
+        if (document.querySelectorAll('.card-brand').length) {
+            let cardBrandCard = document.querySelectorAll('.card-brand');
+            let cardBrandCountTitle = document.querySelectorAll('.card-brand__count-title');
+
+            for (let i = 0; i < cardBrandCard.length; i++) {
+                cardBrandCountTitle[i].onclick = function () {
+                    cardBrandCard[i].classList.toggle('card-brand_active');
+                    setTimeout(() => {
+                        $grid.masonry();
+                    }, 150);
+                }
             }
-            else {
-                $(this).closest($('.page-card-brand')).addClass('page-card-brand_active');
-            }
-        })
+        }
     }
-    cardBrandInfo();
+    cardBrandActive();
 
 
     // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
@@ -324,12 +356,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var galleryTop = new Swiper('.product-slider-main', {
             lazy: true,
             // spaceBetween: 10,
-            loop: true,
+            // loop: true,
             loopedSlides: 1,
-            // navigation: {
-            //     nextEl: '.swiper-button-next',
-            //     prevEl: '.swiper-button-prev',
-            // },
+            navigation: {
+                nextEl: '.product-slider-main-next',
+                prevEl: '.product-slider-main-prev',
+            },
             thumbs: {
                 swiper: galleryThumbs,
             },
@@ -385,11 +417,54 @@ document.addEventListener('DOMContentLoaded', function () {
             // type: 'post'
         }).done(function (resultHtml) {
             console.log('ok');
-            // $('.page-content').append($(resultHtml).find('.page-content-grid-item'));
-            // $('.wrapper > .content').replaceWith(resultHtml);
+            $('.page-content-grid').append($(resultHtml).find('.page-content-grid-item'));
+            $('.pager').replaceWith($(resultHtml).find('.pager'));
+            $grid.masonry('reloadItems');
+            $grid.imagesLoaded(function () {
+                $grid.masonry();
+            });
+            cardCollectionActive();
+            cardBrandActive();
+            initSwiperCardImg();
             observer.observe();
-            cardBrandInfo();
-            cardCollectionInfo();
+        }).fail(function () {
+            console.log('Failed');
+        }).always(function () {
+
+        });
+    });
+
+    $(".pager-content a").on('click', function () {
+        preventDefault();
+        // const pageNext = $(this).data('page-next');
+        // if (pageNext == undefined) {
+        //     return;
+        // }
+        $.ajax({
+            url: 'main-page-list.html',
+            // data: { PAGEN_1: pageNext },
+            // type: 'post'
+        }).done(function (resultHtml) {
+            console.log('ok');
+            $('.page-content').replaceWith(resultHtml);
+            let $grid = $('.page-content-grid').masonry({
+                itemSelector: '.page-content-grid-item',
+                horizontalOrder: true,
+                resize: true,
+                percentPosition: true,
+                initLayout: false,
+                gutter: 8
+            });
+            $grid.masonry('on', 'layoutComplete', function () {
+                console.log('layout is complete');
+            });
+            $grid.imagesLoaded(function () {
+                // init Masonry after all images have loaded
+                $grid.masonry();
+            });
+            cardCollectionActive();
+            cardBrandActive();
+            observer.observe();
         }).fail(function () {
             console.log('Failed');
         }).always(function () {
@@ -399,8 +474,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    function initSwiperCardImg() {
+        var swiperCardImg = new Swiper('.page-card-img', {
+            effect: 'fade',
+            pagination: {
+                el: '.page-card-img-pagination',
+                clickable: true,
+            },
+        });
 
-
+        $('.page-card-img-hover li').on('mouseenter', function () {
+            var currentSwiper = $(this).parent().parent();
+            var swiperIndex = $('.page-card-img').index(currentSwiper);
+            var currentIndex = $(this).parent().children().index(this);
+            swiperCardImg[swiperIndex].slideTo(currentIndex);
+        })
+    }
+    initSwiperCardImg();
 
 
 
@@ -409,3 +499,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log('press F');
 });
+
+
+
+
+
+
+
+
