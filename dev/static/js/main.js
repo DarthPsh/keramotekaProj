@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log('hello');
 
+    $('.page-content-grid-sizer').show();
+
     // посковая строка в шапке открытие/закрытие
     function closeSearchRow() {
         if ($('.header-bot-search__input').val() !== '') {
@@ -354,7 +356,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         var galleryTop = new Swiper('.product-slider-main', {
-            lazy: true,
+            // lazy: true,
+            lazy: {
+                loadPrevNext: true,
+            },
             // spaceBetween: 10,
             // loop: true,
             loopedSlides: 1,
