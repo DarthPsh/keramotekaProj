@@ -46,6 +46,10 @@ header { flex: 0 0 auto; }
         &__more {
             transition: all .3s ease-out;
             margin-left: 7px;
+            .icon-expand_more {
+                height: 8px;
+                width: 10px;
+            }
         }
         a {
             font-style: normal;
@@ -100,6 +104,13 @@ header { flex: 0 0 auto; }
             &__info {
                 font-weight: bold;
             }
+            &__icon {
+                .svg-sprite-icon {
+                    fill: $colorAccent;
+                    height: 24px;
+                    width: 24px;
+                }
+            }
         }
         &__address {
             max-width: 278px;
@@ -136,6 +147,10 @@ header { flex: 0 0 auto; }
                 opacity: 1;
                 visibility: visible;
                 top: -17px;
+            }
+            .icon-expand_more {
+                height: 8px;
+                width: 10px;
             }
         }
         &__worktime {
@@ -468,16 +483,16 @@ header { flex: 0 0 auto; }
             }
             &_active {
                 position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
             }
-            &_triangle {
-                .header-bot-filter__text {
-                    color: $colorAccent;
-                }
-                &:after {
-                    transform: translateX(-50%) scaleY(1);
+            &__icon {
+                .icon-filter {
+                    fill: #C4C4C4;
+                    height: 16px;
+                    width: 16px;
                 }
             }
-            // &__icon {}
             &__text {
                 font-style: normal;
                 font-weight: 600;
@@ -487,6 +502,17 @@ header { flex: 0 0 auto; }
                 color: #999999;
                 max-width: 85px;
                 margin-left: 9px;
+            }
+            &_triangle {
+                .header-bot-filter__text {
+                    color: $colorAccent;
+                }
+                .icon-filter {
+                    fill: $colorAccent;
+                }
+                &:after {
+                    transform: translateX(-50%) scaleY(1);
+                }
             }
         }
         &-search {
@@ -670,6 +696,12 @@ header { flex: 0 0 auto; }
                     }
                     &__icon {
                         margin-right: 10px;
+                        .icon-phone-o {
+                            height: 20px;
+                            width: 20px;
+                            stroke: white;
+                            stroke-width: 2.5px;
+                        }
                     }
                     @media (max-width: 1200px) {
                         width: 80px;
@@ -1200,6 +1232,12 @@ header { flex: 0 0 auto; }
                     img {
                         margin-right: 14px;
                     }
+                    .icon-filter {
+                        fill: #C4C4C4;
+                        height: 16px;
+                        width: 16px;
+                        margin-right: 15px;
+                    }
                 }
                 &__link {
                     font-style: normal;
@@ -1294,6 +1332,20 @@ header { flex: 0 0 auto; }
 }
 
 
+.filter-list-count {
+    background: $colorAccent;
+    border-radius: 50%;
+    color: $colorLight;
+    height: 20px;
+    min-width: 20px;
+    width: 20px;
+    position: absolute;
+    left: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
 
 
 

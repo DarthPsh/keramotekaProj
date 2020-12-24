@@ -65,6 +65,32 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
     // выпадающие меню в списке фильтров
+    // $('.header-filter-list-item').on('click', function () {
+    //     console.log($('.header-filter-list-item').index());
+    // })
+
+    // $(".header-filter-list-drop-menu").each(function (index) {
+    //     $(this).parent().find('.filter-list-count').text(($(this).find('input[type="checkbox"]').length));
+    // })
+
+
+    $('.header-filter-list-item .header-filter-list-drop-menu input').on('click', function () {
+        $(".header-filter-list-drop-menu").each(function (index) {
+            $(this).parent().find('.filter-list-count').text(($(this).find('input[type="checkbox"]:checked').length)) 
+            if ($(this).parent().find('.filter-list-count').text() <= '0') {
+                $(this).parent().find('.filter-list-count').css('opacity', '0');
+            }
+            else {
+                $(this).parent().find('.filter-list-count').css('opacity', '1');
+            }
+           
+            // console.log($(this).parent().find('.filter-list-count').text());
+        })
+        // var test = $(this).closest('.header-filter-list-item').index();
+        // console.log(test);
+    })
+
+
 
 
     $('.header-filter input[type="checkbox"]').on('click', function () {
@@ -97,24 +123,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // })
 
-    $('.header-filter input[type="checkbox"]').on('click', function () {
-        // const pageNext = $(this).data('page-next');
-        // if (pageNext == undefined) {
-        //     return;
-        // }
-        console.log($(this).parent().text());
-        $.ajax({
-            url: 'check-res.html',
-            data: $('.header-filter input[type="checkbox"]').parent().val(),
-            // type: 'post'
-        }).done(function (resultHtml) {
-            console.log(resultHtml);
-        }).fail(function () {
-            console.log('Failed');
-        }).always(function () {
 
-        });
-    });
+
+    // $('.header-filter input[type="checkbox"]').on('click', function () {
+    //     // const pageNext = $(this).data('page-next');
+    //     // if (pageNext == undefined) {
+    //     //     return;
+    //     // }
+    //     console.log($(this).parent().text());
+    //     $.ajax({
+    //         url: 'check-res.html',
+    //         data: $('.header-filter input[type="checkbox"]').parent().val(),
+    //         // type: 'post'
+    //     }).done(function (resultHtml) {
+    //         console.log(resultHtml);
+    //     }).fail(function () {
+    //         console.log('Failed');
+    //     }).always(function () {
+
+    //     });
+    // });
 
 
 
@@ -331,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    // СЛАЙДЕР НА СТРАНИЦЕ КОЛЛЕКЦИИ
     if (document.querySelectorAll('.product-slider').length) {
         var galleryThumbs = new Swiper('.product-slider-thumbs', {
             lazy: true,
@@ -376,11 +405,11 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         });
     }
+    // СЛАЙДЕР НА СТРАНИЦЕ КОЛЛЕКЦИИ
 
 
 
-
-    // 
+    // КНОПКИ КОЛИЧЕТСВА НА КАРТОЧКА ПРОДУКТОВ
     $(function () {
         (function quantityProducts() {
             var $quantityArrowMinus = $(".quantity-arrow-minus");
@@ -401,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })();
     });
-
+    // КНОПКИ КОЛИЧЕТСВА НА КАРТОЧКА ПРОДУКТОВ
 
 
 
@@ -479,6 +508,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+    // АКТИВАЦИЯ СВАЙПЕРА НА КАРТОЧКАХ ПРОИЗВОДИТЕЛЯ И КОЛЛЕКЦИИ
     function initSwiperCardImg() {
         var swiperCardImg = new Swiper('.page-card-img', {
             effect: 'fade',
@@ -496,11 +527,46 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
     initSwiperCardImg();
+    // АКТИВАЦИЯ СВАЙПЕРА НА КАРТОЧКАХ ПРОИЗВОДИТЕЛЯ И КОЛЛЕКЦИИ
+
+
+
+    // ВЫЗЫВАЕМ ФОРМУ "Отправить спецификацию на просчет"
+    $(".cta").on('click', function () {
+        preventDefault();
+        $.ajax({
+            url: 'calculation-form.html',
+            // type: 'post'
+        }).done(function (resultHtml) {
+            console.log('ok');
+            $('body').css('overflow', 'hidden');
+            $('body').append($(resultHtml));
+            setTimeout(() => {
+                document.querySelector('.calculation-popup__footer-download input').onchange = function () {
+                    if (this.files[0]) // если выбрали файл
+                        document.querySelector('.calculation-popup__footer-loaded').innerHTML = this.files[0].name;
+                };
+            }, 100);
+            $('.calculation-popup__close').on('click', function () {
+                $('.calculation-popup-wrap').remove();
+                $('body').css('overflow', 'auto');
+            })
+        }).fail(function () {
+            console.log('Failed');
+        }).always(function () {
+
+        });
+    });
+    // ВЫЗЫВАЕМ ФОРМУ "Отправить спецификацию на просчет"
 
 
 
 
 
+    // document.querySelector('.calculation-popup__footer-download input')[0].onchange = function () {
+    //     if (this.files[0]) // если выбрали файл
+    //         document.querySelector('calculation-popup__footer-loaded')[0].innerHTML = this.files[0].name;
+    // };
 
     console.log('press F');
 });

@@ -39,7 +39,7 @@ ol, ul {
   list-style: none;
 }
 
-
+label {cursor: pointer;}
 
 input,
 button,
@@ -100,7 +100,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 //Модули
 @import "modules/modules";
-
 
 .page {
   &-content {
@@ -631,6 +630,11 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     &-img {
       padding-right: 12px;
+      .svg-sprite-icon {
+        height: 24px;
+        width: 24px;
+        fill: $colorAccent;
+      }
       @media (max-width: 760px) {
         padding-right: 15px;
       }

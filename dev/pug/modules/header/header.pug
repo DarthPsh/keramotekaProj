@@ -15,7 +15,7 @@ header.header
 						li
 							a(href='#') Сотрудничество
 							figure.header-top__icon.header-top__more
-								img(src='static/images/common/expand_more.svg' alt='icon')
+								+icon('expand_more')
 							ul.header-drop-menu.header-top__right-drop-menu
 								li
 									a(href="#") Дилерам
@@ -33,18 +33,18 @@ header.header
 				.header-content
 					.header-content-block.header-content__address
 						figure.header-content-block__icon
-							img(src='static/images/common/map-marker.svg' alt='icon')
+							+icon('map-marker')
 						.header-content-block__text г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская 
 								a.header-content-block__info(href='#') 
 									| &nbsp;Как добраться?
 					.header-content-block.header-content__phone
 						figure.header-content-block__icon
-							img(src='static/images/common/phone.svg' alt='icon')
+							+icon('phone')
 						.header-content-block__text
 							span для Москвы и МО
 							a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
 						figure.header-content-block__icon.header-content__phone__more
-							img(src='static/images/common/expand_more.svg' alt='icon')
+							+icon('expand_more')
 						ul.header-drop-menu.header-content__phone-drop-menu
 							li
 								.header-content__phone-drop-menu-inner
@@ -61,7 +61,7 @@ header.header
 									+icon('phone')
 					.header-content-block.header-content__worktime
 						figure.header-content-block__icon
-							img(src='static/images/common/clock.svg' alt='icon')
+							+icon('clock')
 						.wrapper
 							.header-content-block__text
 								span пн-пт
@@ -83,7 +83,7 @@ header.header
 		.container
 			.header-bot-wrap
 				.header-bot-inner.header-bot-inner__catalog
-					.header-bot-logo
+					a(href="/").header-bot-logo
 						+icon('logo')
 					a.header-bot-catalog__link(href="#") Каталог
 					ul.header-bot-list
@@ -212,7 +212,7 @@ header.header
 				.header-bot-inner.header-bot-inner__search
 					.header-bot-filter
 						figure.header-bot-filter__icon
-							img(src="static/images/common/filter.svg", alt="icon")
+							+icon('filter')
 						.header-bot-filter__text Поиск по параметрам
 					form.header-bot-search
 						input#search-input.header-bot-search__input(type="text" placeholder="Поиск" autocomplete="off")
@@ -222,7 +222,7 @@ header.header
 						.bx_searche
 					a(href="tel:+74956468620").header-bot-phone 
 						figure.header-bot-phone__icon
-							img(src="static/images/common/phone-o.svg", alt="icon")
+							+icon('phone-o')
 						span +7 495 646-86-20
 					.header-bot-mobile-item.header-bot-mobile-item-search
 						+icon('search')
@@ -272,120 +272,132 @@ header.header
 			.header-filter-main
 				ul.header-filter-list
 					li.header-filter-list-item Тип материала
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Страна производителя
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 						ul.header-drop-menu.header-filter-list-drop-menu
 							li
-								label(for="russia") 
-									input(type="checkbox" id='russia')
+								label
+									input(type="checkbox")
 									| Россия
 							li
-								label(for="china") 
-									input(type="checkbox" id='china')
+								label
+									input(type="checkbox")
 									| Китай
 							li
-								label(for="israel") 
-									input(type="checkbox" id='israel')
+								label
+									input(type="checkbox")
 									| Израиль
 							li
-								label(for="singapur") 
-									input(type="checkbox" id='singapur')
+								label
+									input(type="checkbox")
 									| Сингапур
 							li
-								label(for="kenia") 
-									input(type="checkbox" id='kenia')
+								label
+									input(type="checkbox")
 									| Кения
 							li
-								label(for="alzhir") 
-									input(type="checkbox" id='alzhir')
+								label
+									input(type="checkbox")
 									| Алжир
 							li
-								label(for="venessuela") 
-									input(type="checkbox" id='venessuela')
+								label
+									input(type="checkbox")
 									| Венесуэлла
 							li
-								label(for="tadzhik") 
-									input(type="checkbox" id='tadzhik')
+								label
+									input(type="checkbox")
 									| Таджикистан
 							li
-								label(for="uzbek") 
-									input(type="checkbox" id='uzbek')
+								label
+									input(type="checkbox")
 									| Узбекистан
 							li
-								label(for="kirgiz") 
-									input(type="checkbox" id='kirgiz')
+								label
+									input(type="checkbox")
 									| Киргизия
 							li
-								label(for="mordor") 
-									input(type="checkbox" id='mordor')
+								label
+									input(type="checkbox")
 									| Мордор
 					li.header-filter-list-item Фабрика/ бренд
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Ценовой диапазон
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Место применения
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Настенная/ напольная
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Формат
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Размер
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Стиль
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Фактура
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Текстура
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 					li.header-filter-list-item Цвет
+						.filter-list-count
 						figure.header-filter-list-item__icon.header-top__more
 							+icon('expand_more_brs')
 						ul.header-drop-menu.header-filter-list-drop-menu
 							li
-								label(for="red") 
-									input(type="checkbox" id='red')
+								label
+									input(type="checkbox")
 									| Красный
 									.header-filter-list-drop-menu__color(style="background:red;")
 							li
-								label(for="orange") 
-									input(type="checkbox" id='orange')
+								label
+									input(type="checkbox")
 									| Оранжевый
 									.header-filter-list-drop-menu__color(style="background:orange;")
 							li
-								label(for="yellow") 
-									input(type="checkbox" id='yellow')
+								label
+									input(type="checkbox")
 									| Жёлтый
 									.header-filter-list-drop-menu__color(style="background:yellow;")
 							li
-								label(for="green") 
-									input(type="checkbox" id='green')
+								label
+									input(type="checkbox")
 									| Зелёный
 									.header-filter-list-drop-menu__color(style="background:green;")
 							li
-								label(for="skyblue") 
-									input(type="checkbox" id='skyblue')
+								label
+									input(type="checkbox")
 									| Голубой
 									.header-filter-list-drop-menu__color(style="background:skyblue;")
 							li
-								label(for="blue") 
-									input(type="checkbox" id='blue')
+								label
+									input(type="checkbox")
 									| Синий
 									.header-filter-list-drop-menu__color(style="background:blue;")
 							li
-								label(for="violet") 
-									input(type="checkbox" id='violet')
+								label
+									input(type="checkbox")
 									| Фиолетовый
 									.header-filter-list-drop-menu__color(style="background:violet;")
 				ul.header-filter-checked тут появляются выбранные варианты
@@ -403,7 +415,8 @@ header.header
 				li.mobile-menu-list-item
 					.wrapper.mobile-menu-list-item-wrap
 						button.mobile-menu-list-item__btn 
-							img(src="static/images/common/filter.svg", alt="icon")
+							+icon('filter')
+							//- img(src="static/images/common/filter.svg", alt="icon")
 							| ПОИСК ПО ПАРАМЕТРАМ
 				li.mobile-menu-list-item
 					+icon('catalog2')
@@ -418,7 +431,7 @@ header.header
 				li.mobile-menu-list-item
 					a.mobile-menu-list-item__link(href='#') Сотрудничество
 					figure.header-top__icon.header-top__more
-						img(src='static/images/common/expand_more.svg' alt='icon')
+						+icon('expand_more')
 					ul.header-drop-menu.mobile-menu-list-drop
 						li
 							a(href="#") Дилерам
@@ -435,13 +448,13 @@ header.header
 					.wrapper.mobile-menu-list-item-wrap
 						.header-content-block.header-content__address
 							figure.header-content-block__icon
-								img(src='static/images/common/map-marker.svg' alt='icon')
+								+icon('map-marker')
 							.header-content-block__text г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская 
 									a.header-content-block__info(href='#') 
 										| &nbsp;Как добраться?
 						.header-content-block.header-content__phone
 							figure.header-content-block__icon
-								img(src='static/images/common/phone.svg' alt='icon')
+								+icon('phone')
 							.wrapper
 								.header-content-block__text.header-content__phone_moscow
 									span для Москвы и МО
@@ -451,7 +464,7 @@ header.header
 									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
 						.header-content-block.header-content__worktime
 							figure.header-content-block__icon
-								img(src='static/images/common/clock.svg' alt='icon')
+								+icon('clock')
 							.wrapper
 								.header-content-block__text
 									span пн-пт

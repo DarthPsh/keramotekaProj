@@ -140,18 +140,34 @@
                 padding-bottom: 8px;
                 &:last-child {
                     padding-bottom: 0;
-                }
-                img {
-                    max-height: 24px;
-                    min-width: 24px;
+                } 
+                .svg-sprite-icon {
                     fill: #dadada;
                     margin-right: 6px;
+                    max-height: 24px;
+                    min-width: 24px;
+                }
+                &__country {
+                    .svg-sprite-icon {
+                        height: 24px;
+                        width: 24px;
+                    }
+                }
+                &__price {
+                    .svg-sprite-icon {
+                        height: 24px;
+                        width: 24px;
+                    }
                 }
                 &__download {
                     font-size: 14px;
                     line-height: 16px;
                     letter-spacing: 0.005em;
                     text-decoration-line: underline;
+                    .svg-sprite-icon {
+                        height: 24px;
+                        width: 24px;
+                    }
                 }
             }
         }
@@ -204,7 +220,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        font-size: 40px;
+                        font-size: 35px;
                         color: $colorLight;
                         border: 2px solid $colorLight;
                         &:hover {

@@ -1,0 +1,65 @@
+.catalog {
+    &-wrap {
+        background: $colorLight url('/static/images/common/ornament.svg') center right no-repeat;
+        background-size: contain;
+        @media (max-width: 1440px) {
+            background-position: 113% 50%;
+        }
+        @media (max-width: 1200px) {
+            background-position: 120% 50%;
+        }
+        @media (max-width: 768px) {
+            background-position: 130% 50%;
+        }
+        @media (max-width: 760px) {
+            background: $colorLight;
+        }
+    }
+    &-head {
+        display: flex;
+        padding-bottom: 75px;
+        padding-right: 150px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media (max-width: 1440px) {
+            padding-right: 110px;
+        }
+        @media (max-width: 1200px) {
+            padding-right: 170px;
+        }
+        @media (max-width: 768px) {
+            padding: 0;
+            padding-bottom: 30px;
+            flex-direction: column;
+        }
+        &__title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 100%;
+            letter-spacing: 0.01em;
+            margin-bottom: 20px;
+        }
+        &__desc {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            max-width: 722px;
+            @media (max-width: 1440px) {
+                max-width: 605px;
+            }
+            @media (max-width: 1200px) {
+                max-width: 425px;
+            }
+        }
+    }
+    &-content {
+        &__top {
+            padding-top: 24px;
+            &-list {
+                width: 256px;
+            }
+        }
+    }
+}
