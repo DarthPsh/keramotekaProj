@@ -58,40 +58,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // выпадающие меню в списке фильтров
-    $('.header-filter-list-item').on('click', function () {
-        $(this).children('.header-filter-list-drop-menu').toggleClass('header-filter-list-drop-menu_active');
-        $('.header-filter-list-drop-menu').on('click', function (event) {
-            event.stopPropagation();
+    $('.header-filter-list-item').each(function (index, event) {
+        $(this).children('.header-filter-list-item__title').on('click', function () {
+            if ($(this).parent().find('.header-filter-list-drop-menu').hasClass('header-filter-list-drop-menu_active')) {
+                $(this).parent().find('.header-filter-list-drop-menu').removeClass('header-filter-list-drop-menu_active');
+            }
+            else {
+                $('.header-filter-list-drop-menu').removeClass('header-filter-list-drop-menu_active');
+                $(this).parent().find('.header-filter-list-drop-menu').addClass('header-filter-list-drop-menu_active');
+            }
         })
     })
     // выпадающие меню в списке фильтров
-    // $('.header-filter-list-item').on('click', function () {
-    //     console.log($('.header-filter-list-item').index());
-    // })
-
-    // $(".header-filter-list-drop-menu").each(function (index) {
-    //     $(this).parent().find('.filter-list-count').text(($(this).find('input[type="checkbox"]').length));
-    // })
+    $(document).mouseup(function (e) { // событие клика по веб-документу
+        if ($('.header-filter-list-item').has(e.target).length === 0) { // и не по его дочерним элементам
+            $('.header-filter-list-drop-menu').removeClass('header-filter-list-drop-menu_active');
+        }
+    });
 
 
     $('.header-filter-list-item .header-filter-list-drop-menu input').on('click', function () {
         $(".header-filter-list-drop-menu").each(function (index) {
-            $(this).parent().find('.filter-list-count').text(($(this).find('input[type="checkbox"]:checked').length)) 
+            $(this).parent().find('.filter-list-count').text(($(this).find('input[type="checkbox"]:checked').length))
             if ($(this).parent().find('.filter-list-count').text() <= '0') {
                 $(this).parent().find('.filter-list-count').css('opacity', '0');
             }
             else {
                 $(this).parent().find('.filter-list-count').css('opacity', '1');
             }
-           
-            // console.log($(this).parent().find('.filter-list-count').text());
         })
-        // var test = $(this).closest('.header-filter-list-item').index();
-        // console.log(test);
     })
-
-
-
 
     $('.header-filter input[type="checkbox"]').on('click', function () {
         $('#result span').html($('#controls input:checkbox:checked').length);
@@ -99,19 +95,23 @@ document.addEventListener('DOMContentLoaded', function () {
         if (countCheckedFilters > 0) {
             $('.header-filter-submit').addClass('header-filter-submit_active');
             $('.header-filter-reset').addClass('header-filter-reset_active');
+            $('.header-filter-checked').addClass('header-filter-checked_active');
         }
         else {
             $('.header-filter-submit').removeClass('header-filter-submit_active');
             $('.header-filter-reset').removeClass('header-filter-reset_active');
+            $('.header-filter-checked').removeClass('header-filter-checked_active');
         }
         console.log(countCheckedFilters);
     });
 
 
     // CБРОС ФИЛЬТРОВ
-    $('.header-filter-reset').on('click', function () {
+    $('.header-filter button[type="reset"]').on('click', function () {
         $('.header-filter-submit').removeClass('header-filter-submit_active');
         $('.header-filter-reset').removeClass('header-filter-reset_active');
+        $('.filter-list-count').css('opacity', '0');
+        $('.header-filter-checked').removeClass('header-filter-checked_active');
     })
 
 
@@ -543,8 +543,14 @@ document.addEventListener('DOMContentLoaded', function () {
             $('body').append($(resultHtml));
             setTimeout(() => {
                 document.querySelector('.calculation-popup__footer-download input').onchange = function () {
-                    if (this.files[0]) // если выбрали файл
-                        document.querySelector('.calculation-popup__footer-loaded').innerHTML = this.files[0].name;
+                    if (this.files[0]) { // если выбрали файл
+                        document.querySelector('.calculation-popup__footer-loaded .file-name').innerText = this.files[0].name;
+                        document.querySelector('.calculation-popup__footer-loaded').style.opacity = '1';
+                    }
+                    document.querySelector('.calculation-popup__footer-loaded .svg-sprite-icon').addEventListener('click', function () {
+                        // curField.remove();
+                        // calculation-popup__footer-file
+                    })
                 };
             }, 100);
             $('.calculation-popup__close').on('click', function () {

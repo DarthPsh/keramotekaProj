@@ -271,14 +271,16 @@ header.header
 						| Под заказ
 			.header-filter-main
 				ul.header-filter-list
-					li.header-filter-list-item Тип материала
+					li.header-filter-list-item 
+						.header-filter-list-item__title Тип материала
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Страна производителя
+					li.header-filter-list-item 
+						.header-filter-list-item__title Страна производителя
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
 						ul.header-drop-menu.header-filter-list-drop-menu
 							li
 								label
@@ -324,46 +326,56 @@ header.header
 								label
 									input(type="checkbox")
 									| Мордор
-					li.header-filter-list-item Фабрика/ бренд
+					li.header-filter-list-item 
+						.header-filter-list-item__title Фабрика/ бренд
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Ценовой диапазон
+					li.header-filter-list-item 
+						.header-filter-list-item__title Ценовой диапазон
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Место применения
+					li.header-filter-list-item 
+						.header-filter-list-item__title Место применения
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Настенная/ напольная
+					li.header-filter-list-item 
+						.header-filter-list-item__title Настенная/ напольная
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Формат
+					li.header-filter-list-item 
+						.header-filter-list-item__title Формат
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Размер
+					li.header-filter-list-item 
+						.header-filter-list-item__title Размер
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Стиль
+					li.header-filter-list-item 
+						.header-filter-list-item__title Стиль
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Фактура
+					li.header-filter-list-item 
+						.header-filter-list-item__title Фактура
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Текстура
+					li.header-filter-list-item 
+						.header-filter-list-item__title Текстура
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
-					li.header-filter-list-item Цвет
+					li.header-filter-list-item 
+						.header-filter-list-item__title Цвет
+							figure.header-filter-list-item__icon.header-top__more
+								+icon('expand_more_brs')
 						.filter-list-count
-						figure.header-filter-list-item__icon.header-top__more
-							+icon('expand_more_brs')
 						ul.header-drop-menu.header-filter-list-drop-menu
 							li
 								label
@@ -400,7 +412,9 @@ header.header
 									input(type="checkbox")
 									| Фиолетовый
 									.header-filter-list-drop-menu__color(style="background:violet;")
-				ul.header-filter-checked тут появляются выбранные варианты
+				.header-filter-checked 
+					ul.header-filter-checked-list тут появляются выбранные варианты
+					button.header-filter-checked-reset(type="reset") Сбросить
 			.header-filter-btns
 				button.header-filter-reset(type="reset") 
 					+icon('refresh')

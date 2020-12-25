@@ -239,6 +239,24 @@
                 max-width: 230px;
                 width: 100%;
             }
+            &-loaded {
+                position: relative; 
+                display: flex;
+                align-items: center;
+                opacity: 0;
+                .file-name {
+                    white-space: nowrap; 
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
+                }
+                .svg-sprite-icon {
+                    height: 14px;
+                    width: 14px;
+                    margin-right: 13px;
+                    fill: #999999;
+                    cursor: pointer;
+                }
+            }
             &-policy {
                 font-style: normal;
                 font-weight: normal;

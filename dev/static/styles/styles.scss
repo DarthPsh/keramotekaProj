@@ -60,7 +60,7 @@ section { position: relative; }
 
 input,
 select,
-button { outline: none; }
+button { outline: none; cursor:pointer;}
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
