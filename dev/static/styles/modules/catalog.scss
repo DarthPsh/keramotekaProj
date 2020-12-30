@@ -57,8 +57,30 @@
     &-content {
         &__top {
             padding-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media (max-width: 760px) {
+                padding: 16px 0;
+            }
             &-list {
                 width: 256px;
+            }
+            &-view {
+                display: flex;
+                .view-link {
+                    padding: 0 15px;
+                    .svg-sprite-icon {
+                        fill: #333333;
+                        height: 18px;
+                        width: 18px;
+                    } 
+                    &-current {
+                        .svg-sprite-icon {
+                            fill: $colorAccent;
+                        } 
+                    }
+                }
             }
         }
     }

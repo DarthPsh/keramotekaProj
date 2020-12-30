@@ -178,52 +178,51 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function cardCollectionActive() {
-    if (document.querySelectorAll('.card-collection').length) {
-      (function () {
-        var cardCollectionCard = document.querySelectorAll('.card-collection');
-        var cardCollectionName = document.querySelectorAll('.card-collection__name');
-
-        var _loop = function _loop(i) {
-          cardCollectionName[i].onclick = function () {
-            cardCollectionCard[i].classList.toggle('card-collection_active');
-            setTimeout(function () {
-              $grid.masonry();
-            }, 150);
-          };
-        };
-
-        for (var i = 0; i < cardCollectionCard.length; i++) {
-          _loop(i);
-        }
-      })();
-    }
+    $('body').on('click', '.card-collection__name', function () {
+      $(this).parent().parent().toggleClass('card-collection_active');
+      setTimeout(function () {
+        $grid.masonry();
+      }, 150);
+    });
   }
 
   cardCollectionActive();
 
   function cardBrandActive() {
-    if (document.querySelectorAll('.card-brand').length) {
-      (function () {
-        var cardBrandCard = document.querySelectorAll('.card-brand');
-        var cardBrandCountTitle = document.querySelectorAll('.card-brand__count-title');
+    $('body').on('click', '.card-brand__count-title', function () {
+      var _this = this;
 
-        var _loop2 = function _loop2(i) {
-          cardBrandCountTitle[i].onclick = function () {
-            cardBrandCard[i].classList.toggle('card-brand_active');
-            setTimeout(function () {
-              $grid.masonry();
-            }, 150);
-          };
-        };
-
-        for (var i = 0; i < cardBrandCard.length; i++) {
-          _loop2(i);
-        }
-      })();
-    }
+      if ($('.page-content-grid').hasClass('page-content-list')) {
+        console.log('НЕТ НУЖНОГО КЛАССА');
+        $(this).closest('.card-brand').find('.card-brand__max').removeClass('card-brand__max_active');
+        setTimeout(function () {
+          $(_this).closest('.card-brand').find('.card-brand__min').show();
+          $grid.masonry();
+        }, 300);
+      } else {
+        $(this).closest('.card-brand-content').toggleClass('card-brand_active');
+        setTimeout(function () {
+          $grid.masonry();
+        }, 150);
+      }
+    });
   }
 
-  cardBrandActive(); // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
+  cardBrandActive();
+
+  function cardBrandMinActive() {
+    $('body').on('click', '.card-brand__min', function () {
+      $(this).hide();
+      $(this).next().addClass('card-brand__max_active');
+      $(this).next().find('.card-brand-content').addClass('card-brand_active');
+      initSwiperCardImg();
+      setTimeout(function () {
+        $grid.masonry();
+      }, 300);
+    });
+  }
+
+  cardBrandMinActive(); // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
 
   var scrollPos = 0;
   $(window).on('scroll', function () {
@@ -407,8 +406,6 @@ document.addEventListener('DOMContentLoaded', function () {
       $grid.imagesLoaded(function () {
         $grid.masonry();
       });
-      cardCollectionActive();
-      cardBrandActive();
       initSwiperCardImg();
       observer.observe();
     }).fail(function () {
@@ -443,8 +440,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // init Masonry after all images have loaded
         $grid.masonry();
       });
-      cardCollectionActive();
-      cardBrandActive();
       observer.observe();
     }).fail(function () {
       console.log('Failed');
@@ -468,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   initSwiperCardImg(); // АКТИВАЦИЯ СВАЙПЕРА НА КАРТОЧКАХ ПРОИЗВОДИТЕЛЯ И КОЛЛЕКЦИИ
-  // ВЫЗЫВАЕМ ФОРМУ "Отправить спецификацию на просчет"
+  // ФОРМА "Отправить спецификацию на просчет"
 
   $(".cta").on('click', function () {
     preventDefault();
@@ -476,34 +471,92 @@ document.addEventListener('DOMContentLoaded', function () {
       url: 'calculation-form.html' // type: 'post'
 
     }).done(function (resultHtml) {
-      console.log('ok');
       $('body').css('overflow', 'hidden');
-      $('body').append($(resultHtml));
-      setTimeout(function () {
-        document.querySelector('.calculation-popup__footer-download input').onchange = function () {
-          if (this.files[0]) {
-            // если выбрали файл
-            document.querySelector('.calculation-popup__footer-loaded .file-name').innerText = this.files[0].name;
-            document.querySelector('.calculation-popup__footer-loaded').style.opacity = '1';
-          }
-
-          document.querySelector('.calculation-popup__footer-loaded .svg-sprite-icon').addEventListener('click', function () {// curField.remove();
-            // calculation-popup__footer-file
-          });
-        };
-      }, 100);
-      $('.calculation-popup__close').on('click', function () {
-        $('.calculation-popup-wrap').remove();
-        $('body').css('overflow', 'auto');
-      });
+      $('body').append(resultHtml);
+      sendCalculationForm();
     }).fail(function () {
       console.log('Failed');
     }).always(function () {});
-  }); // ВЫЗЫВАЕМ ФОРМУ "Отправить спецификацию на просчет"
-  // document.querySelector('.calculation-popup__footer-download input')[0].onchange = function () {
-  //     if (this.files[0]) // если выбрали файл
-  //         document.querySelector('calculation-popup__footer-loaded')[0].innerHTML = this.files[0].name;
-  // };
+  });
+  $('body').on('change', '.calculation-popup__footer-download input', function () {
+    if (this.files[0]) {
+      // если выбрали файл
+      document.querySelector('.calculation-popup__footer-loaded .file-name').innerText = this.files[0].name;
+      document.querySelector('.calculation-popup__footer-loaded').style.opacity = '1';
+    }
 
+    document.querySelector('.calculation-popup__footer-loaded .svg-sprite-icon').addEventListener('click', function () {
+      document.querySelector('.calculation-popup__footer-download input').value = '';
+
+      if (!/safari/i.test(navigator.userAgent)) {
+        document.querySelector('.calculation-popup__footer-download input').type = '';
+        document.querySelector('.calculation-popup__footer-download input').type = 'file';
+      }
+
+      document.querySelector('.calculation-popup__footer-loaded .file-name').innerText = '';
+      document.querySelector('.calculation-popup__footer-loaded').style.opacity = '0';
+    });
+  });
+  $('body').on('click', '.calculation-popup__close', function () {
+    $('.calculation-popup-wrap').remove();
+    $('body').css('overflow', 'auto');
+  });
+
+  function sendCalculationForm() {
+    $('.calculation-popup__form').validate({
+      ignore: '',
+      submitHandler: function submitHandler(form) {
+        if ($(form).hasClass('ajax-form')) {
+          var formData = new FormData(form);
+
+          if ($(form).find('[type=file]').length != 0) {
+            var fileNode = $(form).find('[type=file]')[0];
+            var file = fileNode.files[0];
+            formData.append(fileNode.name, file);
+            $.ajax({
+              type: $(form).attr('method'),
+              url: $(form).attr('action'),
+              data: $(form).serialize()
+            }).done(function () {
+              console.log('success');
+            }).fail(function () {
+              console.log('fail');
+            });
+          }
+        } else {
+          form.submit();
+        }
+      }
+    });
+  } // ФОРМА "Отправить спецификацию на просчет"
+
+
+  $(".view-list").on('click', function () {
+    preventDefault();
+    $.ajax({
+      url: 'catalog-list.html'
+    }).done(function (resultHtml) {
+      console.log('ok');
+      $('.page-content').replaceWith(resultHtml);
+      var $grid = $('.page-content-grid').masonry({
+        itemSelector: '.page-content-grid-item',
+        horizontalOrder: true,
+        resize: true,
+        percentPosition: true,
+        initLayout: false,
+        gutter: 8
+      });
+      $grid.masonry('on', 'layoutComplete', function () {
+        console.log('layout is complete');
+      });
+      $grid.imagesLoaded(function () {
+        // init Masonry after all images have loaded
+        $grid.masonry();
+      });
+      observer.observe();
+    }).fail(function () {
+      console.log('Failed');
+    }).always(function () {});
+  });
   console.log('press F');
 });

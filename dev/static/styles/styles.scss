@@ -125,6 +125,61 @@ input[type="number"]::-webkit-outer-spin-button {
           width: calc(50% - 4px);
         }
       }
+      .card-brand__min {
+        display: none;
+      }
+    }
+    &-list {
+      .page-content-grid-item,
+      .page-content-grid-sizer {
+        @media ( max-width: 480px ) {
+          width: 100%;
+        }
+      }
+      .card-brand__min {
+        display: flex;
+        align-items: baseline;
+        background: $colorLight;
+        padding: 15px;
+        justify-content: space-between;
+        &-title {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0.04em;
+          text-decoration: underline;
+          text-decoration-color: $colorAccent;
+        }
+        &-count {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 14px;  
+          text-align: right;
+          letter-spacing: 0.02em;
+          color: #999999;
+          padding-left: 10px;
+          display: flex;
+          align-items: baseline;
+          transform: translateY(-2px);
+          .svg-sprite-icon {
+            fill: #999999;
+            width: 14px;
+            height: 9px;
+            margin-left: 10px;
+          }
+        }
+      }
+      .card-brand__max {
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .2s;
+      }
+      .card-brand__max_active {
+        max-height: 100%;
+      }
     }
   }
   &-card {
@@ -140,6 +195,10 @@ input[type="number"]::-webkit-outer-spin-button {
       height: 100%;
       position: relative;
       background: $colorLight;
+      &-wrap {
+        display: flex;
+        align-items: center;
+      }
       &-hover {
         position: absolute;
         top: 0;
@@ -456,7 +515,7 @@ input[type="number"]::-webkit-outer-spin-button {
       }
     }
     &__list {
-      padding-top: 16px;
+      padding: 0 16px;
       height: auto;
       max-height: 0;
       overflow: hidden;
