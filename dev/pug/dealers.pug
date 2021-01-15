@@ -1,0 +1,272 @@
+extends layout/main
+
+block variables
+    -var title = 'ДИЛЕРАМ'
+
+block content
+    .page-top.dealers-wrap
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-list__item 
+                        a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") ДИЛЕРСКИЙ ОТДЕЛ
+            .information-main.information-main__head.dealers-main
+                .information-main__title.dealers-main__title Дилерский отдел
+                .information-main__desc.dealers-main__desc Оптовые продажи керамической плитки и керамогранита. Предложение для торговых организаций.
+            #links-scrollbar.scrollbar-slider.information-main__links.dealers-main__links.swiper-container
+                .swiper-wrapper
+                    a.swiper-slide.information-main__link.dealers-main__link(href="#terms-of-cooperation") УСЛОВИЯ СОТРУДНИЧЕСТВА
+                    a.swiper-slide.information-main__link.dealers-main__link(href="#warehouse-assortment") СКЛАДСКОЙ АССОРТИМЕНТ
+                    a.swiper-slide.information-main__link.information-main__link-contacts.dealers-main__link(href="#contacts") КОНТАКТЫ ДЛЯ ДИЛЕРОВ 
+            .dealers.information
+                .information-main.information-main__aside.dealers-main
+                    .information-main__title.dealers-main__title Дилерский отдел
+                    .information-main__desc.dealers-main__desc Оптовые продажи керамической плитки и керамогранита. Предложение для торговых организаций.
+                    .information-main__links.dealers-main__links
+                        a.information-main__link.dealers-main__link(href="#terms-of-cooperation") УСЛОВИЯ СОТРУДНИЧЕСТВА
+                        a.information-main__link.dealers-main__link(href="#warehouse-assortment") СКЛАДСКОЙ АССОРТИМЕНТ
+                        a.information-main__link.information-main__link-contacts.dealers-main__link(href="#contacts") КОНТАКТЫ ДЛЯ ДИЛЕРОВ
+                .information-content.dealers-content
+                    #terms-of-cooperation.information-content__block.dealers-content__block
+                        .information-content__block-title.dealers-content__block-title Условия сотрудничества
+                        .information-content__block-desc.dealers-content__block-desc 
+                            p Компания КЕРАМОТЕКА с 2006 года поставляет на российский рынок высококачественный керамогранит и керамическую плитку и приглашает к сотрудничеству торговые компании. Мы являемся официальным дилером фабрик: 
+                            p 
+                                a(href="#") Atlas Concorde, 
+                                a(href="#") Equipe Ceramicas, 
+                                a(href="#") Ceramiche Grazia, 
+                                a(href="#") Adex, 
+                                a(href="#") REX Ceramiche, 
+                                a(href="#") Cifre, 
+                                a(href="#") Ibero, 
+                                a(href="#") 41zero42, 
+                                a(href="#") Ceramica Ribesalbes, 
+                                a(href="#") Fabresa, 
+                                a(href="#") Gayafores, 
+                                a(href="#") Dual Gres, 
+                                a(href="#") Atlantic Tiles, 
+                                a(href="#") Argenta, 
+                                a(href="#") Saloni, 
+                                a(href="#") Cicogres, 
+                                a(href="#") Rondine, 
+                                a(href="#") Panaria, 
+                                a(href="#") Settecento, 
+                                a(href="#") Amadis, 
+                                a(href="#") Ceracasa,
+                                |  а также российских 
+                                a(href="#") Атлас Конкорд Россия
+                                |  и 
+                                a(href="#") Керранова.
+                                |  Мы регулярно пополняем товарный запас, а заказы с фабрик выполняются в короткие сроки. 
+                        .information-content__block-desc.dealers-content__block-desc
+                            .information-content__block-subtitle Что мы предлагаем?
+                            p Мы приглашаем к сотрудничеству как московские, так и региональные торговые фирмы. Оптовым покупателям мы готовы предложить:
+                            ul 
+                                li обширный и регулярно пополняемый складской запас по популярным коллекциям;
+                                li оптимальные и конкурентоспособные цены и скидки;
+                                li экспозиторы, образцы и рекламные материалы, консультационную поддержку;
+                                li удобные условия сотрудничества — с нами действительно легко работать!
+                        .information-content__block-desc.dealers-content__block-desc
+                            .information-content__block-subtitle Кто может стать дилером?
+                            p Для определения условий сотрудничества и возможности предоставления статуса дилера, мы просим предоставить краткую информацию о вашей компании на почту 
+                                a(href="mailto:dealers@keramoteka.ru") dealers@keramoteka.ru:
+                            ul 
+                                li Краткое описание деятельности компании. Примерный состав / ценовой сегмент вашего текущего ассортимента по направлению керамическая плитка. 
+                                li Основные поставщики, с которыми вы уже сотрудничаете;
+                                li Фотографии торговой точки / магазина;
+                                li Контактная информация и карточка с реквизитами юридического лица.
+                    #warehouse-assortment.information-content__block.dealers-content__block
+                        .information-content__block-title.dealers-content__block-title Складской ассортимент
+                        .information-content__block-desc.dealers-content__block-desc 
+                            p Наш складской ассортимент представлен коллекциями, показанными в каталоге на этой странице. Кроме этого, мы поставляем под заказ и другие коллекции указанных фабрик (уточняйте возможность поставки конкретного заказа у вашего менеджера!).                          
+                .information-contact.dealers-contact
+                    .information-contact__block
+                        .information-contact__block-title КОНТАКТЫ ДИЛЕРСКОГО ОТДЕЛА
+                        .information-contact__block-item
+                            .information-contact__block-label Для клиентов в Москве
+                            a(href="tel:+7 495 646-86-20").information-contact__block-info +7 495 646-86-20
+                        .information-contact__block-item
+                            .information-contact__block-label Для регионов (бесплатно)
+                            a(href="tel:8 800 555-33-76").information-contact__block-info 8 800 555-33-76
+                        .information-contact__block-item
+                            .information-contact__block-label Электронная почта
+                            a(href="mailto:dealers@keramoteka.ru").information-contact__block-info dealers@keramoteka.ru
+                        button.information-contact__block-btn КОНТАКТЫ СОТРУДНИКОВ
+                    .information-contact__block
+                        .information-contact__block-title АДРЕСА
+                        .information-contact__block-item
+                            .information-contact__block-label Офис
+                            .information-contact__block-info Москва, 1-й Щемиловский переулок, 17/1 
+                        .information-contact__block-item
+                            .information-contact__block-label Склад
+                            .information-contact__block-info Химки, мкр. Подрезково, ул. Центральная, д. 2/5
+                        a.information-contact__block-download(href="#" download) 
+                            +icon('pdf')
+                            | Схема проезда на склад
+                    .information-contact__block
+                        .information-contact__block-title ВРЕМЯ РАБОТЫ
+                        .information-contact__block-item
+                            .information-contact__block-label Будние дни
+                            .information-contact__block-info 9:00 — 20:00
+                        .information-contact__block-item
+                            .information-contact__block-label Суббота
+                            .information-contact__block-info 10:00 — 18:00
+                    .information-contact__footer Если у вас есть вопрос, который вы считаете чрезвычайно важным и не терпящим отлагательства, либо у вас есть жалоба или предложение, вы можете обратиться непосредственнок генеральному директору Сергею Мосийчуку: через электронную почту  
+                        a(href="mailto:s_mosiychuk@keramoteka.ru ") s_mosiychuk@keramoteka.ru 
+                        |  или по телефону 
+                        a(href="tel:+7 916 683-37-49 ") +7 916 683-37-49 
+    .page-content
+        .container
+            .page-content-grid
+                .page-content-grid-sizer(style="display:none;")
+                .page-content-grid-item.page-card
+                    .page-card-collection.card-collection.card-collection_active
+                        .card-badge
+                            .card-badge__info НОВИНКА
+                            .card-badge__have В ПУТИ НА СКЛАД
+                        figure.page-card-img.swiper-container
+                            .swiper-wrapper
+                                img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-1.png", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/e43/315_315_2/41zero42-spectre-04.jpg", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/a5f/315_315_2/wow-stripes-6.jpg", alt="img")
+                            ul.page-card-img-hover
+                                li
+                                li
+                                li
+                            .page-card-img-pagination.swiper-pagination
+                        .page-card-content.card-collection-content
+                            .card-collection__brand ARCANA
+                            .card-collection__name RIBE / ELBURG
+                                +icon('expand_more')
+                            .card-collection__desc Коллекция ARCANA RIBE / ELBURG представлена ректифицированным матовым керамогранитом в формате 80x80 см. Более авангардные текстуры Ribe, как и более спокойные Elburg, вдохновлены популярным стилем терраццо для создания очаровательных в своей смелости интерьеров.
+                .page-content-grid-item.page-card
+                    .page-card-collection.card-collection
+                        .card-badge
+                            .card-badge__info НОВИНКА
+                            .card-badge__have В ПУТИ НА СКЛАД
+                        figure.page-card-img
+                            .swiper-wrapper
+                                img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-2.png", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/028/315_315_2/equipe-artisan-4.jpg", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/08d/315_315_2/AtlasConcorde-Boost-03.jpg", alt="img")
+                            ul.page-card-img-hover
+                                li
+                                li
+                                li
+                            .page-card-img-pagination.swiper-pagination
+                        .page-card-content.card-collection-content
+                            .card-collection__brand REX CERAMICHE
+                            .card-collection__name LES BIJOUX DE REX
+                                +icon('expand_more')
+                            .card-collection__desc Коллекция керамогранита REX LES BIJOUX DE REX вдохновлена мраморами со столь редким и ценным рисунком, что ее можно назвать настоящим произведением искусства. Calacatta Altissimo Blanc, Onyx Blanche, Ombre De Caravage, Brèche Capraia, Marron Imperial, Jaspe Rouge, Sodalite Bleu, Les Quatre Saisons - излучают художественное очарование посредством стиля и большой выразительной силы, характерной для бренда Rex.
+                .page-content-grid-item.page-card
+                    .page-card-collection.card-collection
+                        .card-badge
+                            .card-badge__info НОВИНКА
+                            .card-badge__have В ПУТИ НА СКЛАД
+                        figure.page-card-img
+                            .swiper-wrapper
+                                img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-3.png", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/045/315_315_2/dna-amb-13-enamel-white-square-rounded-edge.jpg", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/35d/315_315_2/AtlasConcorde_Prism_M01_19.jpg", alt="img")
+                            ul.page-card-img-hover
+                                li
+                                li
+                                li
+                            .page-card-img-pagination.swiper-pagination
+                        .page-card-content.card-collection-content
+                            .card-collection__brand WOW
+                            .card-collection__name FLOW
+                                +icon('expand_more')
+                            .card-collection__desc Утонченная коллекция WOW FLOW / ВАУ ФЛОУ представлена керамогранитом в форме ромбов 14x24 см в пяти актуальных оттенках — White, Taupe, Black, Old Rose, Blue, и трех вариантах "под дерево" — Light, Mid, Dark. Серия дополнена декоративным фоном в пяти основных цветах для создания бесконечного числа переливов. Широкая тональная вариативность плиток позволяет добиться более выразительного эффекта от облицовки. Основные элементы выпускаются в 6 оттенках в каждом цвете, цветные декоры — в 14 вариантах и "деревянные" ромбы — в 30 вариантах оттенка, которые случайным образом смешаны в коробке.
+                .page-content-grid-item.page-card
+                    .page-card-collection.card-collection
+                        .card-badge
+                            .card-badge__info НОВИНКА
+                            .card-badge__have В ПУТИ НА СКЛАД
+                        figure.page-card-img
+                            .swiper-wrapper
+                                img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-4.png", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/98a/315_315_2/41zero42-biscuit-amb-14.jpg", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/d9c/315_315_2/arcana-stracciatella-08.jpg", alt="img")
+                            ul.page-card-img-hover
+                                li
+                                li
+                                li
+                            .page-card-img-pagination.swiper-pagination
+                        .page-card-content.card-collection-content
+                            .card-collection__brand ATLAS CONCORDE
+                            .card-collection__name BOOST
+                                +icon('expand_more')
+                            .card-collection__desc Коллекция Atlas Concorde Boost / Атлас Конкорд Буст - представлена керамогранитом и настенной плиткой, имитирующей цемент. Нейтральная палитра керамогранита, перекликаясь с оригинальным цветом стен, наполняет интерьер живой индивидуальностью. Теплые оттенки окисленного материала сочетаются с холодными, характерными для цемента штрихами неяркой по характеру поверхности.
+                .page-content-grid-item.page-card
+                    .page-card-collection.card-collection
+                        .card-badge
+                            .card-badge__info НОВИНКА
+                            .card-badge__have В ПУТИ НА СКЛАД
+                        figure.page-card-img
+                            .swiper-wrapper
+                                img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-5.png", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/4c8/315_315_2/STROMBOLI%209,2x36,8_Rose%20Breeze_Habitat%20White_bath.jpg", alt="img")
+                                img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/48c/315_315_2/atlas-concorde-blaze-001-03-iron.jpg", alt="img")
+                            ul.page-card-img-hover
+                                li
+                                li
+                                li
+                            .page-card-img-pagination.swiper-pagination
+                        .page-card-content.card-collection-content
+                            .card-collection__brand 41zero42
+                            .card-collection__name SPECTRE
+                                +icon('expand_more')
+                            .card-collection__desc EQUIPE ARTISAN / ЭКИПЕ АРТИСАН — новая эффектная серия керамической плитки для стен, предлагаемая в десяти оттенках — и ярких, и пастельных. Производится в компактных форматах 13.2x13.2 и 6.5x20.
+        .page-content-after
+            .container
+                .pager
+                    .pager-content
+                        a(href="#" class="current-page") 1
+                        a(href="#") 2
+                        a(href="#") 3
+                        a(href="#") ...
+                        a(href="#") 8
+                    a.pager-more(href="#" data-page-next='2') 
+                        +icon('renew')
+                        span ЗАГРУЗИТЬ ЕЩЕ
+    .container
+        #contacts.information-contact.dealers-contact
+            .information-contact__block
+                .information-contact__block-title КОНТАКТЫ ДИЛЕРСКОГО ОТДЕЛА
+                .information-contact__block-item
+                    .information-contact__block-label Для клиентов в Москве
+                    a(href="tel:+7 495 646-86-20").information-contact__block-info +7 495 646-86-20
+                .information-contact__block-item
+                    .information-contact__block-label Для регионов (бесплатно)
+                    a(href="tel:8 800 555-33-76").information-contact__block-info 8 800 555-33-76
+                .information-contact__block-item
+                    .information-contact__block-label Электронная почта
+                    a(href="mailto:dealers@keramoteka.ru").information-contact__block-info dealers@keramoteka.ru
+                button.information-contact__block-btn КОНТАКТЫ СОТРУДНИКОВ
+            .information-contact__block
+                .information-contact__block-title АДРЕСА
+                .information-contact__block-item
+                    .information-contact__block-label Офис
+                    .information-contact__block-info Москва, 1-й Щемиловский переулок, 17/1 
+                .information-contact__block-item
+                    .information-contact__block-label Склад
+                    .information-contact__block-info Химки, мкр. Подрезково, ул. Центральная, д. 2/5
+                a.information-contact__block-download(href="#" download) 
+                    +icon('pdf')
+                    | Схема проезда на склад
+            .information-contact__block
+                .information-contact__block-title ВРЕМЯ РАБОТЫ
+                .information-contact__block-item
+                    .information-contact__block-label Будние дни
+                    .information-contact__block-info 9:00 — 20:00
+                .information-contact__block-item
+                    .information-contact__block-label Суббота
+                    .information-contact__block-info 10:00 — 18:00
+            .information-contact__footer Если у вас есть вопрос, который вы считаете чрезвычайно важным и не терпящим отлагательства, либо у вас есть жалоба или предложение, вы можете обратиться непосредственнок генеральному директору Сергею Мосийчуку: через электронную почту  
+                a(href="mailto:s_mosiychuk@keramoteka.ru ") s_mosiychuk@keramoteka.ru 
+                |  или по телефону 
+                a(href="tel:+7 916 683-37-49 ") +7 916 683-37-49 

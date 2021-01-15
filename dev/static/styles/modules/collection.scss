@@ -15,7 +15,7 @@
         display: flex;
         align-items: flex-start;
         padding-bottom: 70px;
-        @media (max-width: 920px) {
+        @media (max-width: 760px) {
             flex-wrap: wrap;
         }
         &__name {
@@ -61,7 +61,7 @@
             font-weight: normal;
             font-size: 16px;
             line-height: 24px;
-            @media (max-width: 920px) {
+            @media (max-width: 760px) {
                 flex-basis: 100%;
                 order: 1;
                 padding-top: 25px;
@@ -95,8 +95,12 @@
                     }
                 }
             }
+            &-btns {
+                display: flex;
+            }
             &-cta {
-                padding: 0 55px;
+                max-width: 304px;
+                width: 100%;
                 border-radius: 2px;
                 border: 2px solid #333333;
                 font-style: normal;
@@ -116,6 +120,7 @@
                 background: $colorLight;
                 height: 56px;
                 width: 56px;
+                min-width: 56px;
                 cursor: pointer;
                 .icon-favourites {
                     height: 20px;

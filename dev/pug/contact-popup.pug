@@ -1,0 +1,37 @@
+include helpers/mixins
+//- extends layout/main
+//- block variables
+//-     -var title = 'попап с контактами'
+
+.calculation-popup-wrap.popup-contact
+    .calculation-popup-overlay
+        .calculation-popup
+            .calculation-popup__close
+                .calculation-popup__close-line.calculation-popup__close-line_top
+                .calculation-popup__close-line.calculation-popup__close-line_bot
+            .calculation-popup__title Контакты сотрудников
+            .scrollbar-slider.popup-contact__tabs.swiper-container
+                .swiper-wrapper
+                    .swiper-slide.popup-contact__tab.popup-contact__tab_active ОТДЕЛ ЗАКАЗОВ
+                    .swiper-slide.popup-contact__tab ТЕРРИТОРИАЛЬНЫЕ МЕНЕДЖЕРЫ
+                    .swiper-slide.popup-contact__tab РУКОВОДИТЕЛЬ ОТДЕЛА
+            .popup-contact__contents
+                .popup-contact__content.popup-contact__content_active 
+                    .popup-contact__content-block.employee-block
+                        .employee-name Ирина Слепова
+                        .employee-position Старший менеджер отдела заказов
+                        .employee-phone доб. 208 
+                        a(href="mailto:region@keramoteka.ru").employee-email region@keramoteka.ru
+                    .popup-contact__content-block.employee-block
+                        .employee-name 
+                            +icon('person')
+                            | Алексей Ляшенко
+                        .employee-position Менеджер отдела заказов
+                        .employee-phone 
+                            +icon('phone-o')
+                            | доб. 212
+                        a(href="mailto:opt4@keramoteka.ru").employee-email 
+                            +icon('person')
+                            | opt4@keramoteka.ru
+                .popup-contact__content 
+                .popup-contact__content 

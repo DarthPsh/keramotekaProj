@@ -18,56 +18,71 @@ block content
     .page-content.catalog-content
         .container
             .catalog-content__top
-                .catalog-content__top-list.header-filter-list-item
-                    .header-filter-list-item__title Страна
-                        figure.header-filter-list-item__icon.header-top__more
-                            +icon('expand_more_brs')
-                    .filter-list-count
-                    ul.header-drop-menu.header-filter-list-drop-menu
-                        li
-                            label 
-                                input(type="checkbox")
-                                | Россия
-                        li
-                            label
-                                input(type="checkbox")
-                                | Китай
-                        li
-                            label 
-                                input(type="checkbox")
-                                | Израиль
-                        li
-                            label 
-                                input(type="checkbox")
-                                | Сингапур
-                        li
-                            label
-                                input(type="checkbox")
-                                | Кения
-                        li
-                            label
-                                input(type="checkbox")
-                                | Алжир
-                        li
-                            label 
-                                input(type="checkbox")
-                                | Венесуэлла
-                        li
-                            label
-                                input(type="checkbox")
-                                | Таджикистан
-                        li
-                            label
-                                input(type="checkbox")
-                                | Узбекистан
-                        li
-                            label
-                                input(type="checkbox")
-                                | Киргизия
-                        li
-                            label 
-                                input(type="checkbox")
-                                | Мордор
+                .catalog-content__top-filter
+                        button
+                            +icon('filter')
+                            | ФИЛЬТР
+                            span
+                form.catalog-content__top-list
+                    .catalog-content__top-title Фильтр
+                        +icon('close_brs')
+                    .header-filter-list-item
+                        .header-filter-list-item__title Страна
+                            figure.header-filter-list-item__icon.header-top__more
+                                +icon('expand_more_brs')
+                        .filter-list-count
+                        ul.header-drop-menu.header-filter-list-drop-menu
+                            li
+                                label 
+                                    input(type="checkbox")
+                                    | Россия
+                            li
+                                label
+                                    input(type="checkbox")
+                                    | Китай
+                            li
+                                label 
+                                    input(type="checkbox")
+                                    | Израиль
+                            li
+                                label 
+                                    input(type="checkbox")
+                                    | Сингапур
+                            li
+                                label
+                                    input(type="checkbox")
+                                    | Кения
+                            li
+                                label
+                                    input(type="checkbox")
+                                    | Алжир
+                            li
+                                label 
+                                    input(type="checkbox")
+                                    | Венесуэлла
+                            li
+                                label
+                                    input(type="checkbox")
+                                    | Таджикистан
+                            li
+                                label
+                                    input(type="checkbox")
+                                    | Узбекистан
+                            li
+                                label
+                                    input(type="checkbox")
+                                    | Киргизия
+                            li
+                                label 
+                                    input(type="checkbox")
+                                    | Мордор
+                    .catalog-content__top-btns 
+                        button.catalog-filter-reset(type="reset") 
+                            +icon('refresh')
+                            | Сбросить фильтр
+                        button.catalog-filter-submit(type="submit") 
+                            | ПОКАЗАТЬ 
+                            span.catalog-filter-submit-count (45)
                 .catalog-content__top-view
                     .view-link.view-link-current.view-grid
                         +icon('grid')

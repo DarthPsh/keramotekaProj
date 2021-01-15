@@ -17,6 +17,7 @@ body {
   text-rendering: optimizeSpeed;
   // line-height: 1.5;
   color: $colorBlackText;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -127,6 +128,7 @@ input[type="number"]::-webkit-outer-spin-button {
       }
       .card-brand__min {
         display: none;
+        cursor: pointer;
       }
     }
     &-list {
@@ -818,3 +820,5 @@ input[type="number"]::-webkit-outer-spin-button {
     }
   }
 }
+
+
