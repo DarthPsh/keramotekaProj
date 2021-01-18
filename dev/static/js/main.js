@@ -722,19 +722,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-        let sectionBlock = document.querySelectorAll('.information-main__link');
-        sectionBlock.forEach(block => {
-            let section = document.querySelector(block.hash);
-            if (
-                section.offsetTop <= fromTop &&
-                section.offsetTop + section.offsetHeight > fromTop
-            ) {
-                block.classList.add("information-main__link_active");
-            } else {
-                block.classList.remove("information-main__link_active");
-            }
-        });
+        if (document.querySelectorAll('.information-main__link').length) {
+            let fromTop = window.scrollY;
+            let sectionBlock = document.querySelectorAll('.information-main__link');
+            sectionBlock.forEach(block => {
+                let section = document.querySelector(block.hash);
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    console.log('это это это');
+                    console.log(section.offsetTop);
+                    console.log('это это это');
+                    block.classList.add("information-main__link_active");
+                } else {
+                    block.classList.remove("information-main__link_active");
+                }
+            });
+        }
     });
 
     $('a[href^="tel:"]').attr('href', function (_, v) {

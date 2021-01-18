@@ -362,6 +362,10 @@
                 &__title {
                     border: none;
                 }
+                @media (max-width: 760px) {
+                    height: 100%;
+                    width: 100%;
+                }
             }
         }
         &__tab {
@@ -415,11 +419,77 @@
             }
         }
         &__content {
+            padding-top: 35px;
             &s {}
             display: none;
             &_active {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                @media (max-width: 760px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+            &-block {
+                .svg-sprite-icon {
+                    fill: #999999;
+                }
+                margin-left: 30px;
+                border-bottom: 1px solid #D9D9D9;
+                .employee {
+                    &-block {
+                        &__item {
+                            position: relative;
+                            .svg-sprite-icon {
+                                position: absolute;
+                                left: -28px;
+                                top: 2px;
+                            }
+                        }
+                        &__name {
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 16px;
+                            line-height: 20px;
+                            letter-spacing: 0.04em;
+                            .svg-sprite-icon {
+                                height: 16px;
+                                width: 16px;
+                            }
+                        }
+                        &__position {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 16px;
+                            letter-spacing: 0.005em;
+                            color: #828282;
+                        }
+                        &__phone {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 24px;
+                            .svg-sprite-icon {
+                                height: 18px;
+                                width: 18px;
+                                stroke: #828282;
+                                fill: $colorLight;
+                                stroke-width: 2px;
+                            }
+                        }
+                        &__email {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 24px;
+                            .svg-sprite-icon {
+                                height: 19px;
+                                width: 17px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

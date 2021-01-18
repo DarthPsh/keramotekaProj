@@ -1,0 +1,117 @@
+extends layout/main
+
+block variables
+    -var title = 'заказ и доставка'
+
+block content
+    .page-top.orddev-wrap
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-list__item 
+                        a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") ЗАКАЗ И ДОСТАВКА
+            .information-main.information-main__head.orddev-main
+                .information-main__title.orddev-main__title Заказ и доставка
+                .information-main__desc.orddev-main__desc 
+            #links-scrollbar.scrollbar-slider.information-main__links.orddev-main__links.swiper-container
+                .swiper-wrapper
+                    a.swiper-slide.information-main__link.orddev-main__link(href="#order") ЗАКАЗ
+                    a.swiper-slide.information-main__link.orddev-main__link(href="#payment") ОПЛАТА
+                    a.swiper-slide.information-main__link.orddev-main__link(href="#delivery") ДОСТАВКА
+                    a.swiper-slide.information-main__link.orddev-main__link(href="#pickup") САМОВЫВОЗ
+                    a.swiper-slide.information-main__link.orddev-main__link(href="#return") ВОЗВРАТ
+                    a.swiper-slide.information-main__link.information-main__link-contacts.orddev-main__link(href="#contacts") КОНТАКТЫ
+            .orddev.information
+                .information-main.information-main__aside.orddev-main
+                    .information-main__title.orddev-main__title Заказ и доставка
+                    .information-main__desc.orddev-main__desc 
+                    .information-main__links.orddev-main__links
+                        a.information-main__link.orddev-main__link(href="#order") ЗАКАЗ
+                        a.information-main__link.orddev-main__link(href="#payment") ОПЛАТА
+                        a.information-main__link.orddev-main__link(href="#delivery") ДОСТАВКА
+                        a.information-main__link.orddev-main__link(href="#pickup") САМОВЫВОЗ
+                        a.information-main__link.orddev-main__link(href="#return") ВОЗВРАТ
+                        //- a.information-main__link.information-main__link-contacts.orddev-main__link(href="#contacts") КОНТАКТЫ ДЛЯ ДИЛЕРОВ
+                .information-content.orddev-content
+                    #order.information-content__block.orddev-content__block
+                        .information-content__block-title.orddev-content__block-title Как сделать заказ?
+                        .information-content__block-desc.orddev-content__block-desc 
+                            p Если у вас уже есть готовый проект и рассчитано необходимое количество материала, то сделать заказ вы можете следующими способами:
+                            p 
+                                ol
+                                    li Отправить ваш проект или спецификацию на адрес электронной почты sales@keramoteka.ru.
+                                    li Отправить ваш проект или спецификацию через форму заказа в нижней части страницы любой коллекции.
+                                    li Вы можете добавить необходимые товары через кнопку «Добавить в корзину» в карточке товара и затем оформить заказ через Корзину.
+                                    li Если вам необходима дополнительная консультация, то звоните нам в магазин по телефонам +7 495 649-84-20 (для Москвы), 8 800 707-50-37 (бесплатный звонок для клиентов из любых регионов РФ). Наши менеджеры с радостью проконсультируют вас и примут ваш заказ по телефону.
+                        .information-content__block-desc.orddev-content__block-desc.orddev-content__block-promo
+                            .information-content__block-subtitle Скидки
+                            p Цены на сайте указаны без учета возможных дополнительных скидок. 
+                            p После обработки заказа менеджер сообщит вам итоговую стоимость заказа с учетом возможных скидок, а также ситуацию с наличием товара на складе в Москве. 
+                            p Итоговая скидка зависит от объема заказа, наличия товара в Москве и других факторов. Условия бронирования товара просим уточнять у менеджеров.
+                        .information-content__block-desc.orddev-content__block-desc
+                            .information-content__block-subtitle Приходите в наш магазин
+                            p Если же вы еще не определились с выбором отделочных материалов для вашего проекта, то приглашаем вас в магазин, который удобно расположен по адресу: Москва, 1-й Щемиловский пер., 17/1. В этом случае вы сможете увидеть образцы покупаемого материала (популярные коллекции представлены в нашем магазине), а мы поможем пересчитать заказ с учетом необходимого запаса и подрезки.
+                            p Кроме керамической плитки и керамогранита, вы можете выбрать и приобрести у нас в магазине:
+                            ul 
+                                li Паркетную доску, массив, модульный паркет и инженерную доску. Ассортимент по этому направлению представлен на сайте PARKETTO.RU.
+                                li Декоративную штукатурку SAN MARCO (Италия). Весь спектр декоративных покрытий можно увидеть на нашем сайте SANMARCO.MOSCOW.
+                                li Клеевые смеси, затирку для плитки и керамогранита MAPEI и строительную химию FILA.
+                    #payment.information-content__block.orddev-content__block
+                        .information-content__block-title.orddev-content__block-title Оплата
+                        .information-content__block-desc.orddev-content__block-desc 
+                            p Оплатить заказ вы можете удобным для вас способом:
+                            ul 
+                                li наличными — в кассе магазина,
+                                li пластиковыми картами — в кассе магазина,
+                                li безналичным платежом — со счета организации или частного лица.     
+                    #delivery.information-content__block.orddev-content__block
+                        .information-content__block-title.orddev-content__block-title Доставка
+                        .information-content__block-desc.orddev-content__block-desc 
+                            p Мы стараемся доставлять оплаченные заказы максимально оперативно. Реальный срок доставки зависит от текущей загрузки транспортной службы, но в нормальной ситуации обычно не превышает двух-трех рабочих дней. Не забывайте сообщать желательное время доставки!
+                            p В случае безналичной формы оплаты доставка происходит  после подтверждения оплаты нашей бухгалтерией. Отгрузка по платежному поручению не производится!
+                        .information-content__block-desc.orddev-content__block-desc
+                            .information-content__block-subtitle Доставляем в любую точку России
+                            p Вы можете заказать у нас товар с доставкой в любую точку России! В этом случае вы выбираете подходящую транспортную компанию, а мы осуществляем доставку до погрузочной площадки выбранной т/к в Москве. Если вы не знаете, в какую транспортную компанию вам стоит обратиться, наши менеджеры смогут посоветовать вам т/к с учетом опыта произведенных перевозок. При необходимости, в большинстве т/к возможна дополнительная защита груза - обрешетка, а также страхование грузов. На практике, все заказы, отправленные нами даже в самые отдаленные регионы, вплоть до Владивостока, приходят нашим заказчикам в целости и сохранности.
+                        .information-content__block-desc.orddev-content__block-desc
+                            .information-content__block-subtitle Особые условия доставки
+                            p Внимание! Наша транспортная служба доставляет товар до объекта! Выгрузка и подъем производится силами покупателя. Обязательно проверяйте декоративные элементы и количество упаковок в момент доставки в присутствии нашего водителя! Подписание накладной или универсального передаточного документа (УПД) означает отсутствие у вас претензий к качеству и количеству поставленного товара. Если же обнаружен бой или брак, то это необходимо зафиксировать в накладной или УПД.                  
+                    #pickup.information-content__block.orddev-content__block
+                        .information-content__block-title.orddev-content__block-title Самовывоз
+                        .information-content__block-desc.orddev-content__block-desc 
+                           p Вы можете забрать товар со склада самостоятельно. Наш склад находится в г. Химки, мкр. Подрезково. На складе ваш заказ будет собран на паллете, плотно упакован в стрейч-пленку и погружен в ваш грузовой автомобиль. Погрузка в легковые машины не производится! В случае самовывоза, вам необходимо проверить количество и целостность товара до погрузки в автомобиль! Подписание накладной или универсального передаточного документа (УПД) означает отсутствие у вас претензий к качеству и количеству полученного товара.              
+                    #return.information-content__block.orddev-content__block
+                        .information-content__block-title.orddev-content__block-title Возврат
+                        .information-content__block-desc.orddev-content__block-desc 
+                           p Возврат товара из складского ассортимента производится в течение двух недель с момента отгрузки. Фоновая плитка принимается к возврату только целыми упаковками, декоративные элементы - поштучно. Товар необходимо самостоятельно сдать на склад, в магазине возврат не принимается. Товар, поставленный под заказ, возврату и обмену не подлежит!
+                #contacts.information-contact.orddev-contact
+                    .information-contact__block
+                        .information-contact__block-title ТЕЛЕФОНЫ
+                        .information-contact__block-item
+                            .information-contact__block-label Для клиентов в Москве
+                            a(href="tel:+7 495 649-84-20").information-contact__block-info +7 495 649-84-20
+                        .information-contact__block-item
+                            .information-contact__block-label Для регионов (бесплатно)
+                            a(href="tel:8 800 707-50-37").information-contact__block-info 8 800 707-50-37
+                        .information-contact__block-item
+                            .information-contact__block-label Электронная почта
+                            a(href="mailto:sales@keramoteka.ru").information-contact__block-info sales@keramoteka.ru
+                        //- button.information-contact__block-btn КОНТАКТЫ СОТРУДНИКОВ
+                    .information-contact__block
+                        .information-contact__block-title АДРЕС ШОУРУМА
+                        .information-contact__block-item
+                            .information-contact__block-label Москва
+                            .information-contact__block-info 1-й Щемиловский пер., 17/1 (метро Новослободская, Менделеевская, Достоевская)
+                    .information-contact__block
+                        .information-contact__block-title ВРЕМЯ РАБОТЫ
+                        .information-contact__block-item
+                            .information-contact__block-label Будние дни
+                            .information-contact__block-info 9:00 — 20:00
+                        .information-contact__block-item
+                            .information-contact__block-label Суббота
+                            .information-contact__block-info 10:00 — 18:00
+                    .information-contact__block
+                        .information-contact__block-title ОПЛАТА
+                        .information-contact__block-item
+                            .information-contact__block-label Мы принимаем оплату в любой удобной для вас форме, в том числе пластиковыми картами. 

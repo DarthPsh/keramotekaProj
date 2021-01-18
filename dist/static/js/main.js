@@ -636,17 +636,22 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.catalog-content__top-list .filter-list-count').css('opacity', '0');
   });
   window.addEventListener("scroll", function (event) {
-    var fromTop = window.scrollY;
-    var sectionBlock = document.querySelectorAll('.information-main__link');
-    sectionBlock.forEach(function (block) {
-      var section = document.querySelector(block.hash);
+    if (document.querySelectorAll('.information-main__link').length) {
+      var fromTop = window.scrollY;
+      var sectionBlock = document.querySelectorAll('.information-main__link');
+      sectionBlock.forEach(function (block) {
+        var section = document.querySelector(block.hash);
 
-      if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-        block.classList.add("information-main__link_active");
-      } else {
-        block.classList.remove("information-main__link_active");
-      }
-    });
+        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+          console.log('это это это');
+          console.log(section.offsetTop);
+          console.log('это это это');
+          block.classList.add("information-main__link_active");
+        } else {
+          block.classList.remove("information-main__link_active");
+        }
+      });
+    }
   });
   $('a[href^="tel:"]').attr('href', function (_, v) {
     return v.replace(/\(/g, '').replace(/\)/g, '').replace(/\ /g, '').replace(/\-/g, '');

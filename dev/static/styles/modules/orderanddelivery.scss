@@ -1,0 +1,47 @@
+.orddev {
+    &-wrap {
+        .information-main__link {
+            max-width: none;
+            width: auto;
+            min-width: auto;
+        }
+        #contacts {
+            display: block;
+        }
+    }
+    &-content {
+        &__block {
+            &-promo {
+                padding: 32px 24px;
+                background: #F1F1F1;
+                margin-bottom: 50px;
+                @media (max-width: 760px) {
+                    margin-bottom: 35px;
+                    padding: 32px 0;
+                    position: relative;
+                    margin-bottom: 40px;
+                    &:before {
+                        content: '';
+                        height: 100%;
+                        width: 16px;
+                        background:#F1F1F1;
+                        top: 0;
+                        left: -16px;
+                        display: block;
+                        position: absolute;
+                    }
+                    &:after {
+                        content: '';
+                        height: 100%;
+                        width: 16px;
+                        background:#F1F1F1;
+                        top: 0;
+                        right: -16px;
+                        display: block;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+}
