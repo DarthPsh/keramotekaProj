@@ -10,7 +10,8 @@ const vendorsScripts = [
   'node_modules/svg4everybody/dist/svg4everybody.min.js',
   'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
   'node_modules/imagesloaded/imagesloaded.pkgd.min.js',
-  'dev/static/js/vendor/directive.js'
+  'dev/static/js/vendor/directive.js',
+  // 'node_modules/vanilla-js-wheel-zoom/dist/wheel-zoom.js',
 ];
 
 module.exports = function vendors(cb) {

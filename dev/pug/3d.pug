@@ -1,0 +1,77 @@
+//- include helpers/mixins
+extends layout/main
+block variables
+    -var title = 'ТРИДЭ'
+block content
+    .calculation-popup-wrap.threed
+        .calculation-popup-overlay
+            .calculation-popup
+                .calculation-popup__close
+                    .calculation-popup__close-line.calculation-popup__close-line_top
+                    .calculation-popup__close-line.calculation-popup__close-line_bot
+                .threed-top
+                    .calculation-popup__title 3D-визуализация
+                    .calculation-popup__desc Если вы занимаетесь ремонтом без разработанного дизайн-проекта, мы готовы предложить вам услугу трехмерной визуализации. Наш дизайнер-консультант разработает эскиз будущего интерьера с учетом предоставленных размеров помещений и ваших предпочтений. Это даст возможность увидеть, как будет выглядеть выбранный материал в вашем интерьере. Услуга оказывается по предварительной записи по телефону или через форму ниже. Визуализация может быть выполнена в дистанционном режиме, без посещения шоурума.
+                    .calculation-popup__subtitle Стоимость услуги
+                    .calculation-popup__desc Стоимость 3D-визуализации одного помещения — 5000 рублей. При оплате счета на сумму от 100 000 рублей на выбранные для одного помещения материалы, услуга визуализации предоставляется бесплатно.
+                .threed-slider
+                    .threed-slider__main.swiper-container
+                        .swiper-wrapper
+                            .threed-slider__main-item.swiper-slide
+                                img(src="https://97.img.avito.st/640x480/7994443997.jpg", alt="img")
+                            .threed-slider__main-item.swiper-slide
+                                img(src="https://www.tsoydesign.com.ua/wp-content/uploads/2016/03/3_4-1.jpg", alt="img")
+                            .threed-slider__main-item.swiper-slide
+                                img(src="https://97.img.avito.st/640x480/7994443997.jpg", alt="img")
+                            .threed-slider__main-item.swiper-slide
+                                img(src="https://www.tsoydesign.com.ua/wp-content/uploads/2016/03/3_4-1.jpg", alt="img")
+                            .threed-slider__main-item.swiper-slide
+                                img(src="https://97.img.avito.st/640x480/7994443997.jpg", alt="img")
+                            .threed-slider__main-item.swiper-slide
+                                img(src="https://www.tsoydesign.com.ua/wp-content/uploads/2016/03/3_4-1.jpg", alt="img")
+                    .threed-slider__thumbs-wrap
+                        .threed-slider__thumbs.swiper-container
+                            .swiper-wrapper
+                                .threed-slider__thumbs-item.swiper-slide
+                                    img(src="https://97.img.avito.st/640x480/7994443997.jpg", alt="img")
+                                .threed-slider__thumbs-item.swiper-slide
+                                    img(src="https://www.tsoydesign.com.ua/wp-content/uploads/2016/03/3_4-1.jpg", alt="img")
+                                .threed-slider__thumbs-item.swiper-slide
+                                    img(src="https://97.img.avito.st/640x480/7994443997.jpg", alt="img")
+                                .threed-slider__thumbs-item.swiper-slide
+                                    img(src="https://www.tsoydesign.com.ua/wp-content/uploads/2016/03/3_4-1.jpg", alt="img")
+                                .threed-slider__thumbs-item.swiper-slide
+                                    img(src="https://97.img.avito.st/640x480/7994443997.jpg", alt="img")
+                                .threed-slider__thumbs-item.swiper-slide
+                                    img(src="https://www.tsoydesign.com.ua/wp-content/uploads/2016/03/3_4-1.jpg", alt="img")
+                        .threed-slider__main-pagination.swiper-pagination
+                .threed-form
+                    .calculation-popup__title Заказать консультацию по услуге
+                    .calculation-popup__desc
+                    form.calculation-popup__form.ajax-form
+                        label.calculation-popup__name.calculation-popup__info-item 
+                            span.calculation-popup__info-title ВАШЕ ИМЯ
+                            input(type="text" placeholder="Например Иван Иванов")
+                        label.calculation-popup__info-mail.calculation-popup__info-item 
+                            span.calculation-popup__info-title E-MAIL
+                            input(type="email" placeholder="yourmail@mail.com")
+                        label.calculation-popup__info-tel.calculation-popup__info-item 
+                            span.calculation-popup__info-title ТЕЛЕФОН
+                            input(type="tel" placeholder="+7 (___) ___-__-__")
+                        label.calculation-popup__info-message 
+                            span.calculation-popup__info-title ВАШ ЗАКАЗ
+                            textarea
+                        .calculation-popup__footer
+                            .calculation-popup__footer-file
+                                label.calculation-popup__footer-btn.calculation-popup__footer-download ПРИКРЕПИТЬ ФАЙЛ (<4 МБ)
+                                    input(type="file")
+                                .calculation-popup__footer-loaded
+                                    +icon('close_brs')
+                                    span.file-name
+                            .calculation-popup__footer-end
+                                button(type="submit").calculation-popup__footer-btn.calculation-popup__footer-submit ОТПРАВИТЬ ЗАЯВКУ
+                                label.calculation-popup__footer-policy
+                                    input(type="checkbox")
+                                    span Я принимаю 
+                                        a(href="#") Пользовательское соглашение 
+                                        | и даю свое согласие на обработку моих персональных данных 

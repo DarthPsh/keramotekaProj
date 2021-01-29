@@ -1,0 +1,170 @@
+extends layout/main
+
+block variables
+    -var title = 'О Компании'
+
+block content
+    .page-top.about-wrap
+        .about-head
+            .container
+                .breadcrumbs
+                    ul.breadcrumbs-list
+                        li.breadcrumbs-list__item 
+                            a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                        li.breadcrumbs-list__item
+                            a.breadcrumbs-list__item-link(href="#") О КОМПАНИИ
+                .about-head__content
+                    .about-head__text
+                        .about-head__title О компании
+                        .about-head__desc КЕРАМОТЕКА — полное собрание коллекций керамической плитки, керамического гранита, мозаики и клинкера! Мы прямые импортеры более 30 итальянских и испанских брендов: Atlas Concorde, Equipe, Rex Ceramiche, Vallelunga, Sant’Agostino, 41Zero42, Wow.
+                    .about-head__blocks
+                        .about-head__block
+                            .about-head__block-num 2006
+                            .about-head__block-desc Год основания
+                        .about-head__block
+                            .about-head__block-num 150 000 
+                                span м2
+                            .about-head__block-desc керамической плитки и керамогранита в наличии на складе в Москве. Складские запасы регулярно пополняются.
+                        .about-head__block
+                            .about-head__block-num 3 000 
+                                span м2
+                            .about-head__block-desc современный логистический комплекс со стеллажной системой хранения товара, собственным грузовым автопарком различной грузоподъемности и штатом опытных водителей-экспедиторов.
+        .container
+            .information-main.information-main__head.about-main
+                //- .information-main__title.about-main__title Заказ и доставка
+                .information-main__desc.about-main__desc 
+            #links-scrollbar.scrollbar-slider.information-main__links.about-main__links.swiper-container
+                .swiper-wrapper
+                    a.swiper-slide.information-main__link.about-main__link(href="#retail_buyers") РОЗНИЧНЫМ ПОКУПАТЕЛЯМ
+                    a.swiper-slide.information-main__link.about-main__link(href="#for_dealers_and_shops") ДИЛЕРАМ/МАГАЗИНАМ
+                    a.swiper-slide.information-main__link.about-main__link(href="#for_designers_and_architects") ДИЗАЙНЕРАМ/ АРХИТЕКТОРАМ
+                    a.swiper-slide.information-main__link.about-main__link(href="#construction_organizations") ДЕВЕЛОПЕРАМ/
+                        br
+                        | СТРОИТЕЛЬНЫМ ОРГЕНИЗАЦИЯМ
+                    a.swiper-slide.information-main__link.information-main__link-contacts.about-main__link(href="#contacts") КОНТАКТЫ
+            .about.information
+                .information-main.information-main__aside.about-main
+                    //- .information-main__title.about-main__title Заказ и доставка
+                    .information-main__desc.about-main__desc 
+                    .information-main__links.about-main__links
+                        a.information-main__link.about-main__link(href="#retail_buyers") РОЗНИЧНЫМ ПОКУПАТЕЛЯМ
+                        a.information-main__link.about-main__link(href="#for_dealers_and_shops") ДИЛЕРАМ/МАГАЗИНАМ
+                        a.information-main__link.about-main__link(href="#for_designers_and_architects") ДИЗАЙНЕРАМ/ АРХИТЕКТОРАМ
+                        a.information-main__link.about-main__link(href="#construction_organizations") ДЕВЕЛОПЕРАМ/СТРОИТЕЛЬНЫМ ОРГЕНИЗАЦИЯМ
+                        //- a.information-main__link.information-main__link-contacts.about-main__link(href="#contacts") КОНТАКТЫ ДЛЯ ДИЛЕРОВ
+                .information-content.about-content
+                    #retail_buyers.information-content__block.about-content__block
+                        .information-content__block-title.about-content__block-title Розничным покупателям — широкий ассортимент, выгодные цены и сервис
+                        .information-content__block-desc.about-content__block-desc 
+                            p В салоне-магазине КЕРАМОТЕКА на Новослободской вы сможете приобрести практически все необходимые отделочные материалы для вашей квартиры или дома - керамическую плитку, керамогранит, мозаику и клинкер от лучших европейских фабрик. Среди коллекций представлены как последние новинки, так и бестселлеры последних лет.
+                            p Самые популярные бренды — 
+                                a(href="#") Atlas Concorde, 
+                                a(href="#") Equipe Ceramicas, 
+                                a(href="#") Атлас Конкорд Россия, 
+                                a(href="#") Ceramiche Grazia,
+                                a(href="#") Adex,
+                                a(href="#") REX Ceramiche,
+                                a(href="#") Италон,
+                                a(href="#") 41zero42,
+                                a(href="#") Amadis, 
+                                a(href="#") FAP Ceramiche, 
+                                a(href="#") Gayafores, 
+                                a(href="#") Impronta / Italgraniti, 
+                                a(href="#") Cicogres, 
+                                a(href="#") Cifre, 
+                                a(href="#") Panaria, 
+                                a(href="#") Aparici, 
+                                a(href="#") Piemme / Valentino, 
+                                a(href="#") Sant Agostino, 
+                                a(href="#") Ceramica Bardelli, 
+                                a(href="#") Cir, 
+                                a(href="#") Serenissima, 
+                                a(href="#") Petracers, 
+                                a(href="#") Porcelanosa, 
+                                a(href="#")  Venis. 
+                            p Кроме керамической плитки и керамогранита, вы можете выбрать и приобрести у нас в магазине:
+                                ul 
+                                    li 
+                                        a(href="#") Паркетную доску,
+                                        a(href="#") массив, 
+                                        a(href="#") модульный паркет
+                                        | и 
+                                        a(href="#") инженерную доску. 
+                                        | Ассортимент по этому направлению представлен на сайте 
+                                        a(href="parketto.ru") PARKETTO.RU.
+                                    li 
+                                        a(href="#") Декоративную штукатурку SAN MARCO
+                                        | (Италия). Весь спектр декоративных покрытий можно увидеть на нашем сайте 
+                                        a(href="sanmarco.moscow") SANMARCO.MOSCOW.
+                                    li Клеевые смеси, затирку для плитки и керамогранита MAPEI и строительную химию FILA.
+                            p Исключительно для вас — гибкая ценовая политика — выгодные цены и скидки, любая форма оплаты (в т. ч. пластиковые карты), быстрая доставка! Приезжайте к нам в магазин! Звоните (495) 649-84-20 или 8 800 707-50-37 (бесплатно из регионов), мы всегда будем рады помочь вам.
+                    #for_dealers_and_shops.information-content__block.about-content__block
+                        .information-content__block-title.about-content__block-title Магазинам — удобные условия работы. С нами легко!
+                        .information-content__block-desc.about-content__block-desc 
+                            p Мы приглашаем к сотрудничеству как московские, так и региональные торговые компании.
+                            p Оптовым покупателям мы готовы предложить оптимальные, конкурентоспособные цены и скидки, образцы, рекламные материалы и консультационную поддержку, удобные условия сотрудничества, доставку до транспортной компании для региональных клиентов. По коллекциям из оптового ассортимента постоянно поддерживаются обширные складские остатки! 
+                            p КЕРАМОТЕКА является официальным дилером фабрик: 
+                                a(href="#") Atlas Concorde, 
+                                a(href="#") Equipe Ceramicas, 
+                                a(href="#") Ceramiche Grazia, 
+                                a(href="#") Adex, 
+                                a(href="#") REX Ceramiche, 
+                                a(href="#") Cifre, 
+                                a(href="#") Ibero, 
+                                a(href="#") 41zero42, 
+                                a(href="#") Ceramica Ribesalbes, 
+                                a(href="#") Fabresa, 
+                                a(href="#") Gayafores, 
+                                a(href="#") Dual Gres, 
+                                a(href="#") Atlantic Tiles, 
+                                a(href="#") Argenta, 
+                                a(href="#") Saloni, 
+                                a(href="#") Cicogres, 
+                                a(href="#") Rondine, 
+                                a(href="#") Panaria, 
+                                a(href="#") Settecento, 
+                                a(href="#") Amadis, 
+                                a(href="#") Ceracasa,
+                                |  а также российских 
+                                a(href="#") Атлас Конкорд Россия
+                                |  и 
+                                a(href="#") Керранова.
+                                |  Мы регулярно пополняем товарный запас, а заказы с фабрик выполняются в короткие сроки.     
+                    #for_designers_and_architects.information-content__block.about-content__block
+                        .information-content__block-title.about-content__block-title Архитекторам / дизайнерам — новые коллекции с европейских выставок
+                        .information-content__block-desc.about-content__block-desc 
+                            p Среди предлагаемых нами коллекций керамической плитки и керамогранита всегда есть множество новинок с последних европейских выставок. Мы стараемся быть в курсе последних трендов и представляем нашим клиентам самые модные и актуальные новинки индустрии. Система работы с дизайнерами и архитекторами проста, понятна, прозрачна и взаимовыгодна. Звоните и приезжайте! Мы рады видеть профессионалов среди наших клиентов и нам есть что предложить вам и вашим заказчикам!
+                    #construction_organizations.information-content__block.about-content__block
+                        .information-content__block-title.about-content__block-title Девелоперам / строительным организациям — проектные поставки
+                        .information-content__block-desc.about-content__block-desc 
+                            p За годы работы компанией КЕРАМОТЕКА реализовано множество проектов самого различного уровня — как коммерческого, так и государственного. Среди наших клиентов — ведущие девелоперские и строительные компании, ритейлеры, автосалоны, рестораны, государственные заказчики. Мы предлагаем нашим клиентам широкий ассортимент проектного керамогранита различных ценовых категорий — от недорогого российского до итальянского премиум-сегмента. Мы обладаем обширным складскими остатками в Москве, а для крупных объектов готовы оперативно поставить материал под заказ.
+                #contacts.information-contact.about-contact
+                    .information-contact__block
+                        .information-contact__block-title ТЕЛЕФОНЫ
+                        .information-contact__block-item
+                            .information-contact__block-label Для клиентов в Москве
+                            a(href="tel:+7 495 649-84-20").information-contact__block-info +7 495 649-84-20
+                        .information-contact__block-item
+                            .information-contact__block-label Для регионов (бесплатно)
+                            a(href="tel:8 800 707-50-37").information-contact__block-info 8 800 707-50-37
+                        .information-contact__block-item
+                            .information-contact__block-label Электронная почта
+                            a(href="mailto:sales@keramoteka.ru").information-contact__block-info sales@keramoteka.ru
+                        //- button.information-contact__block-btn КОНТАКТЫ СОТРУДНИКОВ
+                    .information-contact__block
+                        .information-contact__block-title АДРЕС ШОУРУМА
+                        .information-contact__block-item
+                            .information-contact__block-label Москва
+                            .information-contact__block-info 1-й Щемиловский пер., 17/1 (метро Новослободская, Менделеевская, Достоевская)
+                    .information-contact__block
+                        .information-contact__block-title ВРЕМЯ РАБОТЫ
+                        .information-contact__block-item
+                            .information-contact__block-label Будние дни
+                            .information-contact__block-info 9:00 — 20:00
+                        .information-contact__block-item
+                            .information-contact__block-label Суббота
+                            .information-contact__block-info 10:00 — 18:00
+                    .information-contact__block
+                        .information-contact__block-title ОПЛАТА
+                        .information-contact__block-item
+                            .information-contact__block-label Мы принимаем оплату в любой удобной для вас форме, в том числе пластиковыми картами. 

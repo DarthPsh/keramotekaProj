@@ -1,0 +1,103 @@
+extends layout/main
+
+block variables
+    -var title = 'Контакты Шоурум'
+
+block content
+    .page-top.contacts-wrap
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-list__item 
+                        a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") КОНТАКТЫ
+            .information-main.information-main__head.contacts-main
+                .information-main__title.contacts-main__title Контакты
+            #links-scrollbar.scrollbar-slider.information-main__links.contacts-main__links.swiper-container
+                .swiper-wrapper
+                    a.swiper-slide.contacts-main__link.contacts-main__link_active(href="#") ШОУРУМ
+                    a.swiper-slide.contacts-main__link(href="#") ДИЛЕРСКИЙ ОТДЕЛ
+                    a.swiper-slide.contacts-main__link(href="#") СКЛАД
+            .contacts.information
+                .information-contact.contacts-contact
+                    .information-contact__block
+                        +icon('map-marker')
+                        .information-contact__block-item
+                            .information-contact__block-label Адрес
+                            .information-contact__block-info г. Москва, 1-й Щемиловский пер., 17/1, метро: 
+                                span.metro-marker.metro-marker__novoslob Новослободская, 
+                                span.metro-marker.metro-marker__mendeleev Менделеевская, 
+                                span.metro-marker.metro-marker__dostoev Достоевская
+                    .information-contact__block
+                        +icon('phone-o')
+                        .information-contact__block-item
+                            .information-contact__block-label Для клиентов в Москве
+                            a(href="tel:+7 495 649-84-20").information-contact__block-info +7 495 649-84-20
+                            .information-contact__block-label Для регионов (бесплатно)
+                            a(href="tel:8 800 707-50-37").information-contact__block-info 8 800 707-50-37
+                    .information-contact__block
+                        +icon('clock')
+                        .information-contact__block-item
+                            .information-contact__block-label Время работы:
+                            .information-contact__block-info Пн-пт 9:00 — 20:00
+                            .information-contact__block-info Сб-вс 10:00 — 18:00
+                    .information-contact__block
+                        .information-contact__block-item
+                            .information-contact__block-info Предварительный заказ вы можете отправить по e-mail: 
+                                a(href="mailto:sales@keramoteka.ru") sales@keramoteka.ru
+                .information-content.contacts-content
+                    #map.map
+                        img(src="static/images/common/map.png", alt="map")
+                    .information-content__block.contacts-content__block
+                        .information-content__block-title.contacts-content__block-title Как добраться?
+                        .information-content__block-subtitle Пешком
+                        .information-content__block-desc.contacts-content__block-desc 
+                            p Наш магазин плитки находится примерно в 300 метрах от метро «Новослободская» — это всего 3-5 минут пешком. Вам нужно выйти из метро налево (на Новослободской один выход) на Селезневскую улицу. По ней вам нужно идти прямо до третьего поворота направо — это и будет 1-й Щемиловский переулок. Ориентиром вам может служить бизнес-центр Амбер-плаза (ING) — именно после этого здания следует повернуть направо. Далее вы идете прямо до шлагбаума, после которого вы увидите справа серо-бежевое двухэтажное здание. Вторые стеклянные двери — это и есть наш магазин! Ждем вас!
+                        .information-content__block-desc.contacts-content__block-desc
+                            .information-content__block-subtitle На автомобиле
+                            p С Садового кольца к нам проще всего попасть через Краснопролетарскую улицу. Езжайте по ней никуда не сворачивая, до Селезневской улицы. Поворачивайте направо и через 15 метров снова направо. Далее до шлагбаума со знаком "кирпича". С третьего транспортного кольца лучше всего ехать через Новосущевскую улицу. По ней вы должны ехать, никуда не сворачивая, до Селезневской улицы. Поверните направо - и еще через 150 метров будет поворот налево на 1-й Щемиловский переулок. Если вы поедете по навигатору - используйте адрес 1-й Щемиловский переулок, 19! При наличии свободных гостевых мест Вы сможете припарковаться рядом с магазином.
+    .contacts-slider__wrap
+        .container.contacts-slider__container
+            .contacts-slider__main.swiper-container
+                .swiper-wrapper
+                    .contacts-slider__main-item.swiper-slide
+                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        .swiper-lazy-preloader.swiper-lazy-preloader-white
+                    .contacts-slider__main-item.swiper-slide
+                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        .swiper-lazy-preloader.swiper-lazy-preloader-white    
+                    .contacts-slider__main-item.swiper-slide
+                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        .swiper-lazy-preloader.swiper-lazy-preloader-white  
+                    .contacts-slider__main-item.swiper-slide
+                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        .swiper-lazy-preloader.swiper-lazy-preloader-white  
+                    .contacts-slider__main-item.swiper-slide
+                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        .swiper-lazy-preloader.swiper-lazy-preloader-white  
+                    .contacts-slider__main-item.swiper-slide
+                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        .swiper-lazy-preloader.swiper-lazy-preloader-white  
+            .contacts-slider__thumbs-wrap                
+                .contacts-slider__thumbs.swiper-container
+                    .swiper-wrapper    
+                        .contacts-slider__thumbs-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+                        .contacts-slider__thumbs-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white    
+                        .contacts-slider__thumbs-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white  
+                        .contacts-slider__thumbs-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white  
+                        .contacts-slider__thumbs-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white  
+                        .contacts-slider__thumbs-item.swiper-slide
+                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            .swiper-lazy-preloader.swiper-lazy-preloader-white  
+                .contacts-slider__main-pagination.swiper-pagination   

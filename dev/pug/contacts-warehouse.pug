@@ -1,0 +1,64 @@
+extends layout/main
+
+block variables
+    -var title = 'Контакты Склад'
+
+block content
+    .page-top.contacts-wrap
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-list__item 
+                        a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") КОНТАКТЫ
+            .information-main.information-main__head.contacts-main
+                .information-main__title.contacts-main__title Контакты
+            #links-scrollbar.scrollbar-slider.information-main__links.contacts-main__links.swiper-container
+                .swiper-wrapper
+                    a.swiper-slide.contacts-main__link(href="#") ШОУРУМ
+                    a.swiper-slide.contacts-main__link(href="#") ДИЛЕРСКИЙ ОТДЕЛ
+                    a.swiper-slide.contacts-main__link.contacts-main__link_active(href="#") СКЛАД
+            .contacts.information
+                .information-contact.contacts-contact
+                    .information-contact__block
+                        +icon('map-marker')
+                        .information-contact__block-item
+                            .information-contact__block-label Адрес
+                            .information-contact__block-info г. Москва, 1-й Щемиловский пер., 17/1, метро: 
+                                span.metro-marker.metro-marker__novoslob Новослободская, 
+                                span.metro-marker.metro-marker__mendeleev Менделеевская, 
+                                span.metro-marker.metro-marker__dostoev Достоевская
+                    .information-contact__block
+                        +icon('phone-o')
+                        .information-contact__block-item
+                            .information-contact__block-label Для клиентов в Москве
+                            a(href="tel:+7 495 649-84-20").information-contact__block-info +7 495 649-84-20
+                            .information-contact__block-label Для регионов (бесплатно)
+                            a(href="tel:8 800 707-50-37").information-contact__block-info 8 800 707-50-37
+                    .information-contact__block
+                        +icon('clock')
+                        .information-contact__block-item
+                            .information-contact__block-label Время работы:
+                            .information-contact__block-info Пн-пт 9:00 — 20:00
+                            .information-contact__block-info Сб-вс 10:00 — 18:00
+                    .information-contact__block
+                        .information-contact__block-item
+                            .information-contact__block-info Предварительный заказ вы можете отправить по e-mail: 
+                                a(href="mailto:sales@keramoteka.ru") sales@keramoteka.ru
+                .information-content.contacts-content
+                    #map.map
+                        img(src="static/images/common/map.png", alt="map")
+                    .warehouse-info
+                        .information-content__block-title.contacts-content__block-title Схема проезда
+                        figure.warehouse-info__img
+                            img.lozad(data-src="static/images/common/warehouse.png", alt="img")
+                        .information-content__block.contacts-content__block.warehouse-info__scheme
+                            .information-content__block-subtitle Въезд на территорию платный
+                            .information-content__block-desc.contacts-content__block-desc 
+                                p Легковые авто — 50 руб.,
+                                p Грузовые до 7 тонн — 100 руб.,
+                                p более 7 тонн — 150 руб.
+                            a.warehouse-info__scheme-download(href="#" download) 
+                                +icon('pdf')
+                                | СХЕМА ПРОЕЗДА В PDF 

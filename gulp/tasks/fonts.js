@@ -6,3 +6,8 @@ module.exports = function fonts() {
   return gulp.src('dev/static/fonts/**/*.*')
     .pipe(gulp.dest('dist/static/fonts'))
 };
+
+module.exports = function video() {
+  return gulp.src('dev/static/video/**/*.*')
+    .pipe(gulp.dest('dist/static/video'))
+};

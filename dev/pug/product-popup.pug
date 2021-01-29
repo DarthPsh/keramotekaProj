@@ -1,0 +1,66 @@
+include helpers/mixins
+//- extends layout/main
+//- block variables
+//-     -var title = 'попап с контактами'
+
+.calculation-popup-wrap.popup-product
+    .calculation-popup-overlay
+        .calculation-popup
+            .calculation-popup__close
+                .calculation-popup__close-line.calculation-popup__close-line_top
+                .calculation-popup__close-line.calculation-popup__close-line_bot 
+            .popup-product__content
+                .popup-product__prompt Для увеличения крутите колесо мыши. Перетаскивайте, зажав  левую кнопку мыши
+                #container.popup-product__img-wrap
+                    .zoom.popup-product__img
+                        img.media(src="https://ceramir.ru/netcat_files/userfiles/ItalGraniti_Mega_01_Reception_Hotel_Part_A_Definitivo.jpg", alt="img")
+                    .popup-product__img-icon
+                        +icon('zoom')
+                .popup-product__cart
+                    .popup-product__cart-title 
+                        | Керамогранит 
+                        br
+                        | ATLAS CONCORDE RUSSIA 
+                        br
+                        | Gray Wood
+                    ul.popup-product__cart-attributes
+                        li.popup-product__cart-attribute
+                            .attribute-name Размер
+                            .attribute-value 20x120 см                 
+                        li.popup-product__cart-attribute
+                            .attribute-name Артикул
+                            .attribute-value DG_CH_B_BL
+                        li.popup-product__cart-attribute
+                            .attribute-name Цена
+                            .attribute-value 4801 ₽/ м
+                                sup 2 
+                    .popup-product__cart-have
+                        .cart-have__item
+                            .cart-have__item-name В наличии на складе в Москве:
+                            .cart-have__item-value 138 м
+                                sup 2
+                        .cart-have__item
+                            .cart-have__item-name - из них в резерве
+                            .cart-have__item-value 25 м
+                                sup 2
+                    .popup-product__cart-have
+                        .cart-have__item
+                            .cart-have__item-name В пути на склад:
+                            .cart-have__item-value 138 м
+                                sup 2
+                        .cart-have__item
+                            .cart-have__item-name - из них в резерве
+                            .cart-have__item-value 25 м
+                                sup 2
+                    form.product-card-content__to-cart-form.popup-product__cart-form
+                        .attribute-name Количество
+                        .quantity-block
+                            .quantity-arrow.quantity-arrow-minus  
+                            .quantity-num-wrap
+                                input.quantity-num(type="number" value="0")
+                            .quantity-arrow.quantity-arrow-plus 
+                            .quantity-num-unit.unit м
+                                sup 2
+                        button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                            +icon('shopping-cart')
+                            span ДОБАВИТЬ В КОРЗИНУ

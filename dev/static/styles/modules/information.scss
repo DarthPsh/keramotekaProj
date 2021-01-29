@@ -268,19 +268,19 @@
 
 #links-scrollbar {
     display: none;
+    background: $colorLight;
+    top: 0;
+    flex-wrap: wrap;
+    &:after {
+        content: '';
+        height: 4px;
+        width: 100%;
+        background: #333333;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
     @media (max-width: 1200px) {
         display: flex;
-        background: $colorLight;
-        top: 0;
-        flex-wrap: wrap;
-        &:after {
-            content: '';
-            height: 4px;
-            width: 100%;
-            background: #333333;
-            bottom: 0;
-            left: 0;
-            position: absolute;
-        }
     }
 }

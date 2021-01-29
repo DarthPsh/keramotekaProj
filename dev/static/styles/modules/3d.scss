@@ -1,0 +1,52 @@
+.threed {
+    .calculation-popup__info-item {
+        margin-bottom: 15px;
+        max-width: 100%;
+    }
+    .calculation-popup__subtitle {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        margin-bottom: -20px;
+        padding-left: 15px; 
+        border-left: 4px solid $colorAccent;
+    }
+    &-slider {
+        &__main {
+            height: 420px;
+            overflow: hidden;
+            img {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+            }
+            &-pagination {
+                position: static;
+            }
+        }
+        &__thumbs {
+            overflow: hidden;
+            height: 96px;
+            width: 100%;
+            margin: 0;
+            img {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+            }
+            &-wrap {
+                display: flex;
+            }
+        }
+    }
+}

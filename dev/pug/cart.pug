@@ -1,0 +1,219 @@
+extends layout/main
+
+block variables
+    -var title = 'Корзина'
+
+block content
+    .page-top.cart-wrap
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-list__item 
+                        a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                    li.breadcrumbs-list__item
+                        a.breadcrumbs-list__item-link(href="#") КОРЗИНА
+            .information-main.information-main__head.cart-main
+                .information-main__title.cart-main__title Ваш заказ
+            #links-scrollbar.scrollbar-slider.information-main__links.cart-main__links.swiper-container
+                .swiper-wrapper
+                    a.swiper-slide.information-main__link.cart-main__link(href="#cart") КОРЗИНА
+                    a.swiper-slide.information-main__link.cart-main__link(href="#ordering") ОФОРМЛЕНИЕ ЗАКАЗА
+            .cart.information
+                .information-main.information-main__aside.cart-main
+                    .information-main__title.cart-main__title Ваш заказ
+                    .information-main__desc.cart-main__desc Уважаемые клиенты! Заполните необходимые поля в форме заказа и укажите номер телефона. Это позволит, при необходимости, узнать у вас детали заказа и более точно и оперативно обработать ваш заказ.
+                    .information-main__desc.cart-main__desc Мы ответим вам в кратчайшие сроки и сообщим стоимость заказа, размер скидки и ситуацию по наличию.
+                    .information-main__links.cart-main__links
+                        a.information-main__link.cart-main__link(href="#cart") КОРЗИНА
+                        a.information-main__link.cart-main__link(href="#ordering") ОФОРМЛЕНИЕ ЗАКАЗА
+                .information-content.cart-content
+                    #cart.information-content__block.cart-content__block
+                        .information-content__block-title.cart-content__block-title Товаров в корзине: 4
+                            button.cart-reset__all Очистить
+                        .cart-list
+                            .cart-list__item
+                                figure.cart-list__item-img
+                                    img(src="https://otdelkino.ru/upload/iblock/d2f/d2f608c42dffbd93bb691890246257a7.jpg", alt="img")
+                                .cart-list__item-info
+                                    .cart-list__item-title Керамогранит EQUIPE ARTISAN Alabaster
+                                    .cart-list__item-attributes
+                                        .cart-list__item-attribute 13,2 x 13,2 см
+                                        .cart-list__item-attribute Арт. 24459
+                                .cart-list__item-count
+                                    form.product-card-content__to-cart-form
+                                        .quantity-block
+                                            .quantity-arrow.quantity-arrow-minus  
+                                            .quantity-num-wrap
+                                                input.quantity-num(type="number" value="0")
+                                            .quantity-arrow.quantity-arrow-plus
+                                        .quantity-num-unit.unit м
+                                            sup 2 
+                                .cart-list__item-remove
+                                    +icon('trash')
+                            .cart-list__item
+                                figure.cart-list__item-img
+                                    img(src="https://otdelkino.ru/upload/iblock/d2f/d2f608c42dffbd93bb691890246257a7.jpg", alt="img")
+                                .cart-list__item-info
+                                    .cart-list__item-title Керамогранит EQUIPE ARTISAN Alabaster
+                                    .cart-list__item-attributes
+                                        .cart-list__item-attribute 13,2 x 13,2 см
+                                        .cart-list__item-attribute Арт. 24459
+                                .cart-list__item-count
+                                    form.product-card-content__to-cart-form
+                                        .quantity-block
+                                            .quantity-arrow.quantity-arrow-minus  
+                                            .quantity-num-wrap
+                                                input.quantity-num(type="number" value="0")
+                                            .quantity-arrow.quantity-arrow-plus
+                                        .quantity-num-unit.unit м
+                                            sup 2 
+                                .cart-list__item-remove
+                                    +icon('trash')
+                            .cart-list__item
+                                figure.cart-list__item-img
+                                    img(src="https://otdelkino.ru/upload/iblock/d2f/d2f608c42dffbd93bb691890246257a7.jpg", alt="img")
+                                .cart-list__item-info
+                                    .cart-list__item-title Керамогранит EQUIPE ARTISAN Alabaster
+                                    .cart-list__item-attributes
+                                        .cart-list__item-attribute 13,2 x 13,2 см
+                                        .cart-list__item-attribute Арт. 24459
+                                .cart-list__item-count
+                                    form.product-card-content__to-cart-form
+                                        .quantity-block
+                                            .quantity-arrow.quantity-arrow-minus  
+                                            .quantity-num-wrap
+                                                input.quantity-num(type="number" value="0")
+                                            .quantity-arrow.quantity-arrow-plus
+                                        .quantity-num-unit.unit м
+                                            sup 2 
+                                .cart-list__item-remove
+                                    +icon('trash')
+                            .cart-list__item
+                                figure.cart-list__item-img
+                                    img(src="https://otdelkino.ru/upload/iblock/d2f/d2f608c42dffbd93bb691890246257a7.jpg", alt="img")
+                                .cart-list__item-info
+                                    .cart-list__item-title Керамогранит EQUIPE ARTISAN Alabaster
+                                    .cart-list__item-attributes
+                                        .cart-list__item-attribute 13,2 x 13,2 см
+                                        .cart-list__item-attribute Арт. 24459
+                                .cart-list__item-count
+                                    form.product-card-content__to-cart-form
+                                        .quantity-block
+                                            .quantity-arrow.quantity-arrow-minus  
+                                            .quantity-num-wrap
+                                                input.quantity-num(type="number" value="0")
+                                            .quantity-arrow.quantity-arrow-plus
+                                        .quantity-num-unit.unit м
+                                            sup 2 
+                                .cart-list__item-remove
+                                    +icon('trash')
+                            .cart-list__item
+                                figure.cart-list__item-img
+                                    img(src="https://otdelkino.ru/upload/iblock/d2f/d2f608c42dffbd93bb691890246257a7.jpg", alt="img")
+                                .cart-list__item-info
+                                    .cart-list__item-title Керамогранит EQUIPE ARTISAN Alabaster
+                                    .cart-list__item-attributes
+                                        .cart-list__item-attribute 13,2 x 13,2 см
+                                        .cart-list__item-attribute Арт. 24459
+                                .cart-list__item-count
+                                    form.product-card-content__to-cart-form
+                                        .quantity-block
+                                            .quantity-arrow.quantity-arrow-minus  
+                                            .quantity-num-wrap
+                                                input.quantity-num(type="number" value="0")
+                                            .quantity-arrow.quantity-arrow-plus
+                                        .quantity-num-unit.unit м
+                                            sup 2 
+                                .cart-list__item-remove
+                                    +icon('trash')
+                            .cart-list__item
+                                figure.cart-list__item-img
+                                    img(src="https://otdelkino.ru/upload/iblock/d2f/d2f608c42dffbd93bb691890246257a7.jpg", alt="img")
+                                .cart-list__item-info
+                                    .cart-list__item-title Керамогранит EQUIPE ARTISAN Alabaster
+                                    .cart-list__item-attributes
+                                        .cart-list__item-attribute 13,2 x 13,2 см
+                                        .cart-list__item-attribute Арт. 24459
+                                .cart-list__item-count
+                                    form.product-card-content__to-cart-form
+                                        .quantity-block
+                                            .quantity-arrow.quantity-arrow-minus  
+                                            .quantity-num-wrap
+                                                input.quantity-num(type="number" value="0")
+                                            .quantity-arrow.quantity-arrow-plus
+                                        .quantity-num-unit.unit м
+                                            sup 2 
+                                .cart-list__item-remove
+                                    +icon('trash')
+                            .cart-list__item
+                                figure.cart-list__item-img
+                                    img(src="https://otdelkino.ru/upload/iblock/d2f/d2f608c42dffbd93bb691890246257a7.jpg", alt="img")
+                                .cart-list__item-info
+                                    .cart-list__item-title Керамогранит EQUIPE ARTISAN Alabaster
+                                    .cart-list__item-attributes
+                                        .cart-list__item-attribute 13,2 x 13,2 см
+                                        .cart-list__item-attribute Арт. 24459
+                                .cart-list__item-count
+                                    form.product-card-content__to-cart-form
+                                        .quantity-block
+                                            .quantity-arrow.quantity-arrow-minus  
+                                            .quantity-num-wrap
+                                                input.quantity-num(type="number" value="0")
+                                            .quantity-arrow.quantity-arrow-plus
+                                        .quantity-num-unit.unit м
+                                            sup 2 
+                                .cart-list__item-remove
+                                    +icon('trash')
+                        .information-content__block-desc.about-content__block-desc 
+                            p Наличие товара, а также окончательная стоимость и условия доставки будут уточнены в момент подтверждения заказа по телефону или электронной почте. Цвет товара на фотографиях может незначительно отличаться от реального цвета товара. 
+                    #ordering.information-content__block.cart-content__block
+                        .information-content__block-title.cart-content__block-title Оформить заказ
+                        .cart-form
+                            form.calculation-popup__form.ajax-form
+                                .calculation-popup__head
+                                    .calculation-popup__check
+                                        label.calculation-popup__check-private.calculation-popup__check-item
+                                            input(type="radio" name="type") 
+                                            | Частное лицо
+                                        label.calculation-popup__check-entity.calculation-popup__check-item 
+                                            input(type="radio" name="type")
+                                            | Юридическое лицо  
+                                    label.calculation-popup__name 
+                                        span.calculation-popup__info-title ВАШЕ ИМЯ
+                                        input(type="text" placeholder="Например Иван Иванов")
+                                .calculation-popup__info
+                                    label.calculation-popup__info-mail.calculation-popup__info-item 
+                                        span.calculation-popup__info-title E-MAIL
+                                        input(type="email" placeholder="yourmail@mail.com")
+                                    label.calculation-popup__info-tel.calculation-popup__info-item 
+                                        span.calculation-popup__info-title ТЕЛЕФОН
+                                        input(type="tel" placeholder="+7 (___) ___-__-__")
+                                .calculation-popup__delivery
+                                    .calculation-popup__check-delivery
+                                        label.calculation-popup__check-need.calculation-popup__check-item 
+                                            input(type="radio" name="delivery") 
+                                            | Нужна доставка
+                                        label.calculation-popup__check-pickup.calculation-popup__check-item
+                                            input(type="radio" name="delivery") 
+                                            | Самовывоз со  
+                                            b  склада
+                                    label.calculation-popup__info-address 
+                                        span.calculation-popup__info-title ВАШ АДРЕС
+                                        input(type="text")
+                                label.calculation-popup__info-message 
+                                    span.calculation-popup__info-title ВАШ ЗАКАЗ
+                                    textarea
+                                .calculation-popup__footer
+                                    .calculation-popup__footer-file
+                                        label.calculation-popup__footer-btn.calculation-popup__footer-download ПРИКРЕПИТЬ ФАЙЛ (<4 МБ)
+                                            input(type="file")
+                                        .calculation-popup__footer-loaded
+                                            +icon('close_brs')
+                                            span.file-name
+                                    .calculation-popup__footer-end
+                                        button(type="submit").calculation-popup__footer-btn.calculation-popup__footer-submit ОТПРАВИТЬ ЗАЯВКУ
+                                        label.calculation-popup__footer-policy
+                                            input(type="checkbox")
+                                            span Я принимаю 
+                                                a(href="#") Пользовательское соглашение 
+                                                | и даю свое согласие на обработку моих персональных данных 
