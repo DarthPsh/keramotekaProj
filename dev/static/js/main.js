@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log('hello');
 
+    function onlyTheNumbersRemain() {
+        $('a[href^="tel:"]').attr('href', function (_, v) {
+            return v.replace(/\(/g, '').replace(/\)/g, '').replace(/\ /g, '').replace(/\-/g, '');
+        });
+    }
+    onlyTheNumbersRemain(); // удаляем все символы из инпута tel кроме чисел
+
     //плавный скролл
     jQuery('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
@@ -9,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollTop: jQuery(jQuery(this).attr('href')).offset().top
         }, 500, 'linear');
     });
+
+
+    $('.alert-close').on('click', function () {
+        $(this).closest('.alert').hide();
+    })
 
 
     $('.page-content-grid-sizer').show();
@@ -225,6 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function cardCollectionActive() {
         $('body').on('click', '.card-collection__name', function () {
+            preventDefault();
             $(this).parent().parent().toggleClass('card-collection_active');
             setTimeout(() => {
                 $grid.masonry();
@@ -412,15 +425,39 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.product-text__content-read-more').toggleClass('product-text__content-read-more_active');
     })
 
-
-
+    var threedSliderThumbs = new Swiper('.threed-slider__thumbs', {
+        spaceBetween: 5,
+        slidesPerView: 'auto',
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            760: {
+                spaceBetween: 8,
+                slidesPerView: 5,
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+            },
+        }
+    });
+    var threedSliderMain = new Swiper('.threed-slider__main', {
+        spaceBetween: 10,
+        thumbs: {
+            swiper: threedSliderThumbs
+        },
+        pagination: {
+            el: '.threed-slider__main-pagination',
+            type: 'fraction',
+        },
+    });
     // СЛАЙДЕР НА СТРАНИЦЕ КОЛЛЕКЦИИ
     if (document.querySelectorAll('.product-slider').length) {
         var galleryThumbs = new Swiper('.product-slider-thumbs', {
             lazy: true,
             spaceBetween: 5,
             slidesPerView: 7,
-            loop: true,
+            // loop: true,
             freeMode: true,
             loopedSlides: 1, //looped slides should be the same
             watchSlidesVisibility: true,
@@ -428,14 +465,18 @@ document.addEventListener('DOMContentLoaded', function () {
             direction: 'horizontal',
             breakpoints: {
                 761: {
-                    freeMode: false,
+                    freeMode: true,
                     slidesPerView: 7,
                     spaceBetween: 8,
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
                 },
                 1441: {
-                    freeMode: false,
+                    freeMode: true,
                     spaceBetween: 16,
                     direction: 'vertical',
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
                 },
             }
         });
@@ -741,10 +782,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    $('a[href^="tel:"]').attr('href', function (_, v) {
-        return v.replace(/\(/g, '').replace(/\)/g, '').replace(/\ /g, '').replace(/\-/g, '');
-    });
-
     let scrollBarSlider = null;
     function scrollBarSliderFunc(doCreate) {
         if ($(window).innerWidth() <= 760) {
@@ -805,7 +842,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lazy: true,
             spaceBetween: 5,
             slidesPerView: 7,
-            loop: true,
+            // loop: true,
             freeMode: true,
             loopedSlides: 10, //looped slides should be the same
             watchSlidesVisibility: true,
@@ -816,7 +853,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     direction: 'vertical',
                     spaceBetween: 10,
                     slidesPerView: 4,
-                    loop: true,
+                    // loop: true,
                     freeMode: true,
                     loopedSlides: 4,
                     watchSlidesVisibility: true,
@@ -826,7 +863,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     direction: 'vertical',
                     spaceBetween: 10,
                     slidesPerView: 5,
-                    loop: true,
+                    // loop: true,
                     freeMode: true,
                     loopedSlides: 5,
                     watchSlidesVisibility: true,
@@ -834,23 +871,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             }
         });
-        // var contactsSliderThumbs = new Swiper('.contacts-slider__thumbs', {
-        //     lazy: true,
-        //     direction: 'vertical',
-        //     spaceBetween: 10,
-        //     slidesPerView: 5,
-        //     loop: true,
-        //     freeMode: true,
-        //     loopedSlides: 5, 
-        //     watchSlidesVisibility: true,
-        //     watchSlidesProgress: true,
-        // });
     }
     if (document.querySelectorAll('.contacts-slider__main').length) {
         var contactsSliderMain = new Swiper('.contacts-slider__main', {
             lazy: true,
             spaceBetween: 10,
-            loop: true,
+            // loop: true,
             //loopedSlides: 5, //looped slides should be the same
             pagination: {
                 el: '.contacts-slider__main-pagination',
@@ -908,17 +934,25 @@ document.addEventListener('DOMContentLoaded', function () {
     removeCartItem();
 
 
-    $('.play').click(function () {
-        $(this).next('video')[0].play();
-    })
+   
+
 
     if (document.querySelectorAll('.threed-slider').length) {
         var threedSliderThumbs = new Swiper('.threed-slider__thumbs', {
-            spaceBetween: 10,
-            slidesPerView: 4,
+            spaceBetween: 5,
+            slidesPerView: 'auto',
             freeMode: true,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
+            breakpoints: {
+                760: {
+                    spaceBetween: 8,
+                    slidesPerView: 5,
+                    freeMode: true,
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
+                },
+            }
         });
         var threedSliderMain = new Swiper('.threed-slider__main', {
             spaceBetween: 10,
@@ -931,6 +965,22 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         });
     }
+
+
+    if (document.querySelectorAll('.recently-viewed').length) {
+        var recentlyViewedSlider = new Swiper('.recently-viewed', {
+            spaceBetween: 8,
+            slidesPerView: 'auto',
+            freeMode: true,
+            navigation: {
+                nextEl: '.recently-viewed-next',
+                prevEl: '.recently-viewed-prev',
+            },
+        });
+    }
+
+
+
 
 
 

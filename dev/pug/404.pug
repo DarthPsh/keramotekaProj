@@ -1,0 +1,20 @@
+extends layout/main
+
+block variables
+    -var title = '404'
+
+block content
+    .page-top.nofound-wrap
+        .container
+            .breadcrumbs
+                ul.breadcrumbs-list
+                    li.breadcrumbs-list__item 
+                        a.breadcrumbs-list__item-link(href="#") 404
+            .nofound.information
+                .information-main.information-main__aside.nofound-main
+                    .information-main__title.nofound-main__title Страница не найдена
+                    .information-main__desc.nofound-main__desc Говорят, этой страницы уже не существует. Продолжите с главной страницы.
+                    a(href="/").information-main__desc.nofound-main__link ПЕРЕЙТИ НА ГЛАВНУЮ
+                .information-content.nofound-content
+                    figure.nofound-image
+                        img(src="static/images/common/404.jpg", alt="404")

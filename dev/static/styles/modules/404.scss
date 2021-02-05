@@ -1,0 +1,91 @@
+.nofound {
+    padding-bottom: 50px;
+    flex-wrap: nowrap;
+    @media ( max-width: 760px ) {
+        flex-direction: column;
+    }
+    &-main {
+        max-width: 470px;
+        @media ( max-width: 1440px ) {
+            max-width: 260px;
+            min-width: 260px;
+            margin-right: 15px;
+        }
+        @media ( max-width: 1200px ) {
+            display: block;
+        }
+        &__title {
+            @media ( max-width: 1440px ) {
+                max-width: 215px;
+            }
+        }
+        &__desc {
+            margin-bottom: 30px;
+        }
+        &__link {
+            color: $colorLight;
+            background:  #333333;
+            border-radius: 2px;
+            height: 56px;
+            width: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+    &-content {
+        max-width: 825px;
+        @media ( max-width: 1200px ) {
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    &-image {
+        overflow: hidden;
+        @media ( max-width: 1200px ) {
+            max-width: 695px;
+            max-height: 463px;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+.agreement {
+    padding-bottom: 50px;
+    flex-wrap: nowrap;
+    @media ( max-width: 760px ) {
+        flex-direction: column;
+    }
+    &-main {
+        max-width: 420px;
+        @media ( max-width: 1440px ) {
+            margin-right: 15px;
+        }
+        @media ( max-width: 1200px ) {
+            display: block;
+        }
+        &__title {
+            max-width: 420px;
+            @media ( max-width: 1440px ) {
+                max-width: 310px;
+            }
+        }
+    }
+    &-content {
+        max-width: 825px;
+        @media ( max-width: 1200px ) {
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

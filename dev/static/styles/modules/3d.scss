@@ -14,9 +14,19 @@
         border-left: 4px solid $colorAccent;
     }
     &-slider {
+        padding-bottom: 60px;
+        @media (max-width: 760px) {
+            padding-bottom: 30px;
+        }
         &__main {
             height: 420px;
             overflow: hidden;
+            @media (max-width: 760px) {
+                height: 380px;
+            }
+            @media (max-width: 540px) {
+                height: 245px;
+            }
             img {
                 position: absolute;
                 height: 100%;
@@ -28,11 +38,19 @@
             }
             &-pagination {
                 position: static;
+                width: 110px;
+                text-align: right;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 100%;
+                @media (max-width: 760px) {
+                    display: none;
+                }
             }
         }
         &__thumbs {
             overflow: hidden;
-            height: 96px;
             width: 100%;
             margin: 0;
             img {
@@ -46,6 +64,50 @@
             }
             &-wrap {
                 display: flex;
+                padding: 8px 0;
+                @media (max-width: 760px) {
+                    background: #333333;
+                }
+            }
+            &-item {
+                height: 76px;
+                @media (max-width: 760px) {
+                    width: 42px;
+                    max-width: 42px;
+                    height: 32px;
+                }
+            }
+            .swiper-slide-thumb-active {
+                img {
+                    outline: 5px solid #FAC420; 
+                    outline-offset: -5px;
+                    @media (max-width: 760px) {
+                        outline: 2px solid #FAC420; 
+                        outline-offset: -2px;
+                    }
+                }
+            } 
+        }
+    }
+    .calculation-popup {
+        @media (max-width: 760px) {
+            padding: 22px 0;
+            .calculation-popup__title {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .calculation-popup__subtitle {
+                padding-left: 16px;
+                padding-right: 16px;
+                margin-left: 16px;
+            }
+            .calculation-popup__desc {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .calculation-popup__form {
+                padding-left: 16px;
+                padding-right: 16px;
             }
         }
     }

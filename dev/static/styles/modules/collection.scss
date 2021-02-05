@@ -194,7 +194,11 @@
         &:hover .product-slider-main-arrow {
             transform: translateX(0);
         }
+        &:hover .video-btn {
+            opacity: 1 !important;
+        }
         &-main {
+            min-height: 200px;
             width: calc(100% - 216px);
             @media (max-width: 1440px) {
                 width: 100%;
@@ -206,26 +210,14 @@
                 img {
                     width: 100%;
                 }
-                video {
+                iframe {
                     position: absolute;
-                    top: 0;
-                    left: 0;
                     width: 100%;
                     height: 100%;
-                    position: relative;
-                }
-                .play {
-                    display: block;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    height: 80px;
-                    width: 80px;
-                    background: url('/static/images/common/playvideo.svg') center no-repeat;
-                    background-size: contain;
-                    z-index: 1;
-                    cursor: pointer;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
                 }
                 &__label {
                     height: 1px;
@@ -234,6 +226,9 @@
                     position: absolute;
                     opacity: 0;
                     transition: all .3s ease-out; 
+                    @media (max-width: 760px) {
+                        opacity: 1;
+                    }
                     &-circle {
                         position: absolute;
                         height: 48px;

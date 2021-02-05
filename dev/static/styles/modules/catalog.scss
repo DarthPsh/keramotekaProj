@@ -132,9 +132,13 @@
                     left: 0;
                     width: 100%;
                     display: flex;
+                    display: none;
                     justify-content: space-between;
                     align-items: center;
                     padding: 15px;
+                    @media (max-width: 760px) {
+                        display: flex;
+                    }
                     .catalog-filter-reset {
                         display: flex;
                         flex-direction: column;
