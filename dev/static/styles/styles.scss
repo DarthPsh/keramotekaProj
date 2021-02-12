@@ -9,6 +9,7 @@ html {
   font-family: 'Proxima Nova Rg', serif;
   font-size: 16px;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +19,6 @@ body {
   text-rendering: optimizeSpeed;
   // line-height: 1.5;
   color: $colorBlackText;
-  scroll-behavior: smooth;
 }
 
 *,
@@ -715,11 +715,15 @@ input[type="number"]::-webkit-outer-spin-button {
 .advantages {
   display: flex;
   justify-content: space-between;
+  padding: 45px 0;
   @media (max-width: 992px) {
     flex-wrap: wrap;   
   }
   @media (max-width: 760px) {
     flex-direction: column;
+  }
+  &-section {
+    border-top: 1px solid #D9D9D9;
   }
   &-block {
     display: flex;
@@ -817,6 +821,9 @@ input[type="number"]::-webkit-outer-spin-button {
       align-items: center;
       justify-content: center;
       margin-right: 5px;
+      &:hover {
+        border: 2px solid $colorAccent;
+      }
     }
     a.current-page {
       background: $colorAccent;
@@ -841,11 +848,19 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .3s;
+    &:hover {
+      border-color: $colorBlackText;
+      .icon-renew {
+        transform: rotate(360deg);
+      }
+    }
     .icon-renew {
       height: 24px;
       width: 24px;  
       fill: #DADADA;
       margin-right: 10px;
+      transition: 1s;
     }
     @media (max-width: 760px) {
       position: absolute;

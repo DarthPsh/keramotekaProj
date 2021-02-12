@@ -81,11 +81,23 @@
         }
     }
     &-content {
-        max-width: 825px;
+        max-width: 915px;
         @media ( max-width: 1200px ) {
             padding: 0;
             display: flex;
             justify-content: flex-end;
+        }
+        &__text {
+            max-width: 715px;
+            @media ( max-width: 1440px ) {
+                max-width: 605px;
+            }
+            @media ( max-width: 1200px ) {
+                max-width: 520px;
+            }
+            @media ( max-width: 760px ) {
+                max-width: 100%  ;
+            }
         }
     }
 }

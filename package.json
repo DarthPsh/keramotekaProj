@@ -42,6 +42,7 @@
     "gulp-w3c-html-validator": "^2.0.0",
     "gulp.spritesmith": "^6.11.0",
     "imagesloaded": "^4.1.4",
+    "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
     "jquery-validation": "^1.19.2",
     "masonry-layout": "^4.2.2",

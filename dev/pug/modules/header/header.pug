@@ -24,7 +24,7 @@ header.header
 						li
 							a(href='#') Шоурум
 						li
-							a(href='#') 3D-визуализация
+							a.3d-visual(href='#') 3D-визуализация
 						li
 							a(href='#') Заказ и доставка
 				.header-top__right
@@ -79,6 +79,14 @@ header.header
 					.header-content-block.header-content__worktime
 						figure.header-content-block__icon
 							+icon('clock')
+						ul.header-drop-menu.header-content__worktime-drop-menu
+							li
+								.header-content-block__text
+									span пн-пт
+									span.header-content-block__info 9:00 — 20:00
+								.header-content-block__text
+									span сб-вс
+									span.header-content-block__info 10:00 — 18:00
 						.wrapper
 							.header-content-block__text
 								span пн-пт
@@ -86,12 +94,24 @@ header.header
 							.header-content-block__text
 								span сб-вс
 								span.header-content-block__info 10:00 — 18:00
-					.header-content-circle.header-content__favourites
+					a(href="/favorites.html").header-content-circle.header-content__favourites
 						+icon('favourites')
-						.header-content-circle__badge 28
-					.header-content-circle.header-content__cart
+						input(type="number" value="0" disabled).header-content-circle__badge
+						ul.header-drop-menu.favourites-empty__drop-menu
+							li
+								.favourites-empty__text
+									p Список избранных коллекций пуст
+									p На страницах коллекций нажимайте кнопку
+							li
+								.favourites-empty__icon 
+									+icon('favourites')
+					a(href="/cart.html").header-content-circle.header-content__cart
 						+icon('shopping-cart')
-						.header-content-circle__badge 4
+						input(type="number" value="0" disabled).header-content-circle__badge.cart-count
+						ul.header-drop-menu.cart-empty__drop-menu
+							li
+								.cart-empty__text
+									p Ваша корзина пуста
 				.header-burger
 					.header-burger-line.header-burger-line__top
 					.header-burger-line.header-burger-line__mid
@@ -244,20 +264,46 @@ header.header
 					.header-bot-mobile-item.header-bot-mobile-item-search
 						+icon('search')
 						.header-bot-mobile-item-desc Поиск
-					.header-bot-mobile-item
+					a(href="/contacts-shop.html").header-bot-mobile-item
 						+icon('map-marker')
 						.header-bot-mobile-item-desc Адрес шоурума
-					.header-bot-mobile-item
+					.header-bot-mobile-item.header-bot-mobile-phone
 						+icon('phone')
-						.header-bot-mobile-item-desc Звоните нам					
-					.header-bot-mobile-item.header-bot-mobile-item__favourites
-						.header-bot-mobile-item__badge 28
+						.header-bot-mobile-item-desc Звоните нам
+						ul.header-drop-menu.header-mobile-phone-drop-menu
+							li
+								.header-content__phone-drop-menu-inner
+									span для Москвы и МО
+									a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
+								a.header-content-circle(href='tel:+74956498420')
+									+icon('phone')
+							li
+								.header-content__phone-drop-menu
+									span для регионов РФ 
+									span (бесплатно)
+									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
+								a.header-content-circle(href='tel:88007075037')
+									+icon('phone')
+					a(href="/favorites.html").header-bot-mobile-item.header-bot-mobile-item__favourites
+						input(type="number" value="0" disabled).header-bot-mobile-item__badge.favourites-count
 						+icon('favourites')
 						.header-bot-mobile-item-desc Избранные коллекции
-					.header-bot-mobile-item.header-bot-mobile-item__cart
-						.header-bot-mobile-item__badge 4
+						ul.header-drop-menu.favourites-empty__drop-menu
+							li
+								.favourites-empty__text
+									p Список избранных коллекций пуст
+									p На страницах коллекций нажимайте кнопку
+							li
+								.favourites-empty__icon 
+									+icon('favourites')
+					a(href="/cart.html").header-bot-mobile-item.header-bot-mobile-item__cart
+						input(type="number" value="0" disabled).header-bot-mobile-item__badge.cart-count 
 						+icon('shopping-cart')
 						.header-bot-mobile-item-desc Ваш заказ
+						ul.header-drop-menu.cart-empty__drop-menu
+							li
+								.cart-empty__text
+									p Ваша корзина пуста
 					.header-bot-mobile-search-close Отмена
 	form.header-filter 
 		.container 
@@ -471,7 +517,7 @@ header.header
 						li
 							a(href="#") Дизайнерам и архитекторам
 				li.mobile-menu-list-item
-					a.mobile-menu-list-item__link(href='#') 3D-визуализация
+					a.mobile-menu-list-item__link.3d-visual(href='#') 3D-визуализация
 				li.mobile-menu-list-item
 					a.mobile-menu-list-item__link(href='#') О компании
 				li.mobile-menu-list-item.mobile-menu-list-item__contacts

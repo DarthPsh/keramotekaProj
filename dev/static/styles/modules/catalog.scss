@@ -200,6 +200,9 @@
 }
 .catalog-second {
     background: none;
+    &__content {
+        padding-top: 60px;
+    }
     .catalog {
         &-head {
             flex-wrap: nowrap;
@@ -211,11 +214,13 @@
             }
             &__title {
                 font-weight: normal;
+                text-transform: uppercase;
                 @media (max-width: 760px) {
                     width: 70%;
                     flex-grow: 1;
                     margin-bottom: 0;
                     padding-left: 15px;
+                    font-size: 32px;
                 }
             }
             &__logo {
@@ -225,7 +230,6 @@
                 min-width: 192px;
                 position: relative;
                 overflow: hidden;
-                margin: auto;
                 @media ( max-width: 992px ) {
                     height: 130px;
                     width: 130px;
