@@ -8,14 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     onlyTheNumbersRemain(); // удаляем все символы из инпута tel кроме чисел
     $('input[type="tel"]').inputmask("+7(999)999-9999");
-    
+
     $(document).ajaxSuccess(function () {
         $('input[type="tel"]').inputmask("+7 (999) 999-99-99");
     });
-
-
-
-
 
     //плавный скролл
     // jQuery('a[href*="#"]').on('click', function (e) {
@@ -196,21 +192,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    $('.header-filter .header-filter-list-item .header-filter-list-drop-menu input').on('click', function () {
-        $(".header-filter .header-filter-list-drop-menu").each(function (index) {
-            $(this).parent().find('.filter-list-count').text(($(this).find('input[type="checkbox"]:checked').length))
-            if ($(this).parent().find('.filter-list-count').text() <= '0') {
-                $(this).parent().find('.filter-list-count').css('opacity', '0');
-            }
-            else {
-                $(this).parent().find('.filter-list-count').css('opacity', '1');
-            }
+    function countCheckedFiltersFunc() {
+        $('.header-filter .header-filter-list-item .header-filter-list-drop-menu input').on('click', function () {
+            $(".header-filter .header-filter-list-drop-menu").each(function (index) {
+                $(this).parent().find('.filter-list-count').text(($(this).find('input[type="checkbox"]:checked').length))
+                if ($(this).parent().find('.filter-list-count').text() <= '0') {
+                    $(this).parent().find('.filter-list-count').css('opacity', '0');
+                }
+                else {
+                    $(this).parent().find('.filter-list-count').css('opacity', '1');
+                }
+            })
         })
-    })
+    }
+    countCheckedFiltersFunc();
 
     $('.header-filter input[type="checkbox"]').on('click', function () {
         $('#result span').html($('#controls input:checkbox:checked').length);
         let countCheckedFilters = $('.header-filter input[type="checkbox"]:checked').length;
+        let dataIndexOfCheck = $('.header-filter input[type="checkbox"]').index(this);
+        let checkList = $('.header-filter-checked-list');
+        let checkListItem = $('.header-filter-checked-list li');
         if (countCheckedFilters > 0) {
             $('.header-filter-submit').addClass('header-filter-submit_active');
             $('.header-filter-reset').addClass('header-filter-reset_active');
@@ -223,8 +225,34 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.header-filter-checked').removeClass('header-filter-checked_active');
             $('.header-filter-btns').removeClass('header-filter-btns_active');
         }
-        console.log(countCheckedFilters);
+        
+        if (this.checked) {
+            $('<li data-index-of-check="' + dataIndexOfCheck + '">' + $(this).parent().text() + '<svg class="svg-sprite-icon icon-close_brs"><use xlink:href="/static/images/sprite/symbol/sprite.svg#close_brs"></use></svg></li>').prependTo(checkList);
+        }
+        else {
+            for (let i = 0; i < checkListItem.length; i++) {
+                if (dataIndexOfCheck == checkListItem[i].dataset.indexOfCheck) {
+                    checkListItem[i].remove();
+                }
+            }
+        }        
     });
+    $('body').on('click', '.header-filter-checked-list li', function() {
+        let checkedFilters = $('.header-filter input[type="checkbox"]');
+        for (let i = 0; i < checkedFilters.length; i++) {
+            if ($(this).data('indexOfCheck') == i) {
+                checkedFilters[i].checked = false;
+            }
+        }
+        $(this).remove();
+        countCheckedFiltersFunc();
+    })
+    $('.header-filter-checked-reset').on('click', function() {
+        $('.header-filter-checked-list li').remove();
+    })
+    $('.header-filter-reset').on('click', function() {
+        $('.header-filter-checked-list li').remove();
+    })
 
 
     // CБРОС ФИЛЬТРОВ

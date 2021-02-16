@@ -250,12 +250,14 @@ header.header
 					.header-bot-filter
 						figure.header-bot-filter__icon
 							+icon('filter')
+							+icon('close_brs')
 						.header-bot-filter__text Поиск по параметрам
 					form.header-bot-search
 						input#search-input.header-bot-search__input(type="text" placeholder="Поиск" autocomplete="off")
 						.header-bot-search__nav
 							input(type="reset" value="").header-bot-search__clear
-							input(type="submit" value="").header-bot-search__icon
+							button(type="submit" value="").header-bot-search__icon
+								+icon('search')
 						.bx_searche
 					a(href="tel:+74956468620").header-bot-phone 
 						figure.header-bot-phone__icon
@@ -476,7 +478,7 @@ header.header
 									| Фиолетовый
 									.header-filter-list-drop-menu__color(style="background:violet;")
 				.header-filter-checked 
-					ul.header-filter-checked-list тут появляются выбранные варианты
+					ul.header-filter-checked-list 
 					button.header-filter-checked-reset(type="reset") Сбросить
 			.header-filter-btns
 				button.header-filter-reset(type="reset") 

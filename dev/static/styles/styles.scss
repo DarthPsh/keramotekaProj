@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Proxima Nova Rg', serif;
+  font-family: 'Proxima Nova Rg', Arial, Helvetica, sans-serif;
   height: 100%;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -60,7 +60,7 @@ textarea { resize: none; }
 
 section { position: relative; }
 
-input,
+// input,
 select,
 button { outline: none; cursor:pointer;}
 
