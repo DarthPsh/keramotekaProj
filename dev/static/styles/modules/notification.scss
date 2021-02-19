@@ -5,6 +5,8 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        padding-right: 30px;
+        position: relative;
     }
     &-badge {
         padding: 4px 9px;
@@ -17,6 +19,9 @@
         color: #333333;
         background: $colorAccent;
         margin-right: 18px;
+        @media ( max-width: 760px ) {
+            display: none;
+        }
     }
     &-text {
         font-style: normal;
@@ -37,7 +42,9 @@
     }
     &-close {
         margin-left: auto;
-        padding: 5px;
+        position: absolute;
+        right: 0;
+        top: 0;
         .svg-sprite-icon {
             fill: #999999;
             height: 13px;
@@ -47,14 +54,23 @@
     }
     &-warning {
         background: $colorAccent;
+        @media ( max-width: 760px ) {
+            background: #F1F1F1;
+        }
         .alert-badge {
             background: rgba($colorLight, .5);
         }
         .alert-text {
             color: $colorBlackText;
+            @media ( max-width: 760px ) {
+                color: #828282;
+            }
         }
         .svg-sprite-icon {
             fill: #333333;
+            @media ( max-width: 760px ) {
+                fill: #828282;
+            }
         }
     } 
 }

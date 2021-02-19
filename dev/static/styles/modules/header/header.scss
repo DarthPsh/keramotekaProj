@@ -216,11 +216,22 @@ header { flex: 0 0 auto; }
                 fill: $colorLight;
                 transition: .3s;
             }
+            .icon-favourites {
+                height: 24px;
+                width: 24px;
+                fill: transparent;
+                stroke: $colorLight;
+                stroke-width: 2px;
+            }
             .icon-shopping-cart {
                 transform: translateX(-2px);
             }
             &:hover .svg-sprite-icon {
                 fill: $colorAccent;
+            }
+            &:hover .icon-favourites {
+                fill: transparent;
+                stroke: $colorAccent;
             }
             &__badge {
                 height: 24px;
@@ -323,6 +334,7 @@ header { flex: 0 0 auto; }
         padding: 12px 0;
         position: relative;
         transition: all .3s ease-out;
+        z-index: 12;
         @media (min-width: 1024px) {
             will-change: transform;
         }
@@ -414,6 +426,11 @@ header { flex: 0 0 auto; }
                     fill: $colorLight;
                     display: block;
                     margin: auto;
+                }
+                .icon-favourites {
+                    fill: transparent;
+                    stroke: $colorLight;
+                    stroke-width: 2px; 
                 }
                 @media (max-width: 760px) {
                     display: flex;
@@ -676,6 +693,7 @@ header { flex: 0 0 auto; }
                 z-index: 2;
                 // background: $colorLight url('/static/images/common/search.svg') center no-repeat;
                 background: $colorLight;
+                background: transparent;
                 padding: 0;
                 text-indent: -999px;
                 min-width: 44px;
@@ -788,6 +806,12 @@ header { flex: 0 0 auto; }
                             max-width: none;
                         }
                     }
+                    &__icon {
+                        border-color: transparent;
+                        .icon-search {
+                            fill: $colorLight;
+                        }
+                    }
                 }
                 &-phone {
                     display: flex;
@@ -811,7 +835,7 @@ header { flex: 0 0 auto; }
                             height: 20px;
                             width: 20px;
                             stroke: white;
-                            stroke-width: 2.5px;
+                            stroke-width: 2px;
                         }
                     }
                     @media (max-width: 1200px) {
@@ -1334,12 +1358,15 @@ header { flex: 0 0 auto; }
         opacity: 1;
         visibility: visible;
     }
-    &__color {
+    .circle-color {
         height: 12px;
         width: 12px;
         border-radius: 50%;
-        border: 1px solid $colorDark;
+        border: 1px solid transparent;;
         margin-left: auto;
+        &__border {
+            border: 1px solid $colorDark;
+        }
     }
     &::-webkit-scrollbar{
         width: 4px;
@@ -1460,8 +1487,12 @@ header { flex: 0 0 auto; }
         display: flex;
         align-items: center;
         justify-content: center;
-        .svg-sprite-icon {
-            fill: #999999 !important;
+        .icon-favourites {
+            height: 24px;
+            width: 24px;
+            fill: transparent;
+            stroke: #D9D9D9 !important;
+            stroke-width: 2px;
         }
     }
 }

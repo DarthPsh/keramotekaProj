@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.header-filter-checked').removeClass('header-filter-checked_active');
             $('.header-filter-btns').removeClass('header-filter-btns_active');
         }
-        
+
         if (this.checked) {
             $('<li data-index-of-check="' + dataIndexOfCheck + '">' + $(this).parent().text() + '<svg class="svg-sprite-icon icon-close_brs"><use xlink:href="/static/images/sprite/symbol/sprite.svg#close_brs"></use></svg></li>').prependTo(checkList);
         }
@@ -235,9 +235,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     checkListItem[i].remove();
                 }
             }
-        }        
+        }
     });
-    $('body').on('click', '.header-filter-checked-list li', function() {
+    $('body').on('click', '.header-filter-checked-list li', function () {
         let checkedFilters = $('.header-filter input[type="checkbox"]');
         for (let i = 0; i < checkedFilters.length; i++) {
             if ($(this).data('indexOfCheck') == i) {
@@ -247,10 +247,10 @@ document.addEventListener('DOMContentLoaded', function () {
         $(this).remove();
         countCheckedFiltersFunc();
     })
-    $('.header-filter-checked-reset').on('click', function() {
+    $('.header-filter-checked-reset').on('click', function () {
         $('.header-filter-checked-list li').remove();
     })
-    $('.header-filter-reset').on('click', function() {
+    $('.header-filter-reset').on('click', function () {
         $('.header-filter-checked-list li').remove();
     })
 
@@ -345,7 +345,8 @@ document.addEventListener('DOMContentLoaded', function () {
         resize: true,
         percentPosition: true,
         initLayout: false,
-        gutter: 8
+        gutter: 8,
+        // transitionDuration: 0,
     });
     $grid.masonry('on', 'layoutComplete', function () {
         console.log('layout is complete');
@@ -393,6 +394,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     $grid.imagesLoaded(function () {
                         // init Masonry after all images have loaded
                         $grid.masonry();
+                        
                     });
                 }, 300);
             }
@@ -569,13 +571,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var threedSliderMain = new Swiper('.threed-slider__main', {
         spaceBetween: 10,
         thumbs: {
-            swiper: threedSliderThumbs
+            swiper: threedSliderThumbs,
+            autoScrollOffset: 1,
         },
         pagination: {
             el: '.threed-slider__main-pagination',
             type: 'fraction',
         },
     });
+
     // СЛАЙДЕР НА СТРАНИЦЕ КОЛЛЕКЦИИ
     if (document.querySelectorAll('.product-slider').length) {
         var galleryThumbs = new Swiper('.product-slider-thumbs', {
@@ -619,6 +623,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             thumbs: {
                 swiper: galleryThumbs,
+                autoScrollOffset: 1,
             },
             pagination: {
                 el: '.product-slider-thumbs-pagination',
@@ -749,6 +754,12 @@ document.addEventListener('DOMContentLoaded', function () {
             $('body').css('overflow', 'hidden');
             $('body').append(resultHtml);
             sendCalculationForm();
+            history.pushState(null, null, "#popup");
+            $(window).on('popstate', function () {
+                $('.calculation-popup-wrap').remove();
+                $('body').css('overflow', 'auto');
+                history.replaceState(null, null, " ");
+            });
         }).fail(function () {
             console.log('Failed');
         }).always(function () {
@@ -775,7 +786,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('body').on('click', '.calculation-popup__close', function () {
         $('.calculation-popup-wrap').remove();
         $('body').css('overflow', 'auto');
-        history.replaceState({ page: 1 }, " ", " ");
+        history.replaceState(null, null, " ");
     });
 
     function sendCalculationForm() {
@@ -938,7 +949,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.popup-contact__content:eq(' + tabIndex + ')').addClass('popup-contact__content_active');
         })
     }
-    contactsTabs();
+    // contactsTabs();
 
     // попап контактов
     $(".information-contact__block-btn").on('click', function () {
@@ -949,10 +960,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }).done(function (resultHtml) {
             $('body').css('overflow', 'hidden');
             $('body').append(resultHtml);
-            scrollBarSliderFunc(true);
 
+            history.pushState(null, null, "#popup");
+            $(window).on('popstate', function () {
+                $('.calculation-popup-wrap').remove();
+                $('body').css('overflow', 'auto');
+                history.replaceState(null, null, " ");
+            });
+
+            scrollBarSliderFunc();
             contactsTabs();
-
         }).fail(function () {
             console.log('Failed');
         }).always(function () {
@@ -1001,6 +1018,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelectorAll('.contacts-slider__main').length) {
         var contactsSliderMain = new Swiper('.contacts-slider__main', {
             lazy: true,
+            loadPrevNext: true,
             spaceBetween: 10,
             // loop: true,
             //loopedSlides: 5, //looped slides should be the same
@@ -1010,6 +1028,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             thumbs: {
                 swiper: contactsSliderThumbs,
+                autoScrollOffset: 1,
             },
         });
     }
@@ -1017,7 +1036,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // попап товара "положить в квартиру"    
-    $('.product-card-img').on('click', function () {
+    $('.product-card').on('click', function () {
         // preventDefault();
         $.ajax({
             url: 'product-popup.html',
@@ -1026,9 +1045,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             $('body').css('overflow', 'hidden');
             $('body').append(resultHtml);
-
+            history.pushState(null, null, "#popup");
+            $(window).on('popstate', function () {
+                $('.calculation-popup-wrap').remove();
+                $('body').css('overflow', 'auto');
+                history.replaceState(null, null, " ");
+            });
             quantityBtnsFunc();
-
             zoom();
 
 
@@ -1080,7 +1103,8 @@ document.addEventListener('DOMContentLoaded', function () {
             var threedSliderMain = new Swiper('.threed-slider__main', {
                 spaceBetween: 10,
                 thumbs: {
-                    swiper: threedSliderThumbs
+                    swiper: threedSliderThumbs,
+                    autoScrollOffset: 1,
                 },
                 pagination: {
                     el: '.threed-slider__main-pagination',
@@ -1131,35 +1155,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // попап тридэ
-    $(".information-contact__block-btn").on('click', function () {
-        preventDefault();
-        $.ajax({
-            url: 'contact-popup.html',
-            // type: 'post'
-        }).done(function (resultHtml) {
-            $('body').css('overflow', 'hidden');
-            $('body').append(resultHtml);
-            scrollBarSliderFunc(true);
-
-            contactsTabs();
-
-        }).fail(function () {
-            console.log('Failed');
-        }).always(function () {
-
-        });
-    });
+    
     $(".3d-visual").on('click', function () {
         preventDefault();
         $.ajax({
             url: '3d.html',
             // type: 'post'
         }).done(function (resultHtml) {
-            // $('body').css('overflow', 'hidden');
-            console.log('OK');
             $('body').append(resultHtml);
-            $('#popup').html();
-            history.pushState({ page: 1 }, "", "#popup");
+            // $('#popup').html();
+            history.pushState(null, null, "#popup");
+            $(window).on('popstate', function () {
+                $('.calculation-popup-wrap').remove();
+                $('body').css('overflow', 'auto');
+                history.replaceState(null, null, " ");
+            });
             initTreedSlider();
             sendCalculationForm()
         }).fail(function () {
@@ -1169,6 +1179,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     // попап тридэ
+
+
+    $('.product-text__content-favorite').on('click', function() {
+        $('.product-text__content-favorite').toggleClass('product-text__content-favorite_active');
+    })
 
 
 

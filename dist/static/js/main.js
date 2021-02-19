@@ -308,7 +308,8 @@ document.addEventListener('DOMContentLoaded', function () {
     resize: true,
     percentPosition: true,
     initLayout: false,
-    gutter: 8
+    gutter: 8 // transitionDuration: 0,
+
   });
   $grid.masonry('on', 'layoutComplete', function () {
     console.log('layout is complete');
@@ -507,7 +508,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var threedSliderMain = new Swiper('.threed-slider__main', {
     spaceBetween: 10,
     thumbs: {
-      swiper: threedSliderThumbs
+      swiper: threedSliderThumbs,
+      autoScrollOffset: 1
     },
     pagination: {
       el: '.threed-slider__main-pagination',
@@ -557,7 +559,8 @@ document.addEventListener('DOMContentLoaded', function () {
         prevEl: '.product-slider-main-prev'
       },
       thumbs: {
-        swiper: galleryThumbs
+        swiper: galleryThumbs,
+        autoScrollOffset: 1
       },
       pagination: {
         el: '.product-slider-thumbs-pagination',
@@ -673,6 +676,12 @@ document.addEventListener('DOMContentLoaded', function () {
       $('body').css('overflow', 'hidden');
       $('body').append(resultHtml);
       sendCalculationForm();
+      history.pushState(null, null, "#popup");
+      $(window).on('popstate', function () {
+        $('.calculation-popup-wrap').remove();
+        $('body').css('overflow', 'auto');
+        history.replaceState(null, null, " ");
+      });
     }).fail(function () {
       console.log('Failed');
     }).always(function () {});
@@ -699,9 +708,7 @@ document.addEventListener('DOMContentLoaded', function () {
   $('body').on('click', '.calculation-popup__close', function () {
     $('.calculation-popup-wrap').remove();
     $('body').css('overflow', 'auto');
-    history.replaceState({
-      page: 1
-    }, " ", " ");
+    history.replaceState(null, null, " ");
   });
 
   function sendCalculationForm() {
@@ -847,9 +854,9 @@ document.addEventListener('DOMContentLoaded', function () {
       $('.popup-contact__content').removeClass('popup-contact__content_active');
       $('.popup-contact__content:eq(' + tabIndex + ')').addClass('popup-contact__content_active');
     });
-  }
+  } // contactsTabs();
+  // попап контактов
 
-  contactsTabs(); // попап контактов
 
   $(".information-contact__block-btn").on('click', function () {
     preventDefault();
@@ -859,7 +866,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }).done(function (resultHtml) {
       $('body').css('overflow', 'hidden');
       $('body').append(resultHtml);
-      scrollBarSliderFunc(true);
+      history.pushState(null, null, "#popup");
+      $(window).on('popstate', function () {
+        $('.calculation-popup-wrap').remove();
+        $('body').css('overflow', 'auto');
+        history.replaceState(null, null, " ");
+      });
+      scrollBarSliderFunc();
       contactsTabs();
     }).fail(function () {
       console.log('Failed');
@@ -906,6 +919,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelectorAll('.contacts-slider__main').length) {
     var contactsSliderMain = new Swiper('.contacts-slider__main', {
       lazy: true,
+      loadPrevNext: true,
       spaceBetween: 10,
       // loop: true,
       //loopedSlides: 5, //looped slides should be the same
@@ -914,13 +928,14 @@ document.addEventListener('DOMContentLoaded', function () {
         type: 'fraction'
       },
       thumbs: {
-        swiper: contactsSliderThumbs
+        swiper: contactsSliderThumbs,
+        autoScrollOffset: 1
       }
     });
   } // попап товара "положить в квартиру"    
 
 
-  $('.product-card-img').on('click', function () {
+  $('.product-card').on('click', function () {
     // preventDefault();
     $.ajax({
       url: 'product-popup.html' // type: 'post'
@@ -928,6 +943,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }).done(function (resultHtml) {
       $('body').css('overflow', 'hidden');
       $('body').append(resultHtml);
+      history.pushState(null, null, "#popup");
+      $(window).on('popstate', function () {
+        $('.calculation-popup-wrap').remove();
+        $('body').css('overflow', 'auto');
+        history.replaceState(null, null, " ");
+      });
       quantityBtnsFunc();
       zoom();
     }).fail(function () {
@@ -977,7 +998,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var threedSliderMain = new Swiper('.threed-slider__main', {
         spaceBetween: 10,
         thumbs: {
-          swiper: threedSliderThumbs
+          swiper: threedSliderThumbs,
+          autoScrollOffset: 1
         },
         pagination: {
           el: '.threed-slider__main-pagination',
@@ -1021,33 +1043,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
   }); // попап тридэ
 
-  $(".information-contact__block-btn").on('click', function () {
-    preventDefault();
-    $.ajax({
-      url: 'contact-popup.html' // type: 'post'
-
-    }).done(function (resultHtml) {
-      $('body').css('overflow', 'hidden');
-      $('body').append(resultHtml);
-      scrollBarSliderFunc(true);
-      contactsTabs();
-    }).fail(function () {
-      console.log('Failed');
-    }).always(function () {});
-  });
   $(".3d-visual").on('click', function () {
     preventDefault();
     $.ajax({
       url: '3d.html' // type: 'post'
 
     }).done(function (resultHtml) {
-      // $('body').css('overflow', 'hidden');
-      console.log('OK');
-      $('body').append(resultHtml);
-      $('#popup').html();
-      history.pushState({
-        page: 1
-      }, "", "#popup");
+      $('body').append(resultHtml); // $('#popup').html();
+
+      history.pushState(null, null, "#popup");
+      $(window).on('popstate', function () {
+        $('.calculation-popup-wrap').remove();
+        $('body').css('overflow', 'auto');
+        history.replaceState(null, null, " ");
+      });
       initTreedSlider();
       sendCalculationForm();
     }).fail(function () {
@@ -1055,5 +1064,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }).always(function () {});
   }); // попап тридэ
 
+  $('.product-text__content-favorite').on('click', function () {
+    $('.product-text__content-favorite').toggleClass('product-text__content-favorite_active');
+  });
   console.log('press F');
 });
