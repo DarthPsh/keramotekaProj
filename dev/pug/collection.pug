@@ -46,9 +46,14 @@ block content
                         li.product-text__info-item.product-text__info-item__price 
                             +icon('rub')
                             div ₽₽₽
+                            .wrap
+                                +icon('quest')
+                                ul.header-drop-menu.hint-price__list
+                                    li Цена базовых форматов: 2500-5000 руб. за кв.м
                         li.product-text__info-item.product-text__info-item__download 
                             +icon('pdf')
-                            a(href="#" download)  Скачать PDF-каталог
+                            a(href="#" download) 
+                                span Скачать PDF-каталог
             .product-slider.container
                 .product-slider-main.swiper-container
                     .product-slider-main-arrow.product-slider-main-next.swiper-button-next
@@ -160,13 +165,14 @@ block content
             .product-list-title Керамогранит
             .product-list 
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="static/images/content/product-1.png", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="static/images/content/product-1.png", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -186,26 +192,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -225,26 +232,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -264,26 +272,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="static/images/content/product-1.png", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="static/images/content/product-1.png", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -303,26 +312,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -342,26 +352,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -381,26 +392,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="static/images/content/product-1.png", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="static/images/content/product-1.png", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -420,26 +432,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -459,28 +472,29 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
             .product-list-title Декоративные элементы
             .product-list 
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="static/images/content/product-1.png", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="static/images/content/product-1.png", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -500,26 +514,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/fb3/560_560_1/impronta-empreinte-ep00b3.jpg", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -539,26 +554,27 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
                 .product-card(data-product-id="666")
-                    figure.product-card-img
-                        img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                     .product-card-content
+                        figure.product-card-img
+                            img(src="https://www.keramoteka.ru/upload/resize_cache/iblock/600/560_560_1/impronta-empreinte-ep1327d.jpg", alt="img")
                         .wrap
                             .product-card-content__brand DUAL GRES
                             .product-card-content__collection  ANTIGUA
-                        .product-card-content__name Cement Decor
+                        .product-card-content__name 
+                            span Cement Decor
                         .product-card-content__price 2283
                             span.currency  ₽
                             span.unit м
@@ -578,18 +594,18 @@ block content
                                 span.product-card-content__info-way-count —
                             .product-card-content__info-way__reserve ИЗ НИХ В РЕЗЕРВЕ 
                                 span.product-card-content__info-way__reserve-count —
-                        .product-card-content__to-cart
-                            form.product-card-content__to-cart-form
-                                .quantity-block
-                                    .quantity-arrow.quantity-arrow-minus  
-                                    .quantity-num-wrap
-                                        input.quantity-num(type="number" value="0")
-                                        .quantity-num-unit.unit м
-                                            sup 2
-                                    .quantity-arrow.quantity-arrow-plus 
-                                button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
-                                    +icon('shopping-cart')
-                                    span ДОБАВИТЬ В КОРЗИНУ
+                    .product-card-content__to-cart
+                        form.product-card-content__to-cart-form
+                            .quantity-block
+                                .quantity-arrow.quantity-arrow-minus  
+                                .quantity-num-wrap
+                                    input.quantity-num(type="number" value="0")
+                                    .quantity-num-unit.unit м
+                                        sup 2
+                                .quantity-arrow.quantity-arrow-plus 
+                            button.product-card-content__to-cart-btn.add-to-cart(type="submit") 
+                                +icon('shopping-cart')
+                                span ДОБАВИТЬ В КОРЗИНУ
     .calculate-section
         .container
             .calculate
@@ -602,209 +618,225 @@ block content
                 .advantages-block
                     figure.advantages-block-img
                         +icon('adv-1')
-                    .advantages-block-text 762 коллекции керамогранита и плитки от лучших фабрик в Европе и России
+                    a(href="#").advantages-block-text
+                        span 762 коллекции керамогранита и плитки от лучших фабрик в Европе и России
                 .advantages-block
                     figure.advantages-block-img
                         +icon('adv-2')
-                    .advantages-block-text 3D-визуализация вашего будущего интерьера
+                    a(href="#").advantages-block-text
+                        span 3D-визуализация вашего будущего интерьера
                 .advantages-block
                     figure.advantages-block-img
                         +icon('adv-3')
-                    .advantages-block-text Шоурум в 5 минутах ходьбы от метро Новослободская
+                    a(href="#").advantages-block-text
+                        span Шоурум в 5 минутах ходьбы от метро Новослободская
                 .advantages-block
                     figure.advantages-block-img
                         +icon('adv-4')
-                    .advantages-block-text Надежная доставка по России и самовывоз
+                    a(href="#").advantages-block-text
+                        span Надежная доставка по России и самовывоз
                 .advantages-block
                     figure.advantages-block-img
                         +icon('adv-5')
-                    .advantages-block-text Большой складской запас оптовых коллекций
+                    a(href="#").advantages-block-text
+                        span Большой складской запас оптовых коллекций
     .page-content.favorites-content
         .container
             .recently-viewed__title Вы недавно смотрели
-            .swiper-container.recently-viewed
+            .recently-viewed__wrap
                 .recently-viewed-btn.recently-viewed-next.swiper-button-next
                     +icon('expand_more_brs')
                 .recently-viewed-btn.recently-viewed-prev.swiper-button-prev 
                     +icon('expand_more_brs')
-                .swiper-wrapper
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img.swiper-container
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-1.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/e43/315_315_2/41zero42-spectre-04.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/a5f/315_315_2/wow-stripes-6.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand ARCANA
-                                .card-collection__name RIBE / ELBURG
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-2.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/028/315_315_2/equipe-artisan-4.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/08d/315_315_2/AtlasConcorde-Boost-03.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand REX CERAMICHE
-                                .card-collection__name LES BIJOUX DE REX
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-3.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/045/315_315_2/dna-amb-13-enamel-white-square-rounded-edge.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/35d/315_315_2/AtlasConcorde_Prism_M01_19.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand WOW
-                                .card-collection__name FLOW
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-4.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/98a/315_315_2/41zero42-biscuit-amb-14.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/d9c/315_315_2/arcana-stracciatella-08.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand ATLAS CONCORDE
-                                .card-collection__name BOOST
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-5.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/4c8/315_315_2/STROMBOLI%209,2x36,8_Rose%20Breeze_Habitat%20White_bath.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/48c/315_315_2/atlas-concorde-blaze-001-03-iron.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand 41zero42
-                                .card-collection__name SPECTRE
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img.swiper-container
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-1.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/e43/315_315_2/41zero42-spectre-04.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/a5f/315_315_2/wow-stripes-6.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand ARCANA
-                                .card-collection__name RIBE / ELBURG
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-2.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/028/315_315_2/equipe-artisan-4.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/08d/315_315_2/AtlasConcorde-Boost-03.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand REX CERAMICHE
-                                .card-collection__name LES BIJOUX DE REX
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-3.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/045/315_315_2/dna-amb-13-enamel-white-square-rounded-edge.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/35d/315_315_2/AtlasConcorde_Prism_M01_19.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand WOW
-                                .card-collection__name FLOW
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-4.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/98a/315_315_2/41zero42-biscuit-amb-14.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/d9c/315_315_2/arcana-stracciatella-08.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand ATLAS CONCORDE
-                                .card-collection__name BOOST
-                    .page-content-grid-item.page-cards.swiper-slide
-                        a(href="#").page-card-collection.card-collection
-                            .card-badge
-                                .card-badge__info НОВИНКА
-                                .card-badge__have В ПУТИ НА СКЛАД
-                            figure.page-card-img
-                                .swiper-wrapper
-                                    img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-5.png", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/4c8/315_315_2/STROMBOLI%209,2x36,8_Rose%20Breeze_Habitat%20White_bath.jpg", alt="img")
-                                    img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/48c/315_315_2/atlas-concorde-blaze-001-03-iron.jpg", alt="img")
-                                ul.page-card-img-hover
-                                    li
-                                    li
-                                    li
-                                .page-card-img-pagination.swiper-pagination
-                            .page-card-content.card-collection-content
-                                .card-collection__brand 41zero42
-                                .card-collection__name SPECTRE
+                .swiper-container.recently-viewed
+                    .swiper-wrapper
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img.swiper-container
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-1.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/e43/315_315_2/41zero42-spectre-04.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/a5f/315_315_2/wow-stripes-6.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand ARCANA
+                                    .card-collection__name
+                                        span RIBE / ELBURG
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-2.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/028/315_315_2/equipe-artisan-4.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/08d/315_315_2/AtlasConcorde-Boost-03.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand REX CERAMICHE
+                                    .card-collection__name
+                                        span LES BIJOUX DE REX
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-3.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/045/315_315_2/dna-amb-13-enamel-white-square-rounded-edge.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/35d/315_315_2/AtlasConcorde_Prism_M01_19.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand WOW
+                                    .card-collection__name
+                                        span FLOW
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-4.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/98a/315_315_2/41zero42-biscuit-amb-14.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/d9c/315_315_2/arcana-stracciatella-08.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand ATLAS CONCORDE
+                                    .card-collection__name
+                                        span BOOST
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-5.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/4c8/315_315_2/STROMBOLI%209,2x36,8_Rose%20Breeze_Habitat%20White_bath.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/48c/315_315_2/atlas-concorde-blaze-001-03-iron.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand 41zero42
+                                    .card-collection__name
+                                        span SPECTRE
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img.swiper-container
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-1.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/e43/315_315_2/41zero42-spectre-04.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/a5f/315_315_2/wow-stripes-6.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand ARCANA
+                                    .card-collection__name
+                                        span RIBE / ELBURG
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-2.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/028/315_315_2/equipe-artisan-4.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/08d/315_315_2/AtlasConcorde-Boost-03.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand REX CERAMICHE
+                                    .card-collection__name
+                                        span LES BIJOUX DE REX
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-3.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/045/315_315_2/dna-amb-13-enamel-white-square-rounded-edge.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/35d/315_315_2/AtlasConcorde_Prism_M01_19.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand WOW
+                                    .card-collection__name
+                                        span FLOW
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-4.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/98a/315_315_2/41zero42-biscuit-amb-14.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/d9c/315_315_2/arcana-stracciatella-08.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand ATLAS CONCORDE
+                                    .card-collection__name
+                                        span BOOST
+                        .page-content-grid-item.page-cards.swiper-slide
+                            a(href="#").page-card-collection.card-collection
+                                .card-badge
+                                    .card-badge__info НОВИНКА
+                                    .card-badge__have В ПУТИ НА СКЛАД
+                                figure.page-card-img
+                                    .swiper-wrapper
+                                        img.lozad.swiper-slide(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/page-card-5.png", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/4c8/315_315_2/STROMBOLI%209,2x36,8_Rose%20Breeze_Habitat%20White_bath.jpg", alt="img")
+                                        img.lozad.swiper-slide(data-src="https://www.keramoteka.ru/upload/resize_cache/uf/48c/315_315_2/atlas-concorde-blaze-001-03-iron.jpg", alt="img")
+                                    ul.page-card-img-hover
+                                        li
+                                        li
+                                        li
+                                    .page-card-img-pagination.swiper-pagination
+                                .page-card-content.card-collection-content
+                                    .card-collection__brand 41zero42
+                                    .card-collection__name
+                                        span SPECTRE

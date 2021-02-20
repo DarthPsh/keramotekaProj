@@ -78,15 +78,9 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @keyframes heartBeat {
   0% {
-    filter: blur(0);
-    transform: scale(1);
-  }
-  30% {
-    filter: blur(3px);
-    transform: scale(1.5);
+    transform: scale(1.6);
   }
   100% {
-    filter: blur(0);
     transform: scale(1);
   }
 }
@@ -208,6 +202,12 @@ input[type="number"]::-webkit-outer-spin-button {
     overflow: hidden;
     &:hover {
       box-shadow: 0px 0px 0px 8px $colorAccent;
+      .card-collection__name span {
+        border-color: #D9D9D9;
+      }
+      .card-brand__name-title span {
+        border-color: #D9D9D9;
+      }
       .page-card-img-pagination {
         display: block;
       }
@@ -473,11 +473,14 @@ input[type="number"]::-webkit-outer-spin-button {
       font-size: 24px;
       line-height: 100%;
       margin-bottom: 12px;
-      text-decoration: underline;
-      text-decoration-color: $colorAccent;
+      // text-decoration: underline;
+      // text-decoration-color: $colorAccent;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      span {
+        border-bottom: 1px solid $colorAccent;
+      }
       @media (max-width: 760px) {
         font-size: 16px;
         line-height: 20px;
@@ -532,8 +535,11 @@ input[type="number"]::-webkit-outer-spin-button {
         font-weight: bold;
         font-size: 24px;
         line-height: 120%;
-        text-decoration: underline;
-        text-decoration-color: $colorAccent;
+        // text-decoration: underline;
+        // text-decoration-color: $colorAccent;
+        span {
+          border-bottom: 1px solid $colorAccent;
+        }
         @media (max-width: 760px) {
           font-size: 16px;
           line-height: 20px;
@@ -736,6 +742,10 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 56px;
     border: none;
     margin-top: 6px;
+    transition: .2s;
+    &:hover {
+      background: $colorAccent;
+    }
   }
 }
 
@@ -772,8 +782,15 @@ input[type="number"]::-webkit-outer-spin-button {
       font-size: 14px;
       line-height: 20px;
       letter-spacing: 0.01em;
-      text-decoration: underline;
-      text-decoration-color: $colorAccent;
+      span {
+        border-bottom: 1px solid $colorAccent;
+        transition: .3s;
+      }
+      &:hover {
+        span {
+          border-bottom: 1px solid transparent;
+        }
+      }
     }
     &:nth-child(1) {
       max-width: 301px;
@@ -898,4 +915,9 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  display: none;
+}
 

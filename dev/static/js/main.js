@@ -611,6 +611,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         var galleryTop = new Swiper('.product-slider-main', {
             // lazy: true,
+            grabCursor: true,
             lazy: {
                 loadPrevNext: true,
             },
@@ -1036,7 +1037,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // попап товара "положить в квартиру"    
-    $('.product-card').on('click', function () {
+    $('.product-card-content').on('click', function () {
         // preventDefault();
         $.ajax({
             url: 'product-popup.html',
