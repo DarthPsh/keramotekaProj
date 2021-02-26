@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log('hello');
 
-    function onlyTheNumbersRemain() {
+    function onlyTheNumbersRemain() { // удаляем все символы кроме + из ссылки с типом tel
         $('a[href^="tel:"]').attr('href', function (_, v) {
             return v.replace(/\(/g, '').replace(/\)/g, '').replace(/\ /g, '').replace(/\-/g, '');
         });
     }
     onlyTheNumbersRemain(); // удаляем все символы из инпута tel кроме чисел
-    $('input[type="tel"]').inputmask("+7(999)999-9999");
+
+    $('input[type="tel"]').inputmask("+7 (999) 999-99-99"); // маска инпута телефона
 
     $(document).ajaxSuccess(function () {
-        $('input[type="tel"]').inputmask("+7 (999) 999-99-99");
+        $('input[type="tel"]').inputmask("+7 (999) 999-99-99"); // маска инпута телефона после аякса
+        onlyTheNumbersRemain(); // удаляем все символы кроме + из ссылки с типом tel после аякса
     });
 
     //плавный скролл
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
 
 
-    $('.alert-close').on('click', function () {
+    $('.alert-close').on('click', function () { // удаляем баннер над шапкой
         $(this).closest('.alert').hide();
     })
 
@@ -35,7 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.header-mobile-phone-drop-menu').toggleClass('header-mobile-phone-drop-menu_active');
     })
 
-    function favouritesBadgeCounter() {
+
+    function favouritesBadgeCounter() { // счётчик количества товаров в избранном
         if ($('.header-content__favourites .header-content-circle__badge').val() > 0) {
             $('.header-content__favourites .header-content-circle__badge').addClass('header-content-circle__badge_active');
         }
@@ -64,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     favouritesBadgeCounter();
 
-    function cartBadgeCounter() {
+
+    function cartBadgeCounter() { // счётчик количества товаров в корзине
         if ($('.header-content__cart .header-content-circle__badge').val() > 0) {
             $('.header-content__cart .header-content-circle__badge').addClass('header-content-circle__badge_active');
         }
@@ -93,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     cartBadgeCounter();
 
-    $('body').on('click', '.add-to-cart', function () {
+    $('body').on('click', '.add-to-cart', function () { // добавление в корзину
         preventDefault();
         $.ajax({
             // type: 'POST',
@@ -265,44 +269,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    // let allCheck = document.querySelectorAll('.header-filter input[type="checkbox"]');
-    // allCheck.forEach(function (item) {
-    //     item.addEventListener('click', function () {
-    //         console.log(item.closest('label').innerText);
-    //     })
-
-    // })
-
-
-
-    // $('.header-filter input[type="checkbox"]').on('click', function () {
-    //     // const pageNext = $(this).data('page-next');
-    //     // if (pageNext == undefined) {
-    //     //     return;
-    //     // }
-    //     console.log($(this).parent().text());
-    //     $.ajax({
-    //         url: 'check-res.html',
-    //         data: $('.header-filter input[type="checkbox"]').parent().val(),
-    //         // type: 'post'
-    //     }).done(function (resultHtml) {
-    //         console.log(resultHtml);
-    //     }).fail(function () {
-    //         console.log('Failed');
-    //     }).always(function () {
-
-    //     });
-    // });
-
-
-
-
-
-
-
-
-
-
 
     // аякс для строки поиска
     $(".header-bot-search__input").on('input', function postinput() {
@@ -375,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function cardBrandActive() {
         $('body').on('click', '.card-brand__count-title', function () {
-            if ($('.page-content-grid').hasClass('page-content-list')) {
+            if ($('.page-content-grid').hasClass('page-content-list')) { 
                 console.log('НЕТ НУЖНОГО КЛАССА');
                 $(this).closest('.card-brand').find('.card-brand__max').removeClass('card-brand__max_active');
                 setTimeout(() => {
@@ -388,21 +354,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         initLayout: false,
                         gutter: 8
                     });
-                    $grid.masonry('on', 'layoutComplete', function () {
-                        console.log('layout is complete');
-                    });
                     $grid.imagesLoaded(function () {
-                        // init Masonry after all images have loaded
                         $grid.masonry();
-                        
                     });
                 }, 300);
             }
             else {
                 $(this).closest('.card-brand-content').toggleClass('card-brand_active');
-                setTimeout(() => {
+                let initGrid = setInterval(() => {
                     $grid.masonry();
-                }, 150);
+                });
+                $(this).closest('.card-brand-content').find('.card-brand__list').on('transitionend', function() {
+                    clearInterval(initGrid);
+                });
             }
         })
     }
@@ -521,10 +485,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-
-
-
-
     $('.mobile-menu-list-item__btn').on('click', function () {
         $('.header-filter').addClass('header-filter_active');
         $('.header').addClass('header_overflow');
@@ -535,12 +495,6 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.header').removeClass('header_overflow');
         $('body').css('overflow', '');
     })
-
-
-
-
-
-
 
 
     const observer = lozad(); // lazy loads elements with default selector as '.lozad'
@@ -1119,7 +1073,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.querySelectorAll('.recently-viewed').length) {
         var recentlyViewedSlider = new Swiper('.recently-viewed', {
-            spaceBetween: 8,
+            spaceBetween: 10,
             slidesPerView: 'auto',
             freeMode: true,
             navigation: {
@@ -1156,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // попап тридэ
-    
+
     $(".3d-visual").on('click', function () {
         preventDefault();
         $.ajax({
@@ -1182,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // попап тридэ
 
 
-    $('.product-text__content-favorite').on('click', function() {
+    $('.product-text__content-favorite').on('click', function () {
         $('.product-text__content-favorite').toggleClass('product-text__content-favorite_active');
     })
 

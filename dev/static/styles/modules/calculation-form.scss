@@ -214,6 +214,11 @@
                 letter-spacing: 0.04em;
                 height: 56px;
                 border: none;
+                transition: .3s;
+                &:hover {
+                    background: $colorAccent;
+                    color: $colorBlackText;
+                }
                 @media (max-width: 760px) {
                     max-width: 100%;
                 }

@@ -1080,7 +1080,6 @@ header { flex: 0 0 auto; }
         }
         &-checked {
             display: flex;
-            align-items: center;
             overflow: hidden;
             opacity: 0;
             transition: .2s ease-out;
@@ -1100,6 +1099,7 @@ header { flex: 0 0 auto; }
                 padding: 4px 13px;
                 border-radius: 16px;
                 color: rgba(#333333, .7);
+                height: 23px;
                 @media (max-width: 760px) {
                    display: none;
                 }
@@ -1297,6 +1297,11 @@ header { flex: 0 0 auto; }
             color: $colorBlackText;
             text-transform: none;
         }
+        &:hover {
+            a {
+                color: $colorBlackText;
+            }
+        }
         ul {
             li {
                 &:last-child {
@@ -1304,6 +1309,9 @@ header { flex: 0 0 auto; }
                 }
                 &:hover {
                     background: #F1F1F1;
+                    a {
+                        color: #828282;
+                    }
                 }
             }
         }

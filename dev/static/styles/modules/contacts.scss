@@ -61,6 +61,10 @@
                         font-size: 14px;
                         line-height: 16px;
                         height: 56px;
+                        transition: .3s;
+                        &:hover {
+                            border-color: $colorAccent;
+                        }
                         .svg-sprite-icon {
                             fill: #dadada;
                             width: 26px;
@@ -110,6 +114,49 @@
             .information-contact__block {
                 margin-bottom: 0;
             }
+        }
+        a[href^="tel:"] {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 28px;
+            display: block;
+        }
+        a[href^="mailto:"] {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            border-bottom: 1px solid $colorAccent;
+            transition: .3s;
+            display: block;
+            &:hover {
+                border-color: transparent;
+            }
+        }
+        .information-contact__block:last-child .information-contact__block-item {
+            border: none;
+        }
+        .information-contact__block-label {
+            margin-bottom: 4px;
+        }
+        .information-contact__block .information-contact__block-item .information-contact__block-info {
+            margin-bottom: 7px;
+        }
+        .information-contact__block .information-contact__block-item .information-contact__block-info:last-child {
+            margin-bottom: 0;
+        }
+        .icon-map-marker {
+            height: 22px !important;
+            width: 22px !important;
+        }
+        .icon-phone-o {
+            height: 19px !important;
+            width: 19px !important;
+        }
+        .icon-clock {
+            height: 21px !important;
+            width: 21px !important;
         }
     }
     &-content {

@@ -9,16 +9,16 @@ block content
             .breadcrumbs
                 ul.breadcrumbs-list
                     li.breadcrumbs-list__item 
-                        a.breadcrumbs-list__item-link(href="#") ГЛАВНАЯ
+                        a.breadcrumbs-list__item-link(href="/") ГЛАВНАЯ
                     li.breadcrumbs-list__item
                         a.breadcrumbs-list__item-link(href="#") КОНТАКТЫ
             .information-main.information-main__head.contacts-main
                 .information-main__title.contacts-main__title Контакты
             #links-scrollbar.scrollbar-slider.information-main__links.contacts-main__links.swiper-container
                 .swiper-wrapper
-                    a.swiper-slide.contacts-main__link(href="#") ШОУРУМ
-                    a.swiper-slide.contacts-main__link(href="#") ДИЛЕРСКИЙ ОТДЕЛ
-                    a.swiper-slide.contacts-main__link.contacts-main__link_active(href="#") СКЛАД
+                    a.swiper-slide.contacts-main__link(href="/contacts-shop.html") ШОУРУМ
+                    a.swiper-slide.contacts-main__link(href="/contacts-dealers.html") ДИЛЕРСКИЙ ОТДЕЛ
+                    a.swiper-slide.contacts-main__link.contacts-main__link_active(href="/contacts-warehouse.html") СКЛАД
             .contacts.information
                 .information-contact.contacts-contact
                     .information-contact__block
@@ -51,7 +51,7 @@ block content
                         img(src="static/images/common/map.png", alt="map")
                     .warehouse-info
                         .information-content__block-title.contacts-content__block-title Схема проезда
-                        figure.warehouse-info__img
+                        a.warehouse-info__img(href="static/pdf/Rejting-gorodov-2019.pdf" target="_blank")
                             img.lozad(data-src="static/images/common/warehouse.png", alt="img")
                         .information-content__block.contacts-content__block.warehouse-info__scheme
                             .information-content__block-subtitle Въезд на территорию платный
@@ -59,6 +59,6 @@ block content
                                 p Легковые авто — 50 руб.,
                                 p Грузовые до 7 тонн — 100 руб.,
                                 p более 7 тонн — 150 руб.
-                            a.warehouse-info__scheme-download(href="#" download) 
+                            a.warehouse-info__scheme-download(href="static/pdf/Rejting-gorodov-2019.pdf" target="_blank") 
                                 +icon('pdf')
                                 | СХЕМА ПРОЕЗДА В PDF 

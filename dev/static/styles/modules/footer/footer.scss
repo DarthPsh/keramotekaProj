@@ -21,6 +21,7 @@ footer { flex: 0 0 auto; }
         justify-content: space-between;
         align-items: center;
         padding-bottom: 73px;
+        position: relative;
         @media ( max-width: 1050px ) {
             flex-direction: column-reverse;
             align-items: flex-start;
@@ -60,7 +61,6 @@ footer { flex: 0 0 auto; }
                 font-size: 12px;
                 line-height: 19px;
                 letter-spacing: 0.005em;
-                color: #828282;
                 &-agreement {
                     display: block;
                     font-style: normal;
@@ -68,6 +68,7 @@ footer { flex: 0 0 auto; }
                     font-size: 14px;
                     line-height: 16px;
                     letter-spacing: 0.005em;
+                    color: #828282;
                 }
             }
         }
@@ -152,6 +153,11 @@ footer { flex: 0 0 auto; }
                 height: 40px;
                 width: 40px;
                 display: inline-block;
+                border-radius: 50%;
+                transition: .3s;
+                &:hover {
+                    background: $colorAccent;
+                }
                 .svg-sprite-icon {
                     max-height: 100%;
                     max-width: 100%;
@@ -187,6 +193,28 @@ footer { flex: 0 0 auto; }
             line-height: 19px;
             letter-spacing: 0.005em;
             color: $colorGray;
+        }
+    }
+}
+
+#up {
+    position: absolute;
+    right: 0;
+    bottom: 73px;
+    height: 26px;
+    width: 26px;
+    cursor: pointer;
+    @media ( max-width: 520px ) {
+        top: 40px;
+    }
+    .svg-sprite-icon {
+        height: 26px;
+        width: 25px;
+        transition: .3s;
+    }
+    &:hover {
+        .svg-sprite-icon {
+            transform: translateY(-5px);
         }
     }
 }
