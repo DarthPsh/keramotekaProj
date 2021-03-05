@@ -176,24 +176,30 @@ document.addEventListener('DOMContentLoaded', function () {
     // открываем.закрываем меню с фильтрами
 
 
+    
+
+
+
     // выпадающие меню в списке фильтров
-    $('.header-filter-list-item').each(function (index, event) {
-        $(this).children('.header-filter-list-item__title').on('click', function () {
-            if ($(this).parent().find('.header-filter-list-drop-menu').hasClass('header-filter-list-drop-menu_active')) {
-                $(this).parent().find('.header-filter-list-drop-menu').removeClass('header-filter-list-drop-menu_active');
+    $('.header-filter-list-item__title').each(function (index, event) {
+        $(this).on('click', function () {
+            if ($(this).closest('.header-filter-list-item').hasClass('header-filter-list-item_active')) {
+                $(this).closest('.header-filter-list-item').removeClass('header-filter-list-item_active');
             }
             else {
-                $('.header-filter-list-drop-menu').removeClass('header-filter-list-drop-menu_active');
-                $(this).parent().find('.header-filter-list-drop-menu').addClass('header-filter-list-drop-menu_active');
+                $('.header-filter-list-item').removeClass('header-filter-list-item_active');
+                $(this).closest('.header-filter-list-item').addClass('header-filter-list-item_active');
             }
         })
     })
     // выпадающие меню в списке фильтров
     $(document).mouseup(function (e) { // событие клика по веб-документу
         if ($('.header-filter-list-item').has(e.target).length === 0) { // и не по его дочерним элементам
-            $('.header-filter-list-drop-menu').removeClass('header-filter-list-drop-menu_active');
+            $('.header-filter-list-item').removeClass('header-filter-list-item_active');
         }
     });
+
+
 
 
     function countCheckedFiltersFunc() {
@@ -245,11 +251,12 @@ document.addEventListener('DOMContentLoaded', function () {
         let checkedFilters = $('.header-filter input[type="checkbox"]');
         for (let i = 0; i < checkedFilters.length; i++) {
             if ($(this).data('indexOfCheck') == i) {
-                checkedFilters[i].checked = false;
+                checkedFilters[i].click();
             }
         }
         $(this).remove();
         countCheckedFiltersFunc();
+        $('.header-filter-list-item').removeClass('header-filter-list-item_active');
     })
     $('.header-filter-checked-reset').on('click', function () {
         $('.header-filter-checked-list li').remove();
@@ -341,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function cardBrandActive() {
         $('body').on('click', '.card-brand__count-title', function () {
-            if ($('.page-content-grid').hasClass('page-content-list')) { 
+            if ($('.page-content-grid').hasClass('page-content-list')) {
                 console.log('НЕТ НУЖНОГО КЛАССА');
                 $(this).closest('.card-brand').find('.card-brand__max').removeClass('card-brand__max_active');
                 setTimeout(() => {
@@ -364,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let initGrid = setInterval(() => {
                     $grid.masonry();
                 });
-                $(this).closest('.card-brand-content').find('.card-brand__list').on('transitionend', function() {
+                $(this).closest('.card-brand-content').find('.card-brand__list').on('transitionend', function () {
                     clearInterval(initGrid);
                 });
             }
@@ -379,7 +386,9 @@ document.addEventListener('DOMContentLoaded', function () {
             $(this).next().addClass('card-brand__max_active');
             $(this).next().find('.card-brand-content').addClass('card-brand_active');
             initSwiperCardImg();
-            setTimeout(() => {
+            // setTimeout(() => {   
+            // }, 150);
+            let initGrid = setInterval(() => {
                 let $grid = $('.page-content-grid').masonry({
                     itemSelector: '.page-content-grid-item',
                     horizontalOrder: true,
@@ -388,14 +397,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     initLayout: false,
                     gutter: 8
                 });
-                $grid.masonry('on', 'layoutComplete', function () {
-                    console.log('layout is complete');
-                });
                 $grid.imagesLoaded(function () {
                     // init Masonry after all images have loaded
                     $grid.masonry();
                 });
-            }, 150);
+            });
+            $(this).closest('.page-card-brand').find('.card-brand-content').find('.card-brand__list').on('transitionend', function () {
+                clearInterval(initGrid);
+            });
         })
     }
     cardBrandMinActive();
@@ -441,6 +450,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // АКТИВАЦИЯ СЛАЙДЕРА НА ГЛАВНОЙ
     if (document.querySelectorAll('.page-slider').length) {
         var pageSlider = new Swiper('.page-slider', {
+            loop: true,
+            lazy: {
+                loadPrevNext: true,
+            },
             pagination: {
                 el: '.page-slider-pagination',
                 clickable: true,
@@ -904,7 +917,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.popup-contact__content:eq(' + tabIndex + ')').addClass('popup-contact__content_active');
         })
     }
-    // contactsTabs();
+    contactsTabs();
 
     // попап контактов
     $(".information-contact__block-btn").on('click', function () {
@@ -1136,10 +1149,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // попап тридэ
 
 
-    $('.product-text__content-favorite').on('click', function () {
+    // переключаем физлицо/юрлицо в форме
+    $('body').on('click', '.calculation-popup__check-entity', function () {
+        $(this).closest('.cart-form').find('.calculation-popup__org').hide();
+    })
+    $('body').on('click', '.calculation-popup__check-private', function () {
+        $(this).closest('.cart-form').find('.calculation-popup__org').show();
+    }) // переключаем физлицо/юрлицо в форме
+
+
+    $('.product-text__content-favorite').on('click', function () { // кнопка избранное на стрнице коллекции
         $('.product-text__content-favorite').toggleClass('product-text__content-favorite_active');
     })
 
+
+    $('input[type="checkbox"]').on('input', function () {
+        console.log($(this));
+    })
 
 
 

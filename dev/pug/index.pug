@@ -12,19 +12,19 @@ block content
 					.swiper-wrapper
 						.page-slider-item.swiper-slide
 							figure.page-slider-item-img
-								img.lozad(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/main-slider-1.png", alt="img")
+								img.swiper-lazy(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E" data-src="static/images/content/main-slider-1.png", alt="img")
 							.page-slider-item__info
 								.page-slider-item__title НОВИНКА CERSAIE 2019
 								.page-slider-item__subtitle ATLAS CONCORDE BOOST
 						.page-slider-item.swiper-slide
 							figure.page-slider-item-img
-								img.lozad(data-src="static/images/content/prod-1.png", alt="img")
+								img.swiper-lazy(data-src="static/images/content/prod-1.png", alt="img")
 							.page-slider-item__info
 								.page-slider-item__title НОВИНКА CERSAIE 2019
 								.page-slider-item__subtitle ATLAS CONCORDE BOOST
 						.page-slider-item.swiper-slide
 							figure.page-slider-item-img
-								img.lozad(data-src="static/images/content/prod-2.png", alt="img")
+								img.swiper-lazy(data-src="static/images/content/prod-2.png", alt="img")
 							.page-slider-item__info
 								.page-slider-item__title НОВИНКА CERSAIE 2019
 								.page-slider-item__subtitle ATLAS CONCORDE BOOST
@@ -33,13 +33,16 @@ block content
 						+icon('expand_more')
 					.page-slider-control.page-slider-prev.swiper-button-prev
 						+icon('expand_more')
-				.page-content-grid-item.notification-card
-					.notification-card__badge ОБЪЯВЛЕНИЯ
+				.page-content-grid-item.notification-card 
+					.notification-card__badge ОБЪЯВЛЕНИЕ С СЫЛКОЙ
 					.notification-card__title РЕЖИМ РАБОТЫ В МАЙСКИЕ ПРАЗДНИКИ
 					.notification-card__text 
 						| С 1 по 9 мая магазин работает в сокращенном режиме: 
 						br
 						| с 12:00 по 14:00
+				.page-content-grid-item.notification-card
+					.notification-card__badge ОБЪЯВЛЕНИЕ БЕЗ ССЫЛКИ
+					.notification-card__title РЕЖИМ РАБОТЫ В МАЙСКИЕ ПРАЗДНИКИ
 					a(href="#").notification-card__link Узнать подробнее
 				.page-content-grid-item.page-card
 					a(href="#").page-card-collection.card-collection.card-collection_active

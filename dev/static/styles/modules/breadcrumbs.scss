@@ -25,6 +25,17 @@
                     }
                 }
             }
+            &_back {
+                padding-right: 15px;
+                display: flex;
+                align-items: center;
+                .svg-sprite-icon {
+                    height: 8px;
+                    width: 12px;
+                    fill: #999999;
+                    transform: rotate(90deg);
+                }
+            }
         }
     }
 }

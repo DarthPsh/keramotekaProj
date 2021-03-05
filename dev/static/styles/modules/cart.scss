@@ -30,6 +30,9 @@
         @media (max-width: 760px) {
             display: none;
         }
+        &__title {
+            margin-bottom: 31px;
+        }
         &__desc {
             font-style: normal;
             font-weight: normal;
@@ -222,6 +225,34 @@
         padding-top: 47px;
         form {
             max-width: 630px;
+        }
+    }
+    &-ok {
+        .cart {
+            &-main {
+                max-width: 350px;
+                width: 100%;
+            }
+            &-content {
+                padding: 35px 40px 50px 40px;
+                background: #F1F1F1;
+                @media (max-width: 760px) {
+                    padding: 15px;
+                }
+            }
+        }
+        &-list {
+            &__item {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.01em;
+            }
+            &__product {
+                list-style: decimal;
+                list-style-position: inside;
+                padding-bottom: 29px;
+            }
         }
     }
 }
