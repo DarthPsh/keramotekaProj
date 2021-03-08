@@ -1163,8 +1163,18 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    $('input[type="checkbox"]').on('input', function () {
-        console.log($(this));
+
+    $('.header-filter input[type="checkbox"]').click(function() {
+        let filterList = [];
+        $(".header-filter input:checked").each(function(i, item) {
+            let filterObj = {     
+                filterObjName: $(item).attr("name"), 
+                filterObjVal: $(item).attr("value")        
+            };
+            filterList.push(filterObj);
+        });
+      
+        console.log(filterList);
     })
 
 
