@@ -267,10 +267,10 @@ header.header
 						+icon('search')
 						.header-bot-mobile-item-desc Поиск
 					a(href="/contacts-shop.html").header-bot-mobile-item
-						+icon('map-marker')
+						+icon('adress')
 						.header-bot-mobile-item-desc Адрес шоурума
 					.header-bot-mobile-item.header-bot-mobile-phone
-						+icon('phone')
+						+icon('tel')
 						.header-bot-mobile-item-desc Звоните нам
 						ul.header-drop-menu.header-mobile-phone-drop-menu
 							li
@@ -300,7 +300,7 @@ header.header
 									+icon('favourites')
 					a(href="/cart.html").header-bot-mobile-item.header-bot-mobile-item__cart
 						input(type="number" value="0" disabled).header-bot-mobile-item__badge.cart-count 
-						+icon('shopping-cart')
+						+icon('cart')
 						.header-bot-mobile-item-desc Ваш заказ
 						ul.header-drop-menu.cart-empty__drop-menu
 							li
@@ -498,19 +498,21 @@ header.header
 							//- img(src="static/images/common/filter.svg", alt="icon")
 							| ПОИСК ПО ПАРАМЕТРАМ
 				li.mobile-menu-list-item
-					+icon('catalog2')
-					a.mobile-menu-list-item__link(href='#') Каталог
+					a.mobile-menu-list-item__link(href='#') 
+						+icon('catalog2')
+						| Каталог
 				li.mobile-menu-list-item
-					+icon('catalog2')
-					a.mobile-menu-list-item__link(href='#') Дилерский отдел
+					a.mobile-menu-list-item__link(href='#') 
+						+icon('catalog2')
+						| Дилерский отдел
 				li.mobile-menu-list-item
 					a.mobile-menu-list-item__link(href='#') Заказ и доставка
 				li.mobile-menu-list-item
 					a.mobile-menu-list-item__link(href='#') Шоурум
 				li.mobile-menu-list-item
 					a.mobile-menu-list-item__link(href='#') Сотрудничество
-					figure.header-top__icon.header-top__more
-						+icon('expand_more')
+						figure.header-top__icon.header-top__more
+							+icon('expand_more')
 					ul.header-drop-menu.mobile-menu-list-drop
 						li
 							a(href="#") Дилерам

@@ -23,6 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 *,
@@ -451,11 +452,15 @@ input[type="number"]::-webkit-outer-spin-button {
       line-height: 12px;
       text-align: center;
       letter-spacing: 0.05em;
-      top: 14px;
+      top: 16px;
       left: 16px;
       display: flex;
       flex-wrap: wrap;
       z-index: 2;
+      @media ( max-width: 760px ) {
+        top: 8px;
+        left: 8px;
+      }
       &__info {
         margin-right: 4px;
         margin-bottom: 4px;
@@ -465,7 +470,10 @@ input[type="number"]::-webkit-outer-spin-button {
       }
     }
     &-content {
-      padding: 12px 15px 20px 15px;
+      padding: 12px 14px 20px 16px;
+      @media ( max-width: 760px ) {
+        padding: 8px 8px 0px 8px;
+      }
     }
     &__brand {
       font-weight: normal;
@@ -485,6 +493,9 @@ input[type="number"]::-webkit-outer-spin-button {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media ( max-width: 760px ) {
+        margin-bottom: 8px;
+      }
       span {
         border-bottom: 1px solid $colorAccent;
       }
@@ -515,12 +526,20 @@ input[type="number"]::-webkit-outer-spin-button {
         transform: scaleY(0);
         transform-origin: 0 0;
         transition: all .1s ease-out;
+        padding-bottom: 8px;
       }
     }
     &_active {
       .card-collection__desc {
         max-height: 10000px;
         transform: scaleY(1);
+        @media ( max-width: 760px ) {
+          padding-bottom: 16px;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.005em;
+        }
       }
       .icon-expand_more {
         transform: rotate(-180deg);
@@ -950,5 +969,34 @@ input[type="number"]::-webkit-outer-spin-button {
       margin: 8px;
       margin-left: 0; 
     }
+  }
+}
+
+.mobile-btn {
+  display: none;
+  width: 100%;
+  @media (max-width: 760px) {
+    display: block;
+  }
+}
+.mobile-menu__to-catalog {
+  background: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 19px 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  margin-top: 16px;
+  .svg-sprite-icon {
+      height: 18px;  
+      width: 18px;
+      fill: #999999;
+      margin-right: 13px;
   }
 }

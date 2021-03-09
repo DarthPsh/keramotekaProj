@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log('hello');
 
+
+    $('#up').click(function() { // скролл вверх
+		$('html, body').animate({scrollTop: 0},500);
+		return false;
+	})
+
     function onlyTheNumbersRemain() { // удаляем все символы кроме + из ссылки с типом tel
         $('a[href^="tel:"]').attr('href', function (_, v) {
             return v.replace(/\(/g, '').replace(/\)/g, '').replace(/\ /g, '').replace(/\-/g, '');
@@ -474,6 +480,13 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.mobile-menu').toggleClass('mobile-menu_active');
         $('.header-bot-mobile-item-desc').toggleClass('header-bot-mobile-item-desc_active');
         $('.header-bot').toggleClass('header-bot_active');
+        $('.header').toggleClass('header-mobile');
+        if ($('.header-burger').hasClass('header-burger_active')) {
+            $('body').css('overflow', 'hidden');
+        }
+        else {
+            $('body').css('overflow', '');
+        }
     })
 
 
@@ -494,19 +507,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // МОБИЛЬНОЕ МЕНЮ
     $('.mobile-menu-list-item .header-top__more').on('click', function () {
-        $(this).siblings($('.mobile-menu-list-drop')).toggleClass('mobile-menu-list-drop_active');
+        preventDefault();
+        $(this).closest('.mobile-menu-list-item').find('.mobile-menu-list-drop').toggleClass('mobile-menu-list-drop_active');
     })
 
 
     $('.mobile-menu-list-item__btn').on('click', function () {
         $('.header-filter').addClass('header-filter_active');
         $('.header').addClass('header_overflow');
-        $('body').css('overflow', 'hidden');
+        // $('body').css('overflow', 'hidden');
     })
     $('.header-filter-head__close').on('click', function () {
         $('.header-filter').removeClass('header-filter_active');
         $('.header').removeClass('header_overflow');
-        $('body').css('overflow', '');
+        // $('body').css('overflow', '');
     })
 
 
@@ -1163,21 +1177,29 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
+    // let fList;
+    // $('.header-filter input[type="checkbox"]').change(function() {
+    //     fList = [];
+    //     $(".header-filter input:checked").each(function(i, item) {
+    //         let fObj = {     
+    //             fName: $(item).attr("name"), 
+    //             fVal: $(item).attr("value")
+                
+    //         };
+    //         fList.push(fObj);
+    //     });
+    // })
 
-    $('.header-filter input[type="checkbox"]').click(function() {
-        let filterList = [];
-        $(".header-filter input:checked").each(function(i, item) {
-            let filterObj = {     
-                filterObjName: $(item).attr("name"), 
-                filterObjVal: $(item).attr("value")        
-            };
-            filterList.push(filterObj);
-        });
-      
-        console.log(filterList);
+
+    function clickOnCheckbox() {
+        $('.header-filter').submit();
+    }
+    $('.header-filter input[type="checkbox"]').click(clickOnCheckbox);
+    $('.header-filter').submit((e)=>{
+        e.preventDefault();
+        const formValue = $(e.target).serializeArray();
+        console.log(formValue);
     })
-
-
 
 
     console.log('press F');

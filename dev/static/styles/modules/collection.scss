@@ -152,11 +152,11 @@
                 transition: .3s;
                 &:hover {
                     border-color: $colorAccent;
-                    .icon-favourites {
+                    .icon-favourites-f {
                         stroke: $colorAccent;
                     }
                 }
-                .icon-favourites {
+                .icon-favourites-f {
                     height: 24px;
                     width: 24px;
                     fill: transparent;
@@ -164,7 +164,7 @@
                     stroke-width: 2px;
                 }
                 &_active {
-                    .icon-favourites {
+                    .icon-favourites-f {
                         fill: $colorAccent;
                         stroke: $colorAccent;
                         animation: heartBeat .3s ease;

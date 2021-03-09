@@ -112,6 +112,9 @@ footer { flex: 0 0 auto; }
                 line-height: 16px;
                 letter-spacing: 0.005em;
                 margin-top: 8px;
+                @media ( max-width: 520px ) {
+                    margin-bottom: 2px;
+                }
                 &-cta {
                     margin-top: auto;
                     @media ( max-width: 520px ) {
