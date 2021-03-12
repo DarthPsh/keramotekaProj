@@ -40,20 +40,25 @@
             letter-spacing: 0.02em;
             display: block;
             padding: 8px 15px;
-            transition: all .3s ease-in;
             max-width: 135px;
             min-width: 135px;
             position: relative;
-            border-left: 4px solid #333333;
+            border-left: 1px solid #999999;
             color: #999999;
             @media (max-width: 1200px) {
                 padding: 6px;
                 border-left: none;
-                border-bottom: 4px solid #333333;
+                border-bottom: 1px solid #999999;
             }
             &_active {
-                border-color: $colorAccent; 
+                border-color: $colorAccent;
+                border-width: 4px;
                 color: $colorBlackText;
+                padding-left: 12px;
+                @media (max-width: 760px) {
+                    padding-bottom: 3px;
+                    padding-left: 6px;
+                }
             }
             &-contacts {
                 display: none;
@@ -124,6 +129,9 @@
                             left: 0;
                             transform: rotate(45deg);
                         }
+                        @media (max-width: 760px) {
+                            padding-left: 26px;
+                        }
                     }
                 }
                 ol {
@@ -180,6 +188,13 @@
         }
         &__block {
             margin-bottom: 50px;
+            &-payment {
+                .information-contact__block-item {
+                    @media (max-width: 760px) {
+                        border: none;
+                    }
+                }
+            }
             &-title {
                 font-style: normal;
                 font-weight: bold;
@@ -262,6 +277,13 @@
         display: block;
         width: 100%;
         padding: 60px 0;
+        padding-top: 0;
+    }
+    .contacts-title {
+        display: none;
+        @media (max-width: 760px) {
+            display: block;
+        }
     }
 }
 
@@ -270,11 +292,12 @@
     background: $colorLight;
     top: 0;
     flex-wrap: wrap;
+    overflow: visible;
     &:after {
         content: '';
-        height: 4px;
+        height: 1px;
         width: 100%;
-        background: #333333;
+        background: #999999;
         bottom: 0;
         left: 0;
         position: absolute;
@@ -301,5 +324,8 @@
     transition: .3s;
     &:hover {
         border-color: #333333 !important;
+    }
+    @media (max-width: 760px) {
+        width: 100%;
     }
 }

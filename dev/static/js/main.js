@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('hello');
 
 
-    $('#up').click(function() { // скролл вверх
-		$('html, body').animate({scrollTop: 0},500);
-		return false;
-	})
+    $('#up').click(function () { // скролл вверх
+        $('html, body').animate({ scrollTop: 0 }, 300);
+        return false;
+    })
 
     function onlyTheNumbersRemain() { // удаляем все символы кроме + из ссылки с типом tel
         $('a[href^="tel:"]').attr('href', function (_, v) {
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // открываем.закрываем меню с фильтрами
 
 
-    
+
 
 
 
@@ -199,10 +199,25 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
     // выпадающие меню в списке фильтров
+
     $(document).mouseup(function (e) { // событие клика по веб-документу
-        if ($('.header-filter-list-item').has(e.target).length === 0) { // и не по его дочерним элементам
-            $('.header-filter-list-item').removeClass('header-filter-list-item_active');
-        }
+        // заrрываем выпадающие списки в филmтрах
+        if (!$(".header-filter-list-item").is(e.target) // если клик был не по нашему блоку
+            && $(".header-filter-list-item").has(e.target).length === 0) { // и не по его дочерним элементам
+                $(".header-filter-list-item").removeClass('header-filter-list-item_active'); // скрываем его
+        }  // заrрываем выпадающие списки в филmтрах
+
+         // попап при клике на избранное если пусто
+        if (!$('.header-bot-mobile-item__favourites').is(e.target) // если клик был не по нашему блоку
+            && $('.header-bot-mobile-item__favourites').has(e.target).length === 0) { // и не по его дочерним элементам
+            $('.favourites-empty__drop-menu').removeClass('favourites-empty__drop-menu_active'); // скрываем его
+        } // попап при клике на избранное если пусто
+
+         // попап при клике на корзину если пусто
+        if (!$('.header-bot-mobile-item__cart').is(e.target) // если клик был не по нашему блоку
+            && $('.header-bot-mobile-item__cart').has(e.target).length === 0) { // и не по его дочерним элементам
+            $('.cart-empty__drop-menu').removeClass('cart-empty__drop-menu_active'); // скрываем его
+        } // попап при клике на корзину если пусто
     });
 
 
@@ -561,12 +576,13 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
+
     // СЛАЙДЕР НА СТРАНИЦЕ КОЛЛЕКЦИИ
     if (document.querySelectorAll('.product-slider').length) {
         var galleryThumbs = new Swiper('.product-slider-thumbs', {
             lazy: true,
             spaceBetween: 5,
-            slidesPerView: 7,
+            slidesPerView: 'auto',
             // loop: true,
             freeMode: true,
             loopedSlides: 1, //looped slides should be the same
@@ -580,6 +596,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     spaceBetween: 8,
                     watchSlidesVisibility: true,
                     watchSlidesProgress: true,
+                    direction: 'horizontal',
                 },
                 1441: {
                     freeMode: true,
@@ -627,6 +644,12 @@ document.addEventListener('DOMContentLoaded', function () {
         $(".quantity-arrow-plus").click(function () {
             $(this).closest('.quantity-block').find('.quantity-num').val(+$(this).closest('.quantity-block').find('.quantity-num').val() + 1);
         })
+        $('.quantity-num').focusin(function () {
+            $(this).parent().addClass('quantity-num-wrap_active');
+        });
+        $('.quantity-num').focusout(function () {
+            $('.quantity-num-wrap').removeClass('quantity-num-wrap_active');
+        });
     };
     quantityBtnsFunc();
     // КНОПКИ КОЛИЧЕТСВА НА КАРТОЧКА ПРОДУКТОВ
@@ -881,10 +904,11 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
+
     if (document.querySelectorAll('.information-main__link').length) {
         window.addEventListener("scroll", event => {
 
-            let fromTop = window.scrollY;
+            let fromTop = window.scrollY + 150;
             let sectionBlock = document.querySelectorAll('.information-main__link');
             sectionBlock.forEach(block => {
                 let section = document.querySelector(block.hash);
@@ -900,6 +924,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         });
     }
+
+
+
 
     let scrollBarSlider = null;
     function scrollBarSliderFunc(doCreate) {
@@ -1034,8 +1061,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 history.replaceState(null, null, " ");
             });
             quantityBtnsFunc();
+
+            //это надо будет удалить
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * Math.floor(max));
+            }
+            let randNum = getRandomInt(3);
+            if (randNum == 2) {
+                document.querySelector('.media').src = "https://www.keramogranit.ru/resize/w370-h517-q90/upload/iblock/31a/41775_600.jpg?c31244c5";
+            }
+            else if (randNum == 1) {
+                document.querySelector('.media').src = "https://images.obi.ru/product/RU/1500x1500/426565_2.jpg";
+            }
+            else {
+                document.querySelector('.media').src = "https://ceramir.ru/netcat_files/userfiles/ItalGraniti_Mega_01_Reception_Hotel_Part_A_Definitivo.jpg";
+            }
+            //это надо будет удалить
+
             zoom();
 
+            $('.popup-product__img').on('tap', function () {
+                $('.popup-product__img-icon').hide();
+            })
 
         }).fail(function () {
             console.log('Failed');
@@ -1100,13 +1147,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.querySelectorAll('.recently-viewed').length) {
         var recentlyViewedSlider = new Swiper('.recently-viewed', {
-            spaceBetween: 10,
+            spaceBetween: 8,
             slidesPerView: 'auto',
             freeMode: true,
-            navigation: {
-                nextEl: '.recently-viewed-next',
-                prevEl: '.recently-viewed-prev',
-            },
+            breakpoints: {
+                760: {
+                    spaceBetween: 10,
+                    slidesPerView: 'auto',
+                    freeMode: true,
+                    navigation: {
+                        nextEl: '.recently-viewed-next',
+                        prevEl: '.recently-viewed-prev',
+                    },
+                },
+            }
         });
     }
 
@@ -1121,18 +1175,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     $('.anchor-label').on('click', function () {
-        console.log($(this))
-        $(this).addClass('anchor-label_active');
-        $(this).find('.anchor-label__block').addClass('anchor-label__block_active');
-        $(this).find('.icon-close_brs').addClass('anchor-label__close');
+        // setTimeout(() => {
+            $(this).toggleClass('anchor-label_active');
+            $(this).find('.anchor-label__block').toggleClass('anchor-label__block_active');
+            $(this).find('.icon-close_brs').toggleClass('anchor-label__close');
+        // }, 100);
     })
-    $('.icon-close_brs').on('click', function () {
-        setTimeout(() => {
-            $(this).parent().removeClass('anchor-label_active');
-            $(this).siblings('.anchor-label__block').removeClass('anchor-label__block_active');
-            $(this).removeClass('anchor-label__close');
-        }, 100);
-    })
+    // $('.icon-close_brs').on('click', function () {
+    //     setTimeout(() => {
+    //         $(this).parent().removeClass('anchor-label_active');
+    //         $(this).siblings('.anchor-label__block').removeClass('anchor-label__block_active');
+    //         $(this).removeClass('anchor-label__close');
+    //     }, 100);
+    // })
 
 
 
@@ -1184,7 +1239,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //         let fObj = {     
     //             fName: $(item).attr("name"), 
     //             fVal: $(item).attr("value")
-                
+
     //         };
     //         fList.push(fObj);
     //     });
@@ -1195,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('.header-filter').submit();
     }
     $('.header-filter input[type="checkbox"]').click(clickOnCheckbox);
-    $('.header-filter').submit((e)=>{
+    $('.header-filter').submit((e) => {
         e.preventDefault();
         const formValue = $(e.target).serializeArray();
         console.log(formValue);

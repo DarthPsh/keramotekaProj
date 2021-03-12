@@ -13,5 +13,17 @@
                 margin-bottom: 32px;
             }
         }
-    }   
+    }
+    &-content {
+        .card-collection-content {
+            @media ( max-width: 760px ) {
+                padding-bottom: 8px;
+            }
+        }
+        .page-content-grid-item {
+            @media ( max-width: 760px ) {
+                width: 170px;
+            }
+        }
+    }  
 }

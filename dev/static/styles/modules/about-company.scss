@@ -120,6 +120,7 @@
             @media (max-width: 760px) {
                 font-size: 64px;
                 margin-left: 0;
+                padding-left: 16px;
             }
             &s {
                 display: flex;
@@ -149,6 +150,9 @@
                     background: $colorAccent;
                     top: 4px;
                     left: -40px;
+                    @media (max-width: 760px) {
+                        left: -15px;
+                    }
                 }
             }
             &-desc {

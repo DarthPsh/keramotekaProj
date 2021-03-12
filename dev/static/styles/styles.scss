@@ -112,6 +112,11 @@ input[type="number"]::-webkit-outer-spin-button {
   @media ( max-width: 1200px ) {
       max-width: calc(1048px + 32px);
   }
+  &-card {
+    @media ( max-width: 760px ) {
+      padding: 0 8px;
+    }
+  }
 }
 
 //Модули
@@ -120,6 +125,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .page {
   &-content {
     background: #F1F1F1;
+    overflow: hidden;
     &-grid {
       padding: 20px 0 160px 0;
       min-height: 100vh;
@@ -276,7 +282,8 @@ input[type="number"]::-webkit-outer-spin-button {
       height: 300px;
     }
     @media ( max-width: 760px ) {
-      width: 100%;
+      width: calc(100% + 16px);
+      transform: translateX(-8px);
       height: 256px;
     }
     &-item {
@@ -492,7 +499,7 @@ input[type="number"]::-webkit-outer-spin-button {
       // text-decoration-color: $colorAccent;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
       @media ( max-width: 760px ) {
         margin-bottom: 8px;
       }
@@ -501,7 +508,7 @@ input[type="number"]::-webkit-outer-spin-button {
       }
       @media (max-width: 760px) {
         font-size: 16px;
-        line-height: 20px;
+        line-height: 22px;
         cursor: pointer;
       }
       .icon-expand_more {
@@ -510,6 +517,7 @@ input[type="number"]::-webkit-outer-spin-button {
         height: 9px;
         display: none;
         transition: all .3s ease-out;
+        transform: translateY(-5px);
         @media ( max-width: 760px ) {
           display: block;
         }
@@ -542,7 +550,7 @@ input[type="number"]::-webkit-outer-spin-button {
         }
       }
       .icon-expand_more {
-        transform: rotate(-180deg);
+        transform: translateY(-5px) rotate(-180deg);
       }
     }
   }
@@ -632,10 +640,11 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     margin: 0 4px;
     border: 2px solid #D9D9D9;
+    &_active {
+      border-color: $colorAccent;
+    }
     @media (max-width: 760px) {
       margin: 0;
-      border-left: none;
-      border-right: none;
     }
   }
   &-num {
@@ -676,6 +685,11 @@ input[type="number"]::-webkit-outer-spin-button {
         background: $colorLight;
       }
     }
+    &-minus {
+      @media (max-width: 760px) {
+        border-right: none;
+      }
+    }
     &-plus {
       &:after {
         content: "";
@@ -687,6 +701,9 @@ input[type="number"]::-webkit-outer-spin-button {
         top: 50%;
         transform: translate(-50%, -50%);
         display: block;
+      }
+      @media (max-width: 760px) {
+        border-left: none;
       }
     }
   }
@@ -999,4 +1016,11 @@ input[type="number"]::-webkit-outer-spin-button {
       fill: #999999;
       margin-right: 13px;
   }
+}
+
+.swiper-lazy-preloader {
+  // data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='272' height='272' viewBox='0 0 272 272' fill='none'%3E%3Cpath d='M272 0H0V272H272V0ZM136 95L177.1 136.1 136 177.1 95 136.1 136 95ZM146 126.1H126V146.1H146V126.1ZM151 121.1V133.6H167.5L138.5 104.6V121.1H151ZM121 121.1H133.5V104.6L104.6 133.6H121V121.1ZM121 151.1V138.6H104.6L133.5 167.6V151.1H121ZM151 151.1H138.5V167.6L167.5 138.6H151V151.1Z' fill='%23F1F1F1'/%3E%3C/svg%3E
+  background: url('/static/images/common/preloader.svg') center no-repeat;
+  border: none;
+  animation: none;
 }
