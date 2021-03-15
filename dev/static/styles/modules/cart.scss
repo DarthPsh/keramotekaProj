@@ -142,7 +142,7 @@
                 }
             }
             &-info {
-                margin-left: 20px;
+                margin: 0 20px;
                 @media (max-width: 760px) {
                     margin: 0;
                 }
@@ -188,9 +188,13 @@
             }
             &-count {
                 margin-left: auto;
+                min-width: 250px;
+                width: 250px;
                 @media (max-width: 760px) {
                     margin: 0;
                     padding-left: 110px;
+                    width: auto;
+                    min-width: auto;
                 }
                 .product-card-content__to-cart-form {
                     display: flex;
@@ -211,7 +215,7 @@
                 }
             }
             &-remove {
-                margin-left: 40px;
+                margin-left: 15px;
                 cursor: pointer;
                 .svg-sprite-icon {
                     height: 19px;

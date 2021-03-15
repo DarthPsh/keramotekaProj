@@ -204,16 +204,16 @@ document.addEventListener('DOMContentLoaded', function () {
         // заrрываем выпадающие списки в филmтрах
         if (!$(".header-filter-list-item").is(e.target) // если клик был не по нашему блоку
             && $(".header-filter-list-item").has(e.target).length === 0) { // и не по его дочерним элементам
-                $(".header-filter-list-item").removeClass('header-filter-list-item_active'); // скрываем его
+            $(".header-filter-list-item").removeClass('header-filter-list-item_active'); // скрываем его
         }  // заrрываем выпадающие списки в филmтрах
 
-         // попап при клике на избранное если пусто
+        // попап при клике на избранное если пусто
         if (!$('.header-bot-mobile-item__favourites').is(e.target) // если клик был не по нашему блоку
             && $('.header-bot-mobile-item__favourites').has(e.target).length === 0) { // и не по его дочерним элементам
             $('.favourites-empty__drop-menu').removeClass('favourites-empty__drop-menu_active'); // скрываем его
         } // попап при клике на избранное если пусто
 
-         // попап при клике на корзину если пусто
+        // попап при клике на корзину если пусто
         if (!$('.header-bot-mobile-item__cart').is(e.target) // если клик был не по нашему блоку
             && $('.header-bot-mobile-item__cart').has(e.target).length === 0) { // и не по его дочерним элементам
             $('.cart-empty__drop-menu').removeClass('cart-empty__drop-menu_active'); // скрываем его
@@ -907,8 +907,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.querySelectorAll('.information-main__link').length) {
         window.addEventListener("scroll", event => {
-
-            let fromTop = window.scrollY + 150;
+            let fromTop = window.scrollY + 100;
             let sectionBlock = document.querySelectorAll('.information-main__link');
             sectionBlock.forEach(block => {
                 let section = document.querySelector(block.hash);
@@ -921,7 +920,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     block.classList.remove("information-main__link_active");
                 }
             });
-
         });
     }
 
@@ -1044,6 +1042,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    const oldAddClass = addClass;
+    function addClass($element, targetClass) {
+        oldAddClass($element, targetClass);
+        // your handler
+        console.log($element, targetClass);
+        $('.popup-product__img-icon').hide();
+    }
     // попап товара "положить в квартиру"    
     $('.product-card-content').on('click', function () {
         // preventDefault();
@@ -1080,9 +1085,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
             zoom();
 
-            $('.popup-product__img').on('tap', function () {
-                $('.popup-product__img-icon').hide();
-            })
+            // создаём мутейшнОбсервер
+            var observeObject = function () {
+                var _class = {
+                    init: function (selector, callback) {
+                        var element = document.querySelector(selector);
+
+                        try {
+                            var observer = new MutationObserver(function (mutations) {
+                                mutations.forEach(function (mutation) {
+                                    callback(mutation.target, mutation.attributeName, mutation.oldValue);
+                                });
+                            });
+
+                            observer.observe(element, {
+                                attributes: true,
+                                subtree: true,
+                                attributeOldValue: true
+                            });
+                        } catch (z) {
+                            element.addEventListener('DOMAttrModified', function (e) {
+                                callback(e.target, e.attrName, e.prevValue);
+                            }, false);
+                        }
+                    }
+                };
+                return _class;
+            }();
+
+            /* А тут инициализируем отслеживание в элементе, передавая селектор */
+            $(function () {
+                observeObject.init('.popup-product__img', function (target, name, oldValue) {
+                    /* ссылка на Node, имя атрибута, предыдущее значение */
+                    // console.log(target, name, oldValue);
+                    $('.popup-product__img-icon').slideUp(300);
+                });
+            });
+
 
         }).fail(function () {
             console.log('Failed');
@@ -1176,9 +1215,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('.anchor-label').on('click', function () {
         // setTimeout(() => {
-            $(this).toggleClass('anchor-label_active');
-            $(this).find('.anchor-label__block').toggleClass('anchor-label__block_active');
-            $(this).find('.icon-close_brs').toggleClass('anchor-label__close');
+        $(this).toggleClass('anchor-label_active');
+        $(this).find('.anchor-label__block').toggleClass('anchor-label__block_active');
+        $(this).find('.icon-close_brs').toggleClass('anchor-label__close');
         // }, 100);
     })
     // $('.icon-close_brs').on('click', function () {
@@ -1257,11 +1296,21 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
+    // отправим инфо о том, что мы лайкнули или анлайкнули эту коллекцию
+    $('.product-text__content-favorite').on('click', function () {
+        // preventDefault();
+        $.ajax({
+            // type: 'post'
+        }).done(function () {
+            console.log('OK');
+        }).fail(function () {
+            console.log('Failed');
+        }).always(function () { });
+    }) // отправим инфо о том, что мы лайкнули или анлайкнули эту коллекцию
+
+
     console.log('press F');
 });
-
-
-
 
 
 
