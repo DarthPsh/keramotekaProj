@@ -2,11 +2,17 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 80px;
-    .information-content__block-desc {
+    .information-content__block {
         &:last-child {
-            margin: 0;
-            p {
-                margin: 0;
+            .information-content__block-desc {
+                &:last-child {
+                    margin: 0;
+                    p {
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
+                }
             }
         }
     }
@@ -14,7 +20,8 @@
         flex-wrap: wrap;
     }
     &-main {
-        max-width: 250px;
+        // max-width: 250px;
+        max-width: 340px;
         width: 100%;
         @media (max-width: 1200px) {
             max-width: 100%;
@@ -24,14 +31,14 @@
             font-weight: bold;
             font-size: 40px;
             line-height: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 32px;
         }
         &__desc {
             font-style: normal;
             font-weight: normal;
             font-size: 20px;
             line-height: 28px;
-            margin-bottom: 30px;
+            margin-bottom: 48px;
             @media (max-width: 1200px) {
                 margin-bottom: 35px;
             }
@@ -54,6 +61,10 @@
             position: relative;
             border-left: 1px solid #999999;
             color: #999999;
+            transition: .3s;
+            &:hover {
+                color: $colorBlackText;
+            }
             @media (max-width: 1200px) {
                 padding: 6px;
                 border-left: none;
@@ -120,13 +131,14 @@
                 line-height: 24px;
                 margin-bottom: 48px;
                 p {
-                    margin-bottom: 15px;
+                    margin-bottom: 16px;
                 }
                 a {
                     font-weight: bold;
                     border-bottom: 1px solid $colorAccent;
                 }
                 ul {
+                    margin-bottom: 48px;
                     li {
                         margin-bottom: 16px;
                         position: relative;
@@ -201,7 +213,7 @@
             display: none;
         }
         &__block {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             &:last-child {
                 margin-bottom: 0;
             }

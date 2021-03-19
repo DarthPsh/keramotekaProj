@@ -13,6 +13,9 @@
                 letter-spacing: 0.02em;
                 display: block;
                 text-transform: uppercase;
+                &:hover {
+                    color: $colorBlackText;
+                }
                 &:after {
                     content: '/';
                     margin: 0 10px;

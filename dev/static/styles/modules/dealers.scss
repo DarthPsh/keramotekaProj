@@ -26,3 +26,28 @@
         }
     }
 }
+
+.dealers {
+    &-cta {
+        background: #FFFFFF;
+        border: 2px solid #D9D9D9;
+        box-sizing: border-box;
+        border-radius: 2px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #333333;
+        padding: 22px 70px;
+        display: inline-block;
+        transition: .3s;
+        &:hover {
+            border-color: #333333;
+        }
+        @media (max-width: 760px) {
+            width: 100%;
+        }
+    }
+}

@@ -15,7 +15,7 @@ body {
   font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
   font-style: normal;
   height: 100%;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
   text-rendering: auto;
   // line-height: 1.5;
   color: $colorBlackText;
@@ -232,6 +232,7 @@ input[type="number"]::-webkit-outer-spin-button {
       height: 100%;
       position: relative;
       background: $colorLight;
+      display: block;
       &-wrap {
         display: flex;
         align-items: center;
@@ -593,11 +594,18 @@ input[type="number"]::-webkit-outer-spin-button {
         justify-content: space-between;
         cursor: pointer;
         padding: 16px;
+        transition: all .3s ease-out;
         .icon-expand_more {
           fill: #999999;
           width: 14px;
           height: 9px;
           transition: all .3s ease-out;
+        }
+        &:hover {
+          color: $colorBlackText;
+          .icon-expand_more {
+            fill: $colorBlackText;
+          }
         }
       }
     }
@@ -608,15 +616,21 @@ input[type="number"]::-webkit-outer-spin-button {
       overflow: hidden;
       transition: all .3s ease-in-out;
       &-item {
-        border-top: 1px solid #D9D9D9;
+        border-top: 1px solid rgba(#D9D9D9, .5);
         a {
           display: block;
-          padding: 12px 0 15px 0;
+          padding: 13px 0 14px 0;
           font-weight: 600;
           font-size: 14px;
           line-height: 16px;
           letter-spacing: 0.04em;
           color: #151515;
+          transition: .3s;
+          text-transform: uppercase;
+          &:hover {
+            background: #F1F1F1;
+            padding-left: 8px;
+          }
         }
       }
     }
@@ -748,8 +762,10 @@ input[type="number"]::-webkit-outer-spin-button {
     padding-left: 25px;
     border-left: 4px solid $colorAccent;
     max-width: 480px;
+    transform: translateX(-26px);
     @media (max-width: 1200px) {
       order: 1;
+      transform: translateX(0);
     } 
     @media (max-width: 768px) {
       order: 0;

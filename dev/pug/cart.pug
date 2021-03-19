@@ -185,7 +185,7 @@ block content
                                         label.calculation-popup__check-entity.calculation-popup__check-item 
                                             input(type="radio" name="type")
                                             | Юридическое лицо  
-                                    label.calculation-popup__name.calculation-popup__org
+                                    label.calculation-popup__entity
                                         span.calculation-popup__info-title НАЗВАНИЕ ОРГАНИЗАЦИИ
                                         input(type="text" placeholder='Например ООО "Гранит"')
                                     label.calculation-popup__name 
@@ -205,8 +205,7 @@ block content
                                             | Нужна доставка
                                         label.calculation-popup__check-pickup.calculation-popup__check-item
                                             input(type="radio" name="delivery") 
-                                            | Самовывоз со  
-                                            b  склада
+                                            | Самовывоз со склада
                                     label.calculation-popup__info-address 
                                         span.calculation-popup__info-title ВАШ АДРЕС
                                         input(type="text")
@@ -222,7 +221,7 @@ block content
                                             span.file-name
                                     .calculation-popup__footer-end
                                         button(type="submit").calculation-popup__footer-btn.calculation-popup__footer-submit ОТПРАВИТЬ ЗАЯВКУ
-                                        label.calculation-popup__footer-policy
+                                        .calculation-popup__footer-policy
                                             input(type="checkbox")
                                             span Я принимаю 
                                                 a(href="/agreement.html") Пользовательское соглашение 

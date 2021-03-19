@@ -187,17 +187,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // выпадающие меню в списке фильтров
-    $('.header-filter-list-item__title').each(function (index, event) {
-        $(this).on('click', function () {
-            if ($(this).closest('.header-filter-list-item').hasClass('header-filter-list-item_active')) {
-                $(this).closest('.header-filter-list-item').removeClass('header-filter-list-item_active');
-            }
-            else {
-                $('.header-filter-list-item').removeClass('header-filter-list-item_active');
-                $(this).closest('.header-filter-list-item').addClass('header-filter-list-item_active');
-            }
-        })
+    // $('.header-filter-list-item__title').each(function (index, event) {
+    $('body').on('click', '.header-filter-list-item__title', function () {
+        if ($(this).closest('.header-filter-list-item').hasClass('header-filter-list-item_active')) {
+            $(this).closest('.header-filter-list-item').removeClass('header-filter-list-item_active');
+        }
+        else {
+            $('.header-filter-list-item').removeClass('header-filter-list-item_active');
+            $(this).closest('.header-filter-list-item').addClass('header-filter-list-item_active');
+        }
     })
+    // })
     // выпадающие меню в списке фильтров
 
     $(document).mouseup(function (e) { // событие клика по веб-документу
@@ -748,6 +748,34 @@ document.addEventListener('DOMContentLoaded', function () {
     // АКТИВАЦИЯ СВАЙПЕРА НА КАРТОЧКАХ ПРОИЗВОДИТЕЛЯ И КОЛЛЕКЦИИ
 
 
+    // ФОРМА СТАТЬ ДИЛЕРОМ
+    $(".dealers-cta").on('click', function () {
+        preventDefault();
+        $.ajax({
+            url: 'becomeAdealer.html',
+            // type: 'post'
+        }).done(function (resultHtml) {
+            $('body').css('overflow', 'hidden');
+            $('body').append(resultHtml);
+            sendCalculationForm();
+            history.pushState(null, null, "#popup");
+            $(window).on('popstate', function () {
+                $('.calculation-popup-wrap').remove();
+                $('body').css('overflow', 'auto');
+                history.replaceState(null, null, " ");
+            });
+
+            $('input[type="radio"]').on('change', function () {
+                $(this).closest('.header-filter-list-item').find('.header-filter-list-item__title').text($(this).parent().text());
+            })
+
+        }).fail(function () {
+            console.log('Failed');
+        }).always(function () {
+
+        });
+    });
+
 
     // ФОРМА "Отправить спецификацию на просчет"
     $(".cta").on('click', function () {
@@ -923,6 +951,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    
 
 
 
@@ -1220,16 +1249,16 @@ document.addEventListener('DOMContentLoaded', function () {
         $(this).find('.icon-close_brs').toggleClass('anchor-label__close');
         // }, 100);
     })
-    // $('.icon-close_brs').on('click', function () {
-    //     setTimeout(() => {
-    //         $(this).parent().removeClass('anchor-label_active');
-    //         $(this).siblings('.anchor-label__block').removeClass('anchor-label__block_active');
-    //         $(this).removeClass('anchor-label__close');
-    //     }, 100);
-    // })
+    $('.anchor-label__block-arr').on('click', function() {
+        let idAnchor = $(this).attr('href');
+        $(idAnchor).addClass('product-card_active');
+        console.log(testo);
+    })
+    $('.product-card').on('mouseover', function() {
+        $(this).removeClass('product-card_active');
+    })
 
-
-
+ 
     // попап тридэ
 
     $(".3d-visual").on('click', function () {
@@ -1258,17 +1287,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // переключаем физлицо/юрлицо в форме
-    $('body').on('click', '.calculation-popup__check-entity', function () {
-        $(this).closest('.cart-form').find('.calculation-popup__org').hide();
-    })
     $('body').on('click', '.calculation-popup__check-private', function () {
-        $(this).closest('.cart-form').find('.calculation-popup__org').show();
-    }) // переключаем физлицо/юрлицо в форме
-
-
-    $('.product-text__content-favorite').on('click', function () { // кнопка избранное на стрнице коллекции
-        $('.product-text__content-favorite').toggleClass('product-text__content-favorite_active');
+        $(this).closest('form').find('.calculation-popup__entity').hide();
     })
+    $('body').on('click', '.calculation-popup__check-entity', function () {
+        $(this).closest('form').find('.calculation-popup__entity').show();
+    }) 
+    // переключаем физлицо/юрлицо в форме
 
 
     // let fList;
@@ -1278,22 +1303,21 @@ document.addEventListener('DOMContentLoaded', function () {
     //         let fObj = {     
     //             fName: $(item).attr("name"), 
     //             fVal: $(item).attr("value")
-
     //         };
     //         fList.push(fObj);
     //     });
     // })
 
 
-    function clickOnCheckbox() {
-        $('.header-filter').submit();
-    }
-    $('.header-filter input[type="checkbox"]').click(clickOnCheckbox);
-    $('.header-filter').submit((e) => {
-        e.preventDefault();
-        const formValue = $(e.target).serializeArray();
-        console.log(formValue);
-    })
+    // function clickOnCheckbox() {
+    //     $('.header-filter').submit();
+    // }
+    // $('.header-filter input[type="checkbox"]').click(clickOnCheckbox);
+    // $('.header-filter').submit((e) => {
+    //     e.preventDefault();
+    //     const formValue = $(e.target).serializeArray();
+    //     console.log(formValue);
+    // })
 
 
     // отправим инфо о том, что мы лайкнули или анлайкнули эту коллекцию
@@ -1302,6 +1326,9 @@ document.addEventListener('DOMContentLoaded', function () {
         $.ajax({
             // type: 'post'
         }).done(function () {
+            // $('.product-text__content-favorite').on('click', function () { // кнопка избранное на стрнице коллекции
+            $('.product-text__content-favorite').toggleClass('product-text__content-favorite_active');
+            // })
             console.log('OK');
         }).fail(function () {
             console.log('Failed');
