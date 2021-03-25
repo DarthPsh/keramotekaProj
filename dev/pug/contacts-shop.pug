@@ -14,11 +14,18 @@ block content
                         a.breadcrumbs-list__item-link(href="#") КОНТАКТЫ
             .information-main.information-main__head.contacts-main
                 .information-main__title.contacts-main__title Контакты
-            #links-scrollbar.scrollbar-slider.information-main__links.contacts-main__links.swiper-container
-                .swiper-wrapper
-                    a.swiper-slide.contacts-main__link.contacts-main__link_active(href="/contacts-shop.html") ШОУРУМ
-                    a.swiper-slide.contacts-main__link(href="/contacts-dealers.html") ДИЛЕРСКИЙ ОТДЕЛ
-                    a.swiper-slide.contacts-main__link(href="/contacts-warehouse.html") СКЛАД
+        .container.top-scrollbar__container
+            .top-scrollbar.swiper-container
+                .swiper-wrapper.top-scrollbar__wrapper
+                    a.top-scrollbar__item.top-scrollbar__item_active.swiper-slide(href="/contacts-shop.html") ШОУРУМ
+                    a.top-scrollbar__item.swiper-slide(href="/contacts-dealers.html") ДИЛЕРСКИЙ ОТДЕЛ
+                    a.top-scrollbar__item.swiper-slide(href="/contacts-warehouse.html") СКЛАД
+            //- #links-scrollbar.scrollbar-slider.information-main__links.contacts-main__links.swiper-container
+            //-     .swiper-wrapper
+            //-         a.swiper-slide.contacts-main__link.contacts-main__link_active(href="/contacts-shop.html") ШОУРУМ
+            //-         a.swiper-slide.contacts-main__link(href="/contacts-dealers.html") ДИЛЕРСКИЙ ОТДЕЛ
+            //-         a.swiper-slide.contacts-main__link(href="/contacts-warehouse.html") СКЛАД
+        .container
             .contacts.information
                 .information-contact.contacts-contact
                     .information-contact__block
@@ -62,42 +69,42 @@ block content
             .contacts-slider__main.swiper-container
                 .swiper-wrapper
                     .contacts-slider__main-item.swiper-slide
-                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                         .swiper-lazy-preloader.swiper-lazy-preloader-white
                     .contacts-slider__main-item.swiper-slide
-                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                         .swiper-lazy-preloader.swiper-lazy-preloader-white    
                     .contacts-slider__main-item.swiper-slide
-                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                         .swiper-lazy-preloader.swiper-lazy-preloader-white  
                     .contacts-slider__main-item.swiper-slide
-                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                         .swiper-lazy-preloader.swiper-lazy-preloader-white  
                     .contacts-slider__main-item.swiper-slide
-                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                         .swiper-lazy-preloader.swiper-lazy-preloader-white  
                     .contacts-slider__main-item.swiper-slide
-                        img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                        img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                         .swiper-lazy-preloader.swiper-lazy-preloader-white  
             .contacts-slider__thumbs-wrap                
                 .contacts-slider__thumbs.swiper-container
                     .swiper-wrapper    
                         .contacts-slider__thumbs-item.swiper-slide
-                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                             .swiper-lazy-preloader.swiper-lazy-preloader-white
                         .contacts-slider__thumbs-item.swiper-slide
-                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                             .swiper-lazy-preloader.swiper-lazy-preloader-white    
                         .contacts-slider__thumbs-item.swiper-slide
-                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                             .swiper-lazy-preloader.swiper-lazy-preloader-white  
                         .contacts-slider__thumbs-item.swiper-slide
-                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                             .swiper-lazy-preloader.swiper-lazy-preloader-white  
                         .contacts-slider__thumbs-item.swiper-slide
-                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                             .swiper-lazy-preloader.swiper-lazy-preloader-white  
                         .contacts-slider__thumbs-item.swiper-slide
-                            img(class="swiper-lazy" src="static/images/content/prod-2.png", alt="img")
+                            img(class="swiper-lazy" data-src="static/images/content/prod-2.png")
                             .swiper-lazy-preloader.swiper-lazy-preloader-white  
                 .contacts-slider__main-pagination.swiper-pagination   

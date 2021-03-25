@@ -302,7 +302,6 @@ header { flex: 0 0 auto; }
         li {
             border-bottom: 1px solid rgba(#C8C5C5, .48);
             margin: 0;
-            padding: 21px 38px 19px 16px;
             display: block;
             position: relative;
             &:before {
@@ -316,6 +315,10 @@ header { flex: 0 0 auto; }
                 top: 0;
             }
             &:hover:before {
+                display: block;
+            }
+            a {
+                padding: 21px 38px 19px 16px;
                 display: block;
             }
             &:hover a {
@@ -748,6 +751,8 @@ header { flex: 0 0 auto; }
         }
         &_active {
             top: 0;
+            left: 0;
+            right: 0;
         }
         .header {
             &-bot {
@@ -939,10 +944,10 @@ header { flex: 0 0 auto; }
                         width: 100%;
                         padding: 15px;
                         background: $colorLight;
-                        box-shadow: 0px -3px 15px 0px #000000;
-                        transition: all .3s ease-out;
+                        transition: bottom .3s ease-out;
                         &_active {
                             bottom: 0;
+                            border-top: 1px solid rgba(0, 0, 0, 0.06);
                         }
                     }
                     .header-filter-head {
@@ -953,6 +958,7 @@ header { flex: 0 0 auto; }
                         padding: 15px;
                         z-index: 1;
                         background: $colorLight;
+                        padding-right: 27px;
                     }
                 }
             }
@@ -999,6 +1005,7 @@ header { flex: 0 0 auto; }
                     margin-left: 10px;
                     @media (max-width: 760px) {
                         background: $colorLight;
+                        margin-left: 0;
                     }
                 }
             }
@@ -1012,6 +1019,9 @@ header { flex: 0 0 auto; }
                     @media (max-width: 910px) {
                         margin-left: 0;
                         margin-right: 10px;
+                    }
+                    @media (max-width: 760px) {
+                        margin-right: 0;
                     }
                 }
             }
@@ -1056,6 +1066,7 @@ header { flex: 0 0 auto; }
             }
             @media (max-width: 760px) {
                 grid-template-columns: repeat(1, 1fr);
+                grid-gap: 0;
             }
             &-item {
                 background: $colorLight;
@@ -1167,9 +1178,6 @@ header { flex: 0 0 auto; }
                     display: flex;
                     align-items: center;
                     transition: all .3s;
-                    &:first-child {
-                        margin-left: 16px;
-                    }
                     .svg-sprite-icon {
                         fill: #999999;
                         height: 8px;
@@ -1189,6 +1197,7 @@ header { flex: 0 0 auto; }
                 opacity: 1;
                 transform: scale(1);
                 height: auto;
+                padding-left: 16px;
             }
         }
         &-btns {
@@ -1292,11 +1301,14 @@ header { flex: 0 0 auto; }
         padding-right: 19px;
         padding-left: 16px;
         font-size: 14px;
-    }
-    &-inner {}
-    li span {
-        display: block;
-        color: $colorGray;
+        span {
+            display: block;
+            color: $colorGray;
+        }
+        a {
+            padding: 0;
+            display: flex;
+        }
     }
     .header-content-circle {
         background: $colorLight;
@@ -1321,14 +1333,14 @@ header { flex: 0 0 auto; }
         padding-right: 19px;
         padding-left: 16px;
         font-size: 14px;
+        padding: 21px 38px 19px 16px;
         .header-content-block__text {
             display: flex;
         }
-    }
-    &-inner {}
-    li span {
-        display: block;
-        color: $colorGray;
+        span {
+            display: block;
+            color: $colorGray;
+        }
     }
     .header-content-circle {
         background: $colorLight;
@@ -1416,6 +1428,7 @@ header { flex: 0 0 auto; }
         max-height: 0;
         opacity: 1;
         border-top: 1px solid #d9d9d9;
+        box-shadow: none;
     }
     li {
         cursor: auto;
@@ -1483,6 +1496,10 @@ header { flex: 0 0 auto; }
                 display: none;
             }
         }
+        a {
+            padding: 0;
+            display: flex;
+        }
     }
     &:before {
         content: '';
@@ -1514,6 +1531,9 @@ header { flex: 0 0 auto; }
         transition: all .3s ease-out;
         left: 50%;
         transform: translateX(-50%);
+        @media (max-width: 520px) {
+            padding: 10px;
+        }
         &_active {
             opacity: 1;
             visibility: visible;
@@ -1527,7 +1547,7 @@ header { flex: 0 0 auto; }
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 100%;
+            bottom: calc(100% - 1px);
             width: 0;
             height: 0;
             border-style: solid;
@@ -1584,6 +1604,9 @@ header { flex: 0 0 auto; }
         top: calc(100% + 25px);
         transition: all .3s ease-out;
         right: 0;
+        @media (max-width: 520px) {
+            right: -11px;
+        }
         &_active {
             opacity: 1;
             visibility: visible;
@@ -1595,7 +1618,7 @@ header { flex: 0 0 auto; }
             display: block;
             position: absolute;
             right: 14px;
-            bottom: 100%;
+            bottom: calc(100% - 1px);
             width: 0;
             height: 0;
             border-style: solid;
@@ -1819,15 +1842,16 @@ header { flex: 0 0 auto; }
                 line-height: 16px;
                 letter-spacing: 0.04em;
                 padding-left: 40px;
-                transform: scaleY(0);
-                transform-origin: 0 0;
-                visibility: visible;
+                visibility: unset;
+                height: auto;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height .5s;
                 &_active {
-                    visibility: visible;
                     opacity: 1;
                     position: relative;
                     box-shadow: none;
-                    transform: scaleY(1);
+                    max-height: 250px;
                 }
                 li {
                     &:last-child {

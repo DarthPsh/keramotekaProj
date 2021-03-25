@@ -30,7 +30,7 @@ header.header
 				.header-top__right
 					ul.header-top__right-menu
 						li
-							a(href='#') Сотрудничество
+							a(href='#!') Сотрудничество
 								figure.header-top__icon.header-top__more
 									+icon('expand_more')
 							ul.header-drop-menu.header-top__right-drop-menu
@@ -94,7 +94,7 @@ header.header
 							.header-content-block__text
 								span сб-вс
 								span.header-content-block__info 10:00 — 18:00
-					a(href="/favorites.html").header-content-circle.header-content__favourites
+					a(href="/favorites.html").header-content-circle.header-content__favourites.header-favourites__btn
 						+icon('favourites')
 						input(type="number" value="0" disabled).header-content-circle__badge
 						ul.header-drop-menu.favourites-empty__drop-menu
@@ -105,7 +105,7 @@ header.header
 							li
 								.favourites-empty__icon 
 									+icon('favourites')
-					a(href="/cart.html").header-content-circle.header-content__cart
+					a(href="/cart.html").header-content-circle.header-content__cart.header-cart__btn
 						+icon('shopping-cart')
 						input(type="number" value="0" disabled).header-content-circle__badge.cart-count
 						ul.header-drop-menu.cart-empty__drop-menu
@@ -287,7 +287,7 @@ header.header
 									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
 								a.header-content-circle(href='tel:88007075037')
 									+icon('phone')
-					a(href="/favorites.html").header-bot-mobile-item.header-bot-mobile-item__favourites
+					a(href="/favorites.html").header-bot-mobile-item.header-bot-mobile-item__favourites.header-favourites__btn
 						input(type="number" value="0" disabled).header-bot-mobile-item__badge.favourites-count
 						+icon('favourites')
 						.header-bot-mobile-item-desc Избранные коллекции
@@ -299,7 +299,7 @@ header.header
 							li
 								.favourites-empty__icon 
 									+icon('favourites')
-					a(href="/cart.html").header-bot-mobile-item.header-bot-mobile-item__cart
+					a(href="/cart.html").header-bot-mobile-item.header-bot-mobile-item__cart.header-cart__btn
 						input(type="number" value="0" disabled).header-bot-mobile-item__badge.cart-count 
 						+icon('cart')
 						.header-bot-mobile-item-desc Ваш заказ
@@ -484,10 +484,12 @@ header.header
 			.header-filter-btns
 				button.header-filter-reset(type="reset") 
 					+icon('refresh')
-					| Сбросить фильтр
+					| Сбросить
+					br
+					| фильтр
 				button.header-filter-submit(type="submit") 
 					| ПОКАЗАТЬ 
-					span.header-filter-submit-count 45
+					span.header-filter-submit-count (45)
 					span.header-filter-submit-end  КОЛЛЕКЦИЙ
 	.mobile-menu
 		.container 
@@ -507,11 +509,24 @@ header.header
 						+icon('catalog2')
 						| Дилерский отдел
 				li.mobile-menu-list-item
-					a.mobile-menu-list-item__link(href='#') Заказ и доставка
+					a.mobile-menu-list-item__link(href='#!') Заказ и доставка
+						figure.header-top__icon.header-top__more
+							+icon('expand_more')
+					ul.header-drop-menu.mobile-menu-list-drop
+						li
+							a(href="#") Заказ
+						li
+							a(href="#") Оплата 
+						li
+							a(href="#") Доставка
+						li
+							a(href="#") Самовывоз
+						li
+							a(href="#") Возврат
 				li.mobile-menu-list-item
 					a.mobile-menu-list-item__link(href='#') Шоурум
 				li.mobile-menu-list-item
-					a.mobile-menu-list-item__link(href='#') Сотрудничество
+					a.mobile-menu-list-item__link(href='#!') Сотрудничество
 						figure.header-top__icon.header-top__more
 							+icon('expand_more')
 					ul.header-drop-menu.mobile-menu-list-drop

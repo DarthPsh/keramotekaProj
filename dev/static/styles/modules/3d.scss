@@ -48,6 +48,9 @@
                     display: none;
                 }
             }
+            &-item {
+                background: gray;
+            }
         }
         &__thumbs {
             overflow: hidden;
@@ -71,6 +74,7 @@
             }
             &-item {
                 height: 76px;
+                background: gray;
                 @media (max-width: 760px) {
                     width: 42px;
                     max-width: 42px;

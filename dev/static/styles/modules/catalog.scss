@@ -101,6 +101,7 @@
                 justify-content: space-between;
                 @media (max-width: 760px) {
                     display: flex;
+                    padding-right: 20px;
                 }
                 .svg-sprite-icon {
                     fill: #999999;
@@ -123,7 +124,12 @@
                     position: fixed;
                     flex-direction: column;
                     .header-filter-list-drop-menu {
-                        max-height: 100vh;
+                        max-height: calc(100vh - 86px);
+                        box-shadow: none;
+                        transition: none;
+                        input {
+                            transition: none;
+                        }
                     }
                 }
                 .catalog-content__top-btns {
@@ -145,6 +151,12 @@
                         align-items: center;
                         justify-content: center;
                         border: none;
+                        background: $colorLight;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 100%;
+                        text-align: center;
+                        letter-spacing: .05em;
                         .svg-sprite-icon {
                             width: 16px;
                             height: 19px;
@@ -173,6 +185,12 @@
                     top: 0;
                     bottom: 0;
                     z-index: 20;
+                    overflow: auto;
+                    .catalog-content__top-btns {
+                        background: $colorLight;
+                        position: fixed;
+                        z-index: 30;
+                    }
                 }
                 .header-filter-list-item {
                     max-width: 256px;
@@ -188,14 +206,19 @@
                 .view-link {
                     padding: 0 15px;
                     cursor: pointer;
+                    &:hover {
+                        .svg-sprite-icon {
+                            fill: #333333;
+                        }  
+                    }
                     .svg-sprite-icon {
-                        fill: #333333;
+                        fill: #BDBDBD;
                         height: 18px;
                         width: 18px;
                     } 
                     &-current {
                         .svg-sprite-icon {
-                            fill: $colorAccent;
+                            fill: #333333;
                         } 
                     }
                 }

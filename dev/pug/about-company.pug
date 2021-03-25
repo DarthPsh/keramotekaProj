@@ -35,15 +35,26 @@ block content
             .information-main.information-main__head.about-main
                 //- .information-main__title.about-main__title Заказ и доставка
                 .information-main__desc.about-main__desc 
-            #links-scrollbar.scrollbar-slider.information-main__links.about-main__links.swiper-container
-                .swiper-wrapper
-                    a.swiper-slide.information-main__link.about-main__link(href="#retail_buyers") РОЗНИЧНЫМ ПОКУПАТЕЛЯМ
-                    a.swiper-slide.information-main__link.about-main__link(href="#for_dealers_and_shops") ДИЛЕРАМ/МАГАЗИНАМ
-                    a.swiper-slide.information-main__link.about-main__link(href="#for_designers_and_architects") ДИЗАЙНЕРАМ/ АРХИТЕКТОРАМ
-                    a.swiper-slide.information-main__link.about-main__link(href="#construction_organizations") ДЕВЕЛОПЕРАМ/
+        .container.top-scrollbar__container
+            .top-scrollbar.swiper-container
+                .swiper-wrapper.top-scrollbar__wrapper
+                    a.top-scrollbar__item.swiper-slide(href="#retail_buyers") РОЗНИЧНЫМ ПОКУПАТЕЛЯМ
+                    a.top-scrollbar__item.swiper-slide(href="#for_dealers_and_shops") ДИЛЕРАМ/МАГАЗИНАМ
+                    a.top-scrollbar__item.swiper-slide(href="#for_designers_and_architects") ДИЗАЙНЕРАМ/АРХИТЕКТОРАМ
+                    a.top-scrollbar__item.swiper-slide(href="#construction_organizations") ДЕВЕЛОПЕРАМ/
                         br
                         | СТРОИТЕЛЬНЫМ ОРГЕНИЗАЦИЯМ
-                    a.swiper-slide.information-main__link.information-main__link-contacts.about-main__link(href="#contacts") КОНТАКТЫ
+                    a.top-scrollbar__item.top-scrollbar__contacts.swiper-slide(href="#contacts") КОНТАКТЫ
+            //- #links-scrollbar.scrollbar-slider.information-main__links.about-main__links.swiper-container
+            //-     .swiper-wrapper
+            //-         a.swiper-slide.information-main__link.about-main__link(href="#retail_buyers") РОЗНИЧНЫМ ПОКУПАТЕЛЯМ
+            //-         a.swiper-slide.information-main__link.about-main__link(href="#for_dealers_and_shops") ДИЛЕРАМ/МАГАЗИНАМ
+            //-         a.swiper-slide.information-main__link.about-main__link(href="#for_designers_and_architects") ДИЗАЙНЕРАМ/ АРХИТЕКТОРАМ
+            //-         a.swiper-slide.information-main__link.about-main__link(href="#construction_organizations") ДЕВЕЛОПЕРАМ/
+            //-             br
+            //-             | СТРОИТЕЛЬНЫМ ОРГЕНИЗАЦИЯМ
+            //-         a.swiper-slide.information-main__link.information-main__link-contacts.about-main__link(href="#contacts") КОНТАКТЫ
+        .container
             .about.information
                 .information-main.information-main__aside.about-main
                     //- .information-main__title.about-main__title Заказ и доставка

@@ -14,10 +14,16 @@ block content
                         a.breadcrumbs-list__item-link(href="#") КОРЗИНА
             .information-main.information-main__head.cart-main
                 .information-main__title.cart-main__title Ваш заказ
-            #links-scrollbar.scrollbar-slider.information-main__links.cart-main__links.swiper-container
-                .swiper-wrapper
-                    a.swiper-slide.information-main__link.cart-main__link(href="#cart") КОРЗИНА
-                    a.swiper-slide.information-main__link.cart-main__link(href="#ordering") ОФОРМЛЕНИЕ ЗАКАЗА
+        .container.top-scrollbar__container
+            .top-scrollbar.swiper-container
+                .swiper-wrapper.top-scrollbar__wrapper
+                    a.top-scrollbar__item.swiper-slide(href="#cart") КОРЗИНА
+                    a.top-scrollbar__item.swiper-slide(href="#ordering") ОФОРМЛЕНИЕ ЗАКАЗА
+            //- #links-scrollbar.scrollbar-slider.information-main__links.cart-main__links.swiper-container
+            //-     .swiper-wrapper
+            //-         a.swiper-slide.information-main__link.cart-main__link(href="#cart") КОРЗИНА
+            //-         a.swiper-slide.information-main__link.cart-main__link(href="#ordering") ОФОРМЛЕНИЕ ЗАКАЗА
+        .container
             .cart.information
                 .information-main.information-main__aside.cart-main
                     .information-main__title.cart-main__title Ваш заказ

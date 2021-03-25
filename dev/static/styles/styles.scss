@@ -86,6 +86,15 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -599,7 +608,6 @@ input[type="number"]::-webkit-outer-spin-button {
           fill: #999999;
           width: 14px;
           height: 9px;
-          transition: all .3s ease-out;
         }
         &:hover {
           color: $colorBlackText;
@@ -635,6 +643,9 @@ input[type="number"]::-webkit-outer-spin-button {
       }
     }
     &_active {
+      .card-brand__count-title .svg-sprite-icon {
+        transform: rotate(180deg);
+      }
       .card-brand__list {
         max-height: 3000px;
       }
@@ -941,9 +952,6 @@ input[type="number"]::-webkit-outer-spin-button {
     transition: .3s;
     &:hover {
       border-color: $colorBlackText;
-      .icon-renew {
-        transform: rotate(360deg);
-      }
     }
     .icon-renew {
       height: 24px;
@@ -1039,4 +1047,9 @@ input[type="number"]::-webkit-outer-spin-button {
   background: url('/static/images/common/preloader.svg') center no-repeat;
   border: none;
   animation: none;
+}
+
+
+.item-spin {
+  animation: spin 1s linear infinite;
 }
