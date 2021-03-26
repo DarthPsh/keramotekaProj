@@ -408,7 +408,7 @@ header { flex: 0 0 auto; }
                     padding: 0;
                     background: transparent;
                     height: auto;
-                    width: 25px;
+                    // width: 25px;
                     text-align: center;
                     @media (max-width: 760px) {
                         text-align: left;
@@ -1293,6 +1293,10 @@ header { flex: 0 0 auto; }
 .header-content__phone-drop-menu {
     width: 218px;
     top: 0;
+    @media (max-width: 1200px) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
     li {
         height: 73px;
         display: flex;
@@ -1328,6 +1332,10 @@ header { flex: 0 0 auto; }
 .header-content__worktime-drop-menu {
     width: 218px;
     top: 0;
+    @media (max-width: 1200px) {
+        left: 50%;
+        transform: translateX(-50%);
+    }
     li {
         height: 73px;
         padding-right: 19px;
@@ -1480,6 +1488,7 @@ header { flex: 0 0 auto; }
 .header-mobile-phone-drop-menu {
     top: calc(100% + 25px);
     overflow: visible;
+    width: 218px;
     li {
         height: 73px;
         display: flex;
@@ -1507,7 +1516,7 @@ header { flex: 0 0 auto; }
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 100%;
+        bottom: calc(100% - 1px);
         width: 0;
         height: 0;
         border-style: solid;
@@ -1851,7 +1860,7 @@ header { flex: 0 0 auto; }
                     opacity: 1;
                     position: relative;
                     box-shadow: none;
-                    max-height: 250px;
+                    max-height: 500px;
                 }
                 li {
                     &:last-child {

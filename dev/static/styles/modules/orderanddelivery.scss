@@ -7,6 +7,9 @@
         }
         #contacts {
             display: block;
+            @media (max-width: 760px) {
+                padding-top: 40px;
+            }
         }
     }
     &-content {
