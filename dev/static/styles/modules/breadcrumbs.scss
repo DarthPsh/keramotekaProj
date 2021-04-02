@@ -13,6 +13,7 @@
                 letter-spacing: 0.02em;
                 display: block;
                 text-transform: uppercase;
+                transition: .2s;
                 &:hover {
                     color: $colorBlackText;
                 }

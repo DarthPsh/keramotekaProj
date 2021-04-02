@@ -48,9 +48,6 @@
                     display: none;
                 }
             }
-            &-item {
-                background: gray;
-            }
         }
         &__thumbs {
             overflow: hidden;
@@ -74,11 +71,19 @@
             }
             &-item {
                 height: 76px;
-                background: gray;
+                cursor: pointer;
                 @media (max-width: 760px) {
                     width: 42px;
                     max-width: 42px;
                     height: 32px;
+                }
+                img {
+                    transition: .2s;
+                }
+                &:hover {
+                    img {
+                        opacity: .85;
+                    }
                 }
             }
             .swiper-slide-thumb-active {

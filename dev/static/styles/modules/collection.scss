@@ -939,7 +939,8 @@
                     height: 56px;
                     border: none;
                     margin-top: 12px;
-                    transition: .2s;;
+                    transition: .2s;
+                    text-transform: uppercase;
                     &:hover {
                         background: $colorAccent;
                     }

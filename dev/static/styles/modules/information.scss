@@ -61,7 +61,7 @@
             position: relative;
             border-left: 1px solid #999999;
             color: #999999;
-            transition: .3s;
+            transition: color .3s;
             &:hover {
                 color: $colorBlackText;
             }
@@ -136,6 +136,10 @@
                 a {
                     font-weight: bold;
                     border-bottom: 1px solid $colorAccent;
+                    transition: .2s;
+                    &:hover {
+                        border-color: #D9D9D9;
+                    }
                 }
                 ul {
                     margin-bottom: 48px;
@@ -216,6 +220,11 @@
             margin-bottom: 40px;
             &:last-child {
                 margin-bottom: 0;
+                .information-contact__block-item {
+                    &:last-child {
+                        border: none;
+                    }
+                }
             }
             &-payment {
                 .information-contact__block-item {
@@ -284,9 +293,12 @@
             color: #828282;
             a {
                 color: $colorBlackText;
-                text-decoration: underline;
-                text-decoration-color: $colorAccent;
+                border-bottom: 1px solid #FAC420;
                 white-space: nowrap;
+                transition: .2s;
+                &:hover {
+                    border-color: #D9D9D9;
+                }
             }
         }
     }
@@ -349,7 +361,7 @@
     text-align: center;
     letter-spacing: 0.04em;
     color: #333333;
-    padding: 22px 70px;
+    padding: 16px 47px;
     display: inline-block;
     transition: .3s;
     &:hover {
@@ -362,9 +374,20 @@
 
 .top {
     &-scrollbar {
-        border-bottom: 1px solid #999999;
+        // border-bottom: 1px solid #999999;
+        position: relative;
         overflow: visible;
         display: none;
+        &:after {
+            content: "";
+            height: 1px;
+            width: 100%;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: #999999;
+        }
         @media (max-width: 1200px) {
             display: block;
         } 
@@ -407,7 +430,7 @@
                     display: block;
                     position: absolute;
                     left: 0;
-                    bottom: -1px;
+                    bottom: 0;
                 }
             }
         }

@@ -313,6 +313,11 @@
             height: 19px;
             width: 12px;
         }
+        &:hover {
+            .svg-sprite-icon {
+                fill: $colorAccent;
+            }
+        }
         @media ( max-width: 760px ) {
             display: none;
         }

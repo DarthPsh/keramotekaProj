@@ -691,7 +691,6 @@ header { flex: 0 0 auto; }
                 z-index: 2;
                 // background: $colorLight url('/static/images/common/search.svg') center no-repeat;
                 background: $colorLight;
-                background: transparent;
                 padding: 0;
                 text-indent: -999px;
                 min-width: 44px;
@@ -747,7 +746,8 @@ header { flex: 0 0 auto; }
         width: 100%;
         transition: all .3s ease-out;
         @media (max-width: 760px) {
-            position: static;
+            // position: static;
+            // display: none;
         }
         &_active {
             top: 0;
@@ -776,6 +776,9 @@ header { flex: 0 0 auto; }
                     }
                     @media (max-width: 1200px) {
                         max-width: 550px;
+                    }
+                    @media (max-width: 760px) {
+                        max-width: 100%;
                     }
                 }
                 &-inner__catalog {
@@ -809,6 +812,7 @@ header { flex: 0 0 auto; }
                     }
                     &__icon {
                         border-color: transparent;
+                        background-color: #464646;
                         .icon-search {
                             fill: $colorLight;
                         }
@@ -868,10 +872,17 @@ header { flex: 0 0 auto; }
                             min-width: 50px;
                             display: block;
                             margin-right: 30px;
+                            @media (max-width: 760px) {
+                                margin-right: 0;
+                                min-width: auto;
+                            }
                         }
                         &__cart {
                             min-width: 50px;
                             display: block;
+                            @media (max-width: 760px) {
+                                min-width: auto;
+                            }
                         }
                     }
                 }
@@ -1696,6 +1707,10 @@ header { flex: 0 0 auto; }
         padding: 7px;
         border-bottom: 1px solid rgba(#C8C5C5, .48);
         margin-right: 10px;
+        cursor: pointer;
+        &:hover {
+            background: #F1F1F1;
+        }
     }
 }
 .bx_searche_active {
@@ -1713,12 +1728,12 @@ header { flex: 0 0 auto; }
         visibility: hidden;
         height: auto;
         max-height: 0;
-        // opacity: 0;
+        opacity: 0;
         transition: all .5s ease-out;
         &_active {
             max-height: 1000px;
             // max-height: 100vh;
-            // opacity: 1;
+            opacity: 1;
             visibility: visible;
         }
         &-list {

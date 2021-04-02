@@ -66,7 +66,7 @@
                             border-color: $colorAccent;
                         }
                         .svg-sprite-icon {
-                            fill: #dadada;
+                            fill: #999999;
                             width: 26px;
                             height: 26px;
                             margin-right: 10px;
@@ -76,6 +76,16 @@
                         padding: 0;
                     }
                 }
+            }
+        }
+        .top-scrollbar {
+            display: block;
+            &:after {
+                height: 4px;
+                background: #333333;
+            }
+            &__item {
+                padding-bottom: 11px;
             }
         }
     }
@@ -120,7 +130,7 @@
             font-weight: normal;
             font-size: 20px;
             line-height: 28px;
-            display: block;
+            display: inline-block;
         }
         a[href^="mailto:"] {
             font-style: normal;
@@ -129,7 +139,7 @@
             line-height: 24px;
             border-bottom: 1px solid $colorAccent;
             transition: .3s;
-            display: block;
+            display: inline-block;
             &:hover {
                 border-color: transparent;
             }
@@ -238,6 +248,7 @@
         &__wrap {}
         &__container {
             display: flex;
+            padding-bottom: 88px;
             @media (max-width: 768px) {
                 flex-direction: column;
                 padding: 0;
@@ -246,7 +257,6 @@
         }
         &__main {
             height: 711px;
-            background: gray;
             width: 100%;
             @media (max-width: 1200px) {
                 height: 578px;
@@ -308,7 +318,7 @@
                 height: 50px;
             }
             &-item {
-                background: gray;
+                cursor: pointer;
                 img {
                     width: 100%;
                     height: 100%;
@@ -317,6 +327,12 @@
                     left: 50%;
                     transform: translate(-50%, -50%);
                     object-fit: cover;
+                    transition: .2s;
+                }
+                &:hover {
+                    img {
+                        opacity: .85;
+                    }
                 }
             }
             .swiper-slide-thumb-active {
