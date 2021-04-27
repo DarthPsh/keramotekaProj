@@ -3,6 +3,9 @@
     @media (max-width: 1200px) {
         padding-top: 0;
     }
+    @media (max-width: 760px) {
+        padding-bottom: 0;
+    }
     &-wrap {
         @media (max-width: 1200px) {
             .information-main__link {

@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // type: 'post'
         }).done(function (responseData) {
             $('.bx_searche').addClass('bx_searche_active');
-            $('.header-bot-search .bx_searche').append(responseData);
+            $('.header-bot-search .bx_searche').prepend(responseData);
         }).fail(function () {
             console.log('Failed');
         }).always(function () {
@@ -732,6 +732,12 @@ document.addEventListener('DOMContentLoaded', function () {
             var swiperIndex = $('.page-card-img').index(currentSwiper);
             var currentIndex = $(this).parent().children().index(this);
             swiperCardImg[swiperIndex].slideTo(currentIndex);
+            
+        })
+        $('.page-card-img-hover li').on('mouseleave', function () {
+            var currentSwiper = $(this).parent().parent();
+            var swiperIndex = $('.page-card-img').index(currentSwiper); 
+            swiperCardImg[swiperIndex].slideTo(0);
         })
     }
     initSwiperCardImg();
@@ -789,7 +795,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('body').on('change', '.calculation-popup__footer-download input', function () { // добавляем файл в форму
         if (this.files[0]) { // если выбрали файл
             document.querySelector('.calculation-popup__footer-loaded .file-name').innerText = this.files[0].name;
-            document.querySelector('.calculation-popup__footer-loaded').style.opacity = '1';
+            document.querySelector('.calculation-popup__footer-loaded').style.display = 'block';
         }
         document.querySelector('.calculation-popup__footer-loaded .svg-sprite-icon').addEventListener('click', function () {
             document.querySelector('.calculation-popup__footer-download input').value = '';
@@ -798,7 +804,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('.calculation-popup__footer-download input').type = 'file';
             }
             document.querySelector('.calculation-popup__footer-loaded .file-name').innerText = '';
-            document.querySelector('.calculation-popup__footer-loaded').style.opacity = '0';
+            document.querySelector('.calculation-popup__footer-loaded').style.display = 'none';
         })
     });
 
@@ -1325,10 +1331,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // переключаем доставку в форме
     $('body').on('click', '.calculation-popup__check-pickup', function () {
-        $('.calculation-popup__info-address').hide();
+        $('.calculation-popup__info-address').css('display', 'none');
     })
     $('body').on('click', '.calculation-popup__check-need', function () {
-        $('.calculation-popup__info-address').show();
+        $('.calculation-popup__info-address').css('display', 'flex');
     })// переключаем доставку в форме
 
 

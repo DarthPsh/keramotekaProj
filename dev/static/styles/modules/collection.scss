@@ -291,7 +291,7 @@
     &-slider {
         display: flex;
         position: relative;
-        padding-bottom: 50px;
+        padding-bottom: 48px;
         @media (max-width: 1440px) {
             flex-wrap: wrap;
             flex-basis: 100%
@@ -672,9 +672,18 @@
         //     grid-template-columns: repeat(2, 1fr);
         //     // column-count: 2; 
         // }
+        .page-content-grid {
+            padding-bottom: 0;
+            @media (max-width: 760px) {
+                padding: 0;
+            }
+        }
         &-wrap {
             background: #F1F1F1;
-            padding-bottom: 64px;   
+            padding-bottom: 72px;  
+            @media (max-width: 760px) {
+                padding-bottom: 24px;
+            } 
         }
         &-title {
             font-style: normal;
@@ -682,7 +691,7 @@
             font-size: 32px;
             line-height: 100%;
             letter-spacing: 0.01em;
-            padding: 50px 0 35px 0;
+            padding: 48px 0 4px 0;
             @media (max-width: 760px) {
                 padding: 25px 0 15px 0;
                 font-size: 24px;

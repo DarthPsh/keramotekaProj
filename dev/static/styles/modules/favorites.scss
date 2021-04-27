@@ -24,6 +24,16 @@
             @media ( max-width: 760px ) {
                 width: 170px;
             }
+            &:hover {
+                .page-card-img-pagination {
+                    display: block;
+                }
+            }
+            .page-card-img-pagination {
+                @media ( max-width: 760px ) {
+                    display: block;
+                }
+            }
         }
     }  
 }

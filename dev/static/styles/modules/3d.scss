@@ -1,7 +1,10 @@
 .threed {
     .calculation-popup__info-item {
-        margin-bottom: 15px;
+        margin-bottom: 16px;
         max-width: 100%;
+        @media (max-width: 760px) {
+            margin-bottom: 0;
+        }
     }
     .calculation-popup__subtitle {
         font-style: normal;

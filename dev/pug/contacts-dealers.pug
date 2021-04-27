@@ -19,7 +19,8 @@ block content
                 .swiper-wrapper.top-scrollbar__wrapper
                     a.top-scrollbar__item.swiper-slide(href="/contacts-shop.html") ШОУРУМ
                     a.top-scrollbar__item.top-scrollbar__item_active.swiper-slide(href="/contacts-dealers.html") ДИЛЕРСКИЙ ОТДЕЛ
-                    a.top-scrollbar__item.swiper-slide(href="/contacts-warehouse.html") СКЛАД
+                    a.top-scrollbar__item.swiper-slide(href="/contacts-warehouse.html") СКЛАД В МОСКВЕ
+                    a.top-scrollbar__item.swiper-slide(href="/contacts-warehouse-spb.html") СКЛАД В САНКТ-ПЕТЕРБУРГЕ
             //- #links-scrollbar.scrollbar-slider.information-main__links.contacts-main__links.swiper-container
             //-     .swiper-wrapper
             //-         a.swiper-slide.contacts-main__link(href="contacts-shop.html") ШОУРУМ
@@ -44,15 +45,17 @@ block content
                             .information-contact__block-label Для регионов (бесплатно)
                             a(href="tel:8 800 707-50-37").information-contact__block-info 8 800 707-50-37
                     .information-contact__block
+                        +icon('email')
+                        .information-contact__block-item
+                            .information-contact__block-label Время работы:
+                            .information-contact__block-info
+                                a(href="mailto:dealers@keramoteka.ru") dealers@keramoteka.ru
+                    .information-contact__block
                         +icon('clock')
                         .information-contact__block-item
                             .information-contact__block-label Время работы:
                             .information-contact__block-info Пн-пт 9:00 — 20:00
                             .information-contact__block-info Сб-вс 10:00 — 18:00
-                    .information-contact__block
-                        .information-contact__block-item
-                            .information-contact__block-info Предварительный заказ вы можете отправить по e-mail: 
-                                a(href="mailto:sales@keramoteka.ru") sales@keramoteka.ru
                 .information-content.contacts-content
                     .information-content__block.contacts-content__block
                         h2.information-content__block-title.contacts-content__block-title Контакты сотрудников

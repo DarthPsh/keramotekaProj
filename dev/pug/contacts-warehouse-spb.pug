@@ -1,7 +1,7 @@
 extends layout/main
 
 block variables
-    -var title = 'Контакты Склад МСК'
+    -var title = 'Контакты Склад СПБ'
 
 block content
     .page-top.contacts-wrap
@@ -19,8 +19,8 @@ block content
                 .swiper-wrapper.top-scrollbar__wrapper
                     a.top-scrollbar__item.swiper-slide(href="/contacts-shop.html") ШОУРУМ
                     a.top-scrollbar__item.swiper-slide(href="/contacts-dealers.html") ДИЛЕРСКИЙ ОТДЕЛ
-                    a.top-scrollbar__item.top-scrollbar__item_active.swiper-slide(href="/contacts-warehouse.html") СКЛАД В МОСКВЕ
-                    a.top-scrollbar__item.swiper-slide(href="/contacts-warehouse-spb.html") СКЛАД В САНКТ-ПЕТЕРБУРГЕ
+                    a.top-scrollbar__item.swiper-slide(href="/contacts-warehouse.html") СКЛАД В МОСКВЕ
+                    a.top-scrollbar__item.top-scrollbar__item_active.swiper-slide(href="/contacts-warehouse-spb.html") СКЛАД В САНКТ-ПЕТЕРБУРГЕ
             //- #links-scrollbar.scrollbar-slider.information-main__links.contacts-main__links.swiper-container
             //-     .swiper-wrapper
             //-         a.swiper-slide.contacts-main__link(href="/contacts-shop.html") ШОУРУМ
@@ -33,20 +33,23 @@ block content
                         +icon('map-marker')
                         .information-contact__block-item
                             .information-contact__block-label Адрес
-                            .information-contact__block-info г. Химки, мкр. Подрезково, ул. Центральная, д. 2/5 (заезд с ул. Комсомольская через синие ворота КПП), склад №34Б
+                            .information-contact__block-info г. Москва, 1-й Щемиловский пер., 17/1, метро: 
+                                span.metro-marker.metro-marker__novoslob Новослободская, 
+                                span.metro-marker.metro-marker__mendeleev Менделеевская, 
+                                span.metro-marker.metro-marker__dostoev Достоевская
                     .information-contact__block
                         +icon('phone-o')
                         .information-contact__block-item
                             .information-contact__block-label Для клиентов в Москве
-                            a(href="tel:+7 495 649-84-20").information-contact__block-info +7 495 649-84-20
-                            .information-contact__block-label Для регионов (бесплатно)
                             a(href="tel:+7 495 646-86-20").information-contact__block-info +7 495 646-86-20
+                            .information-contact__block-label Для регионов (бесплатно)
+                            a(href="tel:8 800 555-33-76").information-contact__block-info 8 800 555-33-76
                     .information-contact__block
                         +icon('clock')
                         .information-contact__block-item
                             .information-contact__block-label Время работы:
-                            .information-contact__block-info Пн-пт 10:00 — 17:30
-                            .information-contact__block-info Сб-вс 9:00 — 13:30
+                            .information-contact__block-info Пн-пт 9:00 — 20:00
+                            .information-contact__block-info Сб-вс 10:00 — 18:00
                 .information-content.contacts-content
                     #map.map
                         img(src="static/images/common/map.png", alt="map")

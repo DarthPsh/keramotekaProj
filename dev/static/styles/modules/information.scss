@@ -19,6 +19,9 @@
     @media (max-width: 1200px) {
         flex-wrap: wrap;
     }
+    @media (max-width: 760px) {
+        padding-bottom: 0;
+    }
     &-main {
         // max-width: 250px;
         max-width: 340px;
@@ -130,6 +133,9 @@
                 font-size: 16px;
                 line-height: 24px;
                 margin-bottom: 48px;
+                @media (max-width: 760px) {
+                    margin-bottom: 0;
+                }
                 p {
                     margin-bottom: 16px;
                 }
@@ -216,6 +222,16 @@
         @media (max-width: 760px) {
             display: none;
         }
+        &__title {
+            display: none;
+            @media (max-width: 760px) {
+                display: block;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 100%;
+                margin-bottom: 35px;
+            }
+        }
         &__block {
             margin-bottom: 40px;
             &:last-child {
@@ -245,6 +261,9 @@
             &-item {
                 border-bottom: 1px solid #D9D9D9;
                 margin: 15px 0;
+                @media (max-width: 760px) {
+                    margin: 24px 0;
+                }
             }
             &-btn {
                 border: 2px solid #D9D9D9;
@@ -256,6 +275,10 @@
                 font-size: 14px;
                 line-height: 16px;
                 letter-spacing: 0.04em;
+                transition: .3s;
+                &:hover {
+                    border-color: $colorDark;
+                }
             }
             &-label {
                 font-style: normal;
@@ -278,9 +301,19 @@
                 line-height: 16px;
                 letter-spacing: 0.005em;
                 .svg-sprite-icon {
-                    fill: #DADADA;
+                    fill: #999999;
                     height: 24px;
                     width: 24px;
+                    margin-right: 6px;
+                }
+                span {
+                    border-bottom: 1px solid #151515;
+                    transition: .3s;
+                }
+                &:hover {
+                    span {
+                        border-color: transparent;
+                    }
                 }
             }
         }

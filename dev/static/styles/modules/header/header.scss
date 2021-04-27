@@ -1704,12 +1704,15 @@ header { flex: 0 0 auto; }
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.005em;
-        padding: 7px;
         border-bottom: 1px solid rgba(#C8C5C5, .48);
         margin-right: 10px;
         cursor: pointer;
         &:hover {
             background: #F1F1F1;
+        }
+        a {
+            padding: 7px;
+            display: block;
         }
     }
 }

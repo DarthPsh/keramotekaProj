@@ -126,6 +126,12 @@ footer { flex: 0 0 auto; }
                         display: none;
                     }
                 }
+                a {
+                    transition: .3s;
+                    &:hover {
+                        color: #828282;
+                    }
+                }
                 &-control {
                     margin-top: auto;
                     a {

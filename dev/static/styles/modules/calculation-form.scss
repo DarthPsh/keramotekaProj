@@ -94,12 +94,12 @@
         &__name {
             display: flex;
             flex-direction: column;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
         &__entity {
             display: none;
             flex-direction: column;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
         &__info {
             display: flex;
@@ -107,7 +107,8 @@
             flex-wrap: wrap;
             margin-bottom: 24px;
             @media (max-width: 760px) {
-                flex-direction: column;
+                flex-direction: column-reverse;
+                margin-bottom: 0;
             }
             &-title {
                 font-style: normal;
@@ -118,7 +119,8 @@
                 padding-left: 10px;
                 padding-bottom: 10px;
                 @media (max-width: 760px) {
-                    padding-top: 10px;
+                    padding-top: 24px;
+                    padding-bottom: 5px;
                 }
             }
             &-item {
@@ -130,9 +132,22 @@
                     max-width: 100%;
                 }
             }
+            &-tel {
+                small {
+                    display: none;
+                    @media (max-width: 760px) {
+                        font-weight: normal;
+                        font-size: 12px;
+                        line-height: 19px;
+                        letter-spacing: 0.005em;
+                        display: block;
+                        margin-top: 8px;
+                    }
+                }
+            }
             &-mail {}
             &-address {
-                display: flex;
+                display: none;
                 flex-direction: column;
                 width: 100%;
                 max-width: 390px;
@@ -160,6 +175,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 margin-bottom: 5px;
+                display: none;
             }
         }
         &__check {
@@ -167,7 +183,7 @@
             flex-wrap: wrap;
             margin-bottom: 25px;
             @media (max-width: 760px) {
-                margin-bottom: 12px;
+                margin: 0;
             }
             &-private {
                 padding-right: 20px;
@@ -200,11 +216,10 @@
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
-                padding-bottom: 15px;
+                padding-bottom: 16px;
                 @media (max-width: 760px) {
                     flex-direction: column;
                     align-items: flex-start;
-                    padding-bottom: 25px;
                 }
             }
             &-end {
@@ -244,9 +259,6 @@
                 input {
                     display: none;
                 }
-                @media (max-width: 760px) {
-                    margin-bottom: 15px;
-                }
             }
             &-submit {
                 background: #333333;
@@ -277,7 +289,10 @@
                 position: relative; 
                 display: flex;
                 align-items: center;
-                opacity: 0;
+                display: none;
+                @media (max-width: 760px) {
+                    padding-top: 16px;
+                }
                 .file-name {
                     white-space: nowrap; 
                     overflow: hidden;
@@ -408,11 +423,14 @@
                     content: '';
                     display: block;
                     position: absolute;
-                    height: 4px;
+                    height: 1px;
                     width: 100%;
                     background: #333333;
                     bottom: 0;
                     left: 0;
+                    @media (max-width: 760px) {
+                        height: 1px;
+                    }
                 }
             }
             width: auto;
@@ -473,6 +491,7 @@
                     &-block {
                         &__item {
                             position: relative;
+                            margin-bottom: 4px;
                             .svg-sprite-icon {
                                 position: absolute;
                                 left: -28px;

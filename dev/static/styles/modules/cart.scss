@@ -239,14 +239,24 @@
     &-form {
         border-top: 4px solid $colorAccent;
         padding-top: 47px;
+        @media (max-width: 760px) {
+            padding-top: 24px;
+        }
         form {
             max-width: 630px;
+        }
+        .information-content__block-desc p {
+            margin-bottom: 10px;
+            display: none;
+            @media (max-width: 760px) {
+                display: block;
+            }
         }
     }
     &-ok {
         .cart {
             &-main {
-                max-width: 350px;
+                padding-right: 96px;
                 width: 100%;
             }
             &-content {
@@ -289,6 +299,9 @@
     &__wrap {
         position: relative;
         margin: 30px 0 60px 0;
+        @media ( max-width: 760px ) {
+            margin: 24px 0 36px 0;
+        }
         .swiper-button-disabled {
             transition-duration: 1s;
             visibility: hidden;
@@ -302,6 +315,9 @@
         font-size: 32px;
         line-height: 100%;
         letter-spacing: 0.01em;
+        @media ( max-width: 760px ) {
+            padding-top: 32px;
+        }
     }
     &-btn {
         background: #333333;
