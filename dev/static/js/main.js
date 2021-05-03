@@ -223,7 +223,16 @@ document.addEventListener('DOMContentLoaded', function () {
             && $('.header-bot-mobile-phone').has(e.target).length === 0) { // и не по его дочерним элементам
             $('.header-mobile-phone-drop-menu').removeClass('header-mobile-phone-drop-menu_active'); // скрываем его
         } // закрываем попап при клике на телефон на мобиле
+
+        // закрываем попап при клике вне попапа
+        if (!$('.calculation-popup').is(e.target) // если клик был не по нашему блоку
+            && $('.calculation-popup').has(e.target).length === 0) { // и не по его дочерним элементам
+            $('.calculation-popup-wrap').remove();
+            $('body').css('overflow', 'auto');
+            history.replaceState(null, null, " ");
+        } // закрываем попап при клике вне попапа
     });
+    
 
     $('.header-bot-mobile-phone').on('click', function () {
         $('.header-mobile-phone-drop-menu').toggleClass('header-mobile-phone-drop-menu_active');
@@ -351,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function () {
         resize: true,
         percentPosition: true,
         initLayout: false,
-        gutter: 8,
+        gutter: 5,
         // transitionDuration: 0,
     });
     $grid.masonry('on', 'layoutComplete', function () {
@@ -392,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         resize: true,
                         percentPosition: true,
                         initLayout: false,
-                        gutter: 8
+                        gutter: 5
                     });
                     $grid.imagesLoaded(function () {
                         $grid.masonry();
@@ -428,7 +437,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     resize: true,
                     percentPosition: true,
                     initLayout: false,
-                    gutter: 8
+                    gutter: 5
                 });
                 $grid.imagesLoaded(function () {
                     // init Masonry after all images have loaded
@@ -698,7 +707,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 resize: true,
                 percentPosition: true,
                 initLayout: false,
-                gutter: 8
+                gutter: 5
             });
             $grid.masonry('on', 'layoutComplete', function () {
                 console.log('layout is complete');
@@ -874,7 +883,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 resize: true,
                 percentPosition: true,
                 initLayout: false,
-                gutter: 8
+                gutter: 5
             });
             $grid.masonry('on', 'layoutComplete', function () {
                 console.log('layout is complete');

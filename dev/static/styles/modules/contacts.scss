@@ -109,8 +109,6 @@
         .top-scrollbar {
             display: block;
             &:after {
-                height: 4px;
-                background: #333333;
                 @media (max-width: 760px) {
                     height: 1px;
                 }

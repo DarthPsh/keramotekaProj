@@ -16,14 +16,21 @@
         }
         &-overlay {
             position: fixed;
-            bottom: 0; left: 0; top: 0; right: 0;
+            bottom: 0; 
+            left: 0; 
+            top: 0; 
+            right: 0;
             overflow: auto;
             -webkit-overflow-scrolling: touch;
             background: rgba(#333333, .8);
             zoom: 1;
-            padding-top: 200px;
-            padding-bottom: 300px;
+            // padding-top: 200px;
+            // padding-bottom: 300px;
+            padding: 24px 0;
             z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             @media (max-width: 760px) {
                 padding: 0;
             }

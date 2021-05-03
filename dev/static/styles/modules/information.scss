@@ -441,7 +441,7 @@
             align-items: flex-end;
         }
         &__item {
-            padding: 6px;
+            padding: 12px;
             text-transform: uppercase;
             font-weight: bold;
             font-size: 12px;
@@ -450,6 +450,12 @@
             width: auto;
             color: #999999;
             position: relative;
+            br {
+                display: none;
+                @media (max-width: 760px) {
+                    display: block;
+                }
+            }
             &:hover {
                 color: $colorBlackText;
             }

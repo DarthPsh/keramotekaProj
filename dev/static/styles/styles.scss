@@ -143,17 +143,17 @@ input[type="number"]::-webkit-outer-spin-button {
       }
       &-item,
       &-sizer {
-        width: calc(20% - 8px);
+        width: calc(20% - 5px);
         float: left;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
         @media ( max-width: 1440px ) {
-          width: calc(25% - 8px);
+          width: calc(25% - 5px);
         }
         @media ( max-width: 992px ) {
-          width: calc(100% / 3 - 8px);
+          width: calc(100% / 3 - 5px);
         }
         @media ( max-width: 760px ) {
-          width: calc(50% - 4px);
+          width: calc(50% - 5px);
         }
       }
       .card-brand__min {
@@ -222,7 +222,7 @@ input[type="number"]::-webkit-outer-spin-button {
   &-card {
     overflow: hidden;
     &:hover {
-      box-shadow: 0px 0px 0px 8px $colorAccent;
+      box-shadow: 0px 0px 0px 5px $colorAccent;
       .card-collection__name span {
         border-color: #D9D9D9;
       }
@@ -238,10 +238,26 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     &-img {
       width: 100%;
-      height: 100%;
+      // height: 100%;
       position: relative;
       background: $colorLight;
       display: block;
+      &:after {
+        content: "";
+        padding-top: 100%;
+        display: block;
+      }   
+      .swiper-wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      } 
+      &-item {
+        position: relative;
+        width: 100% !important;
+      }            
       &-wrap {
         display: flex;
         align-items: center;
@@ -273,8 +289,13 @@ input[type="number"]::-webkit-outer-spin-button {
         }
       }
       img {
-        width: 100%;
+        width: 100% !important;
         height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) !important;
       }
     }
     &-content {
@@ -283,17 +304,17 @@ input[type="number"]::-webkit-outer-spin-button {
   }
   &-slider {
     height: 352px;
-    width: calc(40% - 8px);
+    width: calc(40% - 5px);
     @media ( max-width: 1440px ) {
-      width: calc(50% - 8px);
+      width: calc(50% - 5px);
     }
     @media ( max-width: 992px ) {
-      width: calc(100% / 3 * 2 - 8px);
+      width: calc(100% / 3 * 2 - 5px);
       height: 300px;
     }
     @media ( max-width: 760px ) {
-      width: calc(100% + 16px);
-      transform: translateX(-8px);
+      width: calc(100% + 10px);
+      transform: translateX(-5px);
       height: 256px;
     }
     &-item {
@@ -395,10 +416,10 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-direction: column;
     &-after {
       background: $colorLight;
-      padding: 35px 0;
+      // padding: 35px 0;
       position: relative;
       @media (max-width: 760px) {
-        padding: 0 0 40px 0;
+        // padding: 0 0 40px 0;
       }
       &-wrap {
         display: flex;
@@ -702,7 +723,7 @@ input[type="number"]::-webkit-outer-spin-button {
       content: "";
       width: 16px;
       height: 2px;
-      background: #D9D9D9;
+      background: #828282;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -710,6 +731,7 @@ input[type="number"]::-webkit-outer-spin-button {
       display: block;
     }
     &:hover {
+      background: #EBEBEB;
       &:before,
       &:after {
         background: $colorDark;
@@ -725,7 +747,7 @@ input[type="number"]::-webkit-outer-spin-button {
         content: "";
         width: 2px;
         height: 16px;
-        background: #D9D9D9;
+        background: #828282;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -921,6 +943,11 @@ input[type="number"]::-webkit-outer-spin-button {
   }
   &-content {
     display: flex;
+    padding: 35px 0;
+    // position: relative;
+    // @media (max-width: 760px) {
+    //   padding: 0 0 40px 0;
+    // }
     a {
       height: 48px;
       width: 48px;
@@ -940,9 +967,12 @@ input[type="number"]::-webkit-outer-spin-button {
     }
   }
   &-more {
-    width: 304px;
-    height: 48px;
-    background: #FFFFFF;
+    // width: 304px;
+    // height: 48px;
+    // height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: transparent;
     box-sizing: border-box;
     border-radius: 2px;
     font-weight: 600;
@@ -955,7 +985,9 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     transition: .3s;
     &:hover {
-      
+      .icon-renew {
+        animation: spin 1s; 
+      }
     }
     .icon-renew {
       height: 24px;
@@ -966,7 +998,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     @media (max-width: 760px) {
       position: absolute;
-      top: -70px;
+      top: -55px;
       border: none;
     }
   }

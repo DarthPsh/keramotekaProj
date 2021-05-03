@@ -372,6 +372,7 @@
                     }
                     &__block {
                         padding: 16px;
+                        padding-bottom: 11px;
                         width: 255px;
                         background: #FFFFFF;
                         box-shadow: 0px 8px 8px rgba(50, 50, 71, 0.08), 0px 8px 16px rgba(50, 50, 71, 0.06);
@@ -422,6 +423,10 @@
                             letter-spacing: 0.005em;
                             padding-top: 8px;
                             border-top: 1px solid #D9D9D9;
+                            transition: .3s;
+                            &:hover {
+                                color: #828282;
+                            }
                         }
                         @media (max-width: 760px) {
                             top: 50%;
@@ -714,7 +719,7 @@
             padding-bottom: 16px;
         }
         &:hover {
-            box-shadow: 0px 0px 0px 8px $colorAccent;
+            box-shadow: 0px 0px 0px 5px $colorAccent;
             z-index: 0;
             .product-card-content__name span {
                 border-color: #D9D9D9;
@@ -802,15 +807,7 @@
                 line-height: 28px;
                 margin-bottom: 8px;
                 @media (max-width: 760px) {
-                    font-size: 12px;
-                    line-height: 16px;
-                    letter-spacing: 0.015em;
-                    margin: 0;
-                }
-                &:before {
-                    @media (max-width: 760px) {
-                        content: "ЦЕНА: ";
-                    }
+                    
                 }
                 .unit {
                     color: #999999;
@@ -840,7 +837,6 @@
                     @media (max-width: 760px) {
                         padding-bottom: 3px;
                         margin-bottom: 5px;
-                        border-bottom: 1px solid #D9D9D9;
                     }
                     &:before {
                         content: "Арт.: ";
@@ -849,65 +845,86 @@
                         }
                     }
                 }
-                &-have {
-                    display: flex;
-                    justify-content: space-between;
-                    position: relative;
-                    order: 1;
-                    align-items: center;
-                    @media (max-width: 760px) {
-                        justify-content: flex-start;
+            }
+            &__warehouse {
+                width: 100%;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                border-spacing: 0px;
+                border-collapse: collapse;
+                text-align: right;
+                @media (max-width: 760px) {
+                    font-size: 10px;
+                    margin-bottom: 12px;
+                }
+                tr {
+                    height: 18px;
+                    vertical-align: middle;
+                    th:first-child,
+                    td:first-child {
+                        text-align: left;
                     }
-                    &-count {
-                        order: 3;
-                    }
-                    &:before {
-                        content: ''; 
-                        border-bottom: 1px dashed #828282; 
-                        flex-grow: 1; 
-                        margin: 0 5px;
-                        order: 2;
-                        @media (max-width: 760px) {
-                            display: none;
-                        }
-                    }
-                    &__reserve {
-                        margin-bottom: 6px;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        @media (max-width: 760px) {
-                            justify-content: flex-start;
-                            padding-bottom: 3px;
+                }
+                .warehouse {
+                    &-head {
+                        font-weight: normal;
+                        th {
+                            font-weight: normal;
+                            border-top: 1px solid #D9D9D9;
                             border-bottom: 1px solid #D9D9D9;
+                            padding-top: 4px;
+                            padding-bottom: 5px;
                         }
-                        &-count {
-                            order: 3;
+                    }
+                    &-availability {
+                        td {
+                            padding-top: 7px;
+                            &:first-child {
+                                display: flex;
+                                justify-content: space-between;
+                                max-width: 120px;
+                                @media (max-width: 760px) {
+                                    max-width: 100px;
+                                }
+                            }
                         }
-                        &:before {
-                            content: ''; 
-                            border-bottom: 1px dashed #828282; 
-                            flex-grow: 1; 
-                            margin: 0 5px;
-                            order: 2;
-                            @media (max-width: 760px) {
-                                display: none;
+                        &__reserve {
+                            td {
+                                padding-bottom: 6px;
+                                @media (max-width: 760px) {
+                                    padding-bottom: 10px;
+                                }
                             }
                         }
                     }
-                }
-                &-way {
-                    color: #999999;
-                    display: flex;
-                    justify-content: space-between;
-                    position: relative;
-                    &__reserve {
-                        color: #999999;
-                        display: flex;
-                        justify-content: space-between;
-                        @media (max-width: 760px) {
-                            margin-bottom: 7px;
+                    &-way {
+                        td {
+                            &:first-child {
+                                display: flex;
+                                justify-content: space-between;
+                                max-width: 120px;
+                                @media (max-width: 760px) {
+                                    max-width: 100px;
+                                }
+                            }
                         }
+                    }
+                    &-unit {
+                        background: #F1F1F1;
+                        color: #828282;
+                        text-transform: none;
+                        height: 18px;
+                        width: 34px;
+                        text-align: center;
+                        @media (max-width: 760px) {
+                            width: 24px;
+                        }
+                    }
+                    &-empty {
+                        color: #999999;
                     }
                 }
             }
