@@ -70,17 +70,11 @@
     }
     &-warning {
         background: $colorAccent;
-        @media ( max-width: 760px ) {
-            background: #F1F1F1;
-        }
         .alert-badge {
             background: rgba($colorLight, .5);
         }
         .alert-text {
             color: $colorBlackText;
-            @media ( max-width: 760px ) {
-                color: #828282;
-            }
         }
         .alert-link {
             color: #151515;

@@ -6,7 +6,7 @@
         &:last-child {
             .information-content__block-desc {
                 &:last-child {
-                    margin: 0;
+                    // margin: 0;
                     p {
                         &:last-child {
                             margin: 0;
@@ -133,9 +133,6 @@
                 font-size: 16px;
                 line-height: 24px;
                 margin-bottom: 48px;
-                @media (max-width: 760px) {
-                    margin-bottom: 0;
-                }
                 p {
                     margin-bottom: 16px;
                 }

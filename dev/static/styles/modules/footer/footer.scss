@@ -3,7 +3,7 @@ footer { flex: 0 0 auto; }
 .footer {
     padding-top: 63px;
     border-top: 1px solid #D9D9D9;
-    @media ( max-width: 520px ) {
+    @media ( max-width: 760px ) {
         padding-top: 0;
     }
     .logo {
@@ -12,7 +12,7 @@ footer { flex: 0 0 auto; }
                 height: 18px;
             }
         }
-        @media ( max-width: 520px ) {
+        @media ( max-width: 760px ) {
             display: none;
         }
     }
@@ -26,7 +26,7 @@ footer { flex: 0 0 auto; }
             flex-direction: column-reverse;
             align-items: flex-start;
         }
-        @media ( max-width: 520px ) {
+        @media ( max-width: 760px ) {
             padding-bottom: 23px;
         }
         &-info {
@@ -51,7 +51,7 @@ footer { flex: 0 0 auto; }
                     line-height: 20px;
                     letter-spacing: 0.01em;
                 }
-                @media ( max-width: 520px ) {
+                @media ( max-width: 760px ) {
                     margin-top: 0;
                 }
             }
@@ -82,12 +82,12 @@ footer { flex: 0 0 auto; }
             @media ( max-width: 1100px ) {
                 padding-right: 30px;
             }
-            @media ( max-width: 520px ) {
+            @media ( max-width: 760px ) {
                 padding-top: 40px;
             }
             &s {
                 display: flex;
-                @media ( max-width: 520px ) {
+                @media ( max-width: 760px ) {
                     flex-direction: column;
                     width: 100%;    
                 }
@@ -100,7 +100,7 @@ footer { flex: 0 0 auto; }
                 letter-spacing: 0.005em;
                 margin-top: 17px;
                 margin-bottom: 20px;
-                @media ( max-width: 520px ) {
+                @media ( max-width: 760px ) {
                     margin-bottom: 8px;
                     margin-top: 0;
                 }
@@ -112,17 +112,14 @@ footer { flex: 0 0 auto; }
                 line-height: 16px;
                 letter-spacing: 0.005em;
                 margin-top: 8px;
-                @media ( max-width: 520px ) {
-                    margin-bottom: 2px;
-                }
                 &-cta {
                     margin-top: auto;
-                    @media ( max-width: 520px ) {
+                    @media ( max-width: 760px ) {
                         display: none;
                     }
                 }
                 &-job {
-                    @media ( max-width: 520px ) {
+                    @media ( max-width: 760px ) {
                         display: none;
                     }
                 }
@@ -138,12 +135,12 @@ footer { flex: 0 0 auto; }
                         display: block;
                         color: $colorGray;
                     }
-                    @media ( max-width: 520px ) {
+                    @media ( max-width: 760px ) {
                         display: none;
                     }
                     &-mobile {
                         display: none;
-                        @media ( max-width: 520px ) {
+                        @media ( max-width: 760px ) {
                             display: block;
                             padding: 24px 0;
                             border-top: 1px solid rgba(#999999, .5);
@@ -155,8 +152,9 @@ footer { flex: 0 0 auto; }
         }
         &-social {
             padding-top: 17px;
-            @media ( max-width: 520px ) {
-                padding-bottom: 45px;
+            @media ( max-width: 760px ) {
+                padding-bottom: 46px;
+                padding-top: 31px;
             }
             &__link {
                 height: 40px;
@@ -179,7 +177,7 @@ footer { flex: 0 0 auto; }
                         margin-bottom: 16px;
                     }
                     @media ( max-width: 1050px ) {
-                        margin-right: 16px;
+                        margin-right: 17px;
                         margin-bottom: 0; 
                     }
                 }
@@ -213,7 +211,7 @@ footer { flex: 0 0 auto; }
     height: 26px;
     width: 26px;
     cursor: pointer;
-    @media ( max-width: 520px ) {
+    @media ( max-width: 760px ) {
         top: 40px;
     }
     .svg-sprite-icon {

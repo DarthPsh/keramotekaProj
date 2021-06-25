@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp --prod",
-    "style:lint": "stylelint ./dev/static/styles/**/*.scss --syntax scss",
-    "style:fix": "stylelint './dev/static/styles/**/*.scss' --syntax scss --fix"
+    "build": "gulp --prod"
   },
-  "author": "Саламатин Анатолий",
+  "author": "Pavlik",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -35,7 +33,6 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-stylelint": "^13.0.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.2.0",
     "gulp-uglify": "^3.0.2",
@@ -51,9 +48,6 @@
     "openseadragon": "^2.4.2",
     "smoothscroll-for-websites": "^1.4.10",
     "smoothscroll-polyfill": "^0.4.4",
-    "stylelint": "^13.2.1",
-    "stylelint-config-standard-scss": "^1.1.0",
-    "stylelint-scss": "^3.15.0",
     "swiper": "^6.4.5",
     "vanilla-js-wheel-zoom": "^6.4.0",
     "vinyl-buffer": "^1.0.1",

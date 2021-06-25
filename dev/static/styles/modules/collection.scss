@@ -353,6 +353,8 @@
                     @media (max-width: 760px) {
                         height: 32px;
                         width: 32px;
+                        opacity: 0;
+                        transition: opacity .3s;
                         &_active {
                             height: 100%;
                             width: 100%;

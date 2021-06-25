@@ -1285,7 +1285,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    $('.anchor-label').on('click', function () {
+    $('.anchor-label').on('click', function (event) {
+        event.stopPropagation();
         // setTimeout(() => {
         $(this).toggleClass('anchor-label_active');
         $(this).find('.anchor-label__block').toggleClass('anchor-label__block_active');
@@ -1299,6 +1300,16 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     $('.product-card').on('mouseover', function () {
         $(this).removeClass('product-card_active');
+    })
+
+    $('.product-slider-main-item').on('click', function() {
+        // $(this).find('.anchor-label').css
+        if($(this).find('.anchor-label').css('opacity') == "1" && window.matchMedia("(max-width: 760px)").matches){
+            $(this).find('.anchor-label').css('opacity', '0');
+        }
+        else {
+            $(this).find('.anchor-label').css('opacity', '1');
+        }
     })
 
 
