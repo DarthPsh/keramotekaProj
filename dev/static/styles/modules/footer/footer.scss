@@ -28,6 +28,7 @@ footer { flex: 0 0 auto; }
         }
         @media ( max-width: 760px ) {
             padding-bottom: 23px;
+            border-bottom: 1px solid #D9D9D9;
         }
         &-info {
             max-width: 425px;
@@ -193,6 +194,9 @@ footer { flex: 0 0 auto; }
     &-bot {
         border-top: 1px solid #D9D9D9;
         padding: 30px 0;
+        @media ( max-width: 760px ) {
+            border: none;
+        }
         &-content {
             font-style: normal;
             font-weight: normal;

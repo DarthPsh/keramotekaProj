@@ -1,5 +1,6 @@
 "use strict";
 
+/* eslint-disable */
 document.addEventListener('DOMContentLoaded', function () {
   console.log('hello');
   $('#up').click(function () {
@@ -300,6 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $('.header-filter-reset').on('click', function () {
     $('.header-filter-checked-list li').remove();
+    $('.header-filter_active .container').css('bottom', '0');
   }); // удаляем список отмеченных фильтров под фильтрами
   // CБРОС ФИЛЬТРОВ
 
@@ -528,11 +530,13 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   $('.mobile-menu-list-item__btn').on('click', function () {
     $('.header-filter').addClass('header-filter_active');
-    $('.header').addClass('header_overflow'); // $('body').css('overflow', 'hidden');
+    $('.header').addClass('header_overflow');
+    $('body').css('overflow', 'hidden');
   });
   $('.header-filter-head__close').on('click', function () {
     $('.header-filter').removeClass('header-filter_active');
-    $('.header').removeClass('header_overflow'); // $('body').css('overflow', '');
+    $('.header').removeClass('header_overflow');
+    $('body').css('overflow', '');
   });
   var observer = lozad(); // lazy loads elements with default selector as '.lozad'
 
@@ -1219,9 +1223,8 @@ document.addEventListener('DOMContentLoaded', function () {
     $grid.masonry();
     console.log($(this).parent());
   });
-  $('.anchor-label').on('click', function (event) {
-    event.stopPropagation(); // setTimeout(() => {
-
+  $('.anchor-label').on('click', function () {
+    // setTimeout(() => {
     $(this).toggleClass('anchor-label_active');
     $(this).find('.anchor-label__block').toggleClass('anchor-label__block_active');
     $(this).find('.icon-close_brs').toggleClass('anchor-label__close'); // }, 100);
@@ -1233,14 +1236,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   $('.product-card').on('mouseover', function () {
     $(this).removeClass('product-card_active');
-  });
-  $('.product-slider-main-item').on('click', function () {
-    // $(this).find('.anchor-label').css
-    if ($(this).find('.anchor-label').css('opacity') == "1" && window.matchMedia("(max-width: 760px)").matches) {
-      $(this).find('.anchor-label').css('opacity', '0');
-    } else {
-      $(this).find('.anchor-label').css('opacity', '1');
-    }
   }); // попап тридэ
 
   $(".3d-visual").on('click', function () {

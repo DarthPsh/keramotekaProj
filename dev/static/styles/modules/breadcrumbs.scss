@@ -2,7 +2,8 @@
     &-list {
         display: flex;
         padding: 16px 0 24px 0;
-        flex-wrap: wrap;
+        white-space: nowrap;
+        overflow: auto;
         &__item {
             &-link {
                 color: #828282;
