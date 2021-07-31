@@ -6,7 +6,7 @@
         &:last-child {
             .information-content__block-desc {
                 &:last-child {
-                    margin: 0;
+                    // margin: 0;
                     p {
                         &:last-child {
                             margin: 0;
@@ -35,6 +35,10 @@
             font-size: 40px;
             line-height: 100%;
             margin-bottom: 32px;
+            @media (max-width: 760px) {
+                font-size: 32px;
+                line-height: 100%
+            } 
         }
         &__desc {
             font-style: normal;
@@ -133,9 +137,6 @@
                 font-size: 16px;
                 line-height: 24px;
                 margin-bottom: 48px;
-                @media (max-width: 760px) {
-                    margin-bottom: 0;
-                }
                 p {
                     margin-bottom: 16px;
                 }
@@ -260,7 +261,8 @@
             }
             &-item {
                 border-bottom: 1px solid #D9D9D9;
-                margin: 15px 0;
+                padding-bottom: 3px;
+                margin: 15px 0 12px 0;
                 @media (max-width: 760px) {
                     margin: 24px 0;
                 }

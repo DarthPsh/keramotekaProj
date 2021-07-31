@@ -18,7 +18,7 @@ block content
             .top-scrollbar.swiper-container
                 .swiper-wrapper.top-scrollbar__wrapper
                     a.top-scrollbar__item.swiper-slide(href="/contacts-shop.html") ШОУРУМ
-                    a.top-scrollbar__item.top-scrollbar__item_active.swiper-slide(href="/contacts-dealers.html") ДИЛЕРСКИЙ
+                    a.top-scrollbar__item.top-scrollbar__item_active.swiper-slide(href="/contacts-dealers.html") ДИЛЕРСКИЙ 
                         br
                         | ОТДЕЛ
                     a.top-scrollbar__item.swiper-slide(href="/contacts-warehouse.html") СКЛАД 
@@ -51,17 +51,17 @@ block content
                             .information-contact__block-label Для регионов (бесплатно)
                             a(href="tel:8 800 707-50-37").information-contact__block-info 8 800 707-50-37
                     .information-contact__block
-                        +icon('email')
-                        .information-contact__block-item
-                            .information-contact__block-label Время работы:
-                            .information-contact__block-info
-                                a(href="mailto:dealers@keramoteka.ru") dealers@keramoteka.ru
-                    .information-contact__block
                         +icon('clock')
                         .information-contact__block-item
                             .information-contact__block-label Время работы:
                             .information-contact__block-info Пн-пт 9:00 — 20:00
                             .information-contact__block-info Сб-вс 10:00 — 18:00
+                    .information-contact__block
+                        +icon('email')
+                        .information-contact__block-item
+                            .information-contact__block-label Предварительный заказ вы можете отправить по e-mail:
+                            .information-contact__block-info
+                                a(href="mailto:sales@keramoteka.ru") sales@keramoteka.ru
                 .information-content.contacts-content
                     .information-content__block.contacts-content__block
                         h2.information-content__block-title.contacts-content__block-title Контакты сотрудников
@@ -78,7 +78,7 @@ block content
                                         | Ирина Слепова
                                     .employee-block__item.employee-block__position 
                                         | Старший менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 208 
                                     a(href="mailto:region@keramoteka.ru").employee-block__item.employee-block__email 
@@ -89,7 +89,7 @@ block content
                                         +icon('persone')
                                         | Алексей Ляшенко
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 212
                                     a(href="mailto:opt4@keramoteka.ru").employee-block__item.employee-block__email 
@@ -100,7 +100,7 @@ block content
                                         +icon('persone')
                                         | Анастасия Ситникова
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 203
                                     a(href="mailto:opt2@keramoteka.ru").employee-block__item.employee-block__email 
@@ -111,7 +111,7 @@ block content
                                         +icon('persone')
                                         | Юлия Асташкина
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 202
                                     a(href="mailto:opt5@keramoteka.ru").employee-block__item.employee-block__email 
@@ -122,7 +122,7 @@ block content
                                         +icon('persone')
                                         | Ольга Горохова
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 215
                                     a(href="mailto:opt3@keramoteka.ru").employee-block__item.employee-block__email 
@@ -133,7 +133,7 @@ block content
                                         +icon('persone')
                                         | Павел Верховых
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 205
                                     a(href="mailto:opt6@keramoteka.ru").employee-block__item.employee-block__email 
@@ -146,7 +146,7 @@ block content
                                         | Ирина Слепова 2
                                     .employee-block__item.employee-block__position 
                                         | Старший менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 208 
                                     a(href="mailto:region@keramoteka.ru").employee-block__item.employee-block__email 
@@ -157,7 +157,7 @@ block content
                                         +icon('persone')
                                         | Алексей Ляшенко
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 212
                                     a(href="mailto:opt4@keramoteka.ru").employee-block__item.employee-block__email 
@@ -168,7 +168,7 @@ block content
                                         +icon('persone')
                                         | Анастасия Ситникова
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 203
                                     a(href="mailto:opt2@keramoteka.ru").employee-block__item.employee-block__email 
@@ -179,7 +179,7 @@ block content
                                         +icon('persone')
                                         | Юлия Асташкина
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 202
                                     a(href="mailto:opt5@keramoteka.ru").employee-block__item.employee-block__email 
@@ -190,7 +190,7 @@ block content
                                         +icon('persone')
                                         | Ольга Горохова
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 215
                                     a(href="mailto:opt3@keramoteka.ru").employee-block__item.employee-block__email 
@@ -201,7 +201,7 @@ block content
                                         +icon('persone')
                                         | Павел Верховых
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 205
                                     a(href="mailto:opt6@keramoteka.ru").employee-block__item.employee-block__email 
@@ -214,7 +214,7 @@ block content
                                         | Ирина Слепова 3
                                     .employee-block__item.employee-block__position 
                                         | Старший менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 208 
                                     a(href="mailto:region@keramoteka.ru").employee-block__item.employee-block__email 
@@ -225,7 +225,7 @@ block content
                                         +icon('persone')
                                         | Алексей Ляшенко
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 212
                                     a(href="mailto:opt4@keramoteka.ru").employee-block__item.employee-block__email 
@@ -236,7 +236,7 @@ block content
                                         +icon('persone')
                                         | Анастасия Ситникова
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 203
                                     a(href="mailto:opt2@keramoteka.ru").employee-block__item.employee-block__email 
@@ -247,7 +247,7 @@ block content
                                         +icon('persone')
                                         | Юлия Асташкина
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 202
                                     a(href="mailto:opt5@keramoteka.ru").employee-block__item.employee-block__email 
@@ -258,7 +258,7 @@ block content
                                         +icon('persone')
                                         | Ольга Горохова
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 215
                                     a(href="mailto:opt3@keramoteka.ru").employee-block__item.employee-block__email 
@@ -269,7 +269,7 @@ block content
                                         +icon('persone')
                                         | Павел Верховых
                                     .employee-block__item.employee-block__position Менеджер отдела заказов
-                                    .employee-block__item.employee-block__phone 
+                                    a(href="tel:").employee-block__item.employee-block__phone 
                                         +icon('phone-o')
                                         | доб. 205
                                     a(href="mailto:opt6@keramoteka.ru").employee-block__item.employee-block__email 

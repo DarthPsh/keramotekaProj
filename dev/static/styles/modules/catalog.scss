@@ -17,7 +17,7 @@
     }
     &-head {
         display: flex;
-        padding-bottom: 75px;
+        padding-bottom: 56px;
         padding-right: 150px;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -231,7 +231,7 @@
 .catalog-second {
     background: none;
     &__content {
-        padding-top: 60px;
+        padding-top: 28px;
     }
     .catalog {
         &-head {
@@ -282,8 +282,8 @@
                 }
             }
             &__desc {
-                max-width: 605px;
-                padding-left: 15px;
+                // max-width: 605px;
+                padding-left: 125px;
                 @media ( max-width: 1200px ) {
                     padding: 0 20px 0 40px;
                 }

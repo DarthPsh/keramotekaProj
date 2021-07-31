@@ -359,6 +359,9 @@ header { flex: 0 0 auto; }
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @media (max-width: 760px) {
+                padding: 0 8px;
+            }
         }
         &-logo {
             display: none;
@@ -413,7 +416,7 @@ header { flex: 0 0 auto; }
                     font-weight: 600;
                     font-size: 18px;
                     line-height: 22px;
-                    top: -12px;  
+                    top: -10px;  
                     border: none;
                     padding: 0;
                     background: transparent;

@@ -1,3 +1,4 @@
+/* eslint-disable */
 document.addEventListener('DOMContentLoaded', function () {
     console.log('hello');
 
@@ -306,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }) // удаляем список отмеченных фильтров под фильтрами
     $('.header-filter-reset').on('click', function () {
         $('.header-filter-checked-list li').remove();
+        $('.header-filter_active .container').css('bottom', '0');
     }) // удаляем список отмеченных фильтров под фильтрами
 
     // CБРОС ФИЛЬТРОВ
@@ -550,12 +552,12 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.mobile-menu-list-item__btn').on('click', function () {
         $('.header-filter').addClass('header-filter_active');
         $('.header').addClass('header_overflow');
-        // $('body').css('overflow', 'hidden');
+        $('body').css('overflow', 'hidden');
     })
     $('.header-filter-head__close').on('click', function () {
         $('.header-filter').removeClass('header-filter_active');
         $('.header').removeClass('header_overflow');
-        // $('body').css('overflow', '');
+        $('body').css('overflow', '');
     })
 
 
@@ -565,7 +567,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     $('.product-text__content-read-more').on('click', function () {
-        $('.product-text__content-read-more').toggleClass('product-text__content-read-more_active');
+        if($(this).hasClass('product-text__content-read-more_active')) {
+            $(this).removeClass('product-text__content-read-more_active')
+            $(this).contents()[0].nodeValue = 'Читать полностью';
+        } else {
+            $(this).addClass('product-text__content-read-more_active')
+            $(this).contents()[0].nodeValue = 'Свернуть';
+        }
     })
 
 

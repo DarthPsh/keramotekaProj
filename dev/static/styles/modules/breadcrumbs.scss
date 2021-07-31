@@ -2,7 +2,8 @@
     &-list {
         display: flex;
         padding: 16px 0 24px 0;
-        flex-wrap: wrap;
+        white-space: nowrap;
+        overflow: auto;
         &__item {
             &-link {
                 color: #828282;
@@ -31,6 +32,7 @@
             }
             &_back {
                 padding-right: 15px;
+                transform: translateY(-1px);
                 display: flex;
                 align-items: center;
                 .svg-sprite-icon {
@@ -40,6 +42,12 @@
                     transform: rotate(90deg);
                 }
             }
+        }
+    }
+    &--light {
+        color: #D9D9D9;
+        &:hover {
+            color: $colorLight;
         }
     }
 }
