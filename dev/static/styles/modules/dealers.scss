@@ -1,53 +1,69 @@
 .catalog-content__top-reset {
-    border: none;
-    background: transparent;
-    color: #333333;
-    white-space: nowrap;
-    padding: 0;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.04em;
+  border: none;
+  background: transparent;
+  color: #333333;
+  white-space: nowrap;
+  padding: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  transform: translateX(26px);
+  @media (max-width: 1024px) {
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    transform: translateX(0);
+  }
+  @media (max-width: 760px) {
+    display: none;
+  }
+  .svg-sprite-icon {
+    height: 14px;
+    width: 14px;
+    fill: #999999;
+    transform: scale(0);
+    margin-left: 12px;
+    transition: 0.2s;
     @media (max-width: 1024px) {
-        font-size: 0;
-        display: flex;
-        align-items: center;
+      height: 20px;
+      width: 20px;
+      display: block;
+      transform: scale(1);
     }
-    @media (max-width: 760px) {
-        display: none;
-    }
+  }
+  &:hover {
+    transform: translateX(0);
     .svg-sprite-icon {
-        height: 20px;
-        width: 20px;
-        fill: #333333;
-        display: none;
-        @media (max-width: 1024px) {
-            display: block;
-        }
+      transform: scale(1);
     }
+  }
 }
 
 .dealers {
-    &-cta {
-        background: #FFFFFF;
-        border: 2px solid #D9D9D9;
-        box-sizing: border-box;
-        border-radius: 2px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 16px;
-        text-align: center;
-        letter-spacing: 0.04em;
-        color: #333333;
-        padding: 16px 47px;
-        display: inline-block;
-        transition: .3s;
-        &:hover {
-            border-color: #333333;
-        }
-        @media (max-width: 760px) {
-            width: 100%;
-        }
+  &-cta {
+    background: #ffffff;
+    border: 2px solid #d9d9d9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #333333;
+    padding: 16px 47px;
+    display: inline-block;
+    transition: 0.3s;
+    &:hover {
+      border-color: #333333;
     }
+    @media (max-width: 760px) {
+      width: 100%;
+    }
+  }
 }

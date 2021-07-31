@@ -34,24 +34,33 @@ include helpers/mixins
                             .attribute-name Цена
                             .attribute-value 4801 ₽/ м
                                 sup 2 
-                    .popup-product__cart-have
-                        .cart-have__item
-                            .cart-have__item-name В наличии на складе в Москве:
-                            .cart-have__item-value 138 м
-                                sup 2
-                        .cart-have__item
-                            .cart-have__item-name - из них в резерве
-                            .cart-have__item-value 25 м
-                                sup 2
-                    .popup-product__cart-have
-                        .cart-have__item
-                            .cart-have__item-name В пути на склад:
-                            .cart-have__item-value 138 м
-                                sup 2
-                        .cart-have__item
-                            .cart-have__item-name - из них в резерве
-                            .cart-have__item-value 25 м
-                                sup 2
+                    table.product-card-content__warehouse.product-card-content__warehouse--gray
+                        thead.warehouse-head
+                            tr
+                                th СКЛАД
+                                th МСК
+                                th СПБ
+                        tbody 
+                            tr.warehouse-availability
+                                td в наличии 
+                                    span.warehouse-unit м
+                                        sup 2
+                                td 1746
+                                td 4768
+                            tr.warehouse-availability__reserve
+                                td из них в резерве
+                                td 1000
+                                td 3214
+                            tr.warehouse-way
+                                td в пути 
+                                    span.warehouse-unit м
+                                        sup 2
+                                td 1234
+                                td 1234
+                            tr.warehouse-way__reserve.warehouse-empty
+                                td из них в резерве
+                                td &mdash;
+                                td &mdash;
                     form.product-card-content__to-cart-form.popup-product__cart-form
                         .attribute-name Количество
                         .quantity-block

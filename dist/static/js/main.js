@@ -542,7 +542,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   observer.observe();
   $('.product-text__content-read-more').on('click', function () {
-    $('.product-text__content-read-more').toggleClass('product-text__content-read-more_active');
+    if ($(this).hasClass('product-text__content-read-more_active')) {
+      $(this).removeClass('product-text__content-read-more_active');
+      $(this).contents()[0].nodeValue = 'Читать полностью';
+    } else {
+      $(this).addClass('product-text__content-read-more_active');
+      $(this).contents()[0].nodeValue = 'Свернуть';
+    }
   }); // СЛАЙДЕР НА СТРАНИЦЕ КОЛЛЕКЦИИ
 
   if (document.querySelectorAll('.product-slider').length) {
