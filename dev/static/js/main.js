@@ -50,25 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
         else {
             $('.header-content__favourites .header-content-circle__badge').removeClass('header-content-circle__badge_active');
         }
-        // $('.header-favourites__btn').on('mouseenter', function () {
-        //     if ($('.header-content__favourites .header-content-circle__badge').val() <= 0) {
-        //         $('.favourites-empty__drop-menu').addClass('favourites-empty__drop-menu_active');
-        //     }
-        // })
-        // $('.header-favourites__btn').on('mouseleave', function () {
-        //     if ($('.header-content__favourites .header-content-circle__badge').val() <= 0) {
-        //         $('.favourites-empty__drop-menu').removeClass('favourites-empty__drop-menu_active');
-        //     }
-        // })
         $('.header-favourites__btn').on('click', function () {
             if ($('.favourites-count').text() == 0) {
                 preventDefault();
                 $('.favourites-empty__drop-menu').toggleClass('favourites-empty__drop-menu_active');
             }
         })
-        // $('.header-favourites__btn').on('click', function () {
-        //     preventDefault();
-        // })
     }
     favouritesBadgeCounter();
 
@@ -219,12 +206,6 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.cart-empty__drop-menu').removeClass('cart-empty__drop-menu_active'); // скрываем его
         } // попап при клике на корзину если пусто
 
-        // закрываем попап при клике на телефон на мобиле
-        if (!$('.header-bot-mobile-phone').is(e.target) // если клик был не по нашему блоку
-            && $('.header-bot-mobile-phone').has(e.target).length === 0) { // и не по его дочерним элементам
-            $('.header-mobile-phone-drop-menu').removeClass('header-mobile-phone-drop-menu_active'); // скрываем его
-        } // закрываем попап при клике на телефон на мобиле
-
         // закрываем попап при клике вне попапа
         if (!$('.calculation-popup').is(e.target) // если клик был не по нашему блоку
             && $('.calculation-popup').has(e.target).length === 0) { // и не по его дочерним элементам
@@ -233,12 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
             history.replaceState(null, null, " ");
         } // закрываем попап при клике вне попапа
     });
-    
-
-    $('.header-bot-mobile-phone').on('click', function () {
-        $('.header-mobile-phone-drop-menu').toggleClass('header-mobile-phone-drop-menu_active');
-    }) // открываем попап при клике на телефон на мобиле
-
 
 
     function countCheckedFiltersFunc() { // счётчик кол-ва отмеченных фильтров в списке фильтров в шапке
@@ -516,7 +491,6 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.header-burger').on('click', function () {
         $('.header-burger').toggleClass('header-burger_active');
         $('.mobile-menu').toggleClass('mobile-menu_active');
-        $('.header-bot-mobile-item-desc').toggleClass('header-bot-mobile-item-desc_active');
         $('.header-bot').toggleClass('header-bot_active');
         $('.header').toggleClass('header-mobile');
         if ($('.header-burger').hasClass('header-burger_active')) {

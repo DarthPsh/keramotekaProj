@@ -30,7 +30,7 @@ header.header
 				.header-top__right
 					ul.header-top__right-menu
 						li
-							a(href='#!') Сотрудничество
+							a(href='#!').header-bot-mobile-item.header-bot-mobile-item-search Сотрудничество
 								figure.header-top__icon.header-top__more
 									+icon('expand_more')
 							ul.header-drop-menu.header-top__right-drop-menu
@@ -45,18 +45,22 @@ header.header
 						li
 							a(href='#') Контакты
 			.header-main
+				.header-burger
+					.header-burger-line.header-burger-line__top
+					.header-burger-line.header-burger-line__mid
+					.header-burger-line.header-burger-line__bot
 				a(href="/").logo
 					img(src='static/images/common/logo.svg' alt='logo')
 				.header-content
 					.header-content-block.header-content__address
 						figure.header-content-block__icon
 							+icon('map-marker')
-						.header-content-block__text г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская 
-								a.header-content-block__info(href='#') 
+						.header-content-block__text г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская
+								a.header-content-block__info(href='#')
 									| &nbsp;Как добраться?
 					.header-content-block.header-content__phone
 						figure.header-content-block__icon
-							+icon('phone')
+							+icon('phone-o')
 						.header-content-block__text
 							span для Москвы и МО
 							a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
@@ -97,7 +101,7 @@ header.header
 					a(href="/favorites.html").header-content-circle.header-content__favourites.header-favourites__btn
 						+icon('favourites')
 						//- input(type="number" value="0" disabled).header-content-circle__badge
-						.header-content-circle__badge
+						.header-content-circle__badge 0
 						ul.header-drop-menu.favourites-empty__drop-menu
 							li
 								.favourites-empty__text
@@ -114,10 +118,6 @@ header.header
 							li
 								.cart-empty__text
 									p Ваша корзина пуста
-				.header-burger
-					.header-burger-line.header-burger-line__top
-					.header-burger-line.header-burger-line__mid
-					.header-burger-line.header-burger-line__bot
 	.header-bot__fake
 	.header-bot
 		.container
@@ -267,56 +267,6 @@ header.header
 									a(href='#') 
 										strong Все результаты
 								div(style='clear:both;')
-					a(href="tel:+74956468620").header-bot-phone 
-						figure.header-bot-phone__icon
-							+icon('phone-o')
-						span +7 495 646-86-20
-					.header-bot-mobile-item.header-bot-mobile-item-search
-						+icon('search')
-						.header-bot-mobile-item-desc Поиск
-					a(href="/contacts-shop.html").header-bot-mobile-item
-						+icon('adress')
-						.header-bot-mobile-item-desc Адрес шоурума
-					.header-bot-mobile-item.header-bot-mobile-phone
-						+icon('tel')
-						.header-bot-mobile-item-desc Звоните нам
-						ul.header-drop-menu.header-mobile-phone-drop-menu
-							li
-								.header-content__phone-drop-menu-inner
-									span для Москвы и МО
-									a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
-								a.header-content-circle(href='tel:+74956498420')
-									+icon('phone')
-							li
-								.header-content__phone-drop-menu-inner
-									span для регионов РФ 
-									span (бесплатно)
-									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
-								a.header-content-circle(href='tel:88007075037')
-									+icon('phone')
-					a(href="/favorites.html").header-bot-mobile-item.header-bot-mobile-item__favourites.header-favourites__btn
-						//- input(type="number" value="0" disabled).header-bot-mobile-item__badge.favourites-count
-						.header-bot-mobile-item__badge.favourites-count 0
-						+icon('favourites')
-						.header-bot-mobile-item-desc Избранные коллекции
-						ul.header-drop-menu.favourites-empty__drop-menu
-							li
-								.favourites-empty__text
-									p Список избранных коллекций пуст
-									p На страницах коллекций нажимайте кнопку
-							li
-								.favourites-empty__icon 
-									+icon('favourites')
-					a(href="/cart.html").header-bot-mobile-item.header-bot-mobile-item__cart.header-cart__btn
-						//- input(type="number" value="0" disabled).header-bot-mobile-item__badge.cart-count 
-						.header-bot-mobile-item__badge.cart-count 0
-						+icon('cart')
-						.header-bot-mobile-item-desc Ваш заказ
-						ul.header-drop-menu.cart-empty__drop-menu
-							li
-								.cart-empty__text
-									p Ваша корзина пуста
-					.header-bot-mobile-search-close Отмена
 	form.header-filter 
 		.container 
 			.header-filter-head
