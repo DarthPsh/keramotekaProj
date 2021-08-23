@@ -14,7 +14,7 @@
 			a(href="#").alert-link Подробнее
 			.alert-close
 				+icon('close_brs')
-
+.header--fake
 header.header
 	.container
 		.header-wrap
@@ -72,14 +72,14 @@ header.header
 									span для Москвы и МО
 									a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
 								a.header-content-circle(href='tel:+74956498420')
-									+icon('phone')
+									+icon('phone-o')
 							li
 								.header-content__phone-drop-menu-inner
 									span для регионов РФ 
 									span (бесплатно)
 									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
 								a.header-content-circle(href='tel:88007075037')
-									+icon('phone')
+									+icon('phone-o')
 					.header-content-block.header-content__worktime
 						figure.header-content-block__icon
 							+icon('clock')
@@ -273,34 +273,51 @@ header.header
 				.header-filter-head__title Поиск по параметрам
 				.header-filter-head__close
 					+icon('search-clear')
-			.header-filter-top
-				.header-filter-top-left
-					label
-						input(type="checkbox" name='novelty' value="1")
-						| Новинка
-					label
-						input(type="checkbox" name='bestseller' value="1")
-						| Хит продаж
-					label
-						input(type="checkbox" name='sale' value="1")
-						| Распродажа
-				.header-filter-top-right
-					label
-						input(type="checkbox" name='in-stock' value="1")
-						| В наличии
-					label
-						input(type="checkbox" name='on-the-way' value="1")
-						| В пути на склад
-					label
-						input(type="checkbox" name='under-the-order' value="1")
-						| Под заказ
 			.header-filter-main
+				.header-filter-top
+					.header-filter-top-left
+						label
+							input(type="checkbox" name='novelty' value="1")
+							| Новинка
+						label
+							input(type="checkbox" name='bestseller' value="1")
+							| Хит продаж
+						label
+							input(type="checkbox" name='sale' value="1")
+							| Распродажа
+					.header-filter-top-right
+						label
+							input(type="checkbox" name='in-stock' value="1")
+							| В наличии
+						label
+							input(type="checkbox" name='on-the-way' value="1")
+							| В пути на склад
+						label
+							input(type="checkbox" name='under-the-order' value="1")
+							| Под заказ
 				ul.header-filter-list
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Тип материала
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='type' value="1")
+									| Тип 1
+							li
+								label
+									input(type="checkbox" name='type' value="2")
+									| Тип 2
+							li
+								label
+									input(type="checkbox" name='type' value="3")
+									| Тип 3
+							li
+								label
+									input(type="checkbox" name='type' value="4")
+									| Тип 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Страна производителя
 							figure.header-filter-list-item__icon.header-top__more
@@ -356,46 +373,199 @@ header.header
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='fabric' value="1")
+									| Фабрика 1
+							li
+								label
+									input(type="checkbox" name='fabric' value="2")
+									| Фабрика 2
+							li
+								label
+									input(type="checkbox" name='fabric' value="3")
+									| Фабрика 3
+							li
+								label
+									input(type="checkbox" name='fabric' value="4")
+									| Фабрика 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Цена базовых форматов
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='price' value="1")
+									| Цена 1
+							li
+								label
+									input(type="checkbox" name='price' value="2")
+									| Цена 2
+							li
+								label
+									input(type="checkbox" name='price' value="3")
+									| Цена 3
+							li
+								label
+									input(type="checkbox" name='price' value="4")
+									| Цена 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Место применения
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='place' value="1")
+									| Место 1
+							li
+								label
+									input(type="checkbox" name='place' value="2")
+									| Место 2
+							li
+								label
+									input(type="checkbox" name='place' value="3")
+									| Место 3
+							li
+								label
+									input(type="checkbox" name='place' value="4")
+									| Место 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Настенная / напольная
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='wall' value="1")
+									| Пункт 1
+							li
+								label
+									input(type="checkbox" name='wall' value="2")
+									| Пункт 2
+							li
+								label
+									input(type="checkbox" name='wall' value="3")
+									| Пункт 3
+							li
+								label
+									input(type="checkbox" name='wall' value="4")
+									| Пункт 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Формат
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='format' value="1")
+									| Формат 1
+							li
+								label
+									input(type="checkbox" name='format' value="2")
+									| Формат 2
+							li
+								label
+									input(type="checkbox" name='format' value="3")
+									| Формат 3
+							li
+								label
+									input(type="checkbox" name='format' value="4")
+									| Формат 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Размер
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='size' value="1")
+									| Размер 1
+							li
+								label
+									input(type="checkbox" name='size' value="2")
+									| Размер 2
+							li
+								label
+									input(type="checkbox" name='size' value="3")
+									| Размер 3
+							li
+								label
+									input(type="checkbox" name='size' value="4")
+									| Размер 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Стиль
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='style' value="1")
+									| Стиль 1
+							li
+								label
+									input(type="checkbox" name='style' value="2")
+									| Стиль 2
+							li
+								label
+									input(type="checkbox" name='style' value="3")
+									| Стиль 3
+							li
+								label
+									input(type="checkbox" name='style' value="4")
+									| Стиль 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Фактура
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='facture' value="1")
+									| Фактура 1
+							li
+								label
+									input(type="checkbox" name='facture' value="2")
+									| Фактура 2
+							li
+								label
+									input(type="checkbox" name='facture' value="3")
+									| Фактура 3
+							li
+								label
+									input(type="checkbox" name='facture' value="4")
+									| Фактура 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Текстура
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
 						.filter-list-count
+						ul.header-drop-menu.header-filter-list-drop-menu
+							li
+								label
+									input(type="checkbox" name='texture' value="1")
+									| Текстура 1
+							li
+								label
+									input(type="checkbox" name='texture' value="2")
+									| Текстура 2
+							li
+								label
+									input(type="checkbox" name='texture' value="3")
+									| Текстура 3
+							li
+								label
+									input(type="checkbox" name='texture' value="4")
+									| Текстура 4
 					li.header-filter-list-item 
 						.header-filter-list-item__title Цвет
 							figure.header-filter-list-item__icon.header-top__more
@@ -455,10 +625,36 @@ header.header
 			ul.mobile-menu-list
 				li.mobile-menu-list-item
 					.wrapper.mobile-menu-list-item-wrap
-						button.mobile-menu-list-item__btn 
-							+icon('filter')
-							//- img(src="static/images/common/filter.svg", alt="icon")
-							| ПОИСК ПО ПАРАМЕТРАМ
+						.mobile-contacts
+							+icon('map-marker')
+							.mobile-contacts__tabs
+								.mobile-contacts__tab.mobile-contacts__tab--active МОСКВА
+								.mobile-contacts__tab САНКТ-ПЕТЕРБУРГ
+							.mobile-contacts__blocks
+								.mobile-contacts__block.mobile-contacts__block--active
+									.mobile-contacts__item.mobile-contacts__address
+										| Шоурум: 1-й Щемиловский пер., 17/1
+										br
+										| м. Новослободская
+										a(href="#") Как добраться?
+									.mobile-contacts__item.mobile-contacts__time
+										| пн-пт 9:00 — 20:00
+										br
+										| сб-вс 10:00 — 18:00
+									a(href="tel:+74956498420").mobile-contacts__item.mobile-contacts__phone +7 495 649-84-20
+									a(href="#").mobile-contacts__item.mobile-contacts__link Подробные контакты
+								.mobile-contacts__block
+									.mobile-contacts__item.mobile-contacts__address
+										| Шоурум: спб
+										br
+										| м. Новослободская
+										a(href="#") Как добраться?
+									.mobile-contacts__item.mobile-contacts__time
+										| пн-пт 9:00 — 20:00
+										br
+										| сб-вс 10:00 — 18:00
+									a(href="tel:+74956498420").mobile-contacts__item.mobile-contacts__phone +7 495 649-84-20
+									a(href="#").mobile-contacts__item.mobile-contacts__link Подробные контакты
 				li.mobile-menu-list-item
 					a.mobile-menu-list-item__link(href='#') 
 						+icon('catalog2')
@@ -495,39 +691,19 @@ header.header
 							a(href="#") Строительным организациям
 						li
 							a(href="#") Дизайнерам и архитекторам
+				//li.mobile-menu-list-item
+				//	a.mobile-menu-list-item__link.3d-visual(href='#') 3D-визуализация
 				li.mobile-menu-list-item
-					a.mobile-menu-list-item__link.3d-visual(href='#') 3D-визуализация
-				li.mobile-menu-list-item
-					a.mobile-menu-list-item__link(href='#') О компании
-				li.mobile-menu-list-item.mobile-menu-list-item__contacts
-					a.mobile-menu-list-item__link(href='#') Контакты
-					.wrapper.mobile-menu-list-item-wrap
-						.header-content-block.header-content__address
-							figure.header-content-block__icon
-								+icon('map-marker')
-							.header-content-block__text г. Москва, 1-й Щемиловский пер., 17/1 м. Новослободская 
-									a.header-content-block__info(href='#') 
-										| &nbsp;Как добраться?
-						.header-content-block.header-content__phone
-							figure.header-content-block__icon
-								+icon('phone')
-							.wrapper
-								.header-content-block__text.header-content__phone_moscow
-									span для Москвы и МО
-									a.header-content-block__info(href='tel:+74956498420') +7 495 649-84-20
-								.header-content-block__text
-									span для регионов РФ (бесплатно)
-									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
-						.header-content-block.header-content__worktime
-							figure.header-content-block__icon
-								+icon('clock')
-							.wrapper
-								.header-content-block__text
-									span пн-пт
-									span.header-content-block__info 9:00 — 20:00
-								.header-content-block__text
-									span сб-вс
-									span.header-content-block__info 10:00 — 18:00
+					a.mobile-menu-list-item__link(href='#!') О компании
+						figure.header-top__icon.header-top__more
+							+icon('expand_more')
+					ul.header-drop-menu.mobile-menu-list-drop
+						li
+							a(href="#") пункт
+						li
+							a(href="#") пункт
+						li
+							a(href="#") пункт
 				li.mobile-menu-list-item.mobile-menu-list-item__social
 					a.mobile-menu-list-item__social-link(href="#")
 						+icon('fb')

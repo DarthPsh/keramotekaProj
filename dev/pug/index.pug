@@ -5,6 +5,15 @@ block variables
 
 block content
 	.page-content
+		.container.top-scrollbar__container.top-scrollbar--front-page
+			.top-scrollbar.swiper-container
+				.swiper-wrapper.top-scrollbar__wrapper
+					a.top-scrollbar__item.swiper-slide(href="#") Пункт
+					a.top-scrollbar__item.swiper-slide(href="#") Пункт 2
+					a.top-scrollbar__item.swiper-slide(href="#") Пункт Пункт
+					a.top-scrollbar__item.swiper-slide(href="#") Пункт 4
+					a.top-scrollbar__item.swiper-slide(href="#") Пункт 5
+					a.top-scrollbar__item.top-scrollbar__contacts.swiper-slide(href="#") Пункт Пункт
 		.container.container-card
 			.page-content-grid
 				.page-content-grid-sizer(style="display:none;")
@@ -57,14 +66,6 @@ block content
 						+icon('expand_more')
 					.page-slider-control.page-slider-prev.swiper-button-prev
 						+icon('expand_more')
-				.page-content-grid-item.mobile-btn
-					a.mobile-menu__to-catalog(href="#") 
-						+icon('catalog2')
-						| КАТАЛОГ
-					button.mobile-menu-list-item__btn 
-						+icon('filter')
-						//- img(src="static/images/common/filter.svg", alt="icon")
-						| ПОИСК ПО ПАРАМЕТРАМ
 				.page-content-grid-item.notification-card
 					.notification-card__badge ОБЪЯВЛЕНИЕ С СЫЛКОЙ
 					.notification-card__title РЕЖИМ РАБОТЫ В МАЙСКИЕ ПРАЗДНИКИ

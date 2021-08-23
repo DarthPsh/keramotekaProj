@@ -481,5 +481,25 @@
                 display: block;
             }
         }
+        &--front-page {
+            display: none;
+            @media (max-width: 760px) {
+                display: block;
+                .top-scrollbar__item {
+                    font-weight: 600;
+                    font-size: 10px;
+                    line-height: 12px;
+                    letter-spacing: 0.05em;
+                    color: #333333;
+                    padding: 10px 15px;
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
     }
 }
