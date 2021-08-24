@@ -10,7 +10,9 @@ const gulpif = require('gulp-if');
 module.exports = function pug2html() {
   return gulp.src('dev/pug/*.pug')
     .pipe(plumber())
-    .pipe(pug())
+    .pipe(pug({
+        pretty: true
+    }))
     .pipe(plumber.stop())
     .pipe(gulpif(argv.prod, htmlValidator()))
     .pipe(gulp.dest('dist'))
