@@ -75,7 +75,7 @@ header.header
 									+icon('phone-o')
 							li
 								.header-content__phone-drop-menu-inner
-									span для регионов РФ 
+									span для регионов РФ
 									span (бесплатно)
 									a.header-content-block__info(href='tel:88007075037') 8 800 707-5037
 								a.header-content-circle(href='tel:88007075037')
@@ -108,7 +108,7 @@ header.header
 									p Список избранных коллекций пуст
 									p На страницах коллекций нажимайте кнопку
 							li
-								.favourites-empty__icon 
+								.favourites-empty__icon
 									+icon('favourites')
 					a(href="/cart.html").header-content-circle.header-content__cart.header-cart__btn
 						+icon('shopping-cart')
@@ -264,11 +264,38 @@ header.header
 						.bx_searche
 							.bx_item_block.all_result
 								.bx_item_element
-									a(href='#') 
+									a(href='#')
 										strong Все результаты
 								div(style='clear:both;')
-	form.header-filter 
-		.container 
+						// azaza
+					.header-bot-content
+						.header-bot-content__phone.header-bot-content__item
+							.header-bot-content__phone-icon
+								+icon('phone-o')
+							a.header-bot-content__phone-link(href="+7 495 646-86-20") +7 495 646-86-20
+						.header-bot-content__item
+							a(href="/favorites.html").header-content-circle.header-content__favourites.header-favourites__btn.header-bot-content__item-icon
+								+icon('favourites')
+								//- input(type="number" value="0" disabled).header-content-circle__badge
+								.header-content-circle__badge 0
+								ul.header-drop-menu.favourites-empty__drop-menu
+									li
+										.favourites-empty__text
+											p Список избранных коллекций пуст
+											p На страницах коллекций нажимайте кнопку
+									li
+										.favourites-empty__icon
+											+icon('favourites')
+							a(href="/cart.html").header-content-circle.header-content__cart.header-cart__btn.header-bot-content__item-icon
+								+icon('shopping-cart')
+								//- input(type="number" value="0" disabled).header-content-circle__badge.cart-count
+								.header-content-circle__badge.cart-count 0
+								ul.header-drop-menu.cart-empty__drop-menu
+									li
+										.cart-empty__text
+											p Ваша корзина пуста
+	form.header-filter
+		.container
 			.header-filter-head
 				.header-filter-head__title Поиск по параметрам
 				.header-filter-head__close
@@ -318,7 +345,7 @@ header.header
 								label
 									input(type="checkbox" name='type' value="4")
 									| Тип 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Страна производителя
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -368,7 +395,7 @@ header.header
 								label
 									input(type="checkbox" name='country' value="11")
 									| Мордор
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Фабрика / бренд
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -390,7 +417,7 @@ header.header
 								label
 									input(type="checkbox" name='fabric' value="4")
 									| Фабрика 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Цена базовых форматов
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -412,7 +439,7 @@ header.header
 								label
 									input(type="checkbox" name='price' value="4")
 									| Цена 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Место применения
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -434,7 +461,7 @@ header.header
 								label
 									input(type="checkbox" name='place' value="4")
 									| Место 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Настенная / напольная
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -456,7 +483,7 @@ header.header
 								label
 									input(type="checkbox" name='wall' value="4")
 									| Пункт 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Формат
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -478,7 +505,7 @@ header.header
 								label
 									input(type="checkbox" name='format' value="4")
 									| Формат 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Размер
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -500,7 +527,7 @@ header.header
 								label
 									input(type="checkbox" name='size' value="4")
 									| Размер 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Стиль
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -522,7 +549,7 @@ header.header
 								label
 									input(type="checkbox" name='style' value="4")
 									| Стиль 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Фактура
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -544,7 +571,7 @@ header.header
 								label
 									input(type="checkbox" name='facture' value="4")
 									| Фактура 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Текстура
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -566,7 +593,7 @@ header.header
 								label
 									input(type="checkbox" name='texture' value="4")
 									| Текстура 4
-					li.header-filter-list-item 
+					li.header-filter-list-item
 						.header-filter-list-item__title Цвет
 							figure.header-filter-list-item__icon.header-top__more
 								+icon('expand_more_brs')
@@ -607,21 +634,21 @@ header.header
 									input(type="checkbox" name='color' value="7")
 									| Фиолетовый
 									.circle-color(style="background:violet;")
-				.header-filter-checked 
-					ul.header-filter-checked-list 
+				.header-filter-checked
+					ul.header-filter-checked-list
 					button.header-filter-checked-reset(type="reset") Сбросить
 			.header-filter-btns
-				button.header-filter-reset(type="reset") 
+				button.header-filter-reset(type="reset")
 					+icon('refresh')
 					| Сбросить
 					br
 					| фильтр
-				button.header-filter-submit(type="submit") 
-					| ПОКАЗАТЬ 
+				button.header-filter-submit(type="submit")
+					| ПОКАЗАТЬ
 					span.header-filter-submit-count (45)
 					span.header-filter-submit-end  КОЛЛЕКЦИЙ
 	.mobile-menu
-		.container 
+		.container
 			ul.mobile-menu-list
 				li.mobile-menu-list-item
 					.wrapper.mobile-menu-list-item-wrap
@@ -656,11 +683,11 @@ header.header
 									a(href="tel:+74956498420").mobile-contacts__item.mobile-contacts__phone +7 495 649-84-20
 									a(href="#").mobile-contacts__item.mobile-contacts__link Подробные контакты
 				li.mobile-menu-list-item
-					a.mobile-menu-list-item__link(href='#') 
+					a.mobile-menu-list-item__link(href='#')
 						+icon('catalog2')
 						| Каталог
 				li.mobile-menu-list-item
-					a.mobile-menu-list-item__link(href='#') 
+					a.mobile-menu-list-item__link(href='#')
 						+icon('catalog2')
 						| Дилерский отдел
 				li.mobile-menu-list-item
@@ -671,7 +698,7 @@ header.header
 						li
 							a(href="#") Заказ
 						li
-							a(href="#") Оплата 
+							a(href="#") Оплата
 						li
 							a(href="#") Доставка
 						li

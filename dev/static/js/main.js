@@ -157,16 +157,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // посковая строка в шапке открытие/закрытие
 
 
-    // кнопка очищения строки поиска    
+    // кнопка очищения строки поиска
     $('.header-bot-search__clear').on('click', function () {
         $('.header-bot-search__clear').removeClass('header-bot-search__clear_active');
         $('.header-bot-search__input').removeClass('header-bot-search__input-border_active');
         $('.header-bot-search__icon').removeClass('header-bot-search__icon_active');
     })
-    // кнопка очищения строки поиска 
+    // кнопка очищения строки поиска
 
 
-    // открываем/закрываем меню с фильтрами    
+    // открываем/закрываем меню с фильтрами
     $('.header-bot-filter').on('click', function () {
         if ($(window).width() <= '760') {
             $('.header-filter').toggleClass('header-filter_active');
@@ -182,11 +182,11 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.header-filter').toggleClass('header-filter_active');
             $('.header-bot-filter').toggleClass('header-bot-filter_triangle');
         }
-        if ($('.wrapper').css('overflow') == 'hidden') {
-            $('.wrapper').css('overflow', '');
-        } else {
-            $('.wrapper').css('overflow', 'hidden');
-        }
+        // if ($('.wrapper').css('overflow') == 'hidden') {
+        //     $('.wrapper').css('overflow', '');
+        // } else {
+        //     $('.wrapper').css('overflow', 'hidden');
+        // }
     })
     // открываем/закрываем меню с фильтрами
 
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    // аякс для строки поиска  
+    // аякс для строки поиска
 
 
 
@@ -416,13 +416,13 @@ document.addEventListener('DOMContentLoaded', function () {
     cardBrandActive();
 
 
-    function cardBrandMinActive() {  // разворачиваем карточки производителя 
+    function cardBrandMinActive() {  // разворачиваем карточки производителя
         $('body').on('click', '.card-brand__min', function () {
             $(this).hide();
             $(this).next().addClass('card-brand__max_active');
             $(this).next().find('.card-brand-content').addClass('card-brand_active');
             initSwiperCardImg();
-            // setTimeout(() => {   
+            // setTimeout(() => {
             // }, 150);
             let initGrid = setInterval(() => {
                 let $grid = $('.page-content-grid').masonry({
@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         scrollPos = st;
-        // 
+        //
     })
     // ВЫПАДАЮЩАЯ ШАПКА ПРИ СКРОЛЛЕ
 
@@ -789,11 +789,11 @@ document.addEventListener('DOMContentLoaded', function () {
             var swiperIndex = $('.page-card-img').index(currentSwiper);
             var currentIndex = $(this).parent().children().index(this);
             swiperCardImg[swiperIndex].slideTo(currentIndex);
-            
+
         })
         $('.page-card-img-hover li').on('mouseleave', function () {
             var currentSwiper = $(this).parent().parent();
-            var swiperIndex = $('.page-card-img').index(currentSwiper); 
+            var swiperIndex = $('.page-card-img').index(currentSwiper);
             swiperCardImg[swiperIndex].slideTo(0);
         })
     }
@@ -1165,7 +1165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log($element, targetClass);
         $('.popup-product__img-icon').hide();
     }
-    // попап товара "положить в квартиру"    
+    // попап товара "положить в квартиру"
     $('.product-card-content').on('click', function () {
         // preventDefault();
         $.ajax({
@@ -1399,8 +1399,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // $('.header-filter input[type="checkbox"]').change(function() {
     //     fList = [];
     //     $(".header-filter input:checked").each(function(i, item) {
-    //         let fObj = {     
-    //             fName: $(item).attr("name"), 
+    //         let fObj = {
+    //             fName: $(item).attr("name"),
     //             fVal: $(item).attr("value")
     //         };
     //         fList.push(fObj);
