@@ -38,7 +38,7 @@
             @media (max-width: 760px) {
                 font-size: 32px;
                 line-height: 100%
-            } 
+            }
         }
         &__desc {
             font-style: normal;
@@ -191,7 +191,7 @@
                             letter-spacing: 0.04em;
                         }
                         &:after {
-                            content: ''; 
+                            content: '';
                             background: $colorAccent;
                             height: 16px;
                             width: 16px;
@@ -425,7 +425,7 @@
         }
         @media (max-width: 1200px) {
             display: block;
-        } 
+        }
         @media (max-width: 760px) {
             padding: 0 16px;
         }
